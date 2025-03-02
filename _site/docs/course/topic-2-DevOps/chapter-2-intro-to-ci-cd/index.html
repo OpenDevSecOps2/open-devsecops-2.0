@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+.site-nav > ul.nav-list:first-child > li > a,
+.site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(2)) > a,
+.site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:not(:first-child) a,
+.site-nav li.external a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > a {
+  font-weight: 600;
+  text-decoration: none;
+}.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+.site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(2) > button svg {
+  transform: rotate(-90deg);
+}.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
+  display: block;
+}
+  </style>
+
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/assets/images/opendevsecops-favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Chapter 2 - Intro to CI/CD | open-devsecops</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Chapter 2 - Intro to CI/CD" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning." />
+<meta property="og:description" content="From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning." />
+<link rel="canonical" href="http://localhost:4000/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/" />
+<meta property="og:url" content="http://localhost:4000/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/" />
+<meta property="og:site_name" content="open-devsecops" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Chapter 2 - Intro to CI/CD" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning.","headline":"Chapter 2 - Intro to CI/CD","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/opendevsecops-transparent.png"}},"url":"http://localhost:4000/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="master-container">
+    <div class="main-container">
+      <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/" class="site-title lh-tight"><div class="site-nav-header">
+    <div class="site-logo" role="img" aria-label="open-devsecops"></div>
+    <p>open-devsecops</p]>
+</div></a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/course/" class="nav-list-link">Course Overview</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Lab Infrastructure Setup Guide category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/lab-setup-guide/" class="nav-list-link">Lab Infrastructure Setup Guide</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 2 - DevOps category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/lab-setup-guide/topic-2-devops-lab/" class="nav-list-link">Topic 2 - DevOps</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/lab-setup-guide/topic-2-devops-lab/aws/" class="nav-list-link">AWS</a>
+              </li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 3 - DevSecOps category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/lab-setup-guide/topic-3-devsecops-lab/" class="nav-list-link">Topic 3 - DevSecOps</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/lab-setup-guide/topic-3-devsecops-lab/aws/" class="nav-list-link">AWS</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 1 - Git category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-1-git/" class="nav-list-link">Topic 1 - Git</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-1-version-control/" class="nav-list-link">Chapter 1 - Introduction to Version Control</a></li><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-2-understanding-git/" class="nav-list-link">Chapter 2 - Git Fundamentals</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 3 - Git Intermediate Concepts category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/" class="nav-list-link">Chapter 3 - Git Intermediate Concepts</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/lab/git-lab-1.html" class="nav-list-link">Lab 1. Version Control and Branching</a>
+              </li></ul></li><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-4-git-best-practices/" class="nav-list-link">Chapter 4 - Git Best Practices</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 2 - DevOps category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-2-DevOps/" class="nav-list-link">Topic 2 - DevOps</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/" class="nav-list-link">Chapter 1 - Intro to DevOps</a></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/" class="nav-list-link">Chapter 2 - Intro to CI/CD</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 3 - Containerization category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-2-DevOps/chapter-3-containerization/" class="nav-list-link">Chapter 3 - Containerization</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-1.html" class="nav-list-link">Lab 1. Containerizing a React Application</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-2.html" class="nav-list-link">Lab 2. Accessing Corporate Network and AWS ECR</a>
+              </li></ul></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-4-webhooks/" class="nav-list-link">Chapter 4 - Webhooks</a></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-5-automation/" class="nav-list-link">Chapter 5 - Automated Tests</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 6 - Deployment category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-2-DevOps/chapter-6-deployment/" class="nav-list-link">Chapter 6 - Deployment</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-6-deployment/lab/deployment-lab-1.html" class="nav-list-link">Lab 1. Configuring a Simple CI/CD Pipeline</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 3 - DevSecOps category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-3-devsecops/" class="nav-list-link">Topic 3 - DevSecOps</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-3-devsecops/chapter-1-devsecops/" class="nav-list-link">Chapter 1 - DevSecOps</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 2 - Security Checks in CI/CD category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/" class="nav-list-link">Chapter 2 - Security Checks in CI/CD</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/devsecops-lab-1.html" class="nav-list-link">Lab 1. Securing a Vulnerable Application</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Other Documents category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/other/" class="nav-list-link">Other Documents</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/other/research/references.html" class="nav-list-link">References</a></li><li class="nav-list-item"><a href="/docs/other/research/user-research.html" class="nav-list-link">User Research</a></li></ul></li></ul>
+
+  
+</nav>
+
+
+  
+  
+    <footer class="site-footer">
+    This site uses a custom theme based on <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>.
+</footer>
+  
+</div>
+
+      <div class="content-container">
+        <div class="main" id="top">
+          <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search the documentation..." aria-label="Search the documentation..." autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/open-devsecops" class="site-button"
+          
+        >
+          Github
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/open-devsecops/open-devsecops.github.io" class="site-button"
+          
+        >
+          Contribute
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+            <div class="main-content-wrap">
+              <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/course/topic-2-DevOps/">Topic 2 - DevOps</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Chapter 2 - Intro to CI/CD</span></li>
+  </ol>
+</nav>
+              <div id="main-content" class="main-content">
+                <main>
+                  
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+<h1 id="introduction-to-cicd">Introduction to CI/CD</h1>
+<p>CI/CD, short for <strong>Continuous Integration and Continuous Delivery</strong>, is a part of the DevOps process. “It is a collection of principles and practices designed to help development teams ensure the reliable delivery of frequent code changes.”</p>
+
+<div style="text-align: center;">
+    <img src="https://www.mindtheproduct.com/wp-content/uploads/2015/12/409-images-for-snap-blog-postedit_image3-auto.png" alt="CI/CD Lifecycle" style="max-width: 50%; height: auto; margin: 0 auto;" />
+    <p><em>Source: <a href="http://www.mindtheproduct.com/what-the-hell-are-ci-cd-and-devops-a-cheatsheet-for-the-rest-of-us/">Mind The Product</a></em></p>
+
+</div>
+
+<h2 id="devops-vs-cicd"><span class="me-2">DevOps vs. CI/CD</span><a href="#devops-vs-cicd" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<!-- 
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+  th {
+    background-color: #333;
+    color: #fff;
+  }
+  th:last-child,
+  td:last-child {
+    border-right: none;
+  }
+  ul {
+    list-style-type: disc;
+    margin-top: 0;
+    padding-left: 20px; /* Adjusted padding for the bullets */
+  }
+  ul li {
+    margin-bottom: 5px;
+  }
+</style>
+-->
+<div class="table-wrapper"><table>
+  <tr>
+    <th>Category</th>
+    <th>DevOps</th>
+    <th>CI</th>
+    <th>CD</th>
+  </tr>
+  <tr>
+    <td><strong>Purpose</strong></td>
+    <td>Facilitate collaboration and efficiency across the development lifecycle.</td>
+    <td>Automate testing to ensure code compatibility.</td>
+    <td>Automate deployment for seamless software releases.</td>
+  </tr>
+  <tr>
+    <td><strong>Methods</strong></td>
+    <td>
+      <ul>
+        <li>Implement automation to streamline collaboration between development and operations teams.</li>
+        <li>Use infrastructure as code (IaC) to provision and manage infrastructure.</li>
+        <li>Integrate continuous feedback loops to gather insights from stakeholders and improve processes iteratively.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Automate the build and testing process for every code change.</li>
+        <li>Identify integration issues early in the development lifecycle.</li>
+        <li>Support the principle of "fail fast" by providing rapid feedback to developers.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Encompass both Continuous Integration and Continuous Deployment.</li>
+        <li>Automate the deployment process to production environments.</li>
+        <li>Enable organizations to release software updates quickly and reliably while minimizing risks.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Key Benefits</strong></td>
+    <td>
+      <ul>
+        <li>Promotes a culture of shared responsibility and accountability.</li>
+        <li>Emphasizes the importance of automating repetitive tasks to reduce manual errors and increase efficiency.</li>
+        <li>Focuses on delivering value to customers through rapid and iterative development cycles.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Increases code quality by identifying issues early in the development process.</li>
+        <li>Speeds up the development cycle by automating build and testing processes.</li>
+        <li>Enables rapid feedback to developers for quick iterations.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Accelerates time to market by automating deployment processes.</li>
+        <li>Minimizes risks associated with manual deployments.</li>
+        <li>Enhances overall software reliability and stability.</li>
+      </ul>
+    </td>
+  </tr>
+</table></div>
+
+<h3 id="references"><span class="me-2">References</span><a href="#references" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<details>
+  <summary>Expand</summary>
+    <b>1.</b> Ashtari, Hossein et al. “Key Differences between CI/CD and DevOps.” <i>Spiceworks</i>, <a href="http://www.spiceworks.com/tech/devops/articles/cicd-vs-devops/" target="_blank">www.spiceworks.com/tech/devops/articles/cicd-vs-devops/</a>. Accessed 20 Feb. 2024.<br />
+    <b>2.</b> Ferringer, Megan. “Here’s the Difference between CI/CD and Devops-and How They Work Together to Drive Innovation.” <i>Navisite</i>, 2 Mar. 2023, <a href="http://www.navisite.com/blog/insights/ci-cd-vs-devops/" target="_blank">www.navisite.com/blog/insights/ci-cd-vs-devops/</a>.<br />
+    <b>3.</b> “What the Hell Are CI/CD and DevOps? A Cheatsheet for the Rest of Us.” <i>Mind the Product</i>, <a href="http://www.mindtheproduct.com/what-the-hell-are-ci-cd-and-devops-a-cheatsheet-for-the-rest-of-us/" target="_blank">www.mindtheproduct.com/what-the-hell-are-ci-cd-and-devops-a-cheatsheet-for-the-rest-of-us/</a>. Accessed 20 Feb. 2024.<br />
+    <b>4.</b> “The IDEAL &amp; Practical CI / CD Pipeline - Concepts Overview.” <i>YouTube</i>, 17 Feb. 2022, <a href="https://www.youtube.com/watch?v=OPwU3UWCxhw" target="_blank">www.youtube.com/watch?v=OPwU3UWCxhw</a>.<br />
+    <b>5.</b> Morg, Brad. “How to Design a Modern CI/CD Pipeline.” <i>YouTube</i>, 17 Oct. 2023, <a href="https://www.youtube.com/watch?v=KnSBNd3b0qI" target="_blank">www.youtube.com/watch?v=KnSBNd3b0qI</a>.<br />
+    <b>6.</b> Morg, Brad. “How to Design a Deployment Pipeline (GitOps).” <i>YouTube</i>, 30 Oct. 2023, <a href="https://www.youtube.com/watch?v=pJ9f7w4AxtU" target="_blank">www.youtube.com/watch?v=pJ9f7w4AxtU</a>.<br />
+</details>
+
+                  
+                </main>
+                
+
+  <hr>
+  <footer>
+    
+
+    <script>
+    /* Dynamically add the toc navbar after the side-bar element. This allows us
+        to *not* have to override default.html in _layouts */
+    let sideBarElements = document.getElementsByClassName('content-container');
+    let tocNav = document.createElement('nav');
+    tocNav.setAttribute("id", "tocbot-toc");
+    tocNav.classList.add("js-toc");
+    tocNav.classList.add("tocbot-right");
+    sideBarElements[0].after(tocNav);
+
+    /** WARNING: YOU MUST USE C MULTI-LINE COMMENT STYLE RATHER THAN // BECAUSE 
+     *  OF HOW JEKYLL COMPILES THIS FILE INTO SINGLE LINES **/
+    tocbot.init({
+        /* Where to render the table of contents. */
+        tocSelector: '.js-toc',
+        /* Where to grab the headings to build the table of contents. */
+        contentSelector: '.main-content-wrap',
+        /* How many heading levels should collapse. Default is 0 */
+        collapseDepth: 2,
+        /* Which headings to grab inside of the contentSelector element. */
+        headingSelector: 'h2',
+    });
+
+    /* Track scrolling to show/hide the tocbot navigation bar on right side */
+    var onScrollHandler = function (event) {
+
+        /* End event listener after visitor scrolls past 500px */
+        if (window.pageYOffset > 500) {
+        window.removeEventListener('scroll', onScrollHandler, false);
+        document.getElementById("tocbot-toc").style.visibility = "visible";
+        }
+        /* console.log("window scroll event:", window.pageYOffset); */
+    };
+
+    /* Listen for scroll events */
+    window.addEventListener('scroll', onScrollHandler, false);
+</script>
+<script>
+    let lists = document.getElementsByClassName('toc-list');
+    if (lists.length > 0) {
+        let header = document.createElement('h2');
+        header.innerText = "Contents";
+        lists[0].prepend(header);
+    }
+</script>
+
+    
+  </footer>
+
+
+              </div>
+          </div>
+        </div>
+        
+          
+<button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
+  <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+</button>
+
+
+<div class="search-overlay"></div>
+
+        
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

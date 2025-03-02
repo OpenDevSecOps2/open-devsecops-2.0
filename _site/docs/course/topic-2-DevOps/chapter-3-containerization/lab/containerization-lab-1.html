@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+.site-nav > ul.nav-list:first-child > li > a,
+.site-nav > ul.nav-list:first-child > li > ul > li > a,
+.site-nav > ul.nav-list:first-child > li > ul > li > ul > li:not(:nth-child(2)) > a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:not(:first-child) a,
+.site-nav li.external a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > ul > li:nth-child(2) > a {
+  font-weight: 600;
+  text-decoration: none;
+}.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+.site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(3) > button svg {
+  transform: rotate(-90deg);
+}.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
+  display: block;
+}
+  </style>
+
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/assets/images/opendevsecops-favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Lab 1. Containerizing a React Application | open-devsecops</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Lab 1. Containerizing a React Application" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning." />
+<meta property="og:description" content="From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning." />
+<link rel="canonical" href="http://localhost:4000/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-1.html" />
+<meta property="og:url" content="http://localhost:4000/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-1.html" />
+<meta property="og:site_name" content="open-devsecops" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Lab 1. Containerizing a React Application" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning.","headline":"Lab 1. Containerizing a React Application","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/opendevsecops-transparent.png"}},"url":"http://localhost:4000/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-1.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="master-container">
+    <div class="main-container">
+      <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/" class="site-title lh-tight"><div class="site-nav-header">
+    <div class="site-logo" role="img" aria-label="open-devsecops"></div>
+    <p>open-devsecops</p]>
+</div></a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/course/" class="nav-list-link">Course Overview</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Lab Infrastructure Setup Guide category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/lab-setup-guide/" class="nav-list-link">Lab Infrastructure Setup Guide</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 2 - DevOps category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/lab-setup-guide/topic-2-devops-lab/" class="nav-list-link">Topic 2 - DevOps</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/lab-setup-guide/topic-2-devops-lab/aws/" class="nav-list-link">AWS</a>
+              </li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 3 - DevSecOps category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/lab-setup-guide/topic-3-devsecops-lab/" class="nav-list-link">Topic 3 - DevSecOps</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/lab-setup-guide/topic-3-devsecops-lab/aws/" class="nav-list-link">AWS</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 1 - Git category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-1-git/" class="nav-list-link">Topic 1 - Git</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-1-version-control/" class="nav-list-link">Chapter 1 - Introduction to Version Control</a></li><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-2-understanding-git/" class="nav-list-link">Chapter 2 - Git Fundamentals</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 3 - Git Intermediate Concepts category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/" class="nav-list-link">Chapter 3 - Git Intermediate Concepts</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/lab/git-lab-1.html" class="nav-list-link">Lab 1. Version Control and Branching</a>
+              </li></ul></li><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-4-git-best-practices/" class="nav-list-link">Chapter 4 - Git Best Practices</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 2 - DevOps category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-2-DevOps/" class="nav-list-link">Topic 2 - DevOps</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/" class="nav-list-link">Chapter 1 - Intro to DevOps</a></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/" class="nav-list-link">Chapter 2 - Intro to CI/CD</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 3 - Containerization category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-2-DevOps/chapter-3-containerization/" class="nav-list-link">Chapter 3 - Containerization</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-1.html" class="nav-list-link">Lab 1. Containerizing a React Application</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-2.html" class="nav-list-link">Lab 2. Accessing Corporate Network and AWS ECR</a>
+              </li></ul></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-4-webhooks/" class="nav-list-link">Chapter 4 - Webhooks</a></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-5-automation/" class="nav-list-link">Chapter 5 - Automated Tests</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 6 - Deployment category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-2-DevOps/chapter-6-deployment/" class="nav-list-link">Chapter 6 - Deployment</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-6-deployment/lab/deployment-lab-1.html" class="nav-list-link">Lab 1. Configuring a Simple CI/CD Pipeline</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 3 - DevSecOps category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-3-devsecops/" class="nav-list-link">Topic 3 - DevSecOps</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-3-devsecops/chapter-1-devsecops/" class="nav-list-link">Chapter 1 - DevSecOps</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 2 - Security Checks in CI/CD category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/" class="nav-list-link">Chapter 2 - Security Checks in CI/CD</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/devsecops-lab-1.html" class="nav-list-link">Lab 1. Securing a Vulnerable Application</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Other Documents category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/other/" class="nav-list-link">Other Documents</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/other/research/references.html" class="nav-list-link">References</a></li><li class="nav-list-item"><a href="/docs/other/research/user-research.html" class="nav-list-link">User Research</a></li></ul></li></ul>
+
+  
+</nav>
+
+
+  
+  
+    <footer class="site-footer">
+    This site uses a custom theme based on <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>.
+</footer>
+  
+</div>
+
+      <div class="content-container">
+        <div class="main" id="top">
+          <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search the documentation..." aria-label="Search the documentation..." autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/open-devsecops" class="site-button"
+          
+        >
+          Github
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/open-devsecops/open-devsecops.github.io" class="site-button"
+          
+        >
+          Contribute
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+            <div class="main-content-wrap">
+              <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/course/topic-2-DevOps/">Topic 2 - DevOps</a></li>
+    <li class="breadcrumb-nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-3-containerization/">Chapter 3 - Containerization</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Lab 1. Containerizing a React Application</span></li>
+  </ol>
+</nav>
+              <div id="main-content" class="main-content">
+                <main>
+                  
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+<h1 id="lab-1---containerizing-a-react-application">Lab 1 - Containerizing a React Application</h1>
+<p class="label label-blue"><strong>Estimated Time to Complete:</strong> 25-30 minutes</p>
+
+<p class="info">Before you begin the lab exercise, please check the <strong>Labs Overview</strong> page to ensure that you have all the required software installed and that you meet all the prerequisites.</p>
+
+<h2 id="learning-objectives"><span class="me-2">Learning Objectives</span><a href="#learning-objectives" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>Create a Docker image of a React application</li>
+  <li>Run the Docker image locally</li>
+  <li>Interact with a running Docker container</li>
+  <li>Understand Docker container isolation</li>
+</ul>
+
+<h2 id="introduction"><span class="me-2">Introduction</span><a href="#introduction" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Welcome 👋</p>
+
+<p>This lab serves as your first step into container technology, empowering you with the skills to package and isolate a React application in a Docker container.</p>
+
+<h2 id="fork-and-clone-the-reference-application"><span class="me-2">Fork and Clone the Reference Application</span><a href="#fork-and-clone-the-reference-application" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Let’ start by forking the reference application repository. This will create a copy that you can modify and use without affecting the original codebase. Cloning will then brings this copy to your local machine.</p>
+
+<ol>
+  <li><strong>Fork the Repository:</strong> Navigate to the <a href="https://github.com/open-devsecops/topic-2-lab-reference-app" target="_blank">reference application</a> and fork the repository to your own GitHub account.</li>
+  <li><strong>Clone Your Fork:</strong> Open your terminal and clone the forked repository to your local machine.</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code>git clone &lt;your-forked-repo-url&gt;<span class="sb">`</span>
+</code></pre></div></div>
+
+<h2 id="run-the-react-application-locally"><span class="me-2">Run the React Application Locally</span><a href="#run-the-react-application-locally" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>With the reference application repository cloned, let’s run the React app locally to see how it looks and functions on your machine.</p>
+
+<ol>
+  <li><strong>Navigate to the Project Directory:</strong> Move into the project directory in your terminal.</li>
+  <li><strong>Install Dependencies:</strong> Run <code class="language-plaintext highlighter-rouge">npm install</code> to install the required node modules for the project.</li>
+  <li><strong>Start the Application:</strong> Enter <code class="language-plaintext highlighter-rouge">npm start</code> to run the application locally. Your default web browser should automatically open to <code class="language-plaintext highlighter-rouge">http://localhost:3000</code>, displaying the reference application.</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code><span class="nb">cd </span>topic-2-lab-reference-app
+npm <span class="nb">install
+</span>npm start
+</code></pre></div></div>
+
+<h2 id="optional-customize-the-react-application"><span class="me-2">(Optional) Customize the React Application!</span><a href="#optional-customize-the-react-application" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Now that you have the application running, feel free to personalize it! This will also prepare you for the next lab, where you’ll share your customized app with a classmate.</p>
+
+<ol>
+  <li>Open the <code class="language-plaintext highlighter-rouge">src/App.js</code> file in your favorite code editor.</li>
+  <li>Make changes to the JSX to alter the layout, style, or functionality of your app. For example, you might want to change text, or add images!</li>
+</ol>
+
+<p class="info">If you want to include images, place them in the <code class="language-plaintext highlighter-rouge">public</code> folder of your project, and reference them in the <code class="language-plaintext highlighter-rouge">App.js</code> file with the following HTML tag: <code class="language-plaintext highlighter-rouge">&lt;img src="/image-name.jpg" alt="Description of image" /&gt;</code>.</p>
+
+<h2 id="containerize-the-application"><span class="me-2">Containerize the Application</span><a href="#containerize-the-application" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Okay, we have the React application running on our local machine. Imagine you want to ensure that this React app runs exactly the same way on any machine. How can you achieve that? The answer lies in containerization.</p>
+
+<p class="info">On Windows, you can use the <code class="language-plaintext highlighter-rouge">echo. &gt; Dockerfile</code> command in the Command Prompt. On a MacOs/Linux machine, use the <code class="language-plaintext highlighter-rouge">touch Dockerfile</code> command.</p>
+
+<h3 id="creating-a-dockerfile"><span class="me-2">Creating a Dockerfile</span><a href="#creating-a-dockerfile" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>The first step in containerizing your application is to create a Dockerfile. This file contains a set of instructions for Docker to build an image of your application.</p>
+
+<p><strong>In the root directory of your project</strong>, create a file named <code class="language-plaintext highlighter-rouge">Dockerfile</code> with no file extension. This file will dictate how Docker should package your app and its environment.</p>
+
+<p><strong>Specifying the Base Image:</strong> Start your Dockerfile with a line specifying the base image. For a React application, a good starting point is the official Node.js image. This ensures your app has all the necessary Node.js tools right from the get-go.</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="code-header">
+        <span data-label-text="Dockerfile"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code><span class="k">FROM</span><span class="w"> </span><span class="s">node:21-alpine</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
+</code></pre></div></div>
+<p>Here, <code class="language-plaintext highlighter-rouge">node:21-alpine</code> specifies that we’re using version 21 of Node.js based on the lightweight Alpine Linux. This choice keeps our image small and fast to deploy.</p>
+
+<p class="info"><code class="language-plaintext highlighter-rouge">AS build</code> names this stage of the build process <strong>build</strong>. Naming a stage allows you to refer to it in later stages of the build, especially when you want to copy artifacts from one stage to another without carrying over all the files and settings from the previous stages. This will start to make more sense as we proceed with the rest of the build definition.</p>
+
+<p><strong>Setting Up The Working Directory:</strong> Let’s set up a directory for the React app. All subsequent intructions from this Dockerfile will be executed relative to this directory within the running container.</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="code-header">
+        <span data-label-text="Dockerfile"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code><span class="k">WORKDIR</span><span class="s"> /app</span>
+</code></pre></div></div>
+
+<p><strong>Copying The Application Files:</strong> Now, let’s copy your application’s files into the container’s working directory. Start with the package.json files to optimize caching for npm install.</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="code-header">
+        <span data-label-text="Dockerfile"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code><span class="k">COPY</span><span class="s"> package*.json .</span>
+</code></pre></div></div>
+
+<p>Then, we’ll install the dependencies and copy over the rest of the app’s files.</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="code-header">
+        <span data-label-text="Dockerfile"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code><span class="k">RUN </span>npm <span class="nb">install</span>
+<span class="k">COPY</span><span class="s"> . .</span>
+</code></pre></div></div>
+
+<p class="info">The dot used as a path <code class="language-plaintext highlighter-rouge">.</code> refers to the current directory. When used in the COPY command, the first dot represents the path in the context of your local file system (source), and the second dot represents the path inside the Docker container (destination). It translates to “copy everything from the current directory on my local machine to the current directory inside the container.”</p>
+
+<p><strong>Compiling Static Files:</strong> Let’s build the React app to compile the static files for production.</p>
+<div class="language-Dockerfile highlighter-rouge"><div class="code-header">
+        <span data-label-text="Dockerfile"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code><span class="k">RUN </span>npm run build
+</code></pre></div></div>
+
+<p><strong>Serving the Application with Nginx:</strong> 
+When you ran <code class="language-plaintext highlighter-rouge">npm start</code>, you initiated a development server that facilitates live reloading and other development features, listening (typically) on port 3000. However, when preparing a React application for <em>production</em>, we use <code class="language-plaintext highlighter-rouge">npm run build</code> to compile the application into static files (HTML, CSS, JS).</p>
+
+<p>To serve these static files, we’ll use nginx, a high-performance web server. This involves setting up a second stage in our Dockerfile that starts with a fresh image. This technique, known as a <em>multi-stage build</em>, allows us to keep our final image as lightweight as possible by excluding dependencies from the Node.js build environment.</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="code-header">
+        <span data-label-text="Dockerfile"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code><span class="c"># Start a new stage from nginx</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">nginx:alpine</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">runtime</span>
+
+<span class="c"># Set working directory to nginx asset directory</span>
+<span class="k">WORKDIR</span><span class="s"> /usr/share/nginx/html</span>
+
+<span class="c"># Copy static assets from base stage (node.js build image) to the current working directory /usr/share/nginx/html (nginx image)</span>
+<span class="k">COPY</span><span class="s"> --from=build /app/build .</span>
+</code></pre></div></div>
+
+<h3 id="the-complete-dockerfile"><span class="me-2">The Complete Dockerfile</span><a href="#the-complete-dockerfile" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="code-header">
+        <span data-label-text="Dockerfile"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code><span class="c"># Build stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">node:21-alpine</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
+<span class="k">WORKDIR</span><span class="s"> /app</span>
+<span class="k">COPY</span><span class="s"> package*.json .</span>
+<span class="k">RUN </span>npm <span class="nb">install</span>
+<span class="k">COPY</span><span class="s"> . .</span>
+<span class="k">RUN </span>npm run build
+
+<span class="c"># Runtime stage</span>
+<span class="k">FROM</span><span class="w"> </span><span class="s">nginx:alpine</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">runtime</span>
+<span class="k">WORKDIR</span><span class="s"> /usr/share/nginx/html</span>
+<span class="k">COPY</span><span class="s"> --from=build /app/build .</span>
+</code></pre></div></div>
+
+<h2 id="building-your-docker-image"><span class="me-2">Building Your Docker Image</span><a href="#building-your-docker-image" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>With your Dockerfile ready, it’s time to build the image. Open your terminal, navigate to the root directory of your project where the Dockerfile resides, and run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code>docker build <span class="nt">-t</span> my-app <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>This command tells Docker to build an image named <code class="language-plaintext highlighter-rouge">my-app</code> based on the instructions in your Dockerfile. The . indicates that Docker should look for the Dockerfile in the current directory.</p>
+
+<p class="info">The <code class="language-plaintext highlighter-rouge">docker build</code> command may take a few minutes to complete because this process involves downloading and setting up all the necessary dependencies for the React application.</p>
+
+<h2 id="running-your-docker-container"><span class="me-2">Running Your Docker Container</span><a href="#running-your-docker-container" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Once the build completes, you can run your containerized application with:</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code>docker run <span class="nt">-d</span> <span class="nt">-p</span> 8080:80 my-app
+</code></pre></div></div>
+
+<p>This command starts a container from the my-app image that we just created.</p>
+
+<p>In our Docker setup, the Nginx web server inside the container was configured to serve the React static files and listen on port 80, the default port for HTTP web traffic. To make the web server accessible from your local machine, we map port 8080 from your host machine to port 80 inside the container (<code class="language-plaintext highlighter-rouge">-p 8080:80</code>).</p>
+
+<p>Now, if you navigate to <code class="language-plaintext highlighter-rouge">http://localhost:8080</code>, you should see the same React application running, just as it did before — but this time, it’s running inside a Docker container.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">-d</code> option tells Docker to run the container in the background. This allows the container to continue running without occupying the terminal session from which it was started.</p>
+
+<h2 id="stopping-your-running-container"><span class="me-2">Stopping Your Running Container</span><a href="#stopping-your-running-container" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Containers, like any other application, use system resources such as CPU, memory, and network bandwidth. Stopping unused containers frees up these resources.</p>
+
+<p>To stop a running container, you’ll need the container’s ID or name. You can find this information by listing all running containers:</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code>docker ps
+</code></pre></div></div>
+
+<p>Once you’ve identified the container you want to stop, use the docker stop command followed by the container ID or name:</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code>docker stop &lt;container-id or container-name&gt;
+</code></pre></div></div>
+
+<p><strong>Verify the Container has stopped:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code>docker ps <span class="nt">-a</span>
+</code></pre></div></div>
+
+<h2 id="bonus-exploring-the-container-environment"><span class="me-2">Bonus: Exploring the Container Environment</span><a href="#bonus-exploring-the-container-environment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>When your React application is running inside a Docker container, you might wonder, “Is it really isolated from my local environment?” To answer this, let’s dive into the container and see for ourselves.</p>
+
+<h3 id="starting-the-stopped-container"><span class="me-2">Starting the Stopped Container</span><a href="#starting-the-stopped-container" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code>docker start &lt;container-id or container-name&gt;
+</code></pre></div></div>
+
+<blockquote class="info-title">
+  <p>What’s the difference between docker start and docker run?</p>
+
+  <p><code class="language-plaintext highlighter-rouge">docker run</code> is used to create a new container from a specified image and start it immediately. <code class="language-plaintext highlighter-rouge">docker start</code> is used to start an existing container that has been stopped.</p>
+</blockquote>
+
+<h3 id="entering-the-running-container"><span class="me-2">Entering the Running Container</span><a href="#entering-the-running-container" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>Docker provides a command, <code class="language-plaintext highlighter-rouge">docker exec</code>, which allows you to execute commands inside a <strong>running container</strong>. Using this, you can start an interactive shell session:</p>
+
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code>docker <span class="nb">exec</span> <span class="nt">-it</span> &lt;container-id or container-name&gt; sh
+</code></pre></div></div>
+
+<p>Here, <code class="language-plaintext highlighter-rouge">-it</code> instructs Docker to run <code class="language-plaintext highlighter-rouge">sh</code> in interactive mode in the specified container.</p>
+
+<h3 id="checking-the-environment"><span class="me-2">Checking the Environment</span><a href="#checking-the-environment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>Once inside the container, let’s run a simple command to check the operating system information:</p>
+
+<div class="language-sh highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <div></div></div><div class="highlight"><pre><code><span class="nb">uname</span> <span class="nt">-a</span>
+</code></pre></div></div>
+
+<p>This command prints system information about the Linux kernel, which should be different from your host machine’s (especially if you’re not running Alpine Linux).</p>
+
+<p>You can explore further by listing the files in the current directory <code class="language-plaintext highlighter-rouge">ls</code> or checking the environment variables <code class="language-plaintext highlighter-rouge">env</code>.</p>
+
+<p>When you’re done, simply type <code class="language-plaintext highlighter-rouge">exit</code> or press <code class="language-plaintext highlighter-rouge">Ctrl + C</code> to leave the container shell.</p>
+
+                  
+                </main>
+                
+
+  <hr>
+  <footer>
+    
+
+    <script>
+    /* Dynamically add the toc navbar after the side-bar element. This allows us
+        to *not* have to override default.html in _layouts */
+    let sideBarElements = document.getElementsByClassName('content-container');
+    let tocNav = document.createElement('nav');
+    tocNav.setAttribute("id", "tocbot-toc");
+    tocNav.classList.add("js-toc");
+    tocNav.classList.add("tocbot-right");
+    sideBarElements[0].after(tocNav);
+
+    /** WARNING: YOU MUST USE C MULTI-LINE COMMENT STYLE RATHER THAN // BECAUSE 
+     *  OF HOW JEKYLL COMPILES THIS FILE INTO SINGLE LINES **/
+    tocbot.init({
+        /* Where to render the table of contents. */
+        tocSelector: '.js-toc',
+        /* Where to grab the headings to build the table of contents. */
+        contentSelector: '.main-content-wrap',
+        /* How many heading levels should collapse. Default is 0 */
+        collapseDepth: 2,
+        /* Which headings to grab inside of the contentSelector element. */
+        headingSelector: 'h2',
+    });
+
+    /* Track scrolling to show/hide the tocbot navigation bar on right side */
+    var onScrollHandler = function (event) {
+
+        /* End event listener after visitor scrolls past 500px */
+        if (window.pageYOffset > 500) {
+        window.removeEventListener('scroll', onScrollHandler, false);
+        document.getElementById("tocbot-toc").style.visibility = "visible";
+        }
+        /* console.log("window scroll event:", window.pageYOffset); */
+    };
+
+    /* Listen for scroll events */
+    window.addEventListener('scroll', onScrollHandler, false);
+</script>
+<script>
+    let lists = document.getElementsByClassName('toc-list');
+    if (lists.length > 0) {
+        let header = document.createElement('h2');
+        header.innerText = "Contents";
+        lists[0].prepend(header);
+    }
+</script>
+
+    
+  </footer>
+
+
+              </div>
+          </div>
+        </div>
+        
+          
+<button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
+  <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+</button>
+
+
+<div class="search-overlay"></div>
+
+        
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

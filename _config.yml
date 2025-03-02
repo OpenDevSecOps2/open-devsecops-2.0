@@ -1,0 +1,27 @@
+title: open-devsecops
+description: 'From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning.'
+theme: just-the-docs
+
+logo: "/assets/images/opendevsecops-transparent.png"
+favicon_ico: "/assets/images/opendevsecops-favicon.ico"
+
+url: https://open-devsecops.github.io
+search_enabled: false
+
+aux_links:
+  Github: https://github.com/open-devsecops
+  Contribute: https://github.com/open-devsecops/open-devsecops.github.io
+
+callouts:
+  important:
+    title: Important
+    color: green
+  warning:
+    title: Warning
+    color: yellow
+  info:
+    title: Info
+    color: blue
+  lab:
+    title: Access The Lab
+    color: purple

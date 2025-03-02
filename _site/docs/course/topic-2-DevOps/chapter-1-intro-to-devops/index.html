@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+.site-nav > ul.nav-list:first-child > li > a,
+.site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a,
+.site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:not(:first-child) a,
+.site-nav li.external a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > a {
+  font-weight: 600;
+  text-decoration: none;
+}.site-nav > ul.nav-list:first-child > li:nth-child(5) > button svg,
+.site-nav > ul.nav-list:first-child > li:nth-child(5) > ul > li:nth-child(1) > button svg {
+  transform: rotate(-90deg);
+}.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list,
+.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(5) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+  display: block;
+}
+  </style>
+
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/assets/images/opendevsecops-favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Chapter 1 - Intro to DevOps | open-devsecops</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Chapter 1 - Intro to DevOps" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning." />
+<meta property="og:description" content="From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning." />
+<link rel="canonical" href="http://localhost:4000/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/" />
+<meta property="og:url" content="http://localhost:4000/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/" />
+<meta property="og:site_name" content="open-devsecops" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Chapter 1 - Intro to DevOps" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning.","headline":"Chapter 1 - Intro to DevOps","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/opendevsecops-transparent.png"}},"url":"http://localhost:4000/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="master-container">
+    <div class="main-container">
+      <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/" class="site-title lh-tight"><div class="site-nav-header">
+    <div class="site-logo" role="img" aria-label="open-devsecops"></div>
+    <p>open-devsecops</p]>
+</div></a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/course/" class="nav-list-link">Course Overview</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Lab Infrastructure Setup Guide category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/lab-setup-guide/" class="nav-list-link">Lab Infrastructure Setup Guide</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 2 - DevOps category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/lab-setup-guide/topic-2-devops-lab/" class="nav-list-link">Topic 2 - DevOps</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/lab-setup-guide/topic-2-devops-lab/aws/" class="nav-list-link">AWS</a>
+              </li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 3 - DevSecOps category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/lab-setup-guide/topic-3-devsecops-lab/" class="nav-list-link">Topic 3 - DevSecOps</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/lab-setup-guide/topic-3-devsecops-lab/aws/" class="nav-list-link">AWS</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 1 - Git category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-1-git/" class="nav-list-link">Topic 1 - Git</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-1-version-control/" class="nav-list-link">Chapter 1 - Introduction to Version Control</a></li><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-2-understanding-git/" class="nav-list-link">Chapter 2 - Git Fundamentals</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 3 - Git Intermediate Concepts category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/" class="nav-list-link">Chapter 3 - Git Intermediate Concepts</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/lab/git-lab-1.html" class="nav-list-link">Lab 1. Version Control and Branching</a>
+              </li></ul></li><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-4-git-best-practices/" class="nav-list-link">Chapter 4 - Git Best Practices</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 2 - DevOps category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-2-DevOps/" class="nav-list-link">Topic 2 - DevOps</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/" class="nav-list-link">Chapter 1 - Intro to DevOps</a></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/" class="nav-list-link">Chapter 2 - Intro to CI/CD</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 3 - Containerization category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-2-DevOps/chapter-3-containerization/" class="nav-list-link">Chapter 3 - Containerization</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-1.html" class="nav-list-link">Lab 1. Containerizing a React Application</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-2.html" class="nav-list-link">Lab 2. Accessing Corporate Network and AWS ECR</a>
+              </li></ul></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-4-webhooks/" class="nav-list-link">Chapter 4 - Webhooks</a></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-5-automation/" class="nav-list-link">Chapter 5 - Automated Tests</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 6 - Deployment category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-2-DevOps/chapter-6-deployment/" class="nav-list-link">Chapter 6 - Deployment</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-6-deployment/lab/deployment-lab-1.html" class="nav-list-link">Lab 1. Configuring a Simple CI/CD Pipeline</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 3 - DevSecOps category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-3-devsecops/" class="nav-list-link">Topic 3 - DevSecOps</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-3-devsecops/chapter-1-devsecops/" class="nav-list-link">Chapter 1 - DevSecOps</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 2 - Security Checks in CI/CD category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/" class="nav-list-link">Chapter 2 - Security Checks in CI/CD</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/devsecops-lab-1.html" class="nav-list-link">Lab 1. Securing a Vulnerable Application</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Other Documents category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/other/" class="nav-list-link">Other Documents</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/other/research/references.html" class="nav-list-link">References</a></li><li class="nav-list-item"><a href="/docs/other/research/user-research.html" class="nav-list-link">User Research</a></li></ul></li></ul>
+
+  
+</nav>
+
+
+  
+  
+    <footer class="site-footer">
+    This site uses a custom theme based on <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>.
+</footer>
+  
+</div>
+
+      <div class="content-container">
+        <div class="main" id="top">
+          <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search the documentation..." aria-label="Search the documentation..." autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/open-devsecops" class="site-button"
+          
+        >
+          Github
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/open-devsecops/open-devsecops.github.io" class="site-button"
+          
+        >
+          Contribute
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+            <div class="main-content-wrap">
+              <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/course/topic-2-DevOps/">Topic 2 - DevOps</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Chapter 1 - Intro to DevOps</span></li>
+  </ol>
+</nav>
+              <div id="main-content" class="main-content">
+                <main>
+                  
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+<h1 id="introduction-to-devops">Introduction to DevOps</h1>
+<h2 id="problem-space"><span class="me-2">Problem Space</span><a href="#problem-space" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>🧐 Imagine you are writing code for a project idea you have yourself. As your project begins to grow, you hire more developers.</p>
+
+<p><strong>Challenge:</strong> With new developers on board, miscommunication and bottlenecks in deploying updates start to emerge. The cohesive understanding of the project diminishes.</p>
+
+<blockquote>
+  <p>As your product grows, along with your development team, the need for scalable systems intensifies. Retrofitting scalability into a codebase not originally designed for growth can lead to considerable challenges, necessitating potentially extensive revisions. Therefore, it’s crucial to <strong>incorporate scalability from the beginning</strong>, ensuring that your product’s success leads directly to improved performance and user satisfaction, rather than technical debt and operational difficulties.</p>
+
+</blockquote>
+
+<hr />
+<h2 id="typical-division-of-development-and-operations-roles"><span class="me-2">Typical Division of Development and Operations Roles</span><a href="#typical-division-of-development-and-operations-roles" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>In many companies, Development and Operations teams work independently, leading to distinct responsibilities:</p>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Development Team</th>
+      <th>Operations Team</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>- Focuses on rapid innovation and sprint-based feature development.</td>
+      <td>- Responsible for server infrastructure management and release deployments.</td>
+    </tr>
+    <tr>
+      <td>- Delivers completed code to Operations, often without extensive deployment discussions.</td>
+      <td>- Addresses integration challenges and clarifies requirements due to environment discrepancies.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<hr />
+<h2 id="challenges"><span class="me-2">Challenges</span><a href="#challenges" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<!-- Isolation between Development and Operations -->
+<details>
+  <summary><b>Isolation between Development and Operations:</b> This can lead to communication gaps, conflicting objectives, and inefficiencies.</summary>
+    <div style="background-color: #FFF8DC; padding: 1em; border-left: 5px solid #FFD700; margin-bottom: 1em;">
+        <p style="margin: 0;"><strong>🧠 Big Idea:</strong> Developing a product, and then having a different team adapt it to your current production environment creates a lot of confusion and unnecessary back and forth.</p>
+        <blockquote style="margin: 0; border-left: 5px solid #FFD700; padding-left: 0.5em;">
+            <i>“Bureaucratic Development”</i>
+        </blockquote>
+    </div>
+    <div style="padding-left: 1em; margin-bottom: 1em;">
+      <p><strong>👉 Example:</strong></p>
+      <p>In the "MyApp" project, a web app for document sharing, developers introduced a feature for previewing documents, relying on a third-party API. The development environment used a different API key than what was required for production, leading to a configuration mismatch when deployed.</p>
+      <p><strong>Issue:</strong> Upon deployment, users couldn't preview documents due to the incorrect API key used in production, a problem rooted in inadequate management of environment-specific configurations.</p>
+      <p><strong>Resolution:</strong> The operations team, upon reviewing application logs, identified and corrected the API key mismatch. To prevent future issues, they adopted a more systematic approach to configuration management, employing environment variables and configuration tools to ensure accurate settings across all environments.</p>
+      <p><strong>Outcome:</strong> The update resolved the feature's functionality in production. The incident underscored the importance of precise configuration management and prompted the integration of automation tools to streamline environment configuration, illustrating the critical role of DevOps in addressing deployment challenges efficiently.</p>
+      <p><strong>The Challenge:</strong></p>
+      <ul>
+        <li><strong>Delayed Releases:</strong> Frequent back-and-forth to resolve deployment problems slows down the introduction of new features.</li>
+        <li><strong>Team Frustration:</strong> Developers are upset when their features don't go live as expected, while operations are burdened by unclear requirements and additional deployment efforts.</li>
+        <li><strong>Inefficiencies:</strong> Significant time and effort spent addressing deployment issues lead to overall productivity losses.</li>
+      </ul>
+    </div>
+</details>
+
+<!-- Slow Release Cycles -->
+<details>
+  <summary><b>Slow Release Cycles:</b> Manual processes and a lack of collaboration can lead to slow release cycles, delaying feedback and improvements.</summary>
+  <div style="background-color: #FFF8DC; padding: 1em; border-left: 5px solid #FFD700; margin-bottom: 1em;">
+    <p style="margin: 0;"><strong>🧠 Big Idea:</strong> By not having automatic processes for integration, testing, and deploying code, there is a large margin for human error and a slower rate of deployment.</p>
+    <blockquote style="margin: 0; border-left: 5px solid #FFD700; padding-left: 0.5em;">
+      <i>"Manual Testing: Because Robots Need Breaks Too”</i>
+    </blockquote>
+  </div>
+  <div style="padding-left: 1em; margin-bottom: 1em;">
+    <p><strong>👉 Example:</strong></p>
+    <p>In the "StreamlineChat" project, a real-time messaging application, the development team was excited to roll out a much-anticipated video calling feature. However, their process was heavily manual, involving code integration, testing, and deployment, which slowed down the release cycle significantly.</p>
+    <p><strong>Issue:</strong> The slow release cycle meant that it took months for the video calling feature to become available to users, during which time competitors introduced similar features, putting "StreamlineChat" at a disadvantage. Feedback on early versions of the feature, crucial for refining and improving, was also delayed, leading to a less competitive product at launch.</p>
+    <p><strong>Resolution:</strong> To tackle the slow release cycle, "StreamlineChat" decided to overhaul their development and deployment process. They implemented Continuous Integration (CI) and Continuous Deployment (CD) pipelines, automating the integration of code changes and deployment to testing and production environments. This was complemented by fostering a culture of collaboration between developers, testers, and operations teams to ensure smooth, continuous communication and quick resolution of any issues.</p>
+    <p><strong>Outcome:</strong> The adoption of CI/CD and enhanced teamwork dramatically shortened the release cycles for "StreamlineChat," enabling them to deliver the video calling feature and subsequent updates more rapidly to their users. This not only improved their competitive stance in the market but also allowed for quicker iterations based on user feedback, significantly enhancing the feature's quality and user satisfaction. The shift to automated processes and collaborative practices highlighted the transformational impact of DevOps on speeding up software delivery and responsiveness to market needs.</p>
+  </div>
+</details>
+
+<!-- Inconsistency Across Environments -->
+<details>
+  <summary><b>Inconsistency Across Environments:</b> Manual configurations and deployments can lead to inconsistencies between development, testing, and production environments.</summary>
+  <div style="background-color: #FFF8DC; padding: 1em; border-left: 5px solid #FFD700; margin-bottom: 1em;">
+    <p style="margin: 0;"><strong>🧠 Big Idea:</strong> Inconsistencies across environments, stemming from manual configurations and lack of standardization, lead to discrepancies in application behavior and hinder reliable software delivery.</p>
+    <blockquote style="margin: 0; border-left: 5px solid #FFD700; padding-left: 0.5em;">
+      <i>😦"But it works on my machine" syndrome</i>
+    </blockquote>
+  </div>
+  <div style="padding-left: 1em; margin-bottom: 1em;">
+    <p><strong>👉 Example:</strong></p>
+    <ul>
+      <li>In the development environment, the new feature worked seamlessly. However, when the code was pushed to the testing environment, testers encountered numerous issues, including crashes and performance problems that were not present during development.</li>
+      <li>Further investigation revealed that the testing environment was running a different version of a key dependency, which was incompatible with the new feature's code. Additionally, certain environment-specific configurations were not correctly applied in the testing and production environments.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- Quality Assurance -->
+<details>
+  <summary><b>Quality Assurance:</b> Balancing the need for rapid releases with maintaining high-quality standards can be difficult.</summary>
+    <div style="background-color: #FFF8DC; padding: 1em; border-left: 5px solid #FFD700; margin-bottom: 1em;">
+        <p style="margin: 0;"><strong>🧠 Big Idea:</strong> Striking a balance between the speed of software releases and upholding high-quality standards poses a significant challenge, often leading to trade-offs that can compromise product integrity.</p>
+    </div>
+    <div style="padding-left: 1em; margin-bottom: 1em;">
+        <p><strong>👉 In the development of "CodeCraft,"</strong> an IDE designed to support multiple programming languages, the team prioritized rapid feature releases to stay ahead of competitors. However, this focus on speed led to insufficient testing, resulting in features that were sometimes buggy or partially implemented upon release.</p>
+        <p><strong>Issue:</strong> Users experienced frequent crashes and performance issues with new features, undermining trust in the product. The root cause was identified as the lack of comprehensive testing and quality assurance (QA) processes, sacrificed in favor of quicker release cycles.</p>
+        <p><strong>Resolution:</strong> To address these quality issues without significantly slowing down releases, "CodeCraft's" development team integrated automated testing into their CI/CD pipeline, allowing for continuous testing of new code commits. Additionally, they adopted feature flagging to selectively roll out new features to subsets of users, enabling more controlled and gradual releases.</p>
+        <p><strong>Outcome:</strong> These measures improved the stability and quality of new releases, restoring user confidence in "CodeCraft." The development team managed to maintain their rapid release schedule while significantly reducing the occurrence of bugs and crashes in production. This approach highlighted the essential role of DevOps practices in balancing the need for speed with quality assurance, demonstrating that with the right tools and processes, it is possible to achieve both.</p>
+        <p><strong>The Challenge:</strong></p>
+        <ul>
+            <li><strong>Compromised Quality:</strong> The rush to release new features often results in insufficient testing, leading to quality issues that affect user satisfaction.</li>
+            <li><strong>Resource Strain:</strong> Allocating resources effectively between development speed and quality assurance becomes a challenge, with testing often being the first area to suffer cuts.</li>
+            <li><strong>Reputation Risk:</strong> Frequent releases of buggy features can damage a product’s reputation, making users hesitant to adopt new updates or recommend the product to others.</li>
+        </ul>
+    </div>
+</details>
+
+<!-- Visibility and Monitoring -->
+<details>
+  <summary><b>Visibility and Monitoring:</b> Lack of visibility into application performance and system health can delay the identification and resolution of issues.</summary>
+  <div style="background-color: #FFF8DC; padding: 1em; border-left: 5px solid #FFD700; margin-bottom: 1em;">
+    <p style="margin: 0;"><strong>🧠 Big Idea:</strong> Insufficient visibility into application performance and system health can significantly hinder the timely detection and resolution of issues, affecting user experience and operational efficiency.</p>
+    <blockquote style="margin: 0; border-left: 5px solid #FFD700; padding-left: 0.5em;">
+      <i>“Driving with no mirrors”</i>
+    </blockquote>
+  </div>
+  <div style="padding-left: 1em; margin-bottom: 1em;">
+    <p><strong>👉 Example:</strong></p>
+    <p>"Streamline," a video conferencing platform, experienced intermittent downtimes and performance lags that were difficult to predict and diagnose. The development and operations teams struggled to pinpoint the root causes due to a lack of comprehensive monitoring tools and processes.</p>
+    <p><strong>Issue:</strong> Users reported varying degrees of service disruption, from minor lags to complete outages during peak usage times, but the absence of detailed monitoring meant that these issues often went unaddressed until they escalated.</p>
+    <p><strong>Resolution:</strong> To enhance their capability to proactively address system health and performance issues, "Streamline" implemented a suite of monitoring and logging tools. This included the integration of application performance monitoring (APM) tools to track real-time performance metrics and logging services to aggregate and analyze system logs across services.</p>
+    <p><strong>Outcome:</strong> With these tools in place, the "Streamline" team gained deeper insights into the platform's operational state, enabling them to identify and address bottlenecks and failures before they impacted users. This proactive approach not only improved the platform's overall stability and performance but also boosted user satisfaction and trust in the service. The adoption of advanced monitoring and logging tools exemplified the critical role of DevOps in ensuring system reliability and maintaining a high-quality user experience.</p>
+    <p><strong>The Challenge:</strong></p>
+    <ul>
+      <li><strong>Delayed Problem Detection:</strong> Without real-time monitoring, issues can go unnoticed until they significantly impact users, delaying response and resolution times.</li>
+      <li><strong>Reactive vs. Proactive Management:</strong> A lack of visibility forces teams into a reactive stance, dealing with problems after they occur rather than preventing them.</li>
+      <li><strong>Data Fragmentation:</strong> Disparate data sources and a lack of centralized logging can make it challenging to obtain a holistic view of system health, complicating troubleshooting efforts.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- Scalability and Infrastructure Management -->
+<details>
+  <summary><b>Scalability and Infrastructure Management:</b> Scaling applications and managing complex infrastructures manually is time-consuming and error-prone.</summary>
+  <div style="background-color: #FFF8DC; padding: 1em; border-left: 5px solid #FFD700; margin-bottom: 1em;">
+    <p style="margin: 0;"><strong>🧠 Big Idea:</strong> It’s difficult to scale with complex infrastructure, especially without a scalable foundation in place.</p>
+    <blockquote style="margin: 0; border-left: 5px solid #FFD700; padding-left: 0.5em;">
+      <i>⌛️“Scaling on Quicksand”</i>
+    </blockquote>
+  </div>
+  <div style="padding-left: 1em; margin-bottom: 1em;">
+    <p><strong>👉 Example:</strong></p>
+    <p>"GlobalShop," an e-commerce platform, experienced rapid growth, leading to unpredictable traffic spikes, especially during holiday sales. The infrastructure, managed manually by the operations team, struggled to scale effectively, resulting in slow load times and, in severe cases, website outages.</p>
+    <p><strong>Issue:</strong> The manual process of scaling resources to meet demand was not only slow but also prone to human error, leading to either over-provisioning (and thus increased costs) or under-provisioning (resulting in poor user experience).</p>
+    <p><strong>Resolution:</strong> "GlobalShop" decided to automate their scalability and infrastructure management using cloud services and infrastructure as code (IaC). They implemented auto-scaling policies that dynamically adjusted resources based on real-time traffic and system load, ensuring optimal performance. Additionally, by using IaC, they could quickly replicate environments, manage configuration changes systematically, and ensure consistency across their infrastructure.</p>
+    <p><strong>Outcome:</strong> This strategic shift allowed "GlobalShop" to handle traffic surges smoothly, maintaining high availability and performance without the need for constant manual intervention. Operational costs were optimized through efficient resource use, and the platform's reliability boosted customer trust and satisfaction. The move to automated scalability and infrastructure management underscored the essential role of DevOps practices in enabling businesses to adapt rapidly and efficiently to market demands.</p>
+    <p><strong>The Challenge:</strong></p>
+    <ul>
+      <li><strong>Inefficient Resource Utilization:</strong> Manual scaling often leads to resource misallocation, impacting both costs and performance.</li>
+      <li><strong>Slow Response to Demand Fluctuations:</strong> The inability to quickly adjust resources in response to traffic spikes or drops can degrade the user experience.</li>
+      <li><strong>Increased Risk of Human Error:</strong> Manual management of complex infrastructures increases the likelihood of mistakes, which can lead to system instability or security vulnerabilities.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- Security Concerns -->
+<details>
+  <summary><b>Security Concerns:</b> Integrating security into the software development lifecycle can be challenging, often leading to vulnerabilities.</summary>
+  <div style="background-color: #FFF8DC; padding: 1em; border-left: 5px solid #FFD700; margin-bottom: 1em;">
+    <p style="margin: 0;"><strong>🧠 Big Idea:</strong> Adding security after the application is already developed makes it hard to integrate because the code isn’t written to.</p>
+    <blockquote style="margin: 0; border-left: 5px solid #FFD700; padding-left: 0.5em;">
+      <i>“Using handcuffs on an octopus.”</i>
+    </blockquote>
+  </div>
+  <div style="padding-left: 1em; margin-bottom: 1em;">
+    <p><strong>👉 Example:</strong></p>
+    <p>"SafeNet," a finance management application, initially focused on delivering features rapidly to gain market share, often sidelining security considerations until the later stages of development.</p>
+    <p><strong>Issue:</strong> As "SafeNet" grew in popularity, it became a target for cyber attacks, exposing weaknesses in its security posture, such as insufficient data encryption and lack of secure coding practices. This led to data breaches, undermining user trust and attracting regulatory scrutiny.</p>
+    <p><strong>Resolution:</strong> To address these security lapses, "SafeNet" adopted a DevSecOps approach, integrating security practices at every stage of the development lifecycle. This included implementing automated security testing tools to scan for vulnerabilities early, adopting secure coding standards, and conducting regular security training for developers. Additionally, they implemented a robust incident response plan to quickly address any security issues that arose.</p>
+    <p><strong>Outcome:</strong> By embedding security into the development process, "SafeNet" significantly reduced its vulnerability to attacks, restoring user confidence and compliance with regulatory requirements. This shift not only improved the application's security posture but also fostered a culture of security awareness among the development team, highlighting the importance of proactive security measures in today's digital landscape.</p>
+    <p><strong>The Challenge:</strong></p>
+    <ul>
+      <li><strong>Late-stage Security Integration:</strong> Adding security features after development can reveal critical vulnerabilities too late in the process.</li>
+      <li><strong>Cultural Hurdles:</strong> Shifting a team's focus from purely feature-driven development to include security considerations requires a cultural change.</li>
+      <li><strong>Complex Security Landscape:</strong> Keeping up with evolving security threats and compliance requirements demands continuous attention and adaptation.</li>
+    </ul>
+  </div>
+</details>
+
+<!-- Change Management -->
+<details>
+  <summary><b>Change Management:</b> Managing and tracking changes across the development lifecycle can be complex, especially in larger teams or projects.</summary>
+  <div style="background-color: #FFF8DC; padding: 1em; border-left: 5px solid #FFD700; margin-bottom: 1em;">
+    <p style="margin: 0;"><strong>🧠 Big Idea:</strong> The larger your team is, the harder it is to track who is doing what, which causes many issues.</p>
+    <blockquote style="margin: 0; border-left: 5px solid #FFD700; padding-left: 0.5em;">
+      <i>“Mo devs, mo problems.”</i>
+    </blockquote>
+  </div>
+  <div style="padding-left: 1em; margin-bottom: 1em;">
+    <p><strong>👉 Example:</strong></p>
+    <p>"CodeFusion," a project management tool, saw its development pace bog down as the team grew. Every new feature seemed to bring a parade of merge conflicts and version confusion.</p>
+    <p><strong>Issue:</strong> The team's excitement turned into exasperation as more cooks in the code kitchen meant a messier recipe for deployment disasters.</p>
+    <p><strong>Resolution:</strong> "CodeFusion" adopted a streamlined branching strategy and introduced mandatory code reviews. They also embraced CI/CD pipelines for automated testing and smoother merges.</p>
+    <p><strong>Outcome:</strong> The chaos of conflicting code calmed into a coordinated dance of updates, speeding up releases and reducing developer headaches. The implementation of structured version control and CI/CD practices streamlined development processes and improved project outcomes.</p>
+    <p><strong>The Challenge:</strong></p>
+    <ul>
+      <li><strong>Version Conflicts:</strong> Managing simultaneous updates from multiple developers without a robust version control system leads to conflicts and errors.</li>
+      <li><strong>Integration Challenges:</strong> Integrating changes from different branches of development without a clear process can result in bugs and delays.</li>
+      <li><strong>Tracking and Accountability:</strong> Without effective change management tools, it becomes difficult to track who made what changes and why, complicating troubleshooting and accountability.</li>
+    </ul>
+  </div>
+</details>
+
+<h2>What is DevOps?</h2>
+
+<p>DevOps, short for <strong>Development &amp; Operations</strong>, is a term that describes a collection of different practices, ideas, and frameworks that streamline the development and collaboration process for a product.</p>
+
+<div style="text-align: center;">
+    <img src="https://orangematter.solarwinds.com/wp-content/uploads/2022/03/DevOps-lifecycle-capabilities-1024x621.png" alt="DevOps Lifecycle" style="max-width:70%;height:auto;" />
+    <p><em>Source: <a href="http://orangematter.solarwinds.com/2022/03/21/what-is-devops/">Orange Matter</a></em></p>
+</div>
+
+<h3 id="pillars-of-devops"><span class="me-2">Pillars of DevOps:</span><a href="#pillars-of-devops" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li><strong>Collaborative Culture &amp; Shared Responsibility</strong></li>
+  <li><strong>Automation</strong></li>
+  <li><strong>Collecting &amp; Measuring Data</strong></li>
+  <li><strong>Continuous Feedback</strong></li>
+</ul>
+
+<h3 id="references"><span class="me-2">References</span><a href="#references" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<details>
+  <summary>Expand</summary>
+    <b>1.</b> “The Importance of Scalability in Software Design.” <i>Concepta Tech</i>, <a href="http://www.conceptatech.com/blog/importance-of-scalability-in-software-design" target="_blank">www.conceptatech.com/blog/importance-of-scalability-in-software-design</a>. Accessed 20 Feb. 2024.<br />
+    <b>2.</b> “Why Is There a Divide between Dev and Ops?” <i>CloudBees</i>, <a href="http://www.cloudbees.com/blog/why-there-divide-between-dev-and-ops" target="_blank">www.cloudbees.com/blog/why-there-divide-between-dev-and-ops</a>. Accessed 20 Feb. 2024.<br />
+    <b>3.</b> Charboneau, Tyler. “What Is Devops?” <i>Orange Matter</i>, 9 Aug. 2023, <a href="http://orangematter.solarwinds.com/2022/03/21/what-is-devops/" target="_blank">orangematter.solarwinds.com/2022/03/21/what-is-devops/</a>.<br />
+    <b>4.</b> “Six Pillars of Devsecops Series.” <i>CSA</i>, <a href="http://cloudsecurityalliance.org/blog/2021/09/09/six-pillars-of-devsecops-series" target="_blank">cloudsecurityalliance.org/blog/2021/09/09/six-pillars-of-devsecops-series</a>. Accessed 20 Feb. 2024.<br />
+</details>
+
+                  
+                </main>
+                
+
+  <hr>
+  <footer>
+    
+
+    <script>
+    /* Dynamically add the toc navbar after the side-bar element. This allows us
+        to *not* have to override default.html in _layouts */
+    let sideBarElements = document.getElementsByClassName('content-container');
+    let tocNav = document.createElement('nav');
+    tocNav.setAttribute("id", "tocbot-toc");
+    tocNav.classList.add("js-toc");
+    tocNav.classList.add("tocbot-right");
+    sideBarElements[0].after(tocNav);
+
+    /** WARNING: YOU MUST USE C MULTI-LINE COMMENT STYLE RATHER THAN // BECAUSE 
+     *  OF HOW JEKYLL COMPILES THIS FILE INTO SINGLE LINES **/
+    tocbot.init({
+        /* Where to render the table of contents. */
+        tocSelector: '.js-toc',
+        /* Where to grab the headings to build the table of contents. */
+        contentSelector: '.main-content-wrap',
+        /* How many heading levels should collapse. Default is 0 */
+        collapseDepth: 2,
+        /* Which headings to grab inside of the contentSelector element. */
+        headingSelector: 'h2',
+    });
+
+    /* Track scrolling to show/hide the tocbot navigation bar on right side */
+    var onScrollHandler = function (event) {
+
+        /* End event listener after visitor scrolls past 500px */
+        if (window.pageYOffset > 500) {
+        window.removeEventListener('scroll', onScrollHandler, false);
+        document.getElementById("tocbot-toc").style.visibility = "visible";
+        }
+        /* console.log("window scroll event:", window.pageYOffset); */
+    };
+
+    /* Listen for scroll events */
+    window.addEventListener('scroll', onScrollHandler, false);
+</script>
+<script>
+    let lists = document.getElementsByClassName('toc-list');
+    if (lists.length > 0) {
+        let header = document.createElement('h2');
+        header.innerText = "Contents";
+        lists[0].prepend(header);
+    }
+</script>
+
+    
+  </footer>
+
+
+              </div>
+          </div>
+        </div>
+        
+          
+<button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
+  <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+</button>
+
+
+<div class="search-overlay"></div>
+
+        
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

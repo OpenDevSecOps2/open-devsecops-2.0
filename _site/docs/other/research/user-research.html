@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+.site-nav > ul.nav-list:first-child > li > a,
+.site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(2)) > a,
+.site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:not(:first-child) a,
+.site-nav li.external a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:first-child > li:nth-child(7) > ul > li:nth-child(2) > a {
+  font-weight: 600;
+  text-decoration: none;
+}.site-nav > ul.nav-list:first-child > li:nth-child(7) > button svg,
+.site-nav > ul.nav-list:first-child > li:nth-child(7) > ul > li:nth-child(2) > button svg {
+  transform: rotate(-90deg);
+}.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(7) > ul.nav-list,
+.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(7) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
+  display: block;
+}
+  </style>
+
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/assets/images/opendevsecops-favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>User Research | open-devsecops</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="User Research" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning." />
+<meta property="og:description" content="From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning." />
+<link rel="canonical" href="http://localhost:4000/docs/other/research/user-research.html" />
+<meta property="og:url" content="http://localhost:4000/docs/other/research/user-research.html" />
+<meta property="og:site_name" content="open-devsecops" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="User Research" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning.","headline":"User Research","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/opendevsecops-transparent.png"}},"url":"http://localhost:4000/docs/other/research/user-research.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="master-container">
+    <div class="main-container">
+      <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/" class="site-title lh-tight"><div class="site-nav-header">
+    <div class="site-logo" role="img" aria-label="open-devsecops"></div>
+    <p>open-devsecops</p]>
+</div></a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/course/" class="nav-list-link">Course Overview</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Lab Infrastructure Setup Guide category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/lab-setup-guide/" class="nav-list-link">Lab Infrastructure Setup Guide</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 2 - DevOps category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/lab-setup-guide/topic-2-devops-lab/" class="nav-list-link">Topic 2 - DevOps</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/lab-setup-guide/topic-2-devops-lab/aws/" class="nav-list-link">AWS</a>
+              </li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 3 - DevSecOps category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/lab-setup-guide/topic-3-devsecops-lab/" class="nav-list-link">Topic 3 - DevSecOps</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/lab-setup-guide/topic-3-devsecops-lab/aws/" class="nav-list-link">AWS</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 1 - Git category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-1-git/" class="nav-list-link">Topic 1 - Git</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-1-version-control/" class="nav-list-link">Chapter 1 - Introduction to Version Control</a></li><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-2-understanding-git/" class="nav-list-link">Chapter 2 - Git Fundamentals</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 3 - Git Intermediate Concepts category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/" class="nav-list-link">Chapter 3 - Git Intermediate Concepts</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/lab/git-lab-1.html" class="nav-list-link">Lab 1. Version Control and Branching</a>
+              </li></ul></li><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-4-git-best-practices/" class="nav-list-link">Chapter 4 - Git Best Practices</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 2 - DevOps category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-2-DevOps/" class="nav-list-link">Topic 2 - DevOps</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/" class="nav-list-link">Chapter 1 - Intro to DevOps</a></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/" class="nav-list-link">Chapter 2 - Intro to CI/CD</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 3 - Containerization category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-2-DevOps/chapter-3-containerization/" class="nav-list-link">Chapter 3 - Containerization</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-1.html" class="nav-list-link">Lab 1. Containerizing a React Application</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-2.html" class="nav-list-link">Lab 2. Accessing Corporate Network and AWS ECR</a>
+              </li></ul></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-4-webhooks/" class="nav-list-link">Chapter 4 - Webhooks</a></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-5-automation/" class="nav-list-link">Chapter 5 - Automated Tests</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 6 - Deployment category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-2-DevOps/chapter-6-deployment/" class="nav-list-link">Chapter 6 - Deployment</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-6-deployment/lab/deployment-lab-1.html" class="nav-list-link">Lab 1. Configuring a Simple CI/CD Pipeline</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 3 - DevSecOps category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-3-devsecops/" class="nav-list-link">Topic 3 - DevSecOps</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-3-devsecops/chapter-1-devsecops/" class="nav-list-link">Chapter 1 - DevSecOps</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 2 - Security Checks in CI/CD category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/" class="nav-list-link">Chapter 2 - Security Checks in CI/CD</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/devsecops-lab-1.html" class="nav-list-link">Lab 1. Securing a Vulnerable Application</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Other Documents category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/other/" class="nav-list-link">Other Documents</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/other/research/references.html" class="nav-list-link">References</a></li><li class="nav-list-item"><a href="/docs/other/research/user-research.html" class="nav-list-link">User Research</a></li></ul></li></ul>
+
+  
+</nav>
+
+
+  
+  
+    <footer class="site-footer">
+    This site uses a custom theme based on <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>.
+</footer>
+  
+</div>
+
+      <div class="content-container">
+        <div class="main" id="top">
+          <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search the documentation..." aria-label="Search the documentation..." autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/open-devsecops" class="site-button"
+          
+        >
+          Github
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/open-devsecops/open-devsecops.github.io" class="site-button"
+          
+        >
+          Contribute
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+            <div class="main-content-wrap">
+              <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/other/">Other Documents</a></li>
+    <li class="breadcrumb-nav-list-item"><span>User Research</span></li>
+  </ol>
+</nav>
+              <div id="main-content" class="main-content">
+                <main>
+                  
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+<h1 id="research-insights">Research Insights</h1>
+
+<h2 id="key-stakeholders"><span class="me-2">Key Stakeholders</span><a href="#key-stakeholders" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>Students, college-aged, going into SWE / Data Science / Cybersecurity</li>
+  <li>Professors in computer science / informatics departments
+    <ul>
+      <li>INFO 442 Professor</li>
+      <li>INFO Software Architecture Lecturer</li>
+      <li>Cybersecurity Professor</li>
+    </ul>
+  </li>
+  <li>Industry professionals in cloud computing and software engineering</li>
+</ul>
+
+<h2 id="survey---students"><span class="me-2">Survey - Students</span><a href="#survey---students" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li><strong>24 responses</strong></li>
+  <li><strong>12 computer science majors</strong></li>
+  <li><strong>12 Informatics majors</strong></li>
+  <li><strong>Year of study ranged</strong></li>
+</ul>
+
+<h2 id="interviewees---students"><span class="me-2">Interviewees - Students</span><a href="#interviewees---students" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>B - 1st year grad student in cybersecurity at NYU</li>
+  <li>S - 4th year Informatics student in UXR/PM/Data</li>
+  <li>R - 4th year Informatics student in software engineering</li>
+  <li>R - 4th year Informatics, data science minor in data</li>
+  <li>A - 2nd year computer science student in software engineering</li>
+</ul>
+
+<h2 id="research-notes"><span class="me-2">Research Notes</span><a href="#research-notes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="full-survey-notes"><span class="me-2">Full Survey Notes</span><a href="#full-survey-notes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>70% know about DevSecOps but have never used it</li>
+  <li>35% have used CI/CD in previous projects, but not proficient</li>
+  <li>30% have heard of it but never used it</li>
+  <li>83% have not taken classes on either
+    <ul>
+      <li>They don’t know about the classes</li>
+      <li>Classes are not offered on a regular basis</li>
+    </ul>
+  </li>
+  <li>Learning through
+    <ul>
+      <li>YouTube</li>
+      <li>Previous internships</li>
+    </ul>
+  </li>
+  <li>57% have not used external resources to learn about DevSecOps/CICD</li>
+  <li>No one was very confident in this</li>
+  <li>Overall, 92% think it is important to be taught about in school</li>
+  <li>52% are not confident at all in applying these concepts in industry</li>
+  <li>Quotes
+    <ul>
+      <li>“I feel like these topics are very application based and are best learned through internships/jobs.”</li>
+      <li>“Lack of practice and guidance”</li>
+      <li>“The whole process can be confusing but it is mainly because there aren’t enough resources to teach that stuff”</li>
+      <li>“I feel like my major (Informatics) does a poor job of preparing aspiring professionals to go into the tech world, especially related to development. There are very few classes that I can name that teach these core concepts for DevSecOps, cloud computing/software, and CI/CD. We often have to supplement it with outside resources, which take up a lot of time and aren’t as nearly effective as taking them in a classroom setting.”</li>
+      <li>“We still are in an environment where security is very new and people still don’t want to adopt it, so in terms of classes, classes don’t really put an emphasis on security or just brush over DevSecOps when teaching students how to program or when teaching them a new technical skill”</li>
+      <li>“Well, I feel like there aren’t any classes that are tailored toward using CI/CD, and likewise for DevSecOps exclusively as far as I know.”</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="full-interview-notes"><span class="me-2">Full Interview Notes</span><a href="#full-interview-notes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>B - grad student in cybersecurity
+    <ul>
+      <li>Mostly 2s on tools, some 4s (code packaging tools) 2 = not confident on tools</li>
+      <li>Never took classes on it bc not interest in devops</li>
+      <li>INFO 310 / 340/330 glossed over</li>
+      <li>TryHackMe</li>
+      <li>Hackthebox</li>
+      <li>Coursera / Udemy – typical, other platforms might be more focused</li>
+      <li>leading to a new wave of programmers / devs going out into industry and creating more vulnerabilities (not tecahing devsecops)</li>
+      <li>Guided practice</li>
+      <li>Linkedin/Reddit are good resources. Google can be too ad-focused</li>
+      <li>sometimes difficult to find connection between reading about it and seeing it implemented</li>
+      <li>Talking to friends in swe - classes require it - used security people to deal with that - but if we teach everyone from the beginning to implement it, makes everything a whole lot safer and more secure, and better! Less work</li>
+    </ul>
+  </li>
+  <li>R - senior in informatics, software engineering focus
+    <ul>
+      <li>Confidence - i felt like i had to relearn a lot of coding practices when i was in both internships</li>
+      <li>Had to relearn a lot of core concepts in internship</li>
+      <li>Wasn’t really required in core curriculum - personally i just didn’t learn about the fact that those classes existed until i was well into my junior year - then at that point - i don’t really have that much time to take more classes - very done with info, focusing on minor</li>
+      <li>Amazon provided a whole training</li>
+      <li>CI/CD talked about in internship</li>
+      <li>Never taken 310, but 442, 441, 443 classes go over CI/CD</li>
+      <li>Mostly 2s and 3s - some 4s on platforms (not confident)</li>
+      <li>Never heard those terms before - i kinda understand the practices associated with them but never heard those specific terms in particular</li>
+      <li>Would look at YouTube first, Google</li>
+      <li>Personally - i learn best with both video and an example</li>
+      <li>Not confident applying knowledge</li>
+      <li>all code i have is really small scale for school projects - would be hard to apply principles that are meant to be used at scale for something smaller</li>
+      <li>Wish devsecops was taught in classes</li>
+      <li>Yes 100% - would probably have saved me a lot of time in your internships if i had known some more principles going in</li>
+    </ul>
+  </li>
+  <li>A - Sophomore in software engineering, CS major
+    <ul>
+      <li>All tools - 1-3 - lot of familiarity but not usage</li>
+      <li>Coursera / udemy - very do this, but not do it well</li>
+      <li>No courses teach this explicitly - pick it up along the way</li>
+      <li>Each company has own workflow - wouldn’t I have to relearn it</li>
+      <li>every company has own unique security vulnerability in tech stack</li>
+      <li>No wouldn’t feel confident diving straight in esp w someting as imporant as security</li>
+      <li>would look up api to check documentation for vulnerabilities</li>
+      <li>On Google - get content out of date, bad answers</li>
+      <li>Read a book on it</li>
+      <li>Coursera / udemy - very do this, but not do it well</li>
+      <li>Interactive labs in class setting - as homework sure - of course - all programing homeworks should be written basically - implementation</li>
+      <li>1-2 confidence level in applying concepts</li>
+      <li>important to integrate into curriculum - but they do CI/CD pretty well already</li>
+      <li>cryptography, more theoretical, not towards industry use</li>
+      <li>dimly aware of classes</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="professor-interview-notes---a"><span class="me-2">Professor Interview Notes - A</span><a href="#professor-interview-notes---a" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>Class topics covered
+    <ul>
+      <li>Start out with words, vocab that’s used in the industry for better communication. Huge piece that was missing for new grads who didn’t understand the vocab used in the industry related to architecture.</li>
+      <li>Second half, design patterns, zooming back in, specific patterns you would see in code to make it more maintainable. “Hard to learn as a student, they are not gonna be good at the start, need to practice a lot, something you develop over time.”</li>
+    </ul>
+  </li>
+  <li>In class activities
+    <ul>
+      <li>Can’t teach all patterns, practice learning patterns. Some labs - break up into 4 large group, each group will get a design pattern to learn. Each member will teach other groups one pattern that they learned.</li>
+      <li>Lots of reading, writing, and discussing things. Not a lot of coding.</li>
+      <li>Not a lot of software engineers know automated testing coming into the industry.</li>
+    </ul>
+  </li>
+  <li>Taught class twice, things that didn’t go well, changed. Adding a new module - openness. Content needs to be ready to go - make as easy as possible. Demonstrate that the module applies to the course being taught. Server side development class would be a great candidate for CI/CD, DevSecOps. “If you convince the teacher that it’s a good idea to teach somethings that’s part of their course, and they’re gonna do it.”</li>
+  <li>Challenges to adding a module
+    <ul>
+      <li>Professors often do add buffer space. Two lectures of buffer space. Really show the value of it. Make it a concise way, tangible exercises. They might be able to add a week or two worth of content to their existing lecture.</li>
+    </ul>
+  </li>
+  <li>Once you get it in the course, they’re going to find out if it fits really well or not. Maybe provide a minimal version you could teach, some expanded stuff for later iterations of their course. Give them the resources, let them figure out what fits or not.</li>
+</ul>
+
+<h2 id="️-full-insights"><span class="me-2">⭐️ Full Insights</span><a href="#️-full-insights" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="class-availability"><span class="me-2">Class Availability</span><a href="#class-availability" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li><strong>83%</strong> of survey respondents have not taken classes on either DevSecOps or security.</li>
+  <li>Lack of classes on DevSecOps/security in general; classes offered are not frequent and are more technical/theoretical (cryptography).</li>
+</ul>
+
+<h3 id="access-to-resources"><span class="me-2">Access to Resources</span><a href="#access-to-resources" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li><strong>35%</strong> of survey respondents have used CI/CD in previous projects, but are not proficient.</li>
+  <li>External resources were utilized by those interested (YouTube, Reddit, LinkedIn, Google, Tryhackme, hackthebox).</li>
+</ul>
+
+<h3 id="term-familiarity"><span class="me-2">Term Familiarity</span><a href="#term-familiarity" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li><strong>70%</strong> know about DevSecOps but have never used it.</li>
+  <li><strong>30%</strong> have heard of it but never used it.</li>
+  <li><strong>52%</strong> are not confident at all in applying these concepts in industry.</li>
+</ul>
+
+<h3 id="importance"><span class="me-2">Importance</span><a href="#importance" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li><strong>92%</strong> of survey respondents agree that DevSecOps and CI/CD should be integrated into classes.</li>
+  <li>Almost all respondents believe DevSecOps should be taught in classes or at least integrated into coursework.</li>
+  <li>Many express a low confidence level in applying these concepts, highlighting a clear need for education in this area.</li>
+</ul>
+
+<h3 id="quotes-on-importance"><span class="me-2">Quotes on Importance</span><a href="#quotes-on-importance" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>“Yes, 100% - it would probably have saved me a lot of time in my internships if I had known some more principles going in.”</li>
+  <li>“It’s important to integrate into the curriculum - they do CI/CD pretty well already.”</li>
+  <li>“[Not teaching them is leading to a new wave of programmers/devs going out] into industry and creating more vulnerabilities (not teaching DevSecOps).”</li>
+</ul>
+
+<h3 id="tools---learning--education"><span class="me-2">Tools - Learning / Education</span><a href="#tools---learning--education" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>Tools ranking and familiarity seem to be higher among those who utilized them in internships, not in classes.</li>
+  <li>Interactive labs and hands-on exercises are highly valued in the learning process, with many students expressing that coding is best learned by doing.</li>
+  <li>Online learning platforms are used but often criticized for not teaching the application of knowledge effectively.</li>
+</ul>
+
+<h3 id="quotes-on-tools-and-education"><span class="me-2">Quotes on Tools and Education</span><a href="#quotes-on-tools-and-education" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>“I feel like these topics are very application-based and are best learned through internships/jobs.”</li>
+  <li>“Personally, I learn best with both video and an example.”</li>
+  <li>“All programming homework should be written basically - implementation is key.”</li>
+</ul>
+
+<h2 id="professor-insights"><span class="me-2">Professor Insights</span><a href="#professor-insights" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="professor-interview-notes-cont"><span class="me-2">Professor Interview Notes (cont.)</span><a href="#professor-interview-notes-cont" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>The need for teaching industry vocabulary and concepts is emphasized, with many students lacking understanding when they enter the workforce.</li>
+  <li>Practical application and teaching of design patterns are seen as crucial, yet challenging to implement effectively in the classroom.</li>
+  <li>Automated testing is a skill not commonly possessed by new software engineers, indicating a gap in practical training.</li>
+</ul>
+
+<h3 id="challenges-and-suggestions-for-course-integration"><span class="me-2">Challenges and Suggestions for Course Integration</span><a href="#challenges-and-suggestions-for-course-integration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>Professors need to be shown the value of integrating new modules like DevSecOps into their curriculum.</li>
+  <li>Providing concise, tangible exercises and a minimal viable version of the module can encourage adoption.</li>
+  <li>Flexibility in course design is important, allowing educators to see how new content fits and to adjust accordingly.</li>
+</ul>
+
+<h3 id="git-and-devops-in-education"><span class="me-2">Git and DevOps in Education</span><a href="#git-and-devops-in-education" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>Efficient use of Git and understanding of pull requests (PRs) are identified as major areas where new graduates are lacking.</li>
+  <li>DevOps practices, particularly for full-stack engineers, are not well covered, leading to a knowledge gap in the industry.</li>
+  <li>Teaching Git management, including the use of .gitignore files, is suggested as a critical area for improvement in the curriculum.</li>
+</ul>
+
+<h3 id="industry-feedback"><span class="me-2">Industry Feedback</span><a href="#industry-feedback" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>Big companies often use their own in-house systems instead of GitHub, which can present a learning curve for new hires.</li>
+  <li>The gap between academic training and actual industry requirements is most evident in areas like DevSecOps, indicating an urgent need for curriculum updates.</li>
+  <li>Teaching practical aspects like managing PRs, rebasing, and merging is crucial for preparing students for real-world software development environments.</li>
+  <li>Emphasis on giving students practical exercises that mimic real-world scenarios can significantly improve their readiness for industry challenges.</li>
+</ul>
+
+<h2 id="conclusions-and-recommendations"><span class="me-2">Conclusions and Recommendations</span><a href="#conclusions-and-recommendations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="addressing-the-skills-gap"><span class="me-2">Addressing the Skills Gap</span><a href="#addressing-the-skills-gap" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>There is a clear need for more comprehensive coverage of DevSecOps and CI/CD in academic curricula to bridge the skills gap.</li>
+  <li>Integrating practical, hands-on training with theoretical learning can enhance students’ understanding and application of these crucial concepts.</li>
+</ul>
+
+<h3 id="enhancing-classroom-learning"><span class="me-2">Enhancing Classroom Learning</span><a href="#enhancing-classroom-learning" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>Courses should include more interactive labs and coding exercises that reflect real-world scenarios.</li>
+  <li>Collaboration with industry professionals to design course content can ensure relevance and applicability.</li>
+</ul>
+
+<h3 id="improving-resource-accessibility"><span class="me-2">Improving Resource Accessibility</span><a href="#improving-resource-accessibility" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>More accessible and updated resources on DevSecOps and CI/CD should be made available to students.</li>
+  <li>Online platforms, while useful, need to focus more on practical application rather than just theoretical knowledge.</li>
+</ul>
+
+<h3 id="encouraging-industry-academia-collaboration"><span class="me-2">Encouraging Industry-Academia Collaboration</span><a href="#encouraging-industry-academia-collaboration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>Facilitating stronger connections between academia and industry can help align educational content with current industry practices and needs.</li>
+  <li>Guest lectures and workshops by industry professionals can provide valuable insights and practical knowledge to students.</li>
+</ul>
+
+<h3 id="future-steps"><span class="me-2">Future Steps</span><a href="#future-steps" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>Continuous evaluation and update of the curriculum are necessary to keep pace with the rapidly evolving tech landscape.</li>
+  <li>Gathering feedback from both students and industry professionals post-implementation can guide future improvements in the curriculum.</li>
+</ul>
+
+                  
+                </main>
+                
+
+  <hr>
+  <footer>
+    
+
+    <script>
+    /* Dynamically add the toc navbar after the side-bar element. This allows us
+        to *not* have to override default.html in _layouts */
+    let sideBarElements = document.getElementsByClassName('content-container');
+    let tocNav = document.createElement('nav');
+    tocNav.setAttribute("id", "tocbot-toc");
+    tocNav.classList.add("js-toc");
+    tocNav.classList.add("tocbot-right");
+    sideBarElements[0].after(tocNav);
+
+    /** WARNING: YOU MUST USE C MULTI-LINE COMMENT STYLE RATHER THAN // BECAUSE 
+     *  OF HOW JEKYLL COMPILES THIS FILE INTO SINGLE LINES **/
+    tocbot.init({
+        /* Where to render the table of contents. */
+        tocSelector: '.js-toc',
+        /* Where to grab the headings to build the table of contents. */
+        contentSelector: '.main-content-wrap',
+        /* How many heading levels should collapse. Default is 0 */
+        collapseDepth: 2,
+        /* Which headings to grab inside of the contentSelector element. */
+        headingSelector: 'h2',
+    });
+
+    /* Track scrolling to show/hide the tocbot navigation bar on right side */
+    var onScrollHandler = function (event) {
+
+        /* End event listener after visitor scrolls past 500px */
+        if (window.pageYOffset > 500) {
+        window.removeEventListener('scroll', onScrollHandler, false);
+        document.getElementById("tocbot-toc").style.visibility = "visible";
+        }
+        /* console.log("window scroll event:", window.pageYOffset); */
+    };
+
+    /* Listen for scroll events */
+    window.addEventListener('scroll', onScrollHandler, false);
+</script>
+<script>
+    let lists = document.getElementsByClassName('toc-list');
+    if (lists.length > 0) {
+        let header = document.createElement('h2');
+        header.innerText = "Contents";
+        lists[0].prepend(header);
+    }
+</script>
+
+    
+  </footer>
+
+
+              </div>
+          </div>
+        </div>
+        
+          
+<button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
+  <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+</button>
+
+
+<div class="search-overlay"></div>
+
+        
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

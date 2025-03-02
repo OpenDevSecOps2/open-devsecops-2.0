@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+.site-nav > ul.nav-list:first-child > li > a,
+.site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(2)) > a,
+.site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:not(:first-child) a,
+.site-nav li.external a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:first-child > li:nth-child(6) > ul > li:nth-child(2) > a {
+  font-weight: 600;
+  text-decoration: none;
+}.site-nav > ul.nav-list:first-child > li:nth-child(6) > button svg,
+.site-nav > ul.nav-list:first-child > li:nth-child(6) > ul > li:nth-child(2) > button svg {
+  transform: rotate(-90deg);
+}.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(6) > ul.nav-list,
+.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(6) > ul.nav-list > li.nav-list-item:nth-child(2) > ul.nav-list {
+  display: block;
+}
+  </style>
+
+  
+
+  
+    <script src="/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="icon" href="/assets/images/opendevsecops-favicon.ico" type="image/x-icon">
+
+
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Chapter 2 - Security Checks in CI/CD | open-devsecops</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Chapter 2 - Security Checks in CI/CD" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning." />
+<meta property="og:description" content="From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning." />
+<link rel="canonical" href="http://localhost:4000/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/" />
+<meta property="og:url" content="http://localhost:4000/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/" />
+<meta property="og:site_name" content="open-devsecops" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Chapter 2 - Security Checks in CI/CD" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning.","headline":"Chapter 2 - Security Checks in CI/CD","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/opendevsecops-transparent.png"}},"url":"http://localhost:4000/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.25.0/tocbot.min.js"></script>
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="master-container">
+    <div class="main-container">
+      <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/" class="site-title lh-tight"><div class="site-nav-header">
+    <div class="site-logo" role="img" aria-label="open-devsecops"></div>
+    <p>open-devsecops</p]>
+</div></a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><a href="/" class="nav-list-link">Home</a></li><li class="nav-list-item"><a href="/docs/course/" class="nav-list-link">Course Overview</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Lab Infrastructure Setup Guide category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/lab-setup-guide/" class="nav-list-link">Lab Infrastructure Setup Guide</a><ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 2 - DevOps category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/lab-setup-guide/topic-2-devops-lab/" class="nav-list-link">Topic 2 - DevOps</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/lab-setup-guide/topic-2-devops-lab/aws/" class="nav-list-link">AWS</a>
+              </li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 3 - DevSecOps category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/lab-setup-guide/topic-3-devsecops-lab/" class="nav-list-link">Topic 3 - DevSecOps</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/lab-setup-guide/topic-3-devsecops-lab/aws/" class="nav-list-link">AWS</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 1 - Git category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-1-git/" class="nav-list-link">Topic 1 - Git</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-1-version-control/" class="nav-list-link">Chapter 1 - Introduction to Version Control</a></li><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-2-understanding-git/" class="nav-list-link">Chapter 2 - Git Fundamentals</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 3 - Git Intermediate Concepts category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/" class="nav-list-link">Chapter 3 - Git Intermediate Concepts</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/lab/git-lab-1.html" class="nav-list-link">Lab 1. Version Control and Branching</a>
+              </li></ul></li><li class="nav-list-item"><a href="/docs/course/topic-1-git/chapter-4-git-best-practices/" class="nav-list-link">Chapter 4 - Git Best Practices</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 2 - DevOps category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-2-DevOps/" class="nav-list-link">Topic 2 - DevOps</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/" class="nav-list-link">Chapter 1 - Intro to DevOps</a></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/" class="nav-list-link">Chapter 2 - Intro to CI/CD</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 3 - Containerization category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-2-DevOps/chapter-3-containerization/" class="nav-list-link">Chapter 3 - Containerization</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-1.html" class="nav-list-link">Lab 1. Containerizing a React Application</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-3-containerization/lab/containerization-lab-2.html" class="nav-list-link">Lab 2. Accessing Corporate Network and AWS ECR</a>
+              </li></ul></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-4-webhooks/" class="nav-list-link">Chapter 4 - Webhooks</a></li><li class="nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-5-automation/" class="nav-list-link">Chapter 5 - Automated Tests</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 6 - Deployment category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-2-DevOps/chapter-6-deployment/" class="nav-list-link">Chapter 6 - Deployment</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-2-DevOps/chapter-6-deployment/lab/deployment-lab-1.html" class="nav-list-link">Lab 1. Configuring a Simple CI/CD Pipeline</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Topic 3 - DevSecOps category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/course/topic-3-devsecops/" class="nav-list-link">Topic 3 - DevSecOps</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/course/topic-3-devsecops/chapter-1-devsecops/" class="nav-list-link">Chapter 1 - DevSecOps</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Chapter 2 - Security Checks in CI/CD category" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+          </button><a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/" class="nav-list-link">Chapter 2 - Security Checks in CI/CD</a><ul class="nav-list"><li class="nav-list-item">
+                <a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html" class="nav-list-link">Labs Overview</a>
+              </li><li class="nav-list-item">
+                <a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/devsecops-lab-1.html" class="nav-list-link">Lab 1. Securing a Vulnerable Application</a>
+              </li></ul></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Other Documents category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/docs/other/" class="nav-list-link">Other Documents</a><ul class="nav-list"><li class="nav-list-item"><a href="/docs/other/research/references.html" class="nav-list-link">References</a></li><li class="nav-list-item"><a href="/docs/other/research/user-research.html" class="nav-list-link">User Research</a></li></ul></li></ul>
+
+  
+</nav>
+
+
+  
+  
+    <footer class="site-footer">
+    This site uses a custom theme based on <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>.
+</footer>
+  
+</div>
+
+      <div class="content-container">
+        <div class="main" id="top">
+          <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search the documentation..." aria-label="Search the documentation..." autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+    <nav aria-label="Auxiliary" class="aux-nav">
+  <ul class="aux-nav-list">
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/open-devsecops" class="site-button"
+          
+        >
+          Github
+        </a>
+      </li>
+    
+      <li class="aux-nav-list-item">
+        <a href="https://github.com/open-devsecops/open-devsecops.github.io" class="site-button"
+          
+        >
+          Contribute
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+  
+</div>
+
+            <div class="main-content-wrap">
+              <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+    <li class="breadcrumb-nav-list-item"><a href="/docs/course/topic-3-devsecops/">Topic 3 - DevSecOps</a></li>
+    <li class="breadcrumb-nav-list-item"><span>Chapter 2 - Security Checks in CI/CD</span></li>
+  </ol>
+</nav>
+              <div id="main-content" class="main-content">
+                <main>
+                  
+
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+<h1 id="chapter-2---security-checks-in-cdcd">Chapter 2 - Security Checks in CD/CD</h1>
+
+<h2 id="the-importance-of-security-checks-in-each-stage-of-the-pipeline"><span class="me-2">The Importance of Security Checks in Each Stage of The Pipeline</span><a href="#the-importance-of-security-checks-in-each-stage-of-the-pipeline" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>A key component of DevSecOps is the introduction of a secure CI/CD pipeline. As you read in previous chapters, CI/CD is critical to DevSecOps because it:</p>
+<blockquote>
+  <blockquote>
+    <ul>
+      <li>Automates and embeds security checks early in the development process</li>
+      <li>Ensures rapid feedback regarding potential vulnerabilities</li>
+      <li>Facilitates a proactive approach to security throughout the lifecycle of the application.</li>
+    </ul>
+  </blockquote>
+</blockquote>
+
+<p>Every organization has a different way of defining their pipeline and the stages involved. Regardless of how many stages there are, it is crucial to ensure every stage has security checks from all realms of IT involved. These stages can generally look like:</p>
+
+<ul>
+  <li>
+    <p><strong>The Planning phase</strong>: The first step is to develop a product roadmap (threat modeling), which will help identify potential security threats. In threat modeling, potential vulnerabilities are identified and countermeasures are set in place to mitigate those risks.</p>
+  </li>
+  <li>
+    <p><strong>Coding</strong>: As developers begin writing code, take measures to make sure that the code is written in accordance with predefined standards and design guidelines. Use source code scanners to detect pieces of code that might be vulnerable to security threats.</p>
+  </li>
+  <li>
+    <p><strong>Building</strong>: As developers begin committing their source code to a shared repository, they need to make sure that automated tests are triggered to verify that the builds comply with requirements.</p>
+  </li>
+  <li>
+    <p><strong>Testing</strong>: Once a build is successful, test the software for bugs. If new features are added on, more automated testing is performed.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <p class="highlight">The stages of SDLC can also be referred as the 6 stages:</p>
+    <ol>
+      <li>Project Planning</li>
+      <li>Gathering Code Requirements &amp; Analysis</li>
+      <li>Design and Build</li>
+      <li>Testing</li>
+      <li>Release</li>
+      <li>Deployment/Maintenance</li>
+    </ol>
+  </blockquote>
+</blockquote>
+
+<p><img src="https://qentelli.com/sites/default/files/inline-images/devsecops-pipeline-inside-image.png" alt="CI/CD Pipeline" /></p>
+
+<div style="text-align: center;">
+    <p><em>Source: <a href="https://qentelli.com/thought-leadership/insights/devsecops-pipeline-factors">Qentelli</a></em></p>
+</div>
+
+<p>Due to the nature of continuous integration, every change needs to be monitored and made sure that it’s safe to release. For every stage, there are multiple different controls that can be embedded to the process, whereas tool integrations are not sufficient by themselves for a secure CI/CD pipeline. Tools must be implemented to support the process mentioned above, but it’s important to understand which tools to use and when. Understanding <strong>SAST testing vs. DAST testing</strong> espscially during the build stages will help ensure a secure SDLC.</p>
+
+<h2 id="sast-vs-dast"><span class="me-2">SAST vs. DAST</span><a href="#sast-vs-dast" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="table-wrapper"><table>
+  <tr>
+    <th>Category</th>
+    <th>SAST</th>
+    <th>DAST</th>
+  </tr>
+  <tr>
+    <td><strong>Purpose</strong></td>
+    <td>SAST involves analyzing source code, byte code, or binary code of an application without executing it. Its purpose is to detect security vulnerabilities early in the development process by identifying parts of the code that might lead to security breaches.</td>
+    <td>DAST involves testing an application’s security by simulating attacks on a running application. It aims to identify vulnerabilities that could be exploited during runtime, such as issues related to user authentication, SQL injection, and cross-site scripting (XSS).</td>
+
+  </tr>
+  <tr>
+    <td><strong>Timeline</strong></td>
+    <td>
+      <ul>
+        <li>SAST is typically conducted at the very early stages of the development cycle, often integrated into the Integrated Development Environment (IDE) or Continuous Integration/Continuous Deployment (CI/CD) pipeline.</li>
+        <li>It is done before the application is run, usually as soon as the code is written.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Conducted later in the development cycle, often after the application is in a stable build and deployed in a testing environment.</li>
+        <li>It is performed on the running application in a safe envrionment, mimicking real-world hacking techniques.</li>
+      </ul>
+    </td>
+
+  </tr>
+  <tr>
+    <td><strong>Pros</strong></td>
+    <td>
+      <ul>
+        <li>Can detect vulnerabilities early in the development cycle, reducing the cost and effort of fixing them later</li>
+        <li>If you can prevent vulnerabilities in software before you launch, you'll have stronger code and a more reliable application</li>
+        <li>SAST can show you exactly where to find issues in the code</li>
+        <li>Can be automated and integrated into the development process, facilitating early and regular security checks</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Can identify runtime and environmental issues that SAST cannot detect</li>
+        <li>Does not require access to source code, making it applicable to any application</li>
+        <li>Offers a real-world perspective on how an attacker might exploit vulnerabilities in a live application</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Cons</strong></td>
+    <td>
+      <ul>
+        <li>Might produce false positives, requiring additional time for developers to sort through and validate issues</li>
+        <li>Only identifies potential security issues in the static code, without considering runtime behavior or external interactions</li>
+        <li>Requires access to the application's source code, which might not always be possible for third-party actors</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Heavy reliance on experts to write tests, making it difficult to scale</li>
+        <li>Might miss certain types of vulnerabilities that can only be detected by analyzing the source code.</li>
+        <li>Can lead to false negatives, as some vulnerabilities might not be detectable during a dynamic scan or might depend on specific conditions to trigger.</li>
+      </ul>
+    </td>
+
+  </tr>
+</table></div>
+
+<h3 id="comparison-and-integration"><span class="me-2">Comparison and Integration</span><a href="#comparison-and-integration" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>Integrating both SAST and DAST in the security testing process provides a more comprehensive approach to application security. SAST can identify vulnerabilities early in the code, while DAST can test the application’s behavior in a runtime environment, catching issues that static analysis might miss. Together, they offer a balanced and thorough method for securing applications throughout the development lifecycle.</p>
+
+<h2 id="vulnerability-scanning"><span class="me-2">Vulnerability scanning</span><a href="#vulnerability-scanning" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p>Vulnerability scanning in a CI/CD pipeline refers to the automated process of identifying security weaknesses in the software code, dependencies, and runtime environments as part of the continuous integration and delivery process. This scanning can detect issues such as insecure coding practices, outdated libraries, misconfigurations, and other vulnerabilities that could potentially be exploited by attackers. You read above the difference between SAST testing and DAST testing. Those processes can be testing using a variety of tools. Some may be cheaper than others, require contracts with experts, or could just be a web plug in. Some of the most popular options you may hear of are listed below</p>
+
+<h3 id="examples-of-widely-used-tools-in-industry"><span class="me-2">Examples of widely-used tools in industry</span><a href="#examples-of-widely-used-tools-in-industry" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<blockquote>
+  <p>SonarQube - A comprehensive tool that provides static code analysis, identifying vulnerabilities, bugs, and code smells in several programming languages</p>
+</blockquote>
+
+<blockquote>
+  <p>OWASP ZAP (Zed Attack Proxy) - An open-source dynamic application security testing tool that can identify security vulnerabilities in web applications during development and testing phases</p>
+</blockquote>
+
+<blockquote>
+  <p>Fortify - Provides static and dynamic application security testing tools to identify vulnerabilities in code and running applications</p>
+</blockquote>
+
+<blockquote>
+  <p>Veracode - Offers a suite of security tools, including static, dynamic, and interactive application security testing, to identify and fix vulnerabilities at various stages of the software development lifecycle</p>
+</blockquote>
+
+<blockquote>
+  <p>Snyk - Specializes in identifying and fixing vulnerabilities in open-source dependencies and container images, integrating seamlessly with CI/CD pipelines</p>
+</blockquote>
+
+<blockquote>
+  <p>GitLab CI/CD Security Scanning - Offers built-in security scanning features in its CI/CD pipelines, including static and dynamic analysis, dependency scanning, and container scanning</p>
+</blockquote>
+
+<blockquote>
+  <p>Jenkins with security plugins - Jenkins, a popular automation server, can be configured with various security plugins to perform static and dynamic analysis, as well as other security checks within the CI/CD pipeline</p>
+</blockquote>
+
+<p>There are countless variations of vulnerability scanners out there and are constantly being innovated. Every software team should take throrough time to research and test as many tools as possible within their budget and timeline to ensure their pipeline is fully covered.</p>
+
+<h3 id="references"><span class="me-2">References</span><a href="#references" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>1.</strong> “What is CI/CD security?” <em>Red Hat</em>, <a href="https://www.redhat.com/en/topics/security/what-is-cicd-security#:~:text=CI%2FCD%20security%20is%20used,policies%2C%20and%20ensure%20quality%20assurance.">Link</a>. Accessed 9 Apr. 2024.</p>
+
+<p><strong>2.</strong> “Security in every stage of CI/CD pipeline” <em>AWS</em>, <a href="https://docs.aws.amazon.com/whitepapers/latest/practicing-continuous-integration-continuous-delivery/security-in-every-stage-of-cicd-pipeline.html">Link</a>. Accessed 9 Apr. 2024.</p>
+
+<p><strong>3.</strong> “SAST, DAST, and IAST Security Testing” <em>Contrast Security</em>, <a href="https://www.contrastsecurity.com/security-influencers/why-the-difference-between-sast-dast-and-iast-matters">Link</a>. Accessed 9 Apr. 2024.</p>
+
+<p><strong>4.</strong> “How to use the Jenkins Security Scan “ <em>Jenkins</em>, <a href="https://www.jenkins.io/doc/developer/security/scan/">Link</a>. Accessed 9 Apr. 2024.</p>
+
+<p><strong>5.</strong> “SonarQube” <em>SonarQube</em>, <a href="https://www.sonarsource.com/products/sonarqube/">Link</a>. Accessed 9 Apr. 2024.</p>
+
+<p><strong>6.</strong> “Snyk Open Source” <em>Snyk</em>, <a href="https://snyk.io/product/open-source-security-management/?utm_medium=paid-search&amp;utm_source=google&amp;utm_campaign=gs_sn:-brand-ecpc&amp;utm_content=br_sca&amp;utm_term=snyk%20sca&amp;gad_source=1&amp;gclid=Cj0KCQjwztOwBhD7ARIsAPDKnkBbO4ZOhhLOMFnW3niLxxHAljuqKD8iOqe82_KTv9t4CDljRWacTd8aAlTxEALw_wcB">Link</a>. Accessed 9 Apr. 2024.</p>
+
+<p><strong>7.</strong> “Vulnerability Scanner Tools” <em>Veracode</em>, <a href="https://www.veracode.com/security/vulnerability-scanning-tools">Link</a>. Accessed 9 Apr. 2024.</p>
+
+<p><strong>8.</strong> “What is Fortify and How it works? An Overview and Its Use Cases” <em>DevOps School</em>, <a href="https://www.devopsschool.com/blog/what-is-fortify-and-how-it-works-an-overview-and-its-use-cases/">Link</a>. Accessed 9 Apr. 2024.</p>
+
+
+                  
+                </main>
+                
+
+  <hr>
+  <footer>
+    
+
+    <script>
+    /* Dynamically add the toc navbar after the side-bar element. This allows us
+        to *not* have to override default.html in _layouts */
+    let sideBarElements = document.getElementsByClassName('content-container');
+    let tocNav = document.createElement('nav');
+    tocNav.setAttribute("id", "tocbot-toc");
+    tocNav.classList.add("js-toc");
+    tocNav.classList.add("tocbot-right");
+    sideBarElements[0].after(tocNav);
+
+    /** WARNING: YOU MUST USE C MULTI-LINE COMMENT STYLE RATHER THAN // BECAUSE 
+     *  OF HOW JEKYLL COMPILES THIS FILE INTO SINGLE LINES **/
+    tocbot.init({
+        /* Where to render the table of contents. */
+        tocSelector: '.js-toc',
+        /* Where to grab the headings to build the table of contents. */
+        contentSelector: '.main-content-wrap',
+        /* How many heading levels should collapse. Default is 0 */
+        collapseDepth: 2,
+        /* Which headings to grab inside of the contentSelector element. */
+        headingSelector: 'h2',
+    });
+
+    /* Track scrolling to show/hide the tocbot navigation bar on right side */
+    var onScrollHandler = function (event) {
+
+        /* End event listener after visitor scrolls past 500px */
+        if (window.pageYOffset > 500) {
+        window.removeEventListener('scroll', onScrollHandler, false);
+        document.getElementById("tocbot-toc").style.visibility = "visible";
+        }
+        /* console.log("window scroll event:", window.pageYOffset); */
+    };
+
+    /* Listen for scroll events */
+    window.addEventListener('scroll', onScrollHandler, false);
+</script>
+<script>
+    let lists = document.getElementsByClassName('toc-list');
+    if (lists.length > 0) {
+        let header = document.createElement('h2');
+        header.innerText = "Contents";
+        lists[0].prepend(header);
+    }
+</script>
+
+    
+  </footer>
+
+
+              </div>
+          </div>
+        </div>
+        
+          
+<button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
+  <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+</button>
+
+
+<div class="search-overlay"></div>
+
+        
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>
