@@ -4,7 +4,7 @@ layout: custom
 nav_order: 0
 ---
 # DevSecOps Curriculum 💻
->> Made by 2024 University of Washington Informatics Capstone Team Info Innovators
+>> Made by 2025 University of Washington Informatics Capstone Team
 
 >> Sponsored by Boeing
 
@@ -44,3 +44,11 @@ Contributions are welcome! Help us keep the curriculum relevant and effective by
 - [Eric Kim](https://www.linkedin.com/in/taehyunnkim/)
 - [Mari Woodworth](https://www.linkedin.com/in/marikowoodworth/)
 - [Brandon Mendoza](https://www.linkedin.com/in/bwmendo/)
+
+### Connect with the Creators 🔗 2.0
+- [Jonathan To](https://www.linkedin.com/in/jonathanto1/)
+- [Raymond Smith](https://www.linkedin.com/in/raymondsmith100/)
+- [Uijin Lim](https://www.linkedin.com/in/uijinlim/)
+- [Ben Leland](https://www.linkedin.com/in/ben-leland/)
+- [Leo Zheng](https://www.linkedin.com/in/leozheng-/)
+
