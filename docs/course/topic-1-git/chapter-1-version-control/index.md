@@ -3,7 +3,7 @@ title: Chapter 1 - Introduction to Version Control
 layout: custom
 parent: Topic 1 - Git
 has_children: false
-has_toc: false
+has_toc: true
 nav_order: 1
 ---
 
@@ -36,3 +36,4 @@ A common tool for version control is GitHub. GitHub allows you acts as a central
     <b>2.</b> “1.1 Getting Started - about Version Control.” <i>Git</i>, <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control" target="_blank">git-scm.com/book/en/v2/Getting-Started-About-Version-Control</a>. Accessed 15 Apr. 2024.<br>
     <b>3.</b> “What Is Version Control?” <i>GitLab</i>, GitLab, 4 Apr. 2023, <a href="https://about.gitlab.com/topics/version-control/" target="_blank">about.gitlab.com/topics/version-control/</a>.<br>
 </details>
+

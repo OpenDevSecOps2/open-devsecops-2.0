@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
@@ -254,11 +253,23 @@
   
 </div>
 
-            <div class="main-content-wrap">
+
+          <!-- Progress Bar -->
+          <div class="header-container">
+            
+
+            <div id="scroll-progress-container">
+              <svg id="scroll-progress-circle" viewBox="0 0 36 36">
+                <circle class="progress-bg" cx="18" cy="18" r="16"></circle>
+                <circle class="progress" cx="18" cy="18" r="16"></circle>
+                <text x="50%" y="55%" text-anchor="middle" class="progress-text">0%</text>
+              </svg>
+            </div>
+          </div>
+
+          <div id="main-content" class="main-content">
+            <main>
               
-              <div id="main-content" class="main-content">
-                <main>
-                  
 
 
 
@@ -356,9 +367,9 @@
   </tbody>
 </table></div>
 
-                  
-                </main>
-                
+              
+            </main>
+            
 
   <hr>
   <footer>
@@ -414,11 +425,11 @@
   </footer>
 
 
-              </div>
           </div>
         </div>
+      </div>
+      
         
-          
 <button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
   <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
 </button>
@@ -426,11 +437,13 @@
 
 <div class="search-overlay"></div>
 
-        
-      </div>
+      
     </div>
   </div>
 
   
+
+  <!-- Progress bar script -->
+  <script src="/assets/js/progress.js"></script>
 </body>
 </html>

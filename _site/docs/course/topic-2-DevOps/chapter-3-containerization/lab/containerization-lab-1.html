@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
@@ -256,17 +255,29 @@
   
 </div>
 
-            <div class="main-content-wrap">
-              <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+
+          <!-- Progress Bar -->
+          <div class="header-container">
+            <nav aria-label="Breadcrumb" class="breadcrumb-nav">
   <ol class="breadcrumb-nav-list">
     <li class="breadcrumb-nav-list-item"><a href="/docs/course/topic-2-DevOps/">Topic 2 - DevOps</a></li>
     <li class="breadcrumb-nav-list-item"><a href="/docs/course/topic-2-DevOps/chapter-3-containerization/">Chapter 3 - Containerization</a></li>
     <li class="breadcrumb-nav-list-item"><span>Lab 1. Containerizing a React Application</span></li>
   </ol>
 </nav>
-              <div id="main-content" class="main-content">
-                <main>
-                  
+
+            <div id="scroll-progress-container">
+              <svg id="scroll-progress-circle" viewBox="0 0 36 36">
+                <circle class="progress-bg" cx="18" cy="18" r="16"></circle>
+                <circle class="progress" cx="18" cy="18" r="16"></circle>
+                <text x="50%" y="55%" text-anchor="middle" class="progress-text">0%</text>
+              </svg>
+            </div>
+          </div>
+
+          <div id="main-content" class="main-content">
+            <main>
+              
 
 
 
@@ -723,9 +734,9 @@ When you ran <code class="language-plaintext highlighter-rouge">npm start</code>
 
 <p>When you’re done, simply type <code class="language-plaintext highlighter-rouge">exit</code> or press <code class="language-plaintext highlighter-rouge">Ctrl + C</code> to leave the container shell.</p>
 
-                  
-                </main>
-                
+              
+            </main>
+            
 
   <hr>
   <footer>
@@ -781,11 +792,11 @@ When you ran <code class="language-plaintext highlighter-rouge">npm start</code>
   </footer>
 
 
-              </div>
           </div>
         </div>
+      </div>
+      
         
-          
 <button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
   <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
 </button>
@@ -793,11 +804,13 @@ When you ran <code class="language-plaintext highlighter-rouge">npm start</code>
 
 <div class="search-overlay"></div>
 
-        
-      </div>
+      
     </div>
   </div>
 
   
+
+  <!-- Progress bar script -->
+  <script src="/assets/js/progress.js"></script>
 </body>
 </html>

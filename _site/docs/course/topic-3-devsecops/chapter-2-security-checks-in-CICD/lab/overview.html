@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
@@ -256,17 +255,29 @@
   
 </div>
 
-            <div class="main-content-wrap">
-              <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+
+          <!-- Progress Bar -->
+          <div class="header-container">
+            <nav aria-label="Breadcrumb" class="breadcrumb-nav">
   <ol class="breadcrumb-nav-list">
     <li class="breadcrumb-nav-list-item"><a href="/docs/course/topic-3-devsecops/">Topic 3 - DevSecOps</a></li>
     <li class="breadcrumb-nav-list-item"><a href="/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/">Chapter 2 - Security Checks in CI/CD</a></li>
     <li class="breadcrumb-nav-list-item"><span>Labs Overview</span></li>
   </ol>
 </nav>
-              <div id="main-content" class="main-content">
-                <main>
-                  
+
+            <div id="scroll-progress-container">
+              <svg id="scroll-progress-circle" viewBox="0 0 36 36">
+                <circle class="progress-bg" cx="18" cy="18" r="16"></circle>
+                <circle class="progress" cx="18" cy="18" r="16"></circle>
+                <text x="50%" y="55%" text-anchor="middle" class="progress-text">0%</text>
+              </svg>
+            </div>
+          </div>
+
+          <div id="main-content" class="main-content">
+            <main>
+              
 
 
 
@@ -449,9 +460,9 @@
   <li>Basic React knowledge: You understand how to run a React application locally</li>
 </ul>
 
-                  
-                </main>
-                
+              
+            </main>
+            
 
   <hr>
   <footer>
@@ -507,11 +518,11 @@
   </footer>
 
 
-              </div>
           </div>
         </div>
+      </div>
+      
         
-          
 <button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
   <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
 </button>
@@ -519,11 +530,13 @@
 
 <div class="search-overlay"></div>
 
-        
-      </div>
+      
     </div>
   </div>
 
   
+
+  <!-- Progress bar script -->
+  <script src="/assets/js/progress.js"></script>
 </body>
 </html>

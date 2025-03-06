@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
@@ -254,11 +253,23 @@
   
 </div>
 
-            <div class="main-content-wrap">
+
+          <!-- Progress Bar -->
+          <div class="header-container">
+            
+
+            <div id="scroll-progress-container">
+              <svg id="scroll-progress-circle" viewBox="0 0 36 36">
+                <circle class="progress-bg" cx="18" cy="18" r="16"></circle>
+                <circle class="progress" cx="18" cy="18" r="16"></circle>
+                <text x="50%" y="55%" text-anchor="middle" class="progress-text">0%</text>
+              </svg>
+            </div>
+          </div>
+
+          <div id="main-content" class="main-content">
+            <main>
               
-              <div id="main-content" class="main-content">
-                <main>
-                  
 
 
 
@@ -345,6 +356,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -366,7 +388,7 @@
 <h1 id="devsecops-curriculum-">DevSecOps Curriculum 💻</h1>
 <blockquote>
   <blockquote>
-    <p>Made by 2024 University of Washington Informatics Capstone Team Info Innovators</p>
+    <p>Made by 2025 University of Washington Informatics Capstone Team</p>
   </blockquote>
 </blockquote>
 
@@ -425,9 +447,19 @@
   <li><a href="https://www.linkedin.com/in/bwmendo/">Brandon Mendoza</a></li>
 </ul>
 
-                  
-                </main>
-                
+<h3 id="connect-with-the-creators--20"><span class="me-2">Connect with the Creators 🔗 2.0</span><a href="#connect-with-the-creators--20" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li><a href="https://www.linkedin.com/in/jonathanto1/">Jonathan To</a></li>
+  <li><a href="https://www.linkedin.com/in/raymondsmith100/">Raymond Smith</a></li>
+  <li><a href="https://www.linkedin.com/in/uijinlim/">Uijin Lim</a></li>
+  <li><a href="https://www.linkedin.com/in/ben-leland/">Ben Leland</a></li>
+  <li><a href="https://www.linkedin.com/in/leozheng-/">Leo Zheng</a></li>
+</ul>
+
+
+              
+            </main>
+            
 
   <hr>
   <footer>
@@ -483,11 +515,11 @@
   </footer>
 
 
-              </div>
           </div>
         </div>
+      </div>
+      
         
-          
 <button id="search-button" class="search-button btn-reset" aria-label="Focus on search">
   <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
 </button>
@@ -495,11 +527,13 @@
 
 <div class="search-overlay"></div>
 
-        
-      </div>
+      
     </div>
   </div>
 
   
+
+  <!-- Progress bar script -->
+  <script src="/assets/js/progress.js"></script>
 </body>
 </html>

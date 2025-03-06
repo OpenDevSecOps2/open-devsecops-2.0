@@ -27,3 +27,6 @@ callouts:
   lab:
     title: Access The Lab
     color: purple
+
+include:
+  - assets/js/progress.js
