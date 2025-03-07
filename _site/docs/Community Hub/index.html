@@ -75,11 +75,18 @@
 
 </head>
 
-<body>
-  <div id="progress-container">
-    <div id="progress-bar"></div>
-    <span id="progress-text">0%</span>
+<div id="progress-container">
+  <svg width="60" height="60" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="45" stroke="#ddd" stroke-width="10" fill="none"/>
+    <circle id="progress-circle" cx="50" cy="50" r="45" 
+            stroke="#7253ed" stroke-width="10" fill="none"
+            stroke-linecap="round" stroke-dasharray="283"
+            stroke-dashoffset="283"
+            transform="rotate(-90 50 50)"/>
+  </svg>
+  <span id="progress-text">0%</span>
 </div>
+
 
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="svg-link" viewBox="0 0 24 24">
