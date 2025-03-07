@@ -30,3 +30,4 @@ callouts:
 
 include:
   - assets/js/progress.js
+  - assetls/js/signin.js

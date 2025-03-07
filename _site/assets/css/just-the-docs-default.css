@@ -7660,4 +7660,12 @@ blockquote.lab-title > p:last-child {
   padding: 40px;
 }
 
+#signin {
+  top: 0px;
+  right: 100px;
+  position: fixed;
+  width: 340px;
+  height: 550px;
+}
+
 /*# sourceMappingURL=just-the-docs-default.css.map */
