@@ -1,7 +1,11 @@
 ---
-title: Home
+title: Dashboard
 layout: custom
 nav_order: 0
+---
+# Welcome Back, John Doe! 👋
+you are currently on an 8 day streak of logging in. Keep it going! 🔥
+
 ---
 # DevSecOps Curriculum 💻
 >> Made by 2024 University of Washington Informatics Capstone Team Info Innovators

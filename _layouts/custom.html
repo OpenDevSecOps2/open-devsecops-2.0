@@ -3,6 +3,11 @@
 <html lang="{{ site.lang | default: 'en-US' }}">
 {% include head.html %}
 <body>
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+    <span id="progress-text">0%</span>
+</div>
+
   {% include icons/icons.html %}
   <div class="master-container">
     <div class="main-container">
@@ -33,5 +38,6 @@
   {% if site.mermaid %}
     {% include components/mermaid.html %}
   {% endif %}
+  <script src="{{ '/assets/js/progress.js' | relative_url }}"></script>
 </body>
 </html>

@@ -351,7 +351,7 @@ div.highlighter-rouge > button, div.listingblock > div.content > button, figure.
 
 @media (min-width: 330px) and (max-width: 1000px) {
   #tocbot-toc {
-    display: none;
+    display: block !important;
   }
 
   .main-container {
@@ -380,7 +380,7 @@ div.highlighter-rouge > button, div.listingblock > div.content > button, figure.
 
 @media (min-width: 1000px) and (max-width: 1400px) {
   #tocbot-toc {
-    display: none;
+    display: block !important;
   }
 }
 
@@ -416,4 +416,38 @@ div.highlighter-rouge > button, div.listingblock > div.content > button, figure.
     font-weight: bold;
     font-size: 16px;
   }
+}
+
+
+// 
+#progress-container {
+  position: fixed;
+  bottom: 80px; /* 돋보기 아이콘 위 */
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+#progress-bar {
+  width: 40px;
+  height: 40px;
+  background: conic-gradient(#007bff 0%, #0056b3 0%);
+  border-radius: 50%;
+}
+
+#progress-text {
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
 }

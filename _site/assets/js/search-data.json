@@ -370,657 +370,671 @@
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-5-automation/"
   },"53": {
-    "doc": "Chapter 4 - Git Best Practices",
-    "title": "Chapter 4 - Git Best Practices",
-    "content": " ",
-    "url": "/docs/course/topic-1-git/chapter-4-git-best-practices/",
+    "doc": "Dashboard",
+    "title": "Welcome Back, John Doe! 👋",
+    "content": "you are currently on an 8 day streak of logging in. Keep it going! 🔥 . ",
+    "url": "/#welcome-back-john-doe-",
     
-    "relUrl": "/docs/course/topic-1-git/chapter-4-git-best-practices/"
+    "relUrl": "/#welcome-back-john-doe-"
   },"54": {
-    "doc": "Chapter 4 - Git Best Practices",
-    "title": "Effective Documentation",
-    "content": "Proper documentation is key to the longevity and maintainability of software. You want to make sure if you abrubtly leave a project at any point, anyone else can pick it up without talking to you at all. | READMEs: Their Role and Key Elements to Include: . | A README is often the first item a visitor will see when visiting your repository. It should include a project title, description, installation instructions, usage, contributing guidelines, license information, and contact information for the maintainers. | Use the README to provide a high-level overview of the project and how all the pieces fit together. Read more… | . | Wiki: Using a Project’s Wiki for Extensive Documentation: . | For more detailed documentation, consider using the project’s wiki. It’s a great place for tutorials, examples, design notes, or other detailed information that users and contributors may need. Read more… | . | Code Comments: Inline Documentation for Code Clarity: . | Well-placed comments within the code can clarify complex algorithms, decision-making, or reasons for significant changes. | Use comments to explain the why, not the what — the code speaks for itself on the latter. | . | . References . Expand 1. Jamiebuilds. “Jamiebuilds/Documentation-Handbook: How to Write High-Quality Friendly Documentation That People Want to Read.” GitHub, github.com/jamiebuilds/documentation-handbook. Accessed 15 Apr. 2024. 2. Maddy. “How to Write the Perfect Documentation for Your GitHub Project.” DEV Community, 11 July 2023, dev.to/maddy/how-to-write-the-perfect-documentation-for-your-github-project-4k38 3. “The Engineer’s Guide to Writing Meaningful Code Comments.” Stepsize CollabGPT: AI Collaboration for Software Teams. Daily Standups and More., stepsize.com/blog/the-engineers-guide-to-writing-code-comments. Accessed 15 Apr. 2024. ",
-    "url": "/docs/course/topic-1-git/chapter-4-git-best-practices/#effective-documentation",
+    "doc": "Dashboard",
+    "title": "DevSecOps Curriculum 💻",
+    "content": "Made by 2024 University of Washington Informatics Capstone Team Info Innovators . Sponsored by Boeing . Welcome to our open-source DevSecOps curriculum! . This comprehensive resource is designed to equip new graduates, companies, professors, students, and self-learners with practical skills in DevSecOps, thereby bridging the knowledge gap in its principles and practices. Our curriculum prepares students for a smooth transition from academic learning to the professional environment by focusing on real-world applications. ",
+    "url": "/#devsecops-curriculum-",
     
-    "relUrl": "/docs/course/topic-1-git/chapter-4-git-best-practices/#effective-documentation"
+    "relUrl": "/#devsecops-curriculum-"
   },"55": {
+    "doc": "Dashboard",
+    "title": "Why DevSecOps and CI/CD in Academia? 🎓",
+    "content": "The tech world is rapidly evolving, and with it, the requirements of the software industry are changing at an unprecedented pace. Traditional academic curricula often lag behind, particularly in areas like DevSecOps and CI/CD practices. This creates a significant skills gap for graduates entering the industry, who find themselves unprepared for the demands of modern software development and deployment. Key insights from our research highlight this disconnect: . | Skills Gap: As per the Veracode Global Skills Survey, about 70% of respondents stated that new graduates did not receive adequate training for their current positions. This gap is particularly evident in DevSecOps, where the integration of security in the development pipeline is crucial yet often overlooked in academic settings. | Demand for Cloud Skills: Institutions struggle to meet the burgeoning demand for cloud skills. Reports by 451 Research and Robert Half International show a significant portion of organizations and IT leaders citing a lack of skills in managing cloud deployments. | Security Risks: The skills gap in DevSecOps and cloud technology can lead to severe security risks, with data breaches often resulting from misconfigured access controls. A staggering 80% of companies experienced a data breach between 2019 and 2020, primarily due to such issues. | Lack of Practical Exposure: Students often graduate with coding skills but lack exposure to best practices and industry tools for deploying software in production, especially using cloud technologies. This lack of practical, hands-on experience creates a steep learning curve when entering the industry. | Cost and Accessibility of External Resources: Many existing online courses on cloud technologies and DevSecOps are expensive, making it difficult for students to access quality education in these areas. | . Our curriculum aims to fill this void by providing up-to-date, practical training in DevSecOps and CI/CD practices. By integrating our modules into existing courses, professors can enrich their curriculum, preparing students for the challenges of modern software development and making them valuable assets to the industry from day one. To understand the skills gap that new graduates face, refer to our User Research. ",
+    "url": "/#why-devsecops-and-cicd-in-academia-",
+    
+    "relUrl": "/#why-devsecops-and-cicd-in-academia-"
+  },"56": {
+    "doc": "Dashboard",
+    "title": "Benefits of Open-Source 🌍",
+    "content": ". | Continuous Evolution: Keeping the curriculum up-to-date with the latest industry advancements. | Accessibility: Democratizing education in DevSecOps. | Adaptability: Customizable for different educational settings. | Transparency and Trust: Encouraging scrutiny and feedback for quality content. | . ",
+    "url": "/#benefits-of-open-source-",
+    
+    "relUrl": "/#benefits-of-open-source-"
+  },"57": {
+    "doc": "Dashboard",
+    "title": "Contributing to the Curriculum 🤝",
+    "content": "Contributions are welcome! Help us keep the curriculum relevant and effective by updating content, adding new exercises, or providing feedback. Connect with the Creators 🔗 . | Sirena Akopyan | Bhavya Garlapati | Eric Kim | Mari Woodworth | Brandon Mendoza | . ",
+    "url": "/#contributing-to-the-curriculum-",
+    
+    "relUrl": "/#contributing-to-the-curriculum-"
+  },"58": {
+    "doc": "Dashboard",
+    "title": "Dashboard",
+    "content": " ",
+    "url": "/",
+    
+    "relUrl": "/"
+  },"59": {
     "doc": "Chapter 2 - Git Fundamentals",
     "title": "Git Fundamentals",
     "content": " ",
     "url": "/docs/course/topic-1-git/chapter-2-understanding-git/#git-fundamentals",
     
     "relUrl": "/docs/course/topic-1-git/chapter-2-understanding-git/#git-fundamentals"
-  },"56": {
+  },"60": {
     "doc": "Chapter 2 - Git Fundamentals",
     "title": "What is a repository?",
     "content": "Repositories are like digital libraries where all the files for a specific project are stored. It is the central hub where the creator of the repository (also known as a repo) can decide who can edit and view the files. In GitHub you can create as many repositories as you want and you will be able to control the structure and workflow you want for your project or organization. Creating &amp; Editing a New Repository . Everything that is done to create or edit a repository can be done on the site itself, or through your terminal! To learn how to create or edit one, see the following GitHub Documentation: . | Creating a Repository | Cloning a Repository | Adding a File to a Repo | . ",
     "url": "/docs/course/topic-1-git/chapter-2-understanding-git/#what-is-a-repository",
     
     "relUrl": "/docs/course/topic-1-git/chapter-2-understanding-git/#what-is-a-repository"
-  },"57": {
+  },"61": {
     "doc": "Chapter 2 - Git Fundamentals",
     "title": "Understanding Git Areas and Commands",
     "content": "Working Directory . The working directory is where you actively work on the files in your project. It contains all the changes you’ve made. Relevant Commands: . | git status: Show the status of changes as untracked, modified, or staged. | git checkout: Switch between branches or revert changes to files in your working directory. | . Staging Area . The staging area, or “index,” is a holding area for changes that are ready to be committed. It’s where you prepare and review changes before they are committed to the repository. Relevant Commands: . | git add: Add changes from the working directory to the staging area. | . Repository . The repository is where Git stores the history of your project. It contains all of your commits, each of which is a snapshot of your project at a point in time. Relevant Commands: . | git commit: Commit your staged changes to the repository. | git log: View the commit history of the repository. | git push: Upload your local repository content to a remote repository. | . Command Workflow . | Make changes in the working directory. | Use git add to select and move these changes to the staging area. | With git commit, save the changes from the staging area to your repository. | If using a remote repository, like on GitHub, git push shares your commits from the local repository to the remote. | . ",
     "url": "/docs/course/topic-1-git/chapter-2-understanding-git/#understanding-git-areas-and-commands",
     
     "relUrl": "/docs/course/topic-1-git/chapter-2-understanding-git/#understanding-git-areas-and-commands"
-  },"58": {
+  },"62": {
     "doc": "Chapter 2 - Git Fundamentals",
     "title": "What is a Branch?",
     "content": "A branch in Git encapsulates an independent line of development, enabling you to work on new features, bug fixes, or experiments separately from the main codebase. It’s akin to creating a parallel universe where you can make changes without affecting the ‘main’ or ‘master’ branch until you’re ready to merge those changes back in. Purpose of Branching . Branching serves several purposes: . | Isolation: Each branch isolates development work from other branches in the repository. This isolation enables you to work on different tasks simultaneously without impacting the stability of the main codebase. | Collaboration: Teams can collaborate on a project more effectively by using branches. Each team member can work on a specific branch without causing conflicts with others’ work. | Parallel Development: Branches enable concurrent development of multiple features, which can later be integrated into the main branch for release. | Experimentation: You can experiment with new ideas in a branch without the risk of destabilizing the codebase. If the experiment fails, you can discard the branch without any impact. | . How Branching Works . Creating a branch in Git is a fast and simple operation because it doesn’t copy files to the branch—instead, Git just creates a new pointer. Here’s how you can work with branches: . | Create a New Branch: git branch &lt;branch-name&gt; | Switch to a Branch: git checkout &lt;branch-name&gt; | Merge a Branch: To incorporate changes from one branch into another, you merge them. For example, you might merge a feature branch into the main branch once the feature is complete. | Delete a Branch: Once you’ve merged the changes and no longer need the branch, you can delete it with git branch -d &lt;branch-name&gt;. | . By using branches, you can manage the development of new features, fixes, and updates in a structured and organized manner, allowing for a smoother and more controlled workflow. References . Expand 1. “About Repositories.” GitHub Docs, docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories. Accessed 15 Apr. 2024. 2. “What Is a Git Repository?: Beginner Git Tutorial.” GitKraken, 17 Mar. 2023, www.gitkraken.com/learn/git/tutorials/what-is-a-git-repository. 3. Git Cheat Sheet, education.github.com/git-cheat-sheet-education.pdf. Accessed 15 Apr. 2024. 4. “3.1 Git Branching - Branches in a Nutshell.” Git, git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell. Accessed 15 Apr. 2024. 5. “Git &amp; Github Tutorial for Beginners #8 - Branches.” YouTube, YouTube, 14 June 2017, www.youtube.com/watch?v=QV0kVNvkMxc. ",
     "url": "/docs/course/topic-1-git/chapter-2-understanding-git/#what-is-a-branch",
     
     "relUrl": "/docs/course/topic-1-git/chapter-2-understanding-git/#what-is-a-branch"
-  },"59": {
+  },"63": {
     "doc": "Chapter 2 - Git Fundamentals",
     "title": "Chapter 2 - Git Fundamentals",
     "content": " ",
     "url": "/docs/course/topic-1-git/chapter-2-understanding-git/",
     
     "relUrl": "/docs/course/topic-1-git/chapter-2-understanding-git/"
-  },"60": {
+  },"64": {
     "doc": "Chapter 3 - Git Intermediate Concepts",
     "title": "Chapter 3 - Git Intermediate Concepts",
     "content": " ",
     "url": "/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/",
     
     "relUrl": "/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/"
-  },"61": {
+  },"65": {
     "doc": "Chapter 3 - Git Intermediate Concepts",
     "title": "Branching Strategies",
     "content": "Branching in Git allows multiple developers to work on different tasks simultaneously without interfering with each other’s work. Here are some common strategies: . | Feature Branching: Create branches for each new feature to keep changes isolated from the main codebase. | Release Branching: Maintain separate branches for release candidates, allowing for bug fixes and preparation for a production release. | Hotfix Branching: Quickly create branches to address urgent bugs in production code. | . Each strategy serves a specific purpose and can be chosen based on the team’s workflow and project requirements. ",
     "url": "/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/#branching-strategies",
     
     "relUrl": "/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/#branching-strategies"
-  },"62": {
+  },"66": {
     "doc": "Chapter 3 - Git Intermediate Concepts",
     "title": "Types of Merging",
     "content": "Merging is the process of integrating changes from one branch into another. Git offers several types of merges: . | Fast-Forward Merge: Moves the base branch pointer forward until it equals the feature branch’s pointer. | Three-Way Merge: Used when two branches have diverged. A new “merge commit” is created to join the two histories. | Squash Merge: Combines all feature branch commits into a single commit for a cleaner history when merging into the base branch. | . Understanding the implications of each merge type is crucial for maintaining a coherent project history. ",
     "url": "/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/#types-of-merging",
     
     "relUrl": "/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/#types-of-merging"
-  },"63": {
+  },"67": {
     "doc": "Chapter 3 - Git Intermediate Concepts",
     "title": "Important Concepts",
     "content": "Other intermediate concepts of version control include: . | Pull Requests (PRs): PRs are a feature of hosting services like GitHub and GitLab. They let you tell others about changes you’ve pushed to a branch in a repository. | Workflows: Workflows like Gitflow and GitHub Flow offer structured methods for branching and merging that fit different types of projects and development cycles. | Rebasing: Rebasing is an alternative to merging, rewriting the commit history to produce a straight, linear progression of changes. | Stashing: Save uncommitted changes in a stack while you switch branches. | . By mastering these concepts, developers can collaborate more effectively and maintain a clean, functional codebase. References . Expand 1. Atlassian. “A Guide to Optimal Branching Strategies in Git.” Atlassian, www.atlassian.com/agile/software-development/branching. Accessed 15 Apr. 2024. 2. Marijan, Bosko. “Git Branching Strategies: What Are Different Branching Strategies?” Knowledge Base by phoenixNAP, 19 Dec. 2023, phoenixnap.com/kb/git-branching-strategy. 3. Merrett, Luke. “Different Merge Types in Git.” Luke Merrett, 7 Aug. 2021, lukemerrett.com/different-merge-types-in-git. 4. “About Merge Methods on Github.” GitHub Docs, docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github. Accessed 15 Apr. 2024. 5. Price, Taylor R. “Git Merge: To Squash or Fast-Forward?” DEV Community, 23 Mar. 2023, dev.to/trpricesoftware/git-merge-to-squash-or-fast-forward-3791. 6. Wright, Mitchell. “What Is Version Control? 13 Key Concepts &amp; Terms to Know.” BloomTech, 28 Feb. 2024, www.bloomtech.com/article/version-control-vocabulary. 7. “About Pull Requests.” GitHub Docs, docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests. Accessed 15 Apr. 2024. 8. “About Git Rebase.” GitHub Docs, docs.github.com/articles/about-git-rebase. Accessed 15 Apr. 2024. ",
     "url": "/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/#important-concepts",
     
     "relUrl": "/docs/course/topic-1-git/chapter-3-Intermediate-Concepts/#important-concepts"
-  },"64": {
+  },"68": {
     "doc": "Chapter 1 - Introduction to Version Control",
     "title": "Chapter 1 - Introduction to Version Control",
     "content": " ",
     "url": "/docs/course/topic-1-git/chapter-1-version-control/",
     
     "relUrl": "/docs/course/topic-1-git/chapter-1-version-control/"
-  },"65": {
+  },"69": {
     "doc": "Chapter 1 - Introduction to Version Control",
     "title": "What is version control?",
     "content": "Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. It’s a critical tool in modern software development, allowing developers to work collaboratively, track every modification, and revert to previous states if necessary. Example Scenario . Armine and Tigran are part of a software development team tasked with creating a new mobile application. Armine is tasked with refining the user authentication system, while Tigran is implementing an innovative feature that allows users to share media within the app. Without Version Control: If Armine and Tigran are editing the same file, Tigran’s latest upload could accidentally overwrite the changes Armine made, resulting in a loss of progress and potential conflicts in the code. With Version Control: Armine and Tigran can work on their updates concurrently without the risk of interfering with each other’s contributions. Here’s how it unfolds: . | Independently, they make their changes and commit their updates to the version control system, each creating a new version in the repository. | The version control system alerts them to the presence of new, separate updates, signaling that a merge of changes is necessary. | Together, they examine the differences, carefully integrate their respective code changes, and commit the unified version to the repository. | Should an issue arise with the authentication update, Armine can revert her portion of the code to a previous state without disrupting Tigran’s feature, thanks to the version history maintained by the system. | . A common tool for version control is GitHub. GitHub allows you acts as a central hub for all of the different versions of your code, kind of how in google docs you can see the history of your changes. Though there are many different systems for version control, we will be learning using GitHubs features. The syntax and user interface of different products are different, but the core elements are the same. References . Expand 1. Atlassian. “What Is Version Control: Atlassian Git Tutorial.” Atlassian, www.atlassian.com/git/tutorials/what-is-version-control. Accessed 15 Apr. 2024. 2. “1.1 Getting Started - about Version Control.” Git, git-scm.com/book/en/v2/Getting-Started-About-Version-Control. Accessed 15 Apr. 2024. 3. “What Is Version Control?” GitLab, GitLab, 4 Apr. 2023, about.gitlab.com/topics/version-control/. ",
     "url": "/docs/course/topic-1-git/chapter-1-version-control/#what-is-version-control",
     
     "relUrl": "/docs/course/topic-1-git/chapter-1-version-control/#what-is-version-control"
-  },"66": {
+  },"70": {
     "doc": "Topic 1 - Git",
     "title": "Topic 1 - Git",
     "content": "| Chapter | Learning Objectives | Lab Description | . | Chapter 1: Introduction to Version Control | - Define version control- Understand the basics of version control systems- Explore the benefits of using version control- Introduction to common version control tools |   | . | Chapter 2: Git Fundamentals | - Explain the structure of repositories- Discuss the role of the staging area and commit history- Cover key Git commands and their uses |   | . | Chapter 3: Git Intermediate Concepts | - Define and utilize branching and merging strategies- Understand different types of merges- Discuss the importance of pull requests and rebasing | Lab: Version Control &amp; Branching- Clone a repository- Create and switch branches- Understand basic Git commands like git add, git commit, git push- Make and commit changes to a repository | . | Chapter 4: Git Best Practices | - Establish effective documentation habits- Discuss the importance of READMEs and wikis- Explore best practices for inline code commenting |   | . ",
     "url": "/docs/course/topic-1-git/",
     
     "relUrl": "/docs/course/topic-1-git/"
-  },"67": {
+  },"71": {
     "doc": "Chapter 1 - DevSecOps",
     "title": "Chapter 1 - DevSecOps",
     "content": " ",
     "url": "/docs/course/topic-3-devsecops/chapter-1-devsecops/",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-1-devsecops/"
-  },"68": {
+  },"72": {
     "doc": "Chapter 1 - DevSecOps",
     "title": "Defining DevSecOps",
     "content": ". | Dev = Development | Sec = Security | Ops = Operations | . DevSecOps is a methodology that integrates security practices within the DevOps process. The main goal of DevSecOps is to embed security in every part of the development lifecycle, from initial design through integration, testing, deployment, and software delivery. Ok, now what? You just have to start integrating this into your coding practices? Actually yes, the whole reason this curriculum is applicable for every person working in IT is because it is best development practice to have a secure lifecycle throughout all of the processes IT goes through when developing a project. Source: Red Hat . ",
     "url": "/docs/course/topic-3-devsecops/chapter-1-devsecops/#defining-devsecops",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-1-devsecops/#defining-devsecops"
-  },"69": {
+  },"73": {
     "doc": "Chapter 1 - DevSecOps",
     "title": "Why Implement DevSecOps:",
     "content": "The Importance of Security in SDLC: . The software development lifecycle (SDLC) is a framework used to develop, deploy, and maintain software. A common problem in software development is that security related activities are deferred until the testing phase, which is late in the SDLC after most of the critical design and implementation has been completed. Missing a security related risk could be costly, set back progress, and go unnoticed causing room for further severe impact. What is “Shift” Testing: . “Shift left” and “shift right” are terms that emphasize implementing security practices throughout the SDLC. By adopting shift left and shift right principles, teams are able to fix security flaws early on. They are meant to evaluate and ensure quality of the project by focusing on continuous testing methods. To shift left is to incorporate security testing as soon as possible to find vulnerabilities and fix defects as early as possible in development. To shift right is to monitor user behavior, usage, performance, and security metrics in the production stage to verify software operability. Source: Red Hat . ",
     "url": "/docs/course/topic-3-devsecops/chapter-1-devsecops/#why-implement-devsecops",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-1-devsecops/#why-implement-devsecops"
-  },"70": {
+  },"74": {
     "doc": "Chapter 1 - DevSecOps",
     "title": "Tools and technologies:",
     "content": "Infrastructure as code scanning | DevSecOps teams use open source tools like Terraform to manage and provision infrastructure like networks, virtual machines, and load balancers through code rather than doing it manually | Terraform helps ensure that infrastructure is set up and updated consistently across hundreds or thousands of servers | Infrastructure as a code scanning tools automatically check the infrastructure at the code level for noncompliance with security policies and standards | Source: Microsoft . Dynamic and Static Application Security Testing | Dynamic application security testing: This process of testing tests the methods a bad actor might use to attack an application. This testing occurs while the application is running and is based on predefined use cases. | Static application security testing: Before their code compiles, DevSecOps developers begin testing their custom code for security vulnerabilities. Static application security testing tools make this process easier with automatic checks and real-time feedback, often specifying exactly where an vulnerability is | | Source: Microsoft . Container Scanning | Container: A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another | Containers are widely used in DevSecOps because they help developers easily deploy self-contained units of code | Container Image: Within a container is a container image, which is a executable software bundle that runs processes for the container. These images are often built using existing images or pulled from public repositories. | Source 1: Docker . Source 2: Microsoft . References . 1. “What is DevSecOps?” Red Hat, https://www.redhat.com/en/topics/devops/what-is-devsecops. Accessed 8 Apr. 2024. 2. “What is DevSecOps?” Microsoft, https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops. Accessed 8 Apr. 2024. 3. “Use containers to Build, Share and Run your applications” Docker, https://www.docker.com/resources/what-container/. Accessed 8 Apr. 2024. 4. “Shift left vs. shift right” Red Hat, https://www.redhat.com/en/topics/devops/shift-left-vs-shift-right. Accessed 8 Apr. 2024. ",
     "url": "/docs/course/topic-3-devsecops/chapter-1-devsecops/#tools-and-technologies",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-1-devsecops/#tools-and-technologies"
-  },"71": {
+  },"75": {
     "doc": "Chapter 2 - Security Checks in CI/CD",
     "title": "Chapter 2 - Security Checks in CD/CD",
     "content": " ",
     "url": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/#chapter-2---security-checks-in-cdcd",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/#chapter-2---security-checks-in-cdcd"
-  },"72": {
+  },"76": {
     "doc": "Chapter 2 - Security Checks in CI/CD",
     "title": "The Importance of Security Checks in Each Stage of The Pipeline",
     "content": "A key component of DevSecOps is the introduction of a secure CI/CD pipeline. As you read in previous chapters, CI/CD is critical to DevSecOps because it: . | Automates and embeds security checks early in the development process | Ensures rapid feedback regarding potential vulnerabilities | Facilitates a proactive approach to security throughout the lifecycle of the application. | . Every organization has a different way of defining their pipeline and the stages involved. Regardless of how many stages there are, it is crucial to ensure every stage has security checks from all realms of IT involved. These stages can generally look like: . | The Planning phase: The first step is to develop a product roadmap (threat modeling), which will help identify potential security threats. In threat modeling, potential vulnerabilities are identified and countermeasures are set in place to mitigate those risks. | Coding: As developers begin writing code, take measures to make sure that the code is written in accordance with predefined standards and design guidelines. Use source code scanners to detect pieces of code that might be vulnerable to security threats. | Building: As developers begin committing their source code to a shared repository, they need to make sure that automated tests are triggered to verify that the builds comply with requirements. | Testing: Once a build is successful, test the software for bugs. If new features are added on, more automated testing is performed. | . The stages of SDLC can also be referred as the 6 stages: . | Project Planning | Gathering Code Requirements &amp; Analysis | Design and Build | Testing | Release | Deployment/Maintenance | . Source: Qentelli . Due to the nature of continuous integration, every change needs to be monitored and made sure that it’s safe to release. For every stage, there are multiple different controls that can be embedded to the process, whereas tool integrations are not sufficient by themselves for a secure CI/CD pipeline. Tools must be implemented to support the process mentioned above, but it’s important to understand which tools to use and when. Understanding SAST testing vs. DAST testing espscially during the build stages will help ensure a secure SDLC. ",
     "url": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/#the-importance-of-security-checks-in-each-stage-of-the-pipeline",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/#the-importance-of-security-checks-in-each-stage-of-the-pipeline"
-  },"73": {
+  },"77": {
     "doc": "Chapter 2 - Security Checks in CI/CD",
     "title": "SAST vs. DAST",
     "content": "| Category | SAST | DAST | . | Purpose | SAST involves analyzing source code, byte code, or binary code of an application without executing it. Its purpose is to detect security vulnerabilities early in the development process by identifying parts of the code that might lead to security breaches. | DAST involves testing an application’s security by simulating attacks on a running application. It aims to identify vulnerabilities that could be exploited during runtime, such as issues related to user authentication, SQL injection, and cross-site scripting (XSS). | . | Timeline | . | SAST is typically conducted at the very early stages of the development cycle, often integrated into the Integrated Development Environment (IDE) or Continuous Integration/Continuous Deployment (CI/CD) pipeline. | It is done before the application is run, usually as soon as the code is written. | . | . | Conducted later in the development cycle, often after the application is in a stable build and deployed in a testing environment. | It is performed on the running application in a safe envrionment, mimicking real-world hacking techniques. | . | . | Pros | . | Can detect vulnerabilities early in the development cycle, reducing the cost and effort of fixing them later | If you can prevent vulnerabilities in software before you launch, you'll have stronger code and a more reliable application | SAST can show you exactly where to find issues in the code | Can be automated and integrated into the development process, facilitating early and regular security checks | . | . | Can identify runtime and environmental issues that SAST cannot detect | Does not require access to source code, making it applicable to any application | Offers a real-world perspective on how an attacker might exploit vulnerabilities in a live application | . | . | Cons | . | Might produce false positives, requiring additional time for developers to sort through and validate issues | Only identifies potential security issues in the static code, without considering runtime behavior or external interactions | Requires access to the application's source code, which might not always be possible for third-party actors | . | . | Heavy reliance on experts to write tests, making it difficult to scale | Might miss certain types of vulnerabilities that can only be detected by analyzing the source code. | Can lead to false negatives, as some vulnerabilities might not be detectable during a dynamic scan or might depend on specific conditions to trigger. | . | . Comparison and Integration . Integrating both SAST and DAST in the security testing process provides a more comprehensive approach to application security. SAST can identify vulnerabilities early in the code, while DAST can test the application’s behavior in a runtime environment, catching issues that static analysis might miss. Together, they offer a balanced and thorough method for securing applications throughout the development lifecycle. ",
     "url": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/#sast-vs-dast",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/#sast-vs-dast"
-  },"74": {
+  },"78": {
     "doc": "Chapter 2 - Security Checks in CI/CD",
     "title": "Vulnerability scanning",
     "content": "Vulnerability scanning in a CI/CD pipeline refers to the automated process of identifying security weaknesses in the software code, dependencies, and runtime environments as part of the continuous integration and delivery process. This scanning can detect issues such as insecure coding practices, outdated libraries, misconfigurations, and other vulnerabilities that could potentially be exploited by attackers. You read above the difference between SAST testing and DAST testing. Those processes can be testing using a variety of tools. Some may be cheaper than others, require contracts with experts, or could just be a web plug in. Some of the most popular options you may hear of are listed below . Examples of widely-used tools in industry . SonarQube - A comprehensive tool that provides static code analysis, identifying vulnerabilities, bugs, and code smells in several programming languages . OWASP ZAP (Zed Attack Proxy) - An open-source dynamic application security testing tool that can identify security vulnerabilities in web applications during development and testing phases . Fortify - Provides static and dynamic application security testing tools to identify vulnerabilities in code and running applications . Veracode - Offers a suite of security tools, including static, dynamic, and interactive application security testing, to identify and fix vulnerabilities at various stages of the software development lifecycle . Snyk - Specializes in identifying and fixing vulnerabilities in open-source dependencies and container images, integrating seamlessly with CI/CD pipelines . GitLab CI/CD Security Scanning - Offers built-in security scanning features in its CI/CD pipelines, including static and dynamic analysis, dependency scanning, and container scanning . Jenkins with security plugins - Jenkins, a popular automation server, can be configured with various security plugins to perform static and dynamic analysis, as well as other security checks within the CI/CD pipeline . There are countless variations of vulnerability scanners out there and are constantly being innovated. Every software team should take throrough time to research and test as many tools as possible within their budget and timeline to ensure their pipeline is fully covered. References . 1. “What is CI/CD security?” Red Hat, Link. Accessed 9 Apr. 2024. 2. “Security in every stage of CI/CD pipeline” AWS, Link. Accessed 9 Apr. 2024. 3. “SAST, DAST, and IAST Security Testing” Contrast Security, Link. Accessed 9 Apr. 2024. 4. “How to use the Jenkins Security Scan “ Jenkins, Link. Accessed 9 Apr. 2024. 5. “SonarQube” SonarQube, Link. Accessed 9 Apr. 2024. 6. “Snyk Open Source” Snyk, Link. Accessed 9 Apr. 2024. 7. “Vulnerability Scanner Tools” Veracode, Link. Accessed 9 Apr. 2024. 8. “What is Fortify and How it works? An Overview and Its Use Cases” DevOps School, Link. Accessed 9 Apr. 2024. ",
     "url": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/#vulnerability-scanning",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/#vulnerability-scanning"
-  },"75": {
+  },"79": {
     "doc": "Chapter 2 - Security Checks in CI/CD",
     "title": "Chapter 2 - Security Checks in CI/CD",
     "content": " ",
     "url": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/"
-  },"76": {
+  },"80": {
     "doc": "Topic 2 - DevOps",
     "title": "DevOps Lab Infrastructure Setup Guide Overview",
     "content": "| Cloud Vendor | Setup Guide Link | . | AWS | DevOps Infrastructure Setup on AWS | . ",
     "url": "/docs/lab-setup-guide/topic-2-devops-lab/#devops-lab-infrastructure-setup-guide-overview",
     
     "relUrl": "/docs/lab-setup-guide/topic-2-devops-lab/#devops-lab-infrastructure-setup-guide-overview"
-  },"77": {
+  },"81": {
     "doc": "Topic 2 - DevOps",
     "title": "Topic 2 - DevOps",
     "content": " ",
     "url": "/docs/lab-setup-guide/topic-2-devops-lab/",
     
     "relUrl": "/docs/lab-setup-guide/topic-2-devops-lab/"
-  },"78": {
+  },"82": {
     "doc": "AWS",
     "title": "DevSecOps Lab Infrastructure Setup Guide on AWS",
     "content": "Estimated Cost: ~$1-2/day . This guide provides detailed instructions for setting up the necessary infrastructure on AWS to support the CI/CD labs in our curriculum. By following this guide, educators and learners will be able to prepare a robust environment for hands-on practice with continuous integration and continuous delivery. ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#devsecops-lab-infrastructure-setup-guide-on-aws",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#devsecops-lab-infrastructure-setup-guide-on-aws"
-  },"79": {
+  },"83": {
     "doc": "AWS",
     "title": "Prerequisites",
     "content": "Before setting up the infrastructure for the CI/CD labs on AWS, ensure that you have the following tools installed and configured on your machine. These tools are necessary for interacting with AWS services and for deploying and managing the infrastructure. Software Requirements . | Name | Purpose | Installation Guide | . | AWS CLI | To interact with Amazon Web Services. | Guide Link | . | Terraform | To provision AWS Infrastructure consistently and programmatically. | Guide Link | . | Git | To clone the infrastructure scripts. | Guide Link | . | WireGuard Client | To access internal services. | Guide Link | . Other Requirements . Active AWS Account: You need an active AWS account to provision AWS services. You will be billed accordingly for the AWS resources utilized during the labs. ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#prerequisites",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#prerequisites"
-  },"80": {
+  },"84": {
     "doc": "AWS",
     "title": "Configuring AWS CLI",
     "content": "Obtain Access Credentials . | Log into your AWS Management Console. | Navigate to IAM &gt; Users. | Click Create user. | Enter the desired user name, click next, and attach the AdministratorAccess policy. | After creation, click on the new user and navigate to the Security credentials tab, and click Create access key. | Generate a new access key for the Command Line Interface user case. Make sure to save these credentials securely. | . Configure the AWS CLI . | Open your terminal. | Run the following command: aws configure . | Enter the Access Key ID and Secret Access Key when prompted. | Specify the default region (e.g., us-west-1). This should be the region where you will deploy the resources. | . ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#configuring-aws-cli",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#configuring-aws-cli"
-  },"81": {
+  },"85": {
     "doc": "AWS",
     "title": "Setting Up The Infrastructure With Terraform",
     "content": "With the AWS CLI configured, the next step is to set up the actual lab infrastructure using Terraform. Terraform will allow you to automate the deployment of all required AWS resources. Clone The Infrastructure Setup Scripts . | Open your terminal. | Run the following command to clone the lab infrastructure setup repository. This repository contains all the necessary Terraform scripts for various lab topics. git clone https://github.com/open-devsecops/lab-infra-setup.git . | Change into the directory containing the Terraform scripts for Topic 3 DevOps lab: cd lab-infra-setup/topic-3-devsecops/aws . | . Initialize Terraform . | Within the Topic 3 - DevSecOps directory, initialize Terraform to install necessary providers and set up your environment. | In the terminal, enter the following: terraform init . | Before applying any changes, review what Terraform intends to do. This command will show you a list of resources that Terraform plans to create. terraform plan . | Apply the configuration to begin provisioning the AWS resources. terraform apply . | When prompted to Enter a value:, enter yes. | After Terraform successfully applies the configuration, it will output important information such as public IPs, or other commands and other data needed to access your resources. | . | Output Name | Description | Usage | . | SSH | SSH command to access the EC2 instance. | Use this command to SSH into the EC2 instance for administrative tasks or troubleshooting. | . | ec2_public_ip | The public IP address of the EC2 instance. | Needed to access various web interfaces for the lab, such as downloading VPN configurations, accessing Jenkins, etc. | . Please allow sufficient time for tools to install. After Terraform successfully provisions the AWS resources, it typically takes about 5 minutes for all software tools to be fully installed and operational on the provisioned resources. You can verify completion by entering in the terminal [ssh command] -f \"grep 'Lab Infrastructure Provisioning Complete' /var/log/cloud-init-output.log\". Example Output . aws_subnet.lab_public_subnet: Creation complete after 1s aws_route_table.lab_public_route_table: Creation complete after 1s aws_route_table_association.lab_pub_sub_rt: Creating... aws_route_table_association.lab_pub_sub_rt: Creation complete after 1s aws_security_group.lab: Creation complete after 2s aws_instance.topic-2-lab: Creating... aws_instance.topic-2-lab: Still creating... [10s elapsed] aws_instance.topic-2-lab: Creation complete after 13s Apply complete! Resources: 16 added, 0 changed, 0 destroyed. Outputs: SSH = \"ssh -i topic-2-cicd-lab-key.pem ubuntu@54.176.55.245\" ec2_public_ip = \"54.176.55.245\" . ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#setting-up-the-infrastructure-with-terraform",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#setting-up-the-infrastructure-with-terraform"
-  },"82": {
+  },"86": {
     "doc": "AWS",
     "title": "Accessing Internal Services",
     "content": "Use The VPN Config Generator . | Navigate to the VPN Config Generator at https://{ec2_public_ip}. Replace {ec2_public_ip} with the actual public IP address output by Terraform. | Download the VPN Configuration file | Import the VPN Configuration file into your WireGuard client. | Activate the VPN connection using WireGuard to securely connect to the internal network. | Access internal services such as http://dashboard.internal or http://jenkins.internal. | . ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#accessing-internal-services",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#accessing-internal-services"
-  },"83": {
+  },"87": {
     "doc": "AWS",
     "title": "Configuring Jenkins",
     "content": "Once your infrastructure is ready and you have connected to the internal network via VPN, you can proceed to set up Jenkins for the DevOps labs. | Navigate to http://jenkins.internal in your web browser. | To unlock Jenkins and begin setup, you need the initial admin password. Replace {ec2_public_ip} in the command below with the public ip in the terraform output. | . ssh -i topic-3-devsecops-lab-key.pem ubuntu@{ec2_public_ip} -f \"sudo docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword\" . Make sure you are in the topic-3-devsecops/aws directory where the SSH key is located before you enter the command. | Enter the modified command to retrieve the pasword. | Back in your web browser on the Jenkins unlock page, enter the initial admin password you retrieved to unlock . | Select the option to Install suggested plugins. | Once the plugin installation is complete, proceed to the Create First Admin User step. | Fill out the form with the admin username, password. | On the Instance Configuration page, ensure the Jenkins URL is set to http://jenkins.internal/. This should be populated automatically. | Click Save and Finish. | . ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#configuring-jenkins",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#configuring-jenkins"
-  },"84": {
+  },"88": {
     "doc": "AWS",
     "title": "Setting Up Jenkins",
     "content": ". Creating Student Account . Finally, let’s set up a student account that has the necessary permissions to create and manage pipelines but does not possess full administrative rights. | Click on Manage Jenkins from the main menu on the left. | Access Security &gt; Users | Click on Create User to set up a new account. | Return to Manage Jenkins and select Security &gt; Security. | Scroll to the Authorization section. | Select “Matrix-based security” from the list of Authorization strategies. | Click Add user. | Enter the username of the student account you created. | Configure the permissions for the student account as follows and click on “Save” to apply the changes. | . (Optional) Installing BlueOcean Plugin . BlueOcean improves the user experience of Jenkins, providing a more visual and intuitive approach to pipeline creation and management. | Go back to the Manage Jenkins page and select Manage Plugins. | Switch to the Available tab and use the search bar to find Blue Ocean. | Check the box next to Blue Ocean | Click on Install to begin installing the selected plugins. | . ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#setting-up-jenkins",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#setting-up-jenkins"
-  },"85": {
+  },"89": {
     "doc": "AWS",
     "title": "Security Tools Overview",
     "content": "Here are the security tools installed and configured for the lab: . | Tool | Purpose | Configuration Required | . | SonarQube | Static Application Security Testing (SAST) | Manual configuration in SonarQube and Jenkins. | . | Trivy | Container image scanning | Pre-installed, no manual configuration required. | . Ensure that you are connected to the internal network via VPN using the VPN configuration file from the previous steps. ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#security-tools-overview",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#security-tools-overview"
-  },"86": {
+  },"90": {
     "doc": "AWS",
     "title": "Configuring SonarQube",
     "content": ". SonarQube comes pre-installed, but some manual configuration is needed to integrate the SAST tool into the Jenkins pipeline that students will use for Topic 3 - DevSecOps labs. Generating Access Token . | Navigate to http://sonarqube.internal | Use the default credentials to log in. | Username: admin | Password: admin | . | After logging in for the first time, you will be prompted to change the admin password. | Click on the profile icon (top-right corner) and select My Account. | Navigate to the Security tab. | Enter a name for the token, select User Token as the type, and click Generate. | Copy the generated token. This token will be used to configure SonarQube in Jenkins. | . Creating Student Account . To allow students to read the project reports in SonarQube, we need to create a new user account with the appropriate permissions. | In SonarQube, go to the Administration tab. | Click on Security in the navigation bar, then select Users. | Click on the Create User button. | Enter in the details and click Create. | Login: student | Name: Student | Password: student1! | . | . Creating a New Quality Gate . A quality gate is a set of conditions that is used to ensure that the code meets certain standards before it is allowed to proceed through the CI/CD pipeline. The default Sonar way quality gate focuses only on new code, which means even if new issues and security hotspots are found, the project will pass, and the pipeline will continue to the next step. The purpose of this lab is for the students to utilize these tools to fix these issues until all issues and hotspots have been addressed. We need to create a new quality gate that includes conditions on Overall Code, ensuring that the project fails if there are any issues or if all security hotspots have not been reviewed. | In SonarQube, go to the Quality Gates tab. | Click on Create to create a new quality gate. | Click Unlock Editing. | Add the following conditions for Overall Code: . | Issues: is greater than 0 | Security hotspots reviewed: is less than 100% | . | To make this new quality gate the default, click on the vertical ellipsis icon beside the quality gate name and select Set as Default. | . SonarQube and Jenkins Integration . | In http://jenkins.internal, go to Manage Jenkins &gt; Manage Plugins. | Switch to the Available tab and search for SonarQube Scanner. | After installing the plugin, go to Manage Jenkins &gt; System. | Scroll down to the SonarQube servers section and click Add SonarQube. | Enter the following details: . | Name: sonarqube (This specific name is important because it is used in the Jenkinsfile within the reference application that the students use to go through the lab exercise) | Server URL: http://sonarqube.internal | Server authentication token: Use the token you generated from SonarQube. | Click Add &gt; Jenkins (If the Jenkins button does not appear when you click Add for the authentication token, try saving the configuration first, and then revisiting the SonarQube servers section). | Change kind to Secret text. | Paste in the access token from the previous step into Secret | Enter in the id. | Click Add. | Select the Jenkins credentials you just generated in Server authentication token | . | . | Click Save to save the configuration. | . ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#configuring-sonarqube",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/#configuring-sonarqube"
-  },"87": {
+  },"91": {
     "doc": "AWS",
     "title": "AWS",
     "content": " ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/aws/"
-  },"88": {
+  },"92": {
     "doc": "Topic 3 - DevSecOps",
     "title": "DevSecOps Lab Infrastructure Setup Guide Overview",
     "content": "| Cloud Vendor | Setup Guide Link | . | AWS | DevSecOps Lab Infrastructure Setup Guide on AWS | . ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/#devsecops-lab-infrastructure-setup-guide-overview",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/#devsecops-lab-infrastructure-setup-guide-overview"
-  },"89": {
+  },"93": {
     "doc": "Topic 3 - DevSecOps",
     "title": "Topic 3 - DevSecOps",
     "content": " ",
     "url": "/docs/lab-setup-guide/topic-3-devsecops-lab/",
     
     "relUrl": "/docs/lab-setup-guide/topic-3-devsecops-lab/"
-  },"90": {
+  },"94": {
     "doc": "Lab Infrastructure Setup Guide",
     "title": "Lab Infrastructure Setup Guide",
     "content": "Welcome to the lab infrastructure setup guide! . Here, we provide detailed instructions for setting up the necessary infrastructure to facilitate the interactive lab exercises included in the curriculum. Each topic requiring specific infrastructure has its own dedicated setup guide tailored to the needs of that particular module. These labs are designed to give students hands-on experience with real-world tools and technologies, enhancing their learning and understanding of key concepts. Professors, administrators, or self-learner can use these guides to prepare environments where students can practice and apply their knowledge. ",
     "url": "/docs/lab-setup-guide/",
     
     "relUrl": "/docs/lab-setup-guide/"
-  },"91": {
+  },"95": {
     "doc": "Lab Infrastructure Setup Guide",
     "title": "Infrastructure Setup Guides by Topic",
     "content": "Please follow the links to access detailed instructions for setting up the lab environment for each topic. | Topic Name | Chapters | Cloud Vendors | Setup Guide Link | . | Topic 2 - DevOps | Chapter 3 - Containerization Chapter 6 - Deployment | AWS | DevOps Infrastructure Setup Overview | . | Topic 3 - DevSecOps | Chapter 2 - Security Checks in CI/CD | AWS | DevSecOps Infrastructure Setup Overview | . ",
     "url": "/docs/lab-setup-guide/#infrastructure-setup-guides-by-topic",
     
     "relUrl": "/docs/lab-setup-guide/#infrastructure-setup-guides-by-topic"
-  },"92": {
-    "doc": "Home",
-    "title": "DevSecOps Curriculum 💻",
-    "content": "Made by 2024 University of Washington Informatics Capstone Team Info Innovators . Sponsored by Boeing . Welcome to our open-source DevSecOps curriculum! . This comprehensive resource is designed to equip new graduates, companies, professors, students, and self-learners with practical skills in DevSecOps, thereby bridging the knowledge gap in its principles and practices. Our curriculum prepares students for a smooth transition from academic learning to the professional environment by focusing on real-world applications. ",
-    "url": "/#devsecops-curriculum-",
-    
-    "relUrl": "/#devsecops-curriculum-"
-  },"93": {
-    "doc": "Home",
-    "title": "Why DevSecOps and CI/CD in Academia? 🎓",
-    "content": "The tech world is rapidly evolving, and with it, the requirements of the software industry are changing at an unprecedented pace. Traditional academic curricula often lag behind, particularly in areas like DevSecOps and CI/CD practices. This creates a significant skills gap for graduates entering the industry, who find themselves unprepared for the demands of modern software development and deployment. Key insights from our research highlight this disconnect: . | Skills Gap: As per the Veracode Global Skills Survey, about 70% of respondents stated that new graduates did not receive adequate training for their current positions. This gap is particularly evident in DevSecOps, where the integration of security in the development pipeline is crucial yet often overlooked in academic settings. | Demand for Cloud Skills: Institutions struggle to meet the burgeoning demand for cloud skills. Reports by 451 Research and Robert Half International show a significant portion of organizations and IT leaders citing a lack of skills in managing cloud deployments. | Security Risks: The skills gap in DevSecOps and cloud technology can lead to severe security risks, with data breaches often resulting from misconfigured access controls. A staggering 80% of companies experienced a data breach between 2019 and 2020, primarily due to such issues. | Lack of Practical Exposure: Students often graduate with coding skills but lack exposure to best practices and industry tools for deploying software in production, especially using cloud technologies. This lack of practical, hands-on experience creates a steep learning curve when entering the industry. | Cost and Accessibility of External Resources: Many existing online courses on cloud technologies and DevSecOps are expensive, making it difficult for students to access quality education in these areas. | . Our curriculum aims to fill this void by providing up-to-date, practical training in DevSecOps and CI/CD practices. By integrating our modules into existing courses, professors can enrich their curriculum, preparing students for the challenges of modern software development and making them valuable assets to the industry from day one. To understand the skills gap that new graduates face, refer to our User Research. ",
-    "url": "/#why-devsecops-and-cicd-in-academia-",
-    
-    "relUrl": "/#why-devsecops-and-cicd-in-academia-"
-  },"94": {
-    "doc": "Home",
-    "title": "Benefits of Open-Source 🌍",
-    "content": ". | Continuous Evolution: Keeping the curriculum up-to-date with the latest industry advancements. | Accessibility: Democratizing education in DevSecOps. | Adaptability: Customizable for different educational settings. | Transparency and Trust: Encouraging scrutiny and feedback for quality content. | . ",
-    "url": "/#benefits-of-open-source-",
-    
-    "relUrl": "/#benefits-of-open-source-"
-  },"95": {
-    "doc": "Home",
-    "title": "Contributing to the Curriculum 🤝",
-    "content": "Contributions are welcome! Help us keep the curriculum relevant and effective by updating content, adding new exercises, or providing feedback. Connect with the Creators 🔗 . | Sirena Akopyan | Bhavya Garlapati | Eric Kim | Mari Woodworth | Brandon Mendoza | . ",
-    "url": "/#contributing-to-the-curriculum-",
-    
-    "relUrl": "/#contributing-to-the-curriculum-"
   },"96": {
-    "doc": "Home",
-    "title": "Home",
+    "doc": "Chapter 4 - Git Best Practices",
+    "title": "Chapter 4 - Git Best Practices",
     "content": " ",
-    "url": "/",
+    "url": "/docs/course/topic-1-git/chapter-4-git-best-practices/",
     
-    "relUrl": "/"
+    "relUrl": "/docs/course/topic-1-git/chapter-4-git-best-practices/"
   },"97": {
+    "doc": "Chapter 4 - Git Best Practices",
+    "title": "Effective Documentation",
+    "content": "Proper documentation is key to the longevity and maintainability of software. You want to make sure if you abrubtly leave a project at any point, anyone else can pick it up without talking to you at all. | READMEs: Their Role and Key Elements to Include: . | A README is often the first item a visitor will see when visiting your repository. It should include a project title, description, installation instructions, usage, contributing guidelines, license information, and contact information for the maintainers. | Use the README to provide a high-level overview of the project and how all the pieces fit together. Read more… | . | Wiki: Using a Project’s Wiki for Extensive Documentation: . | For more detailed documentation, consider using the project’s wiki. It’s a great place for tutorials, examples, design notes, or other detailed information that users and contributors may need. Read more… | . | Code Comments: Inline Documentation for Code Clarity: . | Well-placed comments within the code can clarify complex algorithms, decision-making, or reasons for significant changes. | Use comments to explain the why, not the what — the code speaks for itself on the latter. | . | . References . Expand 1. Jamiebuilds. “Jamiebuilds/Documentation-Handbook: How to Write High-Quality Friendly Documentation That People Want to Read.” GitHub, github.com/jamiebuilds/documentation-handbook. Accessed 15 Apr. 2024. 2. Maddy. “How to Write the Perfect Documentation for Your GitHub Project.” DEV Community, 11 July 2023, dev.to/maddy/how-to-write-the-perfect-documentation-for-your-github-project-4k38 3. “The Engineer’s Guide to Writing Meaningful Code Comments.” Stepsize CollabGPT: AI Collaboration for Software Teams. Daily Standups and More., stepsize.com/blog/the-engineers-guide-to-writing-code-comments. Accessed 15 Apr. 2024. ",
+    "url": "/docs/course/topic-1-git/chapter-4-git-best-practices/#effective-documentation",
+    
+    "relUrl": "/docs/course/topic-1-git/chapter-4-git-best-practices/#effective-documentation"
+  },"98": {
     "doc": "Chapter 3 - Containerization",
     "title": "Definition of Containerization",
     "content": "Containerization in cloud computing is a method of packaging, distributing, and running applications using containers. A container is a: . | Standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably in different computing environments | Unlike virtual machines that require an entire virtual operating system, containers share the machine’s OS kernel and do not require the overhead of starting an OS, booting up, and then running the application. | Pros: This makes them lightweight, allowing a server to host more containers than if using virtual machines. | Containerization ensures that software runs reliably when moved from one computing environment to another. This is because the container encapsulates everything the software needs to run: the application itself, along with its runtime, libraries, and system settings. | . The standardized packaging of containers, managed by orchestration tools like Kubernetes, allows for automation in deploying, managing, scaling, and networking of containers. This brings about a high level of efficiency and scalability for applications, especially in cloud computing environments where resources need to be allocated and managed dynamically. Example of Functioning Kubernetes Dashboard . Source: ikarus . Containerization also supports microservices architectures, allowing for the segmentation of parts of a large application into small, independent services that are easier to develop, deploy, and maintain. This approach improves system resilience and scalability. In the cloud, these benefits are enhanced due to the inherent elasticity and resource management capabilities of cloud services. Overall, containerization is a crucial aspect of modern software development and deployment, enabling more efficient use of resources, faster deployment times, and greater consistency across environments. ",
     "url": "/docs/course/topic-2-DevOps/chapter-3-containerization/#definition-of-containerization",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-3-containerization/#definition-of-containerization"
-  },"98": {
+  },"99": {
     "doc": "Chapter 3 - Containerization",
     "title": "Use Cases",
     "content": ". | Cloud Migration: Cloud migration is a software strategy that involves encapsulating legacy applications in containers and deploying them in a cloud computing environment. Organizations can modernize their applications without rewriting the entire software code. | Microservices Architecture: The microservice architecture is a software development approach that uses multiple, interdependent software components to deliver a functional application. Each microservice has a unique and specific function. A modern cloud application consists of multiple microservices, containerization provides the software tool to pack microservices as deployable programs on different platforms. | IoT Devices: Internet of Things (IoT) devices contain limited computing resources, making manual software updating a complex process. Containerization allows developers to deploy and update applications across IoT devices easily. | . ",
     "url": "/docs/course/topic-2-DevOps/chapter-3-containerization/#use-cases",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-3-containerization/#use-cases"
-  },"99": {
+  },"100": {
     "doc": "Chapter 3 - Containerization",
     "title": "Advantages",
     "content": "Benefits of Containerization . | Isolation of Applications - Each container acts like a small, self-contained unit where a specific application and all its dependencies (libraries, frameworks, etc.) are packaged together. Applications in the container can run reliably and consistently across different computing environments because it has everything it needs to work/access within the container. | Portability - Software developers can use containerization to deploy applications in multiple environments now without re-writing the program code. A single application can be deployed into multiple operating systems. | Scalability - Can easily handle various technologies, packages, and containers on a single virtual machine. The container cluster can use computing resources from the a shared operating system, but one container doesn’t interfere with the operation of other containers. | Fault Tolerance - A single faulty container does not affect the other containers. This allows multiple containers to run micro-services on the cloud, increasing the resilience and availability of the application. | Agility - Software developers can use this isolated environment to troubleshoot and change the application code without interfering with the operating system, hardware, and other services. This can shorten software release cycles and work on updates quicker. | . Lab 1 - Containerizing a React Application . ",
     "url": "/docs/course/topic-2-DevOps/chapter-3-containerization/#advantages",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-3-containerization/#advantages"
-  },"100": {
+  },"101": {
     "doc": "Chapter 3 - Containerization",
     "title": "Artifact vs. Artifactory",
     "content": "Artifact: . An “artifact” typically refers to a container image. This image is a read-only template that contains a snapshot of an application and its dependencies at a specific point in time. It’s essentially a lightweight, portable, and reproducible package that can be used to create multiple containers with identical configurations. This image includes all necessary files, libraries, and configurations required to run an application. Container images are often built using a set of instructions that specify the software and configuration needed to create them. These images adhere to the Open Container Initiative (OCI) image specification, providing a standardized format for creating container images. Once created, these images can be stored and distributed in a registry, facilitating easy sharing across different environments. In simpler terms, think of an artifact like a recipe for an app. This recipe includes everything the app needs to work (like code, tools, and settings). But it’s just a set of instructions, not the running app itself. When you want to run the app, you use this recipe to create a “container,” which is like a mini-computer inside your main computer. It has everything the app needs to run, based on the recipe. This container is isolated, meaning it doesn’t interfere with other things on your computer. So, an artifact in containerization is basically the recipe or blueprint for creating a container that can run an app . This concept of container images as artifacts is fundamental in containerization, enabling the portability, agility, and scalability of applications within the cloud computing and DevOps landscapes . Artifactory: . A repository manager developed by JFrog that supports software packages created by different languages and technologies. It integrates seamlessly with various build tools and CI/CD pipelines, Artifactory is crucial for automating software development and deployment processes. It accommodates multiple package formats like Maven, NuGet, and Docker, providing a unified platform for artifact management. Additionally, it offers version control and secure storage for these artifacts. With its scalability and reliability, Artifactory is designed to meet the demands of both small and large-scale software development projects . Summary of Differences . An “artifact” refers to any file or collection of files that are produced as a result of a software development process. These can include compiled source code, libraries, executables, configuration files, and even Docker images. Artifacts are essentially the tangible outputs of your software development lifecycle, crucial for the functioning of the software project. On the other hand, “Artifactory” is a product developed by JFrog. It functions as a universal repository manager, capable of handling various types of artifacts. Artifactory provides a centralized solution for storing and distributing different types of artifacts, including container images, software packages, binaries, and more. It supports a wide range of package formats. Artifactory also offers integration with various build tools, CI/CD pipelines, and development environments, making it a versatile tool for managing artifacts in a software development process. So, while an “artifact” is a product of the software development process, “Artifactory” is a tool for managing these products. It’s a repository where various artifacts, including those from containerization processes, can be stored, managed, and distributed efficiently . Lab 2 - Accessing Corporate Network and AWS ECR . References . 1. “What is Containerization?” AWS, https://aws.amazon.com/what-is/containerization/#:~:text=Containerization%20involves%20building%20self%2Dsufficient,to%20run%20a%20containerized%20application. Accessed 20 Feb. 2024. 2. “What is containerization? Overview, definition, benefits, and tools”, Log Rocket, https://blog.logrocket.com/product-management/what-is-containerization-definition-benefits-tools/. Accessed 20 Feb. 2024. 3. “What is containerization?”, Red Hat, https://www.redhat.com/en/topics/cloud-native-apps/what-is-containerization. Accessed 20 Feb. 2024. 4. “Decoding the Difference: Artifacts vs Packages in Software Development”, cloudsmith, https://cloudsmith.com/blog/artifacts-vs-packages-what-is-the-difference. Accessed 20 Feb. 2024. 5. “Azure Container Registry between Artifactory: Exploring the Differences”, LevInfo, https://ievinfo.com/azure-container-registry-between-artifactory-differenc/. Accessed 20 Feb. 2024. ",
     "url": "/docs/course/topic-2-DevOps/chapter-3-containerization/#artifact-vs-artifactory",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-3-containerization/#artifact-vs-artifactory"
-  },"101": {
+  },"102": {
     "doc": "Chapter 3 - Containerization",
     "title": "Chapter 3 - Containerization",
     "content": " ",
     "url": "/docs/course/topic-2-DevOps/chapter-3-containerization/",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-3-containerization/"
-  },"102": {
+  },"103": {
     "doc": "Chapter 2 - Intro to CI/CD",
     "title": "Introduction to CI/CD",
     "content": "CI/CD, short for Continuous Integration and Continuous Delivery, is a part of the DevOps process. “It is a collection of principles and practices designed to help development teams ensure the reliable delivery of frequent code changes.” . Source: Mind The Product . ",
     "url": "/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/#introduction-to-cicd",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/#introduction-to-cicd"
-  },"103": {
+  },"104": {
     "doc": "Chapter 2 - Intro to CI/CD",
     "title": "DevOps vs. CI/CD",
     "content": "| Category | DevOps | CI | CD | . | Purpose | Facilitate collaboration and efficiency across the development lifecycle. | Automate testing to ensure code compatibility. | Automate deployment for seamless software releases. | . | Methods | . | Implement automation to streamline collaboration between development and operations teams. | Use infrastructure as code (IaC) to provision and manage infrastructure. | Integrate continuous feedback loops to gather insights from stakeholders and improve processes iteratively. | . | . | Automate the build and testing process for every code change. | Identify integration issues early in the development lifecycle. | Support the principle of \"fail fast\" by providing rapid feedback to developers. | . | . | Encompass both Continuous Integration and Continuous Deployment. | Automate the deployment process to production environments. | Enable organizations to release software updates quickly and reliably while minimizing risks. | . | . | Key Benefits | . | Promotes a culture of shared responsibility and accountability. | Emphasizes the importance of automating repetitive tasks to reduce manual errors and increase efficiency. | Focuses on delivering value to customers through rapid and iterative development cycles. | . | . | Increases code quality by identifying issues early in the development process. | Speeds up the development cycle by automating build and testing processes. | Enables rapid feedback to developers for quick iterations. | . | . | Accelerates time to market by automating deployment processes. | Minimizes risks associated with manual deployments. | Enhances overall software reliability and stability. | . | . References . Expand 1. Ashtari, Hossein et al. “Key Differences between CI/CD and DevOps.” Spiceworks, www.spiceworks.com/tech/devops/articles/cicd-vs-devops/. Accessed 20 Feb. 2024. 2. Ferringer, Megan. “Here’s the Difference between CI/CD and Devops-and How They Work Together to Drive Innovation.” Navisite, 2 Mar. 2023, www.navisite.com/blog/insights/ci-cd-vs-devops/. 3. “What the Hell Are CI/CD and DevOps? A Cheatsheet for the Rest of Us.” Mind the Product, www.mindtheproduct.com/what-the-hell-are-ci-cd-and-devops-a-cheatsheet-for-the-rest-of-us/. Accessed 20 Feb. 2024. 4. “The IDEAL &amp; Practical CI / CD Pipeline - Concepts Overview.” YouTube, 17 Feb. 2022, www.youtube.com/watch?v=OPwU3UWCxhw. 5. Morg, Brad. “How to Design a Modern CI/CD Pipeline.” YouTube, 17 Oct. 2023, www.youtube.com/watch?v=KnSBNd3b0qI. 6. Morg, Brad. “How to Design a Deployment Pipeline (GitOps).” YouTube, 30 Oct. 2023, www.youtube.com/watch?v=pJ9f7w4AxtU. ",
     "url": "/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/#devops-vs-cicd",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/#devops-vs-cicd"
-  },"104": {
+  },"105": {
     "doc": "Chapter 2 - Intro to CI/CD",
     "title": "Chapter 2 - Intro to CI/CD",
     "content": " ",
     "url": "/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-2-intro-to-ci-cd/"
-  },"105": {
+  },"106": {
     "doc": "Chapter 1 - Intro to DevOps",
     "title": "Introduction to DevOps",
     "content": " ",
     "url": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/#introduction-to-devops",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/#introduction-to-devops"
-  },"106": {
+  },"107": {
     "doc": "Chapter 1 - Intro to DevOps",
     "title": "Problem Space",
     "content": "🧐 Imagine you are writing code for a project idea you have yourself. As your project begins to grow, you hire more developers. Challenge: With new developers on board, miscommunication and bottlenecks in deploying updates start to emerge. The cohesive understanding of the project diminishes. As your product grows, along with your development team, the need for scalable systems intensifies. Retrofitting scalability into a codebase not originally designed for growth can lead to considerable challenges, necessitating potentially extensive revisions. Therefore, it’s crucial to incorporate scalability from the beginning, ensuring that your product’s success leads directly to improved performance and user satisfaction, rather than technical debt and operational difficulties. ",
     "url": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/#problem-space",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/#problem-space"
-  },"107": {
+  },"108": {
     "doc": "Chapter 1 - Intro to DevOps",
     "title": "Typical Division of Development and Operations Roles",
     "content": "In many companies, Development and Operations teams work independently, leading to distinct responsibilities: . | Development Team | Operations Team | . | - Focuses on rapid innovation and sprint-based feature development. | - Responsible for server infrastructure management and release deployments. | . | - Delivers completed code to Operations, often without extensive deployment discussions. | - Addresses integration challenges and clarifies requirements due to environment discrepancies. | . ",
     "url": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/#typical-division-of-development-and-operations-roles",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/#typical-division-of-development-and-operations-roles"
-  },"108": {
+  },"109": {
     "doc": "Chapter 1 - Intro to DevOps",
     "title": "Challenges",
     "content": "Isolation between Development and Operations: This can lead to communication gaps, conflicting objectives, and inefficiencies. 🧠 Big Idea: Developing a product, and then having a different team adapt it to your current production environment creates a lot of confusion and unnecessary back and forth. “Bureaucratic Development” 👉 Example: . In the \"MyApp\" project, a web app for document sharing, developers introduced a feature for previewing documents, relying on a third-party API. The development environment used a different API key than what was required for production, leading to a configuration mismatch when deployed. Issue: Upon deployment, users couldn't preview documents due to the incorrect API key used in production, a problem rooted in inadequate management of environment-specific configurations. Resolution: The operations team, upon reviewing application logs, identified and corrected the API key mismatch. To prevent future issues, they adopted a more systematic approach to configuration management, employing environment variables and configuration tools to ensure accurate settings across all environments. Outcome: The update resolved the feature's functionality in production. The incident underscored the importance of precise configuration management and prompted the integration of automation tools to streamline environment configuration, illustrating the critical role of DevOps in addressing deployment challenges efficiently. The Challenge: . | Delayed Releases: Frequent back-and-forth to resolve deployment problems slows down the introduction of new features. | Team Frustration: Developers are upset when their features don't go live as expected, while operations are burdened by unclear requirements and additional deployment efforts. | Inefficiencies: Significant time and effort spent addressing deployment issues lead to overall productivity losses. | . Slow Release Cycles: Manual processes and a lack of collaboration can lead to slow release cycles, delaying feedback and improvements. 🧠 Big Idea: By not having automatic processes for integration, testing, and deploying code, there is a large margin for human error and a slower rate of deployment. \"Manual Testing: Because Robots Need Breaks Too” 👉 Example: . In the \"StreamlineChat\" project, a real-time messaging application, the development team was excited to roll out a much-anticipated video calling feature. However, their process was heavily manual, involving code integration, testing, and deployment, which slowed down the release cycle significantly. Issue: The slow release cycle meant that it took months for the video calling feature to become available to users, during which time competitors introduced similar features, putting \"StreamlineChat\" at a disadvantage. Feedback on early versions of the feature, crucial for refining and improving, was also delayed, leading to a less competitive product at launch. Resolution: To tackle the slow release cycle, \"StreamlineChat\" decided to overhaul their development and deployment process. They implemented Continuous Integration (CI) and Continuous Deployment (CD) pipelines, automating the integration of code changes and deployment to testing and production environments. This was complemented by fostering a culture of collaboration between developers, testers, and operations teams to ensure smooth, continuous communication and quick resolution of any issues. Outcome: The adoption of CI/CD and enhanced teamwork dramatically shortened the release cycles for \"StreamlineChat,\" enabling them to deliver the video calling feature and subsequent updates more rapidly to their users. This not only improved their competitive stance in the market but also allowed for quicker iterations based on user feedback, significantly enhancing the feature's quality and user satisfaction. The shift to automated processes and collaborative practices highlighted the transformational impact of DevOps on speeding up software delivery and responsiveness to market needs. Inconsistency Across Environments: Manual configurations and deployments can lead to inconsistencies between development, testing, and production environments. 🧠 Big Idea: Inconsistencies across environments, stemming from manual configurations and lack of standardization, lead to discrepancies in application behavior and hinder reliable software delivery. 😦\"But it works on my machine\" syndrome 👉 Example: . | In the development environment, the new feature worked seamlessly. However, when the code was pushed to the testing environment, testers encountered numerous issues, including crashes and performance problems that were not present during development. | Further investigation revealed that the testing environment was running a different version of a key dependency, which was incompatible with the new feature's code. Additionally, certain environment-specific configurations were not correctly applied in the testing and production environments. | . Quality Assurance: Balancing the need for rapid releases with maintaining high-quality standards can be difficult. 🧠 Big Idea: Striking a balance between the speed of software releases and upholding high-quality standards poses a significant challenge, often leading to trade-offs that can compromise product integrity. 👉 In the development of \"CodeCraft,\" an IDE designed to support multiple programming languages, the team prioritized rapid feature releases to stay ahead of competitors. However, this focus on speed led to insufficient testing, resulting in features that were sometimes buggy or partially implemented upon release. Issue: Users experienced frequent crashes and performance issues with new features, undermining trust in the product. The root cause was identified as the lack of comprehensive testing and quality assurance (QA) processes, sacrificed in favor of quicker release cycles. Resolution: To address these quality issues without significantly slowing down releases, \"CodeCraft's\" development team integrated automated testing into their CI/CD pipeline, allowing for continuous testing of new code commits. Additionally, they adopted feature flagging to selectively roll out new features to subsets of users, enabling more controlled and gradual releases. Outcome: These measures improved the stability and quality of new releases, restoring user confidence in \"CodeCraft.\" The development team managed to maintain their rapid release schedule while significantly reducing the occurrence of bugs and crashes in production. This approach highlighted the essential role of DevOps practices in balancing the need for speed with quality assurance, demonstrating that with the right tools and processes, it is possible to achieve both. The Challenge: . | Compromised Quality: The rush to release new features often results in insufficient testing, leading to quality issues that affect user satisfaction. | Resource Strain: Allocating resources effectively between development speed and quality assurance becomes a challenge, with testing often being the first area to suffer cuts. | Reputation Risk: Frequent releases of buggy features can damage a product’s reputation, making users hesitant to adopt new updates or recommend the product to others. | . Visibility and Monitoring: Lack of visibility into application performance and system health can delay the identification and resolution of issues. 🧠 Big Idea: Insufficient visibility into application performance and system health can significantly hinder the timely detection and resolution of issues, affecting user experience and operational efficiency. “Driving with no mirrors” 👉 Example: . \"Streamline,\" a video conferencing platform, experienced intermittent downtimes and performance lags that were difficult to predict and diagnose. The development and operations teams struggled to pinpoint the root causes due to a lack of comprehensive monitoring tools and processes. Issue: Users reported varying degrees of service disruption, from minor lags to complete outages during peak usage times, but the absence of detailed monitoring meant that these issues often went unaddressed until they escalated. Resolution: To enhance their capability to proactively address system health and performance issues, \"Streamline\" implemented a suite of monitoring and logging tools. This included the integration of application performance monitoring (APM) tools to track real-time performance metrics and logging services to aggregate and analyze system logs across services. Outcome: With these tools in place, the \"Streamline\" team gained deeper insights into the platform's operational state, enabling them to identify and address bottlenecks and failures before they impacted users. This proactive approach not only improved the platform's overall stability and performance but also boosted user satisfaction and trust in the service. The adoption of advanced monitoring and logging tools exemplified the critical role of DevOps in ensuring system reliability and maintaining a high-quality user experience. The Challenge: . | Delayed Problem Detection: Without real-time monitoring, issues can go unnoticed until they significantly impact users, delaying response and resolution times. | Reactive vs. Proactive Management: A lack of visibility forces teams into a reactive stance, dealing with problems after they occur rather than preventing them. | Data Fragmentation: Disparate data sources and a lack of centralized logging can make it challenging to obtain a holistic view of system health, complicating troubleshooting efforts. | . Scalability and Infrastructure Management: Scaling applications and managing complex infrastructures manually is time-consuming and error-prone. 🧠 Big Idea: It’s difficult to scale with complex infrastructure, especially without a scalable foundation in place. ⌛️“Scaling on Quicksand” 👉 Example: . \"GlobalShop,\" an e-commerce platform, experienced rapid growth, leading to unpredictable traffic spikes, especially during holiday sales. The infrastructure, managed manually by the operations team, struggled to scale effectively, resulting in slow load times and, in severe cases, website outages. Issue: The manual process of scaling resources to meet demand was not only slow but also prone to human error, leading to either over-provisioning (and thus increased costs) or under-provisioning (resulting in poor user experience). Resolution: \"GlobalShop\" decided to automate their scalability and infrastructure management using cloud services and infrastructure as code (IaC). They implemented auto-scaling policies that dynamically adjusted resources based on real-time traffic and system load, ensuring optimal performance. Additionally, by using IaC, they could quickly replicate environments, manage configuration changes systematically, and ensure consistency across their infrastructure. Outcome: This strategic shift allowed \"GlobalShop\" to handle traffic surges smoothly, maintaining high availability and performance without the need for constant manual intervention. Operational costs were optimized through efficient resource use, and the platform's reliability boosted customer trust and satisfaction. The move to automated scalability and infrastructure management underscored the essential role of DevOps practices in enabling businesses to adapt rapidly and efficiently to market demands. The Challenge: . | Inefficient Resource Utilization: Manual scaling often leads to resource misallocation, impacting both costs and performance. | Slow Response to Demand Fluctuations: The inability to quickly adjust resources in response to traffic spikes or drops can degrade the user experience. | Increased Risk of Human Error: Manual management of complex infrastructures increases the likelihood of mistakes, which can lead to system instability or security vulnerabilities. | . Security Concerns: Integrating security into the software development lifecycle can be challenging, often leading to vulnerabilities. 🧠 Big Idea: Adding security after the application is already developed makes it hard to integrate because the code isn’t written to. “Using handcuffs on an octopus.” 👉 Example: . \"SafeNet,\" a finance management application, initially focused on delivering features rapidly to gain market share, often sidelining security considerations until the later stages of development. Issue: As \"SafeNet\" grew in popularity, it became a target for cyber attacks, exposing weaknesses in its security posture, such as insufficient data encryption and lack of secure coding practices. This led to data breaches, undermining user trust and attracting regulatory scrutiny. Resolution: To address these security lapses, \"SafeNet\" adopted a DevSecOps approach, integrating security practices at every stage of the development lifecycle. This included implementing automated security testing tools to scan for vulnerabilities early, adopting secure coding standards, and conducting regular security training for developers. Additionally, they implemented a robust incident response plan to quickly address any security issues that arose. Outcome: By embedding security into the development process, \"SafeNet\" significantly reduced its vulnerability to attacks, restoring user confidence and compliance with regulatory requirements. This shift not only improved the application's security posture but also fostered a culture of security awareness among the development team, highlighting the importance of proactive security measures in today's digital landscape. The Challenge: . | Late-stage Security Integration: Adding security features after development can reveal critical vulnerabilities too late in the process. | Cultural Hurdles: Shifting a team's focus from purely feature-driven development to include security considerations requires a cultural change. | Complex Security Landscape: Keeping up with evolving security threats and compliance requirements demands continuous attention and adaptation. | . Change Management: Managing and tracking changes across the development lifecycle can be complex, especially in larger teams or projects. 🧠 Big Idea: The larger your team is, the harder it is to track who is doing what, which causes many issues. “Mo devs, mo problems.” 👉 Example: . \"CodeFusion,\" a project management tool, saw its development pace bog down as the team grew. Every new feature seemed to bring a parade of merge conflicts and version confusion. Issue: The team's excitement turned into exasperation as more cooks in the code kitchen meant a messier recipe for deployment disasters. Resolution: \"CodeFusion\" adopted a streamlined branching strategy and introduced mandatory code reviews. They also embraced CI/CD pipelines for automated testing and smoother merges. Outcome: The chaos of conflicting code calmed into a coordinated dance of updates, speeding up releases and reducing developer headaches. The implementation of structured version control and CI/CD practices streamlined development processes and improved project outcomes. The Challenge: . | Version Conflicts: Managing simultaneous updates from multiple developers without a robust version control system leads to conflicts and errors. | Integration Challenges: Integrating changes from different branches of development without a clear process can result in bugs and delays. | Tracking and Accountability: Without effective change management tools, it becomes difficult to track who made what changes and why, complicating troubleshooting and accountability. | . ",
     "url": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/#challenges",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/#challenges"
-  },"109": {
+  },"110": {
     "doc": "Chapter 1 - Intro to DevOps",
     "title": "What is DevOps?",
     "content": "DevOps, short for Development &amp; Operations, is a term that describes a collection of different practices, ideas, and frameworks that streamline the development and collaboration process for a product. Source: Orange Matter . Pillars of DevOps: . | Collaborative Culture &amp; Shared Responsibility | Automation | Collecting &amp; Measuring Data | Continuous Feedback | . References . Expand 1. “The Importance of Scalability in Software Design.” Concepta Tech, www.conceptatech.com/blog/importance-of-scalability-in-software-design. Accessed 20 Feb. 2024. 2. “Why Is There a Divide between Dev and Ops?” CloudBees, www.cloudbees.com/blog/why-there-divide-between-dev-and-ops. Accessed 20 Feb. 2024. 3. Charboneau, Tyler. “What Is Devops?” Orange Matter, 9 Aug. 2023, orangematter.solarwinds.com/2022/03/21/what-is-devops/. 4. “Six Pillars of Devsecops Series.” CSA, cloudsecurityalliance.org/blog/2021/09/09/six-pillars-of-devsecops-series. Accessed 20 Feb. 2024. ",
     "url": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/"
-  },"110": {
+  },"111": {
     "doc": "Chapter 1 - Intro to DevOps",
     "title": "Chapter 1 - Intro to DevOps",
     "content": " ",
     "url": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-1-intro-to-devops/"
-  },"111": {
+  },"112": {
     "doc": "Chapter 4 - Webhooks",
     "title": "Utilizing Web Hooks for Continuous Integration",
     "content": "What is a Web Hook? . When deploying code, you want to make sure it is automatically running through several relevant tests without you triggering them every single time. A webhook is like a notification for your CI/CD tests, that you have done something with your code. To set up a webhook, you first need to define rules that it follows: . | Choose Trigger Events: During the webhook setup process in GitHub, you specify which events will trigger the webhook. This could be a variety of actions, such as: . | Pushes: Every time someone pushes code to the repository. | Pull Requests: When a new pull request is opened, closed, or merged. | Releases: When a new release is created. | Branch or Tag Creation: When a new branch or tag is created. | . | Set the Payload URL: This is where you want GitHub to send the notification. The URL is provided by the service you want to notify (your CI/CD platform, for example). | Configure Content Type: This determines how the data is formatted when sent to the receiver. JSON is a common format. | Determine Security Options: If your receiving service requires it, you might also set up a secret token that GitHub will use to sign the data, adding a layer of security to ensure the data is only accepted if it’s verified as coming from GitHub. | . Then, once you want to make a change, the following happens: . | You push code to GitHub - This is you updating your repository with new changes. | GitHub sends a webhook - Because of the rule you set up, GitHub notifies your CI/CD tool that something happened (like a code push). | CI/CD tool starts tests - The CI/CD tool, now informed by the webhook, starts running the tests or actions you’ve configured it to perform upon receiving such a notification. | . References . Expand 1. “About Webhooks.” GitHub Docs, https://docs.github.com/en/webhooks/about-webhooks. Accessed 11 Apr. 2024. 2. “What Are Webhooks and How Do They Work.” What Are Webhooks And How Do They Work, 14 Aug. 2021, https://hookdeck.com/webhooks/guides/what-are-webhooks-how-they-work. 3. “What Is a Webhook? Webhooks for Beginners.” YouTube, YouTube, 30 Nov. 2021, https://www.youtube.com/watch?v=mrkQ5iLb4DM. 4. “What Is a Webhook?” Red Hat - We Make Open Source Technologies for the Enterprise, https://www.redhat.com/en/topics/automation/what-is-a-webhook. Accessed 11 Apr. 2024. ",
     "url": "/docs/course/topic-2-DevOps/chapter-4-webhooks/#utilizing-web-hooks-for-continuous-integration",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-4-webhooks/#utilizing-web-hooks-for-continuous-integration"
-  },"112": {
+  },"113": {
     "doc": "Chapter 4 - Webhooks",
     "title": "Chapter 4 - Webhooks",
     "content": " ",
     "url": "/docs/course/topic-2-DevOps/chapter-4-webhooks/",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-4-webhooks/"
-  },"113": {
+  },"114": {
     "doc": "Topic 2 - DevOps",
     "title": "Topic 2 - Development &amp; Operations (DevOps)",
     "content": "| Chapter | Learning Objectives | Lab Description | . | Chapter 1: Intro to DevOps | - Define DevOps and explore its challenges and benefits- Discuss roles in Development and Operations and the DevOps lifecycle |   | . | Chapter 2: Intro to CI/CD | - Explain CI/CD within the DevOps framework- Discuss CI/CD lifecycle, benefits, and methods |   | . | Chapter 3: Containerization | - Define containerization and its advantages in cloud computing- Explore Kubernetes and microservices architectures- Learn about container application consistency | Lab 1: Containerizing a React Application- Create and run a Docker image of a React application- Interact with a running Docker containerLab 2: Accessing Corporate Network and AWS ECR- Establish a VPN and use AWS IAM credentials to authenticate and push Docker images to AWS ECR | . | Chapter 4: Webhooks | - Discuss the role and setup of webhooks in CI/CD automation- Explore webhook triggers and their applications |   | . | Chapter 5: Automated Tests | - Outline the role of automated testing in CI/CD- Discuss strategies and integration into the pipeline |   | . | Chapter 6: Deployment | - Define deployment environments and strategies- Explore deployment challenges in large-scale environments | Lab: Configuring a Simple Jenkins Pipeline- Automate a Dockerized application deployment using Jenkins- Create and configure a Jenkins pipeline with webhooks | . ",
     "url": "/docs/course/topic-2-DevOps/#topic-2---development--operations-devops",
     
     "relUrl": "/docs/course/topic-2-DevOps/#topic-2---development--operations-devops"
-  },"114": {
+  },"115": {
     "doc": "Topic 2 - DevOps",
     "title": "Topic 2 - DevOps",
     "content": " ",
     "url": "/docs/course/topic-2-DevOps/",
     
     "relUrl": "/docs/course/topic-2-DevOps/"
-  },"115": {
+  },"116": {
     "doc": "Course Overview",
     "title": "Course Overview 📖",
     "content": "| Topic | Chapter and Title | Interactive Lab | . | Git | Chapter 1: Version Control | | . | Chapter 2: Git Fundamentals | | . | Chapter 3: Git Intermediate Concepts | Yes | . | Chapter 4: Git Best Practices | | . | DevOps | Chapter 1: Intro to DevOps | | . | Chapter 2: Intro to CI/CD | | . | Chapter 3: Containerization | Yes | . | Chapter 4: Webhooks | | . | Chapter 5: Automated Tests | | . | Chapter 6: Deployment | Yes | . | DevSecOps | Chapter 1: DevSecOps | . | Chapter 2: Security Checks in CI/CD | Yes | . ",
     "url": "/docs/course/#course-overview-",
     
     "relUrl": "/docs/course/#course-overview-"
-  },"116": {
+  },"117": {
     "doc": "Course Overview",
     "title": "What is DevSecOps and CI/CD? 🔍",
     "content": "DevSecOps is an integration of development (Dev), security (Sec), and operations (Ops) practices. It’s a cultural shift that emphasizes security as a fundamental part of the software development lifecycle. By introducing security early in the development process, DevSecOps ensures that it’s a shared responsibility and not just an afterthought.1-3 . CI/CD, which stands for Continuous Integration and Continuous Delivery/Deployment, complements DevSecOps by automating the software delivery process. Continuous Integration refers to the practice of frequently integrating code changes into a shared repository, followed by automated testing. Continuous Delivery extends this by automatically releasing the validated changes to a repository, while Continuous Deployment goes a step further by automatically deploying the changes into production.4-6 . Our Literature Review provides a comprehensive look at existing academic and industry knowledge on DevSecOps. ",
     "url": "/docs/course/#what-is-devsecops-and-cicd-",
     
     "relUrl": "/docs/course/#what-is-devsecops-and-cicd-"
-  },"117": {
+  },"118": {
     "doc": "Course Overview",
     "title": "Why are they Important?🌟",
     "content": ". | Rapid and Secure Deployment: In a fast-paced tech environment, the ability to quickly develop and deploy software is crucial. DevSecOps and CI/CD enable this rapid deployment while maintaining high security standards. | Reduced Risk: Early integration of security in the development process significantly reduces vulnerabilities and the risk of late-stage security issues. | Efficiency and Reliability: Automation in CI/CD ensures that each integration is tested and validated, reducing human errors and increasing the reliability of the release process. | Cost-Effective: Identifying and fixing issues early in the development cycle is less expensive than making changes after deployment. This approach saves resources and time. | Competitive Advantage: Organizations that adopt these practices are more agile, can respond faster to market changes, and offer more secure and reliable products. | . Incorporating DevSecOps and CI/CD practices into academic curricula prepares students to meet the demands of modern software engineering, making them valuable assets to the industry from the outset. For a detailed understanding of the current market needs that our curriculum addresses, refer to our Market Research. ",
     "url": "/docs/course/#why-are-they-important",
     
     "relUrl": "/docs/course/#why-are-they-important"
-  },"118": {
+  },"119": {
     "doc": "Course Overview",
     "title": "Course Overview",
     "content": " ",
     "url": "/docs/course/",
     
     "relUrl": "/docs/course/"
-  },"119": {
+  },"120": {
     "doc": "Other Documents",
     "title": "Other Documents",
     "content": " ",
     "url": "/docs/other/",
     
     "relUrl": "/docs/other/"
-  },"120": {
+  },"121": {
+    "doc": "Community Hub",
+    "title": "Community Hub",
+    "content": " ",
+    "url": "/docs/Community%20Hub/",
+    
+    "relUrl": "/docs/Community%20Hub/"
+  },"122": {
     "doc": "AWS",
     "title": "DevOps Lab Infrastructure Setup Guide on AWS",
     "content": "Estimated Cost: ~$1/day . This guide provides detailed instructions for setting up the necessary infrastructure on AWS to support the CI/CD labs in our curriculum. By following this guide, educators and learners will be able to prepare a robust environment for hands-on practice with continuous integration and continuous delivery. ",
     "url": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#devops-lab-infrastructure-setup-guide-on-aws",
     
     "relUrl": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#devops-lab-infrastructure-setup-guide-on-aws"
-  },"121": {
+  },"123": {
     "doc": "AWS",
     "title": "Prerequisites",
     "content": "Before setting up the infrastructure for the CI/CD labs on AWS, ensure that you have the following tools installed and configured on your machine. These tools are necessary for interacting with AWS services and for deploying and managing the infrastructure. Software Requirements . | Name | Purpose | Installation Guide | . | AWS CLI | To interact with Amazon Web Services. | Guide Link | . | Terraform | To provision AWS Infrastructure consistently and programmatically. | Guide Link | . | Git | To clone the infrastructure scripts. | Guide Link | . | WireGuard Client | To access internal services. | Guide Link | . Other Requirements . Active AWS Account: You need an active AWS account to provision AWS services. You will be billed accordingly for the AWS resources utilized during the labs. ",
     "url": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#prerequisites",
     
     "relUrl": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#prerequisites"
-  },"122": {
+  },"124": {
     "doc": "AWS",
     "title": "Configuring AWS CLI",
     "content": "Obtain Access Credentials . | Log into your AWS Management Console. | Navigate to IAM &gt; Users. | Click Create user. | Enter the desired user name, click next, and attach the AdministratorAccess policy. | After creation, click on the new user and navigate to the Security credentials tab, and click Create access key. | Generate a new access key for the Command Line Interface user case. Make sure to save these credentials securely. | . Configure the AWS CLI . | Open your terminal. | Run the following command: aws configure . | Enter the Access Key ID and Secret Access Key when prompted. | Specify the default region (e.g., us-west-1). This should be the region where you will deploy the resources. | . ",
     "url": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#configuring-aws-cli",
     
     "relUrl": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#configuring-aws-cli"
-  },"123": {
+  },"125": {
     "doc": "AWS",
     "title": "Setting Up The Infrastructure With Terraform",
     "content": "With the AWS CLI configured, the next step is to set up the actual lab infrastructure using Terraform. Terraform will allow you to automate the deployment of all required AWS resources. Clone The Infrastructure Setup Scripts . | Open your terminal. | Run the following command to clone the lab infrastructure setup repository. This repository contains all the necessary Terraform scripts for various lab topics. git clone https://github.com/open-devsecops/lab-infra-setup.git . | Change into the directory containing the Terraform scripts for Topic 3 DevOps lab: cd lab-infra-setup/topic-2-devops/aws . | . Initialize Terraform . | Within the Topic 2 - DevOps directory, initialize Terraform to install necessary providers and set up your environment. | In the terminal, enter the following: terraform init . | Before applying any changes, review what Terraform intends to do. This command will show you a list of resources that Terraform plans to create. terraform plan . | Apply the configuration to begin provisioning the AWS resources. terraform apply . | When prompted to Enter a value:, enter yes. | After Terraform successfully applies the configuration, it will output important information such as public IPs, or other commands and other data needed to access your resources. | . | Output Name | Description | Usage | . | SSH | SSH command to access the EC2 instance. | Use this command to SSH into the EC2 instance for administrative tasks or troubleshooting. | . | ec2_public_ip | The public IP address of the EC2 instance. | Needed to access various web interfaces for the lab, such as downloading VPN configurations, accessing Jenkins, etc. | . Please allow sufficient time for tools to install. After Terraform successfully provisions the AWS resources, it typically takes about 5 minutes for all software tools to be fully installed and operational on the provisioned resources. You can verify completion by entering in the terminal [ssh command] -f \"grep 'Lab Infrastructure Provisioning Complete' /var/log/cloud-init-output.log\". Example Output . aws_subnet.lab_public_subnet: Creation complete after 1s aws_route_table.lab_public_route_table: Creation complete after 1s aws_route_table_association.lab_pub_sub_rt: Creating... aws_route_table_association.lab_pub_sub_rt: Creation complete after 1s aws_security_group.lab: Creation complete after 2s aws_instance.topic-2-lab: Creating... aws_instance.topic-2-lab: Still creating... [10s elapsed] aws_instance.topic-2-lab: Creation complete after 13s Apply complete! Resources: 16 added, 0 changed, 0 destroyed. Outputs: SSH = \"ssh -i topic-2-cicd-lab-key.pem ubuntu@54.176.55.245\" ec2_public_ip = \"54.176.55.245\" . ",
     "url": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#setting-up-the-infrastructure-with-terraform",
     
     "relUrl": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#setting-up-the-infrastructure-with-terraform"
-  },"124": {
+  },"126": {
     "doc": "AWS",
     "title": "Accessing Internal Services",
     "content": "Use The VPN Config Generator . | Navigate to the VPN Config Generator at https://{ec2_public_ip}. Replace {ec2_public_ip} with the actual public IP address output by Terraform. | Download the VPN Configuration file | Import the VPN Configuration file into your WireGuard client. | Activate the VPN connection using WireGuard to securely connect to the internal network. | Access internal services such as http://dashboard.internal or http://jenkins.internal. | . ",
     "url": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#accessing-internal-services",
     
     "relUrl": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#accessing-internal-services"
-  },"125": {
+  },"127": {
     "doc": "AWS",
     "title": "Configuring Jenkins",
     "content": "Once your infrastructure is ready and you have connected to the internal network via VPN, you can proceed to set up Jenkins for the DevOps labs. | Navigate to http://jenkins.internal in your web browser. | To unlock Jenkins and begin setup, you need the initial admin password. Use the command below to retrieve this. | . ssh -i topic-2-cicd-lab-key.pem ubuntu@{ec2_public_ip} -f \"sudo docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword\" . Make sure you are in the topic-2-devsecops/aws directory where the SSH key is located before you enter the command. | Back in your web browser on the Jenkins unlock page, enter the initial admin password you retrieved to unlock . | Select the option to Install suggested plugins. | Once the plugin installation is complete, proceed to the Create First Admin User step. | Fill out the form with the admin username, password. | On the Instance Configuration page, ensure the Jenkins URL is set to http://jenkins.internal/. This should be populated automatically. | Click Save and Finish. | . ",
     "url": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#configuring-jenkins",
     
     "relUrl": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#configuring-jenkins"
-  },"126": {
+  },"128": {
     "doc": "AWS",
     "title": "Setting Up Jenkins",
     "content": ". Creating Student Account . Finally, let’s set up a student account that has the necessary permissions to create and manage pipelines but does not possess full administrative rights. | Click on Manage Jenkins from the main menu on the left. | Access Security &gt; Users | Click on Create User to set up a new account. | Return to Manage Jenkins and select Security &gt; Security. | Scroll to the Authorization section. | Select “Matrix-based security” from the list of Authorization strategies. | Click Add user. | Enter the username of the student account you created. | Configure the permissions for the student account as follows and click on “Save” to apply the changes. | . (Optional) Installing BlueOcean Plugin . BlueOcean improves the user experience of Jenkins, providing a more visual and intuitive approach to pipeline creation and management. | Go back to the Manage Jenkins page and select Manage Plugins. | Switch to the Available tab and use the search bar to find Blue Ocean. | Check the box next to Blue Ocean | Click on Install to begin installing the selected plugins. | . ",
     "url": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#setting-up-jenkins",
     
     "relUrl": "/docs/lab-setup-guide/topic-2-devops-lab/aws/#setting-up-jenkins"
-  },"127": {
+  },"129": {
     "doc": "AWS",
     "title": "AWS",
     "content": " ",
     "url": "/docs/lab-setup-guide/topic-2-devops-lab/aws/",
     
     "relUrl": "/docs/lab-setup-guide/topic-2-devops-lab/aws/"
-  },"128": {
+  },"130": {
     "doc": "Labs Overview",
     "title": "Introduction",
     "content": "This lab introduces the concepts of containerization with Docker and the use of AWS Elastic Container Registry (ECR) as a shared container registry. You’ll gain hands-on experience by containerizing a React application and pushing the container image to a shared registry. This exercise is crucial for understanding how applications are packaged and distributed in a DevSecOps workflow. ",
     "url": "/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html#introduction",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html#introduction"
-  },"129": {
+  },"131": {
     "doc": "Labs Overview",
     "title": "Labs Overview",
     "content": "| Topic | . | Containerizing a React Application | . | Connecting to the Internal Network &amp; Pushing Image to AWS ECR | . ",
     "url": "/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html"
-  },"130": {
+  },"132": {
     "doc": "Labs Overview",
     "title": "Prerequisites",
     "content": "Tools . Before you begin this lab, ensure you have the following tools installed and ready on your machine: . | Name | Description | Installation Guide | . | Docker | Used for building and running containerized applications. | Download Link | . | Node.js | To run the React application locally. | Download Link | . | Git | For version control and forking the reference application repository. | Download Link | . | AWS CLI | To interact with Amazon Web Services and push images to a shared container registry (AWS ECR). | Download Link | . | Wireguard VPN | For establishing a VPN tunnel to connect to the internal network. | Download Link | . Skills and Knowledge . Below are the skills and knowledge expected to successfully complete the lab exercises: . | Basic command-line operations: You are comfortable navigating and executing commands in a terminal. | Basic Git operations: cloning, forking, committing, pushing. | Basic React knowledge: You understand how to run a React application locally | . ",
     "url": "/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html#prerequisites",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-3-containerization/lab/overview.html#prerequisites"
-  },"131": {
+  },"133": {
     "doc": "Labs Overview",
     "title": "Introduction",
     "content": "In Chapter 1, we explored the fundamentals of containerization and how to manually build and push Docker images to a shared container registry - AWS ECR. This manual process, however, introduces potential for human error. Transitioning from these manual workflows, Chapter 2 aims to streamline and automate these processes through the introduction of a basic CI/CD pipeline using Jenkins. By automating builds, tests, and deployments, we can significantly reduce the risk of errors, ensure consistency across environments, and accelerate the delivery of software updates. ",
     "url": "/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html#introduction",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html#introduction"
-  },"132": {
+  },"134": {
     "doc": "Labs Overview",
     "title": "Labs Overview",
     "content": "| Topic | . | Configuring a Simple CI/CD Pipeline | . ",
     "url": "/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html"
-  },"133": {
+  },"135": {
     "doc": "Labs Overview",
     "title": "Prerequisites",
     "content": "Tools . Before you begin this lab, ensure you have the following tools installed and ready on your machine: . | Name | Description | Installation Guide | . | Docker | Used for building and running containerized applications. | Download Link | . | Git | For version control and forking the reference application repository. | Download Link | . | Wireguard VPN | For establishing a VPN tunnel to connect to the internal network. | Download Link | . Skills and Knowledge . Below are the skills and knowledge expected to successfully complete the lab exercises: . | Basic Understanding of CI/CD Concepts | Basic Docker Fundamentals: Building, Pushing, Pulling, and Running an image. | . ",
     "url": "/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html#prerequisites",
     
     "relUrl": "/docs/course/topic-2-DevOps/chapter-6-deployment/lab/overview.html#prerequisites"
-  },"134": {
+  },"136": {
     "doc": "Labs Overview",
     "title": "Introduction",
     "content": " ",
     "url": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html#introduction",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html#introduction"
-  },"135": {
+  },"137": {
     "doc": "Labs Overview",
     "title": "Labs Overview",
     "content": "| Topic | . | Securing a Vulnerable Application | . ",
     "url": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html"
-  },"136": {
+  },"138": {
     "doc": "Labs Overview",
     "title": "Prerequisites",
     "content": "Tools . Before you begin this lab, ensure you have the following tools installed and ready on your machine: . | Name | Description | Installation Guide | . | Docker | Used for building and running containerized applications. | Download Link | . | Node.js | To run the React application locally. | Download Link | . | Git | For version control and forking the reference application repository. | Download Link | . | AWS CLI | To interact with Amazon Web Services and push images to a shared container registry (AWS ECR). | Download Link | . | Wireguard VPN | For establishing a VPN tunnel to connect to the internal network. | Download Link | . Skills and Knowledge . Below are the skills and knowledge expected to successfully complete the lab exercises: . | Basic command-line operations: You are comfortable navigating and executing commands in a terminal. | Basic Git operations: cloning, forking, committing, pushing. | Basic React knowledge: You understand how to run a React application locally | . ",
     "url": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html#prerequisites",
     
     "relUrl": "/docs/course/topic-3-devsecops/chapter-2-security-checks-in-CICD/lab/overview.html#prerequisites"
-  },"137": {
+  },"139": {
     "doc": "References",
     "title": "References",
     "content": ". | What Is Devsecops? - Developer Security Operations Explained - AWS, aws.amazon.com/what-is/devsecops/. Accessed 7 Feb. 2024. | “What Is DevSecOps?” IBM, www.ibm.com/topics/devsecops. Accessed 6 Feb. 2024. | “What Is DevSecOps and How Does It Work?” Synopsys, www.synopsys.com/glossary/what-is-devsecops.html. Accessed 6 Feb. 2024. | “What Is Ci/CD?” Red Hat - We Make Open Source Technologies for the Enterprise, www.redhat.com/en/topics/devops/what-is-ci-cd. Accessed 6 Feb. 2024. | “What Is Ci/CD?” GitLab, GitLab, 13 Apr. 2023, about.gitlab.com/topics/ci-cd/. | Atlassian. “Continuous Integration vs. Delivery vs. Deployment.” Atlassian, www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment. Accessed 6 Feb. 2024. | Chkadmin. “Why DevSecOps Is Important for Every Development Project.” Check Point Software, Check Point Software, 13 Sept. 2022, www.checkpoint.com/cyber-hub/cloud-security/devsecops/why-devsecops-is-important-for-every-development-project/. | “What Are the Benefits of CI/CD?: Teamcity CI/CD Guide.” JetBrains, www.jetbrains.com/teamcity/ci-cd-guide/benefits-of-ci-cd/. Accessed 6 Feb. 2024. | Zorabedian, John, et al. “Veracode Survey Research Identifies Cybersecurity Skills Gap Causes and Cures.” Veracode, www.veracode.com/blog/security-news/veracode-survey-research-identifies-cybersecurity-skills-gap-causes-and-cures. Accessed 6 Feb. 2024. | Cohen, Lior, et al. “Filling the Skills Gap for Effective Devsecops.” DevOps.Com, 24 Apr. 2020, devops.com/filling-the-skills-gap-for-effective-devsecops/. | “Addressing the DEVSECOPS Skill Gap.” We45 Blogs, www.we45.com/post/addressing-the-devsecops-skill-gap. Accessed 6 Feb. 2024. | Wylie Wong “To Optimize Cloud Deployments, Close the Skills Gap.” Technology Solutions That Drive Education, 26 June 2023, edtechmagazine.com/higher/article/2019/04/optimize-cloud-deployments-close-skills-gap-perfcon. | “What is DevSecOps?” Red Hat, https://www.redhat.com/en/topics/devops/what-is-devsecops. Accessed 8 Apr. 2024. | “What is DevSecOps?” Microsoft, https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops. Accessed 8 Apr. 2024. | “Use containers to Build, Share and Run your applications” Docker, https://www.docker.com/resources/what-container/. Accessed 8 Apr. 2024. | “Shift left vs. shift right” Red Hat, https://www.redhat.com/en/topics/devops/shift-left-vs-shift-right. Accessed 8 Apr. 2024. | “What is CI/CD security?” Red Hat, https://www.redhat.com/en/topics/security/what-is-cicd-security#:~:text=CI%2FCD%20security%20is%20used,policies%2C%20and%20ensure%20quality%20assurance.. Accessed 9 Apr. 2024. | “Security in every stage of CI/CD pipeline” AWS, https://docs.aws.amazon.com/whitepapers/latest/practicing-continuous-integration-continuous-delivery/security-in-every-stage-of-cicd-pipeline.html. Accessed 9 Apr. 2024. | “SAST, DAST, and IAST Security Testing” Contrast Security, https://www.contrastsecurity.com/security-influencers/why-the-difference-between-sast-dast-and-iast-matters. Accessed 9 Apr. 2024. | “How to use the Jenkins Security Scan ” Jenkins, https://www.jenkins.io/doc/developer/security/scan/. Accessed 9 Apr. 2024. | “SonarQube” SonarQube, https://www.sonarsource.com/products/sonarqube/. Accessed 9 Apr. 2024. | “Snyk Open Source” Snyk, https://snyk.io/product/open-source-security-management/?utm_medium=paid-search&amp;utm_source=google&amp;utm_campaign=gs_sn:-brand-ecpc&amp;utm_content=br_sca&amp;utm_term=snyk%20sca&amp;gad_source=1&amp;gclid=Cj0KCQjwztOwBhD7ARIsAPDKnkBbO4ZOhhLOMFnW3niLxxHAljuqKD8iOqe82_KTv9t4CDljRWacTd8aAlTxEALw_wcB. Accessed 9 Apr. 2024. | “Vulnerability Scanner Tools” Veracode, https://www.veracode.com/security/vulnerability-scanning-tools. Accessed 9 Apr. 2024. | “What is Fortify and How it works? An Overview and Its Use Cases” DevOps School, https://www.devopsschool.com/blog/what-is-fortify-and-how-it-works-an-overview-and-its-use-cases/. Accessed 9 Apr. 2024. | “What is Containerization?” AWS, https://aws.amazon.com/what-is/containerization/#:~:text=Containerization%20involves%20building%20self%2Dsufficient,to%20run%20a%20containerized%20application. Accessed 20 Feb. 2024. | “What is containerization? Overview, definition, benefits, and tools”, Log Rocket, https://blog.logrocket.com/product-management/what-is-containerization-definition-benefits-tools/. Accessed 20 Feb. 2024. | “What is containerization?”, Red Hat, https://www.redhat.com/en/topics/cloud-native-apps/what-is-containerization. Accessed 20 Feb. 2024. | “Decoding the Difference: Artifacts vs Packages in Software Development”, cloudsmith, https://cloudsmith.com/blog/artifacts-vs-packages-what-is-the-difference. Accessed 20 Feb. 2024. | “Azure Container Registry between Artifactory: Exploring the Differences”, LevInfo, https://ievinfo.com/azure-container-registry-between-artifactory-differenc/. Accessed 20 Feb. 2024. | . ",
     "url": "/docs/other/research/references.html",
     
     "relUrl": "/docs/other/research/references.html"
-  },"138": {
+  },"140": {
     "doc": "User Research",
     "title": "Research Insights",
     "content": " ",
     "url": "/docs/other/research/user-research.html#research-insights",
     
     "relUrl": "/docs/other/research/user-research.html#research-insights"
-  },"139": {
+  },"141": {
     "doc": "User Research",
     "title": "Key Stakeholders",
     "content": ". | Students, college-aged, going into SWE / Data Science / Cybersecurity | Professors in computer science / informatics departments . | INFO 442 Professor | INFO Software Architecture Lecturer | Cybersecurity Professor | . | Industry professionals in cloud computing and software engineering | . ",
     "url": "/docs/other/research/user-research.html#key-stakeholders",
     
     "relUrl": "/docs/other/research/user-research.html#key-stakeholders"
-  },"140": {
+  },"142": {
     "doc": "User Research",
     "title": "Survey - Students",
     "content": ". | 24 responses | 12 computer science majors | 12 Informatics majors | Year of study ranged | . ",
     "url": "/docs/other/research/user-research.html#survey---students",
     
     "relUrl": "/docs/other/research/user-research.html#survey---students"
-  },"141": {
+  },"143": {
     "doc": "User Research",
     "title": "Interviewees - Students",
     "content": ". | B - 1st year grad student in cybersecurity at NYU | S - 4th year Informatics student in UXR/PM/Data | R - 4th year Informatics student in software engineering | R - 4th year Informatics, data science minor in data | A - 2nd year computer science student in software engineering | . ",
     "url": "/docs/other/research/user-research.html#interviewees---students",
     
     "relUrl": "/docs/other/research/user-research.html#interviewees---students"
-  },"142": {
+  },"144": {
     "doc": "User Research",
     "title": "Research Notes",
     "content": "Full Survey Notes . | 70% know about DevSecOps but have never used it | 35% have used CI/CD in previous projects, but not proficient | 30% have heard of it but never used it | 83% have not taken classes on either . | They don’t know about the classes | Classes are not offered on a regular basis | . | Learning through . | YouTube | Previous internships | . | 57% have not used external resources to learn about DevSecOps/CICD | No one was very confident in this | Overall, 92% think it is important to be taught about in school | 52% are not confident at all in applying these concepts in industry | Quotes . | “I feel like these topics are very application based and are best learned through internships/jobs.” | “Lack of practice and guidance” | “The whole process can be confusing but it is mainly because there aren’t enough resources to teach that stuff” | “I feel like my major (Informatics) does a poor job of preparing aspiring professionals to go into the tech world, especially related to development. There are very few classes that I can name that teach these core concepts for DevSecOps, cloud computing/software, and CI/CD. We often have to supplement it with outside resources, which take up a lot of time and aren’t as nearly effective as taking them in a classroom setting.” | “We still are in an environment where security is very new and people still don’t want to adopt it, so in terms of classes, classes don’t really put an emphasis on security or just brush over DevSecOps when teaching students how to program or when teaching them a new technical skill” | “Well, I feel like there aren’t any classes that are tailored toward using CI/CD, and likewise for DevSecOps exclusively as far as I know.” | . | . Full Interview Notes . | B - grad student in cybersecurity . | Mostly 2s on tools, some 4s (code packaging tools) 2 = not confident on tools | Never took classes on it bc not interest in devops | INFO 310 / 340/330 glossed over | TryHackMe | Hackthebox | Coursera / Udemy – typical, other platforms might be more focused | leading to a new wave of programmers / devs going out into industry and creating more vulnerabilities (not tecahing devsecops) | Guided practice | Linkedin/Reddit are good resources. Google can be too ad-focused | sometimes difficult to find connection between reading about it and seeing it implemented | Talking to friends in swe - classes require it - used security people to deal with that - but if we teach everyone from the beginning to implement it, makes everything a whole lot safer and more secure, and better! Less work | . | R - senior in informatics, software engineering focus . | Confidence - i felt like i had to relearn a lot of coding practices when i was in both internships | Had to relearn a lot of core concepts in internship | Wasn’t really required in core curriculum - personally i just didn’t learn about the fact that those classes existed until i was well into my junior year - then at that point - i don’t really have that much time to take more classes - very done with info, focusing on minor | Amazon provided a whole training | CI/CD talked about in internship | Never taken 310, but 442, 441, 443 classes go over CI/CD | Mostly 2s and 3s - some 4s on platforms (not confident) | Never heard those terms before - i kinda understand the practices associated with them but never heard those specific terms in particular | Would look at YouTube first, Google | Personally - i learn best with both video and an example | Not confident applying knowledge | all code i have is really small scale for school projects - would be hard to apply principles that are meant to be used at scale for something smaller | Wish devsecops was taught in classes | Yes 100% - would probably have saved me a lot of time in your internships if i had known some more principles going in | . | A - Sophomore in software engineering, CS major . | All tools - 1-3 - lot of familiarity but not usage | Coursera / udemy - very do this, but not do it well | No courses teach this explicitly - pick it up along the way | Each company has own workflow - wouldn’t I have to relearn it | every company has own unique security vulnerability in tech stack | No wouldn’t feel confident diving straight in esp w someting as imporant as security | would look up api to check documentation for vulnerabilities | On Google - get content out of date, bad answers | Read a book on it | Coursera / udemy - very do this, but not do it well | Interactive labs in class setting - as homework sure - of course - all programing homeworks should be written basically - implementation | 1-2 confidence level in applying concepts | important to integrate into curriculum - but they do CI/CD pretty well already | cryptography, more theoretical, not towards industry use | dimly aware of classes | . | . Professor Interview Notes - A . | Class topics covered . | Start out with words, vocab that’s used in the industry for better communication. Huge piece that was missing for new grads who didn’t understand the vocab used in the industry related to architecture. | Second half, design patterns, zooming back in, specific patterns you would see in code to make it more maintainable. “Hard to learn as a student, they are not gonna be good at the start, need to practice a lot, something you develop over time.” | . | In class activities . | Can’t teach all patterns, practice learning patterns. Some labs - break up into 4 large group, each group will get a design pattern to learn. Each member will teach other groups one pattern that they learned. | Lots of reading, writing, and discussing things. Not a lot of coding. | Not a lot of software engineers know automated testing coming into the industry. | . | Taught class twice, things that didn’t go well, changed. Adding a new module - openness. Content needs to be ready to go - make as easy as possible. Demonstrate that the module applies to the course being taught. Server side development class would be a great candidate for CI/CD, DevSecOps. “If you convince the teacher that it’s a good idea to teach somethings that’s part of their course, and they’re gonna do it.” | Challenges to adding a module . | Professors often do add buffer space. Two lectures of buffer space. Really show the value of it. Make it a concise way, tangible exercises. They might be able to add a week or two worth of content to their existing lecture. | . | Once you get it in the course, they’re going to find out if it fits really well or not. Maybe provide a minimal version you could teach, some expanded stuff for later iterations of their course. Give them the resources, let them figure out what fits or not. | . ",
     "url": "/docs/other/research/user-research.html#research-notes",
     
     "relUrl": "/docs/other/research/user-research.html#research-notes"
-  },"143": {
+  },"145": {
     "doc": "User Research",
     "title": "⭐️ Full Insights",
     "content": "Class Availability . | 83% of survey respondents have not taken classes on either DevSecOps or security. | Lack of classes on DevSecOps/security in general; classes offered are not frequent and are more technical/theoretical (cryptography). | . Access to Resources . | 35% of survey respondents have used CI/CD in previous projects, but are not proficient. | External resources were utilized by those interested (YouTube, Reddit, LinkedIn, Google, Tryhackme, hackthebox). | . Term Familiarity . | 70% know about DevSecOps but have never used it. | 30% have heard of it but never used it. | 52% are not confident at all in applying these concepts in industry. | . Importance . | 92% of survey respondents agree that DevSecOps and CI/CD should be integrated into classes. | Almost all respondents believe DevSecOps should be taught in classes or at least integrated into coursework. | Many express a low confidence level in applying these concepts, highlighting a clear need for education in this area. | . Quotes on Importance . | “Yes, 100% - it would probably have saved me a lot of time in my internships if I had known some more principles going in.” | “It’s important to integrate into the curriculum - they do CI/CD pretty well already.” | “[Not teaching them is leading to a new wave of programmers/devs going out] into industry and creating more vulnerabilities (not teaching DevSecOps).” | . Tools - Learning / Education . | Tools ranking and familiarity seem to be higher among those who utilized them in internships, not in classes. | Interactive labs and hands-on exercises are highly valued in the learning process, with many students expressing that coding is best learned by doing. | Online learning platforms are used but often criticized for not teaching the application of knowledge effectively. | . Quotes on Tools and Education . | “I feel like these topics are very application-based and are best learned through internships/jobs.” | “Personally, I learn best with both video and an example.” | “All programming homework should be written basically - implementation is key.” | . ",
     "url": "/docs/other/research/user-research.html#%EF%B8%8F-full-insights",
     
     "relUrl": "/docs/other/research/user-research.html#️-full-insights"
-  },"144": {
+  },"146": {
     "doc": "User Research",
     "title": "Professor Insights",
     "content": "Professor Interview Notes (cont.) . | The need for teaching industry vocabulary and concepts is emphasized, with many students lacking understanding when they enter the workforce. | Practical application and teaching of design patterns are seen as crucial, yet challenging to implement effectively in the classroom. | Automated testing is a skill not commonly possessed by new software engineers, indicating a gap in practical training. | . Challenges and Suggestions for Course Integration . | Professors need to be shown the value of integrating new modules like DevSecOps into their curriculum. | Providing concise, tangible exercises and a minimal viable version of the module can encourage adoption. | Flexibility in course design is important, allowing educators to see how new content fits and to adjust accordingly. | . Git and DevOps in Education . | Efficient use of Git and understanding of pull requests (PRs) are identified as major areas where new graduates are lacking. | DevOps practices, particularly for full-stack engineers, are not well covered, leading to a knowledge gap in the industry. | Teaching Git management, including the use of .gitignore files, is suggested as a critical area for improvement in the curriculum. | . Industry Feedback . | Big companies often use their own in-house systems instead of GitHub, which can present a learning curve for new hires. | The gap between academic training and actual industry requirements is most evident in areas like DevSecOps, indicating an urgent need for curriculum updates. | Teaching practical aspects like managing PRs, rebasing, and merging is crucial for preparing students for real-world software development environments. | Emphasis on giving students practical exercises that mimic real-world scenarios can significantly improve their readiness for industry challenges. | . ",
     "url": "/docs/other/research/user-research.html#professor-insights",
     
     "relUrl": "/docs/other/research/user-research.html#professor-insights"
-  },"145": {
+  },"147": {
     "doc": "User Research",
     "title": "Conclusions and Recommendations",
     "content": "Addressing the Skills Gap . | There is a clear need for more comprehensive coverage of DevSecOps and CI/CD in academic curricula to bridge the skills gap. | Integrating practical, hands-on training with theoretical learning can enhance students’ understanding and application of these crucial concepts. | . Enhancing Classroom Learning . | Courses should include more interactive labs and coding exercises that reflect real-world scenarios. | Collaboration with industry professionals to design course content can ensure relevance and applicability. | . Improving Resource Accessibility . | More accessible and updated resources on DevSecOps and CI/CD should be made available to students. | Online platforms, while useful, need to focus more on practical application rather than just theoretical knowledge. | . Encouraging Industry-Academia Collaboration . | Facilitating stronger connections between academia and industry can help align educational content with current industry practices and needs. | Guest lectures and workshops by industry professionals can provide valuable insights and practical knowledge to students. | . Future Steps . | Continuous evaluation and update of the curriculum are necessary to keep pace with the rapidly evolving tech landscape. | Gathering feedback from both students and industry professionals post-implementation can guide future improvements in the curriculum. | . ",
     "url": "/docs/other/research/user-research.html#conclusions-and-recommendations",
     
     "relUrl": "/docs/other/research/user-research.html#conclusions-and-recommendations"
-  },"146": {
+  },"148": {
     "doc": "User Research",
     "title": "User Research",
     "content": " ",
