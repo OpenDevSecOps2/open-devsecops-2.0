@@ -8,7 +8,7 @@ you are currently on an 8 day streak of logging in. Keep it going! 🔥
 
 ---
 # DevSecOps Curriculum 💻
->> Made by 2024 University of Washington Informatics Capstone Team Info Innovators
+>> Made by 2025 University of Washington Informatics Capstone Team
 
 >> Sponsored by Boeing
 
