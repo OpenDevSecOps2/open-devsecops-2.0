@@ -1,3 +1,5 @@
+{% if page.title != "Chapter 2 Quiz" %}
+
 <script>
     /* Dynamically add the toc navbar after the side-bar element. This allows us
         to *not* have to override default.html in _layouts */
@@ -43,3 +45,4 @@
         lists[0].prepend(header);
     }
 </script>
+{% endif %}

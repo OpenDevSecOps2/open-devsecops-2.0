@@ -3,7 +3,7 @@ title: Chapter 2 - Git Fundamentals
 layout: custom
 parent: Topic 1 - Git
 has_toc: false
-has_children: false
+has_children: true
 nav_order: 2
 ---
 

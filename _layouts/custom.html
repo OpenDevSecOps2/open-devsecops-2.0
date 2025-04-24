@@ -2,6 +2,7 @@
 
 <html lang="{{ site.lang | default: 'en-US' }}">
 {% include head.html %}
+{% if page.title != "Chapter 2 Quiz" %}
 <div id="progress-container">
   <svg width="60" height="60" viewBox="0 0 100 100">
     <circle cx="50" cy="50" r="45" stroke="#ddd" stroke-width="10" fill="none"/>
@@ -13,7 +14,7 @@
   </svg>
   <span id="progress-text">0%</span>
 </div>
-
+{% endif %}
 
   {% include icons/icons.html %}
   <div class="master-container">
