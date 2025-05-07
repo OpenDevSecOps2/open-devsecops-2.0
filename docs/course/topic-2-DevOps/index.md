@@ -16,4 +16,14 @@ nav_order: 4
 | Chapter 4: Webhooks | - Discuss the role and setup of webhooks in CI/CD automation<br>- Explore webhook triggers and their applications |  |
 | Chapter 5: Automated Tests | - Outline the role of automated testing in CI/CD<br>- Discuss strategies and integration into the pipeline |  |
 | Chapter 6: Deployment | - Define deployment environments and strategies<br>- Explore deployment challenges in large-scale environments | **Lab: Configuring a Simple Jenkins Pipeline**<br>- Automate a Dockerized application deployment using Jenkins<br>- Create and configure a Jenkins pipeline with webhooks |
+<h2>Prefer To Learn By Video?</h2>
+
+<a href="https://www.youtube.com/watch?v=j5Zsa_eOXeY" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.youtube.com/vi/j5Zsa_eOXeY/0.jpg" alt="DevOps Engineering Course for Beginners">
+</a>
+
+<p><strong>Title:</strong> <a href="https://www.youtube.com/watch?v=j5Zsa_eOXeY" target="_blank" rel="noopener noreferrer">DevOps Engineering Course for Beginners
+</a><br>
+<strong>Author:</strong> freeCodeCamp.org<br>
+
 
