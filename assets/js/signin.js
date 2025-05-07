@@ -36,26 +36,52 @@ button.addEventListener('click', () => {
 // Create user image for later use
 const profileImage = document.createElement('img');
 profileImage.id = 'profile-pic';
+profileImage.alt = 'Profile Picture';
 profileImage.style.borderRadius = '50%';
-profileImage.style.border = '1px solid black';
 profileImage.style.width = '45px';
 profileImage.style.height = '45px';
-profileImage.style.verticalAlign = 'middle';
-profileImage.style.marginTop = 'auto';
-profileImage.style.marginBottom = 'auto';
-profileImage.style.marginLeft = '5px';
 
 // Checks whether or not someone has signed in
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        profileImage.src = user.photoURL;
-        profileImage.alt = 'Profile Picture';
-
-        // if signed in show sign in button with profile 
         if (ul.contains(button)) {
             ul.removeChild(button);
         }
-        ul.append(profileImage);
+        
+        // if signed in show sign in button with profile 
+        const link = document.createElement('a');
+        profileImage.src = user.photoURL;
+
+        link.style.verticalAlign = 'middle';
+        link.style.margin = '7px';
+
+        link.href = '/docs/other/profile.html'
+
+        link.appendChild(profileImage);
+        ul.append(link);
+
+        // Add profile info to top
+        const div = document.createElement('div');
+
+        // div CSS
+        div.style.marginTop = '12px';
+
+        const p1 = document.createElement('p');
+        p1.textContent = user.displayName;
+        p1.style.fontWeight = 'bold'
+        div.appendChild(p1)
+
+        // p1 CSS
+        p1.style.margin = '0';
+
+        const p2 = document.createElement('p');
+        p2.textContent = user.email;
+        div.appendChild(p2);
+
+        // p2 CSS
+        p2.style.margin = '0';
+
+        ul.append(div);
     } else {
         // if not signed in show sign in button
         ul.appendChild(button);
@@ -66,5 +92,3 @@ onAuthStateChanged(auth, (user) => {
 profileImage.addEventListener('click', () => {
     
 });
-
-console.log("Calling signin.js works");

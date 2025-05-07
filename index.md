@@ -1,5 +1,5 @@
 ---
-title: Dashboard
+title: Home
 layout: custom
 nav_order: 0
 ---
@@ -10,7 +10,7 @@ you are currently on an 8 day streak of logging in. Keep it going! 🔥
 # DevSecOps Curriculum 💻
 >> Made by 2025 University of Washington Informatics Capstone Team
 
->> Sponsored by Boeing
+>> Not sponsored by Boeing anymore
 
 Welcome to our open-source DevSecOps curriculum!
 
@@ -43,8 +43,8 @@ To understand the skills gap that new graduates face, refer to our [User Researc
 Contributions are welcome! Help us keep the curriculum relevant and effective by updating content, adding new exercises, or providing feedback.
 
 ### Connect with the Creators 🔗
-- [Sirena Akopyan](https://www.linkedin.com/in/sirena-akopyan/)
-- [Bhavya Garlapati](https://www.linkedin.com/in/bhavya-garlapati-95ab46225/)
-- [Eric Kim](https://www.linkedin.com/in/taehyunnkim/)
-- [Mari Woodworth](https://www.linkedin.com/in/marikowoodworth/)
-- [Brandon Mendoza](https://www.linkedin.com/in/bwmendo/)
+- [Ben Leland (Developer)](https://www.linkedin.com/in/ben-leland/)
+- [Jonathan To (UX Research/Design)](https://www.linkedin.com/in/jonathanto1/)
+- [Raymond Smith (Lit Review)](https://www.linkedin.com/in/raymondsmith100/)
+- [Uijin Lim (Developer)](https://www.linkedin.com/in/uijinlim/)
+- [Leo Zheng (UX Researcher/Developer)](https://www.linkedin.com/in/leozheng-/)

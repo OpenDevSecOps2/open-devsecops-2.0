@@ -5,16 +5,16 @@ nav_order: 0
 has_children: false
 ---
 
-<body>
+<body id='body-info'>
     <h2 class='heading'><strong>Profile</strong></h2>
-    <div class='profile-container'></div>
+    <div class='container' id='profile'></div>
 </body>
 
 <script type='module'>
     import auth from '../../assets/js/signin.js';
     import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
-    const div = document.querySelector('.profile-container');
+    const div = document.querySelector('#profile');
 
     onAuthStateChanged(auth, (user) => {
         div.innerHTML = '';
@@ -35,15 +35,17 @@ has_children: false
 
             const p = document.createElement('p');
             p.textContent = user.displayName;
-            p.className = 'user-name'
+            p.className = 'user-name container-text';
             info.appendChild(p);
 
             const p1 = document.createElement('p');
             p1.textContent = user.email;
+            p1.className = 'container-text';
             info.appendChild(p1);
 
             const p2 = document.createElement('p');
             p2.textContent = 'Member since: ' + user.metadata.creationTime;
+            p2.className = 'container-text';
             info.appendChild(p2);
 
             // add sign out button to change users if needed
@@ -57,10 +59,51 @@ has_children: false
             })
 
             div.appendChild(button);
+
+            // Add Certification Progress div
+            const body = document.querySelector('main');
+
+            const certHeader = document.createElement('h2');
+            certHeader.className = 'heading';
+            certHeader.textContent = 'Certification Progress';
+            certHeader.style.fontWeight = 'bold';
+            body.appendChild(certHeader);
+
+            const cert = document.createElement('div');
+            cert.className = 'container';
+            body.appendChild(cert);
+
+            const certification = document.createElement('img');
+            certification.src = '../../assets/images/certificate.jpg';
+            certification.alt = 'DevSecOps Certificate';
+            certification.className = 'container-element cert';
+            cert.append(certification);
+
+            const progress = document.createElement('div');
+            progress.className = 'container-element';
+            cert.append(progress);
+
+            const label = document.createElement('p');
+            label.textContent = 'DevSecOps Professional Certification';
+            label.style.fontSize = '20px'
+            label.style.fontWeight = 'bold';
+            progress.appendChild(label);
+
+            // Add Quiz Performance div
+            const quizHeader = document.createElement('h2');
+            quizHeader.className = 'heading';
+            quizHeader.textContent = 'Quiz Performance';
+            quizHeader.style.fontWeight = 'bold';
+            body.appendChild(quizHeader);
+
+            const quiz = document.createElement('div');
+            quiz.className = 'container';
+            body.appendChild(quiz);
+
         } else {
             // space showing that a user is not signed in
-            const container = document.querySelector('.profile-container');
-            container.className = 'profile-container signed-out'
+            const container = document.querySelector('#profile');
+            container.className = 'container signed-out'
             const button = document.createElement('button');
             container.appendChild(button);
 
@@ -75,10 +118,10 @@ has_children: false
 </script>
 
 <style>
-    .profile-container {
+    .container {
         display: flex;
         border: 1px solid #cccccc;
-        margin: 50px auto;
+        margin: 20px auto;
         justify-content: left;
         align-items: center;
         margin-top: 5px;
@@ -92,16 +135,18 @@ has_children: false
 
     .profile-img {
         border-radius: 50%;
-        border: 1px solid black;
     }
 
     .heading {
+        margin-top: 15px;
+        padding-top: 15px;
         margin-bottom: 0;
         color: #7253ed;
     }
 
     .user-name {
         font-weight: bold;
+        font-size: 20px;
     }
 
     .sign-out {
@@ -123,5 +168,15 @@ has_children: false
 
     .signed-out {
         justify-content: center;
+    }
+
+    .cert {
+        width: 150px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .container-text {
+        margin: 3px;
     }
 </style>
