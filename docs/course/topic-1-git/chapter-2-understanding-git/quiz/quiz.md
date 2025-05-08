@@ -6,409 +6,669 @@ parent: Chapter 2 - Git Fundamentals
 nav_order: 2
 ---
 
-<div id="git-quiz">
+<div id="quiz">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
     <style>
-        #git-quiz {
-            font-family: "Inter", sans-serif;
+        #quiz {
+            font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: black;
+        }
+
+        #quiz header {
             text-align: center;
-            margin: 0;
-            padding: 0;
-            color: white;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
         }
-        #git-quiz .main-container {
-            display: flex;
-            width: 100%;
-            min-height: 100vh;
-        }
-        #git-quiz .quiz-container {
-            background: radial-gradient(#CECECE, #7253ed);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            flex: 3;
-            margin: 20px;
-            position: relative;
-        }
-        #git-quiz .sidebar {
-            flex: 1;
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-            color: #333;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        #git-quiz .question-status {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            flex-grow: 1;
-        }
-        #git-quiz .sidebar h2 {
+
+        #quiz .chapter-name {
+            font-size: 30px;
+            font-weight: bold;
             text-align: left;
-            margin-bottom: 20px;
-            font-size: 18px;
-            color: #7253ed;
         }
-        #git-quiz .status-item {
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
+
+        #quiz .container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 2px 20px;
+            margin-bottom: 20px;
+            border: 2px solid lightgray;
+        }
+
+        #quiz .quiz-info {
+            justify-content: space-between;
+            margin-bottom: 20px;
             font-weight: bold;
         }
-        #git-quiz .status-item.correct {
-            background-color: #BEE6B7;
-            color: #147638;
-        }
-        #git-quiz .status-item.incorrect {
-            background-color: #FFDEDE;
-            color: #EF4444;
-        }
-        #git-quiz .status-item.pending {
-            background-color: #f0f0f0;
-            color: #666;
-        }
-        #git-quiz .start-quiz {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        #git-quiz .start-quiz h1 {
-            padding-top: 175px;
-        }
-        #git-quiz .start-btn {
-            padding: 12px 30px;
-            background-color: #ffffff;
-            color: #7253ed;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 18px;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        #git-quiz .start-btn:hover {
-            background-color: #f0f0f0;
-        }
-        #git-quiz .question {
-            font-size: 24px;
-            margin: 50px 0 25px 0;
-        }
-        #git-quiz .options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        #git-quiz button {
-            padding: 10px;
+
+        #quiz .btn {
+            font-size: 16px;
+            display: inline-block;
             background-color: #315EEB;
             color: white;
-            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
+            font-weight: bold;
+            margin-right: 10px;
+            border: none;
             cursor: pointer;
-            font-size: 16px;
         }
-        #git-quiz button:hover {
+
+        #quiz .btn:hover {
             background-color: #1046e9;
         }
-        #git-quiz .option-btn {
-            padding: 20px;
-            text-align: left;
-            background-color: white;
-            color: black;
+
+        #quiz .return-link {
+            color: #315EEB;
+            text-decoration: none;
+        }
+
+        #quiz .return-link:hover {
+            text-decoration: underline;
+        }
+
+        #quiz .actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #quiz p + ul, h3 + ul {
+            margin-top: -15px;
+        }
+
+        #quiz h2 {
+            font-size: 20px;
+        }
+
+        #quiz #quiz-container {
+            display: none;
+        }
+
+        #quiz .progress-container {
+            width: 100%;
+            background-color: #e4e4e4;
+            border-radius: 10px;
+            margin: 20px 0 40px;
+        }
+
+        #quiz .progress-bar {
+            height: 10px;
+            background-color: #7253ed;
+            border-radius: 9px;
+            transition: width 0.3s ease;
+        }
+
+        #quiz .question-container {
+            margin-bottom: 20px;
+        }
+
+        #quiz .options {
+            margin: 15px 0;
+        }
+
+        #quiz .option {
+            margin: 10px 0;
+            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
         }
-        #git-quiz .option-btn:hover {
-            background-color: #f0f0f0;
+
+        #quiz .option:hover {
+            background-color: #f5f5f5;
         }
-        #git-quiz .option-btn.selected {
-            background-color: #CFC3FF;
+
+        #quiz .option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
         }
-        #git-quiz .option-btn.correct {
-            background-color: #BEE6B7;
-            color: #147638;
+
+        #quiz .option.selected {
+            background-color: #e0e0e0;
         }
-        #git-quiz .option-btn.incorrect {
-            background-color: #FFDEDE;
-            color: #EF4444;
-        }
-        #git-quiz .progress {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 5px 10px;
-            border-radius: 5px;
-            color: #333;
-        }
-        #git-quiz .result-header {
-            font-size: 28px;
-            margin-bottom: 20px;
-            margin-top: 50px;
-            color: white;
-        }
-        #git-quiz .result {
-            font-size: 24px;
-            margin-top: 175px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        #git-quiz .feedback {
-            margin: 15px 0;
-            font-size: 24px;
-            font-weight: bold;
-            min-height: 24px;
-        }
-        #git-quiz .hidden {
-            display: none;
-        }
-        #git-quiz #next-btn, #git-quiz #dash-btn {
-            width: 100%;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
+
+        #quiz .quiz-btn, .return-btn {
+            width: 160px;
             background-color: #315EEB;
             color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px;
         }
-        #git-quiz #next-btn:hover {
-            background-color: #1E4BD6;
+
+        #quiz .return-btn {
+            background-color: white;
+            color: #315EEB;
+            box-shadow: inset 0 0 0 2px #315EEB;
         }
-        #git-quiz .progress-container {
-            width: 100%;
-            height: 8px;
-            background-color: #e0e0e0;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            margin-top: 20px;
+
+        #quiz .quiz-btn:hover {
+            background-color: #1046e9;
         }
-        #git-quiz .progress-bar {
-            height: 100%;
-            background-color: #7253ed;
-            border-radius: 4px;
-            transition: width 0.3s ease;
+
+        #quiz .return-btn:hover {
+            text-decoration: underline;
         }
-        #git-quiz .progress-text {
+
+        #quiz .feedback-correct {
+            background-color: #e7f9eb;
+            padding: 0 20px;
+            border-radius: 5px;
+            border: 1px solid #54b56b;
+            margin: 25px 0;
+        }
+
+        #quiz .feedback-incorrect {
+            background-color: #fff4f4;
+            padding: 0 20px;
+            border-radius: 5px;
+            border: 1px solid #df7d87;
+            margin: 25px 0;
+        }
+
+        #quiz .hidden {
+            display: none;
+        }
+
+        #quiz .quiz-complete {
+            text-align: center;
+        }
+        
+        #quiz #areas-for-review {
             text-align: left;
-            font-size: 14px;
-            color: #7253ed;
+            background-color: #fef7ed;
+            border-radius: 8px;
+            border: 1px solid #ebcfa8;
+            margin-bottom: 20px;
+        }
+        
+        #quiz .review-section h3 {
             margin-bottom: 5px;
         }
+
+        #quiz .review-item {
+            text-align: left;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        #quiz .review-item.correct-review {
+            background-color: #e7f9eb;
+            border: 1px solid #54b56b;
+        }
+
+        #quiz .review-item.incorrect-review {
+            background-color: #fff4f4;
+            border: 1px solid #df7d87;
+        }
+
+        #quiz .review-question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        #quiz .user-answer {
+            color: #333;
+            margin-left: 25px;
+        }
+
+        #quiz .option-letter {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        #quiz .score-container {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border: 2px solid lightgray;
+        }
+
+        #quiz .score-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #315EEB;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        #quiz .score-display {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+        }
+
+        #quiz .score-numerator {
+            font-size: 32px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        #quiz .score-divider {
+            font-size: 24px;
+            margin: 0 2px;
+            line-height: 1;
+        }
+
+        #quiz .score-denominator {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        #quiz .completion-message {
+            text-align: left;
+            margin-left: 20px;
+            <!-- flex-grow: 1; -->
+            <!-- justify-content: left; -->
+        }
     </style>
-    <div class="main-container">
-        <div class="quiz-container">
-            <div id="start-quiz" class="start-quiz">
-                <h1>Chapter 2: Git Fundamentals</h1>
-                <button id="start-btn" class="start-btn">Start Quiz</button>
+
+    <div id="intro-page">
+        <header>
+            <div class="chapter-name">Chapter 1 - Introduction to Version Control Quiz</div>
+        </header>
+        
+        <div class="container">
+            <p>This quiz covers the key concepts from Chapter 1 - Introduction to Version Control.</p>
+            <p>You'll be tested on:</p>
+            <ul>
+                <li>The purpose and benefits of version control</li>
+                <li>Common version control terminology</li>
+                <li>How version control enables collaboration</li>
+                <li>Using Git and GitHub</li>
+            </ul>
+        </div>
+
+        <div class="quiz-info">
+            <div>Number of questions: 7</div>
+            <div>Estimated time: 5-7 minutes</div>
+        </div>
+        
+        <div class="container">
+            <h3>Instructions</h3>
+            <ul>
+                <li>Select the best answer for each multiple-choice question</li>
+                <li>You'll receive immediate feedback after answering</li>
+                <li>At the end, you'll see a summary of your results</li>
+            </ul>
+        </div>
+        
+        <div class="actions">
+            <button id="start-quiz-btn" class="btn">Start Quiz</button>
+            <a href="#" class="return-link">Return to Chapter</a>
+        </div>
+    </div>
+    
+    <div id="quiz-container">
+        <h3 style="font-weight: normal;" id="question-counter">Question 1 of 7</h3>
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        
+        <div id="question-container" class="question-container"></div>
+        
+        <div id="options-container" class="options"></div>
+        
+        <button id="submit-btn" class="quiz-btn hidden">Submit Answer</button>
+        
+        <div id="feedback-container"></div>
+        
+        <button id="next-btn" class="quiz-btn hidden">Next Question</button>
+    </div>
+    
+    <div id="quiz-complete" class="quiz-complete hidden">
+        <div class="chapter-name">Quiz Completed!</div>
+        
+        <div class="score-container">
+            <div class="score-circle">
+                <div class="score-display">
+                    <span class="score-numerator" id="score">0</span>
+                    <span class="score-divider">/</span>
+                    <span class="score-denominator" id="total-questions">7</span>
+                </div>
+                <div style="font-weight: normal;">correct</div>
             </div>
-            <div id="quiz-screen" class="hidden">
-                <div id="quiz">
-                    <div class="question" id="question"></div>
-                    <div class="options" id="options"></div>
-                    <div class="feedback" id="feedback"></div>
-                    <div class="progress" id="progress"></div>
-                </div>
-                <div id="result" class="hidden">
-                    <h2 class="result-header">Quiz Results</h2>
-                    <div class="result" id="score"></div>
-                </div>
+            <div class="completion-message">
+                <h2 style="font-size: 24px; margin-top: 5px"></h2>
+                <p></p>
             </div>
         </div>
-        <div id="sidebar" class="sidebar hidden">
-            <div class="progress-text" id="progress-text">0% Complete</div>
-            <div class="progress-container">
-                <div class="progress-bar" id="progress-bar"></div>
-            </div>
-            <!-- <h2>Completed Questions</h2> -->
-            <div class="question-status" id="question-status"></div>
-            <button id="next-btn" class="hidden">Next Question</button>
-            <button id="dash-btn" class="hidden">Back to Dashboard</button>
+                
+        <h3 style="text-align: left; margin-top: 25px; margin-bottom: 5px;">Areas for Review</h3>
+        <div id="areas-for-review">
+            <ul style="margin-top: 10px; margin-left: 20px" id="review-list"></ul>
+        </div>
+        
+        <div class="review-section">
+            <h3 style="text-align: left;">Question Review</h3>
+            <div id="question-review"></div>
+        </div>
+        
+        <div>
+            <button id="return-chapter" class="return-btn">Return to Chapter</button>
+            <button id="next-chapter" class="quiz-btn">Next Chapter</button>
         </div>
     </div>
 
-<script>
-    const questions = [
-      {
-        question: "What is a repository in Git?",
-        options: [
-            "A tool that helps developers communicate with each other", 
-            "A central location where files for a specific project are stored and managed", 
-            "A place where developers store backup copies of their work", 
-            "A location on a developer's local machine to edit files"
-        ],
-        correctAnswer: 1
-      },
-      {
-        question: "What command is used to check the status of changes in your working directory?",
-        options: [
-            "git log", 
-            "git add", 
-            "git status", 
-            "git push"
-        ],
-        correctAnswer: 2
-      },
-      {
-        question: "What is the purpose of the staging area in Git?",
-        options: [
-            "It stores the final version of your project files", 
-            "It holds changes that are ready to be committed to the repository", 
-            "It shows the history of your commits", 
-            "It is where you keep your backup files"
-        ],
-        correctAnswer: 1
-      }
-    ];
+    <script>
+        const quizData = [
+            {
+                question: "What is the primary purpose of version control?",
+                options: [
+                    "To create backup copies of a project automatically",
+                    "To track changes to files over time, enable collaboration, and allow reverting to previous versions",
+                    "To prevent developers from editing the same file at the same time",
+                    "To manage project funding and timelines"
+                ],
+                correctAnswer: 1,
+                explanation: "This is exactly the purpose of version control: collaboration, tracking modifications, and reverting when necessary."
+            },
+            {
+                question: "Which command initializes a new Git repository?",
+                options: [
+                    "git start",
+                    "git init",
+                    "git new",
+                    "git create"
+                ],
+                correctAnswer: 1,
+                explanation: "The 'git init' command creates a new Git repository in the current directory."
+            }
+            // ,
+            // {
+            //     question: "What does 'commit' mean in Git?",
+            //     options: [
+            //         "To send changes to a remote repository",
+            //         "To save changes to the local repository",
+            //         "To create a new branch",
+            //         "To merge two branches"
+            //     ],
+            //     correctAnswer: "To save changes to the local repository",
+            //     explanation: "A commit is a snapshot of your repository at a specific point in time, saved to your local repository."
+            // },
+            // {
+            //     question: "What is GitHub primarily used for?",
+            //     options: [
+            //         "As a local version control system",
+            //         "As a cloud-based hosting service for Git repositories",
+            //         "As an alternative to Git",
+            //         "As a file storage service"
+            //     ],
+            //     correctAnswer: "As a cloud-based hosting service for Git repositories",
+            //     explanation: "GitHub is a web-based platform that provides hosting for version control using Git."
+            // },
+            // {
+            //     question: "What is a 'branch' in Git?",
+            //     options: [
+            //         "A separate folder for your project files",
+            //         "A parallel version of your repository",
+            //         "A backup of your repository",
+            //         "A compressed version of your files"
+            //     ],
+            //     correctAnswer: "A parallel version of your repository",
+            //     explanation: "A branch is essentially a separate line of development that allows you to work on features or fixes without affecting the main codebase."
+            // },
+            // {
+            //     question: "Which command shows the current status of your Git repository?",
+            //     options: [
+            //         "git show",
+            //         "git status",
+            //         "git info",
+            //         "git display"
+            //     ],
+            //     correctAnswer: "git status",
+            //     explanation: "The 'git status' command displays the state of the working directory and the staging area."
+            // },
+            // {
+            //     question: "What does 'pull' do in Git?",
+            //     options: [
+            //         "Deletes a branch",
+            //         "Creates a new repository",
+            //         "Fetches and merges changes from a remote repository",
+            //         "Shows the commit history"
+            //     ],
+            //     correctAnswer: "Fetches and merges changes from a remote repository",
+            //     explanation: "The 'git pull' command fetches changes from a remote repository and immediately merges them into your current branch."
+            // }
+        ];
 
-    let currentQuestion = 0;
-    let score = 0;
-    let selectedOption = null;
-    let answerChecked = false;
-    let questionResults = Array(questions.length).fill(null);
+        let currentQuestion = 0;
+        let score = 0;
+        let userAnswers = [];
+        let selectedOption = null;
+        let answerSubmitted = false;
 
-    const startScreen = document.getElementById('start-quiz');
-    const quizScreen = document.getElementById('quiz-screen');
-    const sidebar = document.getElementById('sidebar');
-    const startButton = document.getElementById('start-btn');
-    const questionElement = document.getElementById('question');
-    const optionsElement = document.getElementById('options');
-    const feedbackElement = document.getElementById('feedback');
-    const nextButton = document.getElementById('next-btn');
-    const dashboardButton = document.getElementById('dash-btn');
-    const progressElement = document.getElementById('progress');
-    const resultElement = document.getElementById('result');
-    const scoreElement = document.getElementById('score');
-    const questionStatusElement = document.getElementById('question-status');
-    const progressBar = document.getElementById('progress-bar');
-    const progressText = document.getElementById('progress-text');
+        const introPage = document.getElementById('intro-page');
+        const startQuizBtn = document.getElementById('start-quiz-btn');
+        const questionContainer = document.getElementById('question-container');
+        const optionsContainer = document.getElementById('options-container');
+        const submitBtn = document.getElementById('submit-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const feedbackContainer = document.getElementById('feedback-container');
+        const questionCounter = document.getElementById('question-counter');
+        const progressBar = document.getElementById('progress-bar');
+        const quizContainer = document.getElementById('quiz-container');
+        const quizComplete = document.getElementById('quiz-complete');
+        const scoreDisplay = document.getElementById('score');
+        const totalQuestionsDisplay = document.getElementById('total-questions');
+        const reviewList = document.getElementById('review-list');
+        const questionReview = document.getElementById('question-review');
+        const returnChapterBtn = document.getElementById('return-chapter');
+        const nextChapterBtn = document.getElementById('next-chapter');
+        const quizInfo = document.querySelector('.quiz-info');
+        
+        quizInfo.innerHTML = `
+            <div>Number of questions: ${quizData.length}</div>
+            <div>Estimated time: ${Math.round(quizData.length * 0.75)}-${Math.ceil(quizData.length * 1.25)} minutes</div>
+        `;
 
-    function startQuiz() {
-        startScreen.classList.add('hidden');
-        quizScreen.classList.remove('hidden');
-        sidebar.classList.remove('hidden');
-        initializeQuestionStatus();
-        updateProgressBar();
-        loadQuestion();
-    }
-
-    function initializeQuestionStatus() {
-        questionStatusElement.innerHTML = '';
-        questions.forEach((_, index) => {
-            const statusItem = document.createElement('div');
-            statusItem.className = 'status-item pending';
-            statusItem.textContent = `Question ${index + 1}`;
-            statusItem.id = `status-${index}`;
-            questionStatusElement.appendChild(statusItem);
+        startQuizBtn.addEventListener('click', () => {
+            introPage.style.display = 'none';
+            quizContainer.style.display = 'block';
+            initQuiz();
         });
-    }
 
-    function updateProgressBar() {
-        const answeredQuestions = questionResults.filter(result => result !== null).length;
-        const progressPercentage = (answeredQuestions / questions.length) * 100;
-        progressBar.style.width = `${progressPercentage}%`;
-        progressText.textContent = `${Math.round(progressPercentage)}% Complete`;
-    }
-
-    function updateQuestionStatus(questionIndex, isCorrect) {
-        const statusItem = document.getElementById(`status-${questionIndex}`);
-        statusItem.classList.remove('pending');
-        if (isCorrect) {
-            statusItem.classList.add('correct');
-            statusItem.textContent = `✓ Question ${questionIndex + 1}`;
-        } else {
-            statusItem.classList.add('incorrect');
-            statusItem.textContent = `✗ Question ${questionIndex + 1}`;
+        function initQuiz() {
+            showQuestion();
+            totalQuestionsDisplay.textContent = quizData.length;
         }
-        questionResults[questionIndex] = isCorrect;
-        updateProgressBar();
-    }
 
-    function loadQuestion() {
-        answerChecked = false;
-        const question = questions[currentQuestion];
-        questionElement.textContent = question.question;
-        feedbackElement.textContent = '';
-        
-        optionsElement.innerHTML = '';
-        question.options.forEach((option, index) => {
-            const button = document.createElement('button');
-            button.textContent = option;
-            button.className = 'option-btn';
-            button.addEventListener('click', () => selectOption(index));
-            optionsElement.appendChild(button);
+        function showQuestion() {
+            answerSubmitted = false;
+            const question = quizData[currentQuestion];
+            questionContainer.innerHTML = `<h3>${question.question}</h3>`;
+            
+            optionsContainer.innerHTML = '';
+            const optionLetters = ['A', 'B', 'C', 'D'];
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'option';
+                optionElement.innerHTML = `<span class="option-letter">${optionLetters[index]}.</span> ${option}`;
+                optionElement.dataset.index = index;
+                optionElement.addEventListener('click', selectOption);
+                optionsContainer.appendChild(optionElement);
+            });
+            
+            questionCounter.textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
+            progressBar.style.width = `${(currentQuestion / quizData.length) * 100}%`;
+            
+            submitBtn.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+            feedbackContainer.innerHTML = '';
+            
+            if (currentQuestion === quizData.length - 1) {
+                nextBtn.textContent = 'See Results';
+            } else {
+                nextBtn.textContent = 'Next Question';
+            }
+        }
+
+        function selectOption(e) {
+            if (answerSubmitted) return;
+            
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            e.target.classList.add('selected');
+            selectedOption = e.target.dataset.index;
+            
+            submitBtn.classList.remove('hidden');
+        }
+
+        submitBtn.addEventListener('click', () => {
+            if (selectedOption === null) return;
+            
+            answerSubmitted = true;
+            
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.add('disabled');
+            });
+            
+            const question = quizData[currentQuestion];
+            const selectedIndex = parseInt(selectedOption);
+            const isCorrect = selectedIndex === question.correctAnswer;
+            
+            userAnswers.push({
+                question: question.question,
+                userAnswer: question.options[selectedIndex],
+                correctAnswer: question.options[question.correctAnswer],
+                explanation: question.explanation,
+                isCorrect: isCorrect
+            });
+            
+            if (isCorrect) {
+                score++;
+                showCorrectFeedback();
+            } else {
+                showIncorrectFeedback();
+            }
+            progressBar.style.width = `${((currentQuestion + 1) / quizData.length) * 100}%`;
+
+            submitBtn.classList.add('hidden');
+            nextBtn.classList.remove('hidden');
         });
-        
-        if (currentQuestion === questions.length - 1) {
-            nextButton.textContent = 'See Results';
-        } else {
-            nextButton.textContent = 'Next Question';
+
+        function showCorrectFeedback() {
+            const question = quizData[currentQuestion];
+            feedbackContainer.innerHTML = `
+                <div class="feedback-correct">
+                    <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
+                    <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
+                    <p style="margin-left: 20px">${question.explanation}</p>
+                </div>
+            `;
         }
-        
-        nextButton.classList.add('hidden');
-        dashboardButton.classList.add('hidden')
-        progressElement.textContent = `Question ${currentQuestion + 1}/${questions.length}`;
-    }
 
-    function selectOption(index) {
-        if (answerChecked) return;
-        
-        const options = document.querySelectorAll('#git-quiz .option-btn');
-        const correctIndex = questions[currentQuestion].correctAnswer;
-        
-        options[index].classList.add('selected');
-        selectedOption = index;
-        
-        const isCorrect = (index === correctIndex);
-        
-        if (isCorrect) {
-            feedbackElement.textContent = "Correct!";
-            feedbackElement.style.color = "#147638";
-            options[correctIndex].classList.add('correct');
-            score++;
-        } else {
-            feedbackElement.textContent = "Incorrect!";
-            feedbackElement.style.color = "#EF4444";
-            options[index].classList.add('incorrect');
+        function showIncorrectFeedback() {
+            const question = quizData[currentQuestion];
+            feedbackContainer.innerHTML = `
+                <div class="feedback-incorrect">
+                    <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
+                    <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
+                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
+                    <p style="margin-left: 20px">${question.explanation}</p>
+                </div>
+            `;
         }
-        
-        updateQuestionStatus(currentQuestion, isCorrect);
-        
-        answerChecked = true;
-        nextButton.classList.remove('hidden');
-    }
 
-    function nextQuestion() {
-        currentQuestion++;
-        
-        if (currentQuestion < questions.length) {
-            loadQuestion();
-        } else {
-            showResult();
+        nextBtn.addEventListener('click', () => {
+            currentQuestion++;
+            
+            if (currentQuestion < quizData.length) {
+                showQuestion();
+                selectedOption = null;
+            } else {
+                completeQuiz();
+            }
+        });
+
+        function completeQuiz() {
+            quizContainer.style.display = 'none';
+            quizComplete.classList.remove('hidden');
+            
+            scoreDisplay.textContent = score;
+            
+            const percentage = (score / quizData.length) * 100;
+            const quizName = "Introduction to Version Control";
+            
+            const completionMessage = document.querySelector('.completion-message h2');
+            const completionSubtext = document.querySelector('.completion-message p');
+            
+            if (percentage >= 75) {
+                completionMessage.textContent = 'Good job!';
+                completionSubtext.innerHTML = `You've completed the ${quizName} quiz`;
+            } else {
+                completionMessage.textContent = 'Good effort';
+                completionSubtext.innerHTML = `
+                    <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
+                    <a href="#" class="return-link">Review this chapter</a>
+                `;
+                
+                const reviewLink = completionSubtext.querySelector('.return-link');
+                reviewLink.addEventListener('click', () => {
+                    alert('Returning to chapter for review...');
+                });
+            }
+            
+            const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);
+            if (incorrectQuestions.length > 0) {
+                reviewList.innerHTML = incorrectQuestions.map(q => 
+                    `<li>${q.question}</li>`
+                ).join('');
+            } else {
+                reviewList.innerHTML = "<li>No areas need review</li>";
+            }
+            
+            questionReview.innerHTML = userAnswers.map((answer, index) => {
+                return `
+                    <div class="review-item ${answer.isCorrect ? 'correct-review' : 'incorrect-review'}">
+                        <div class="review-question">
+                            <i class="${answer.isCorrect ? 'fa-solid fa-circle-check' : 'fa-solid fa-circle-xmark'}" style="color: ${answer.isCorrect ? 'green' : 'red'}"></i>
+                                Question ${index + 1}: ${answer.question}
+                        </div>
+                        <div class="user-answer ${answer.isCorrect ? 'correct' : 'incorrect'}">
+                            Your answer: ${answer.userAnswer} ${answer.isCorrect ? '' : ''}
+                        </div>
+                        ${!answer.isCorrect ? `
+                            <div style="color: #00ab41; margin-left: 25px">
+                                Correct answer: ${answer.correctAnswer}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
         }
-    }
 
-    function showResult() {
-        document.getElementById('quiz').style.display = 'none';
-        resultElement.classList.remove('hidden');
-        nextButton.classList.add('hidden')
-        dashboardButton.classList.remove('hidden')
-        scoreElement.textContent = `Your score: ${score} out of ${questions.length}`;
-        updateProgressBar();
+        returnChapterBtn.addEventListener('click', () => {
+            alert('Returning to chapter...');
+        });
 
-        dashboardButton.addEventListener('click', function() {
-        window.location.href = "../index";
-    });
-    }
-
-    startButton.addEventListener('click', startQuiz);
-    nextButton.addEventListener('click', nextQuestion);
-  </script>
+        nextChapterBtn.addEventListener('click', () => {
+            alert('Moving to next chapter...');
+        });
+    </script>
 </div>
