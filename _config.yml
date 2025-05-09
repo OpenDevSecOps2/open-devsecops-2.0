@@ -1,11 +1,11 @@
-title: open-devsecops
+title: open-devsecops2
 description: 'From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning.'
 theme: just-the-docs
 
 logo: "/assets/images/opendevsecops-transparent.png"
 favicon_ico: "/assets/images/opendevsecops-favicon.ico"
 
-url: https://open-devsecops.github.io
+url: https://open-devsecops2.github.io
 search_enabled: true
 search:
   button: true

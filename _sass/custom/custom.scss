@@ -440,6 +440,29 @@
   color: #7253ed;
 }
 
+.site-footer,
+.search-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#scroll-wrapper {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
 // search
 .search-active #search-results {
   display: block !important;
