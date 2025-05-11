@@ -2,6 +2,7 @@
 title: Chapter 4 - Webhooks
 layout: custom
 parent: Topic 2 - DevOps
+has_children: true
 has_toc: false
 nav_order: 4
 ---

@@ -2,7 +2,7 @@
 title: Chapter 1 - Intro to DevOps
 layout: custom
 parent: Topic 2 - DevOps
-has_children: false
+has_children: true
 has_toc: false
 nav_order: 1
 ---
