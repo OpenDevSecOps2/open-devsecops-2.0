@@ -1,8 +1,8 @@
 ---
 layout: custom
-title: Chapter 2 Quiz
+title: Chapter 1 Quiz
 grand_parent: Topic 1 - Git
-parent: Chapter 2 - Git Fundamentals
+parent: Chapter 1 - Introduction to Version Control
 nav_order: 1
 ---
 
@@ -287,16 +287,17 @@ nav_order: 1
 
     <div id="intro-page">
         <header>
-            <div class="chapter-name">Chapter 2 - Git Fundamentals</div>
+            <div class="chapter-name">Chapter 1 - Introduction to Version Control Quiz</div>
         </header>
         
         <div class="container">
-            <p>This quiz covers the key concepts from Chapter 2 - Git Fundamentals.</p>
+            <p>This quiz covers the key concepts from Chapter 1 - Introduction to Version Control.</p>
             <p>You'll be tested on:</p>
             <ul>
-                <li>How repositories organize and store your project's files and history</li>
-                <li>How changes flow through each stage using commands</li>
-                <li>Supporting isolated development and safe collaboration</li>
+                <li>The purpose and benefits of version control</li>
+                <li>Common version control terminology</li>
+                <li>How version control enables collaboration</li>
+                <li>Using Git and GitHub</li>
             </ul>
         </div>
 
@@ -367,121 +368,88 @@ nav_order: 1
         
         <div>
             <button id="return-chapter" class="return-btn" onclick="window.location.href='../index'">Return to Chapter</button>
-            <button id="next-chapter" class="quiz-btn" onclick="window.location.href='../../chapter-3-Intermediate-Concepts/index'">Next Chapter</button>
+            <button id="next-chapter" class="quiz-btn" onclick="window.location.href='../../chapter-2-understanding-git/index'">Next Chapter</button>
         </div>
     </div>
 
     <script>
         const quizData = [
             {
-                question: "What is a repository in Git?",
+                question: "What is the primary purpose of version control?",
                 options: [
-                    "A tool that automatically writes code for you",
-                    "A digital library where all project files and their history are stored",
-                    "A place where completed projects are archived permanently",
-                    "A remote server that only stores backups of projects"
+                    "To create backup copies of a project automatically",
+                    "To track changes to files over time, enable collaboration, and allow reverting to previous versions",
+                    "To prevent developers from editing the same file at the same time",
+                    "To manage project funding and timelines"
                 ],
                 correctAnswer: 1,
-                explanation: "A repository acts as a central hub for your project files."
+                explanation: "This is exactly the purpose of version control: collaboration, tracking modifications, and reverting when necessary."
             },
             {
-                question: "In GitHub, what can you do with repositories?",
+                question: "In the example, what was the potential problem Armine and Tigran faced without version control?",
                 options: [
-                    "You can only store up to three repositories at a time",
-                    "You can create unlimited repositories and control their structure and access",
-                    "You cannot edit repositories after creating them",
-                    "You must pay to create private repositories"
-                ],
-                correctAnswer: 1,
-                explanation: "GitHub lets you create and manage as many repos as you like."
-            },
-            {
-                question: "What is the working directory in Git?",
-                options: [
-                    "A storage location for all previous commits",
-                    "A temporary folder Git uses to sync files with the cloud",
-                    "The place where you actively make changes to project files",
-                    "A location where Git backups your old project versions"
+                    "They might forget to save their changes",
+                    "They could accidentally delete each other's accounts",
+                    "Tigran’s upload could overwrite Armine’s changes, causing loss of progress and conflicts",
+                    "The application might crash due to poor coding practices"
                 ],
                 correctAnswer: 2,
-                explanation: "The working directory is where you make changes to files before staging them."
+                explanation: "Without version control, edits could overwrite each other’s work."
             },
             {
-                question: "What Git command is used to show the status of your files?",
+                question: "What happens with version control when Armine and Tigran work on their code?",
                 options: [
-                    "git add",
-                    "git checkout",
-                    "git status",
-                    "git log"
-                ],
-                correctAnswer: 2,
-                explanation: "git status shows what’s changed, what’s staged, and what’s untracked."
-            },
-            {
-                question: "What is the purpose of the staging area?",
-                options: [
-                    "To permanently save changes to your repository",
-                    "To temporarily store changes that are ready to be committed",
-                    "To switch between different branches",
-                    "To download updates from the remote repository"
+                    "They must wait for the other to finish before starting",
+                    "They can work independently, track updates, and carefully merge changes when needed",
+                    "Tigran automatically controls all updates to the system",
+                    "Only one person can access the project at a time"
                 ],
                 correctAnswer: 1,
-                explanation: "The staging area holds changes that are about to be committed."
+                explanation: "Version control allows concurrent work and later merging."
             },
             {
-                question: "Which Git command is used to add changes from the working directory to the staging area?",
+                question: "If a problem arises with Armine’s authentication updates, what advantage does version control offer?",
                 options: [
-                    "git commit",
-                    "git status",
-                    "git checkout",
-                    "git add"
-                ],
-                correctAnswer: 3,
-                explanation: "git add moves changes to the staging area."
-            },
-            {
-                question: "What does the command git push do?",
-                options: [
-                    "It commits local changes to the working directory",
-                    "It uploads your local commits to a remote repository like GitHub",
-                    "It reverts your project back to the last saved version",
-                    "It deletes unnecessary files from the repository"
-                ],
-                correctAnswer: 1,
-                explanation: "git push moves commits to a remote server."
-            },
-            {
-                question: "What is a branch in Git?",
-                options: [
-                    "A backup of the entire project stored separately",
-                    "A tool that encrypts your project files for security",
-                    "An independent line of development separate from the main codebase",
-                    "A folder where completed features are archived"
+                    "Tigran's code is automatically deleted",
+                    "The entire project is reset to the original version",
+                    "Armine can revert her specific changes without affecting Tigran’s work",
+                    "The system locks down any future edits until the issue is fixed"
                 ],
                 correctAnswer: 2,
-                explanation: "A branch isolates your changes from the main project."
+                explanation: "Version control allows rolling back individual changes safely."
             },
             {
-                question: "What is one major benefit of using branches?",
+                question: "What popular tool for version control is mentioned in the chapter?",
                 options: [
-                    "You can lock files to prevent other developers from accessing them.",
-                    "You can experiment with new features without affecting the main codebase.",
-                    "You can automatically merge all changes without reviewing them.",
-                    "You can permanently delete old commits without risk."
-                ],
-                correctAnswer: 1,
-                explanation: "Branches isolate new work safely."
-            },
-            {
-                question: "What command would you use to create a new branch in Git?",
-                options: [
-                    "git checkout",
-                    "git merge",
-                    "git branch <branch-name>",
-                    "git push"
+                    "Dropboxs",
+                    "Slack",
+                    "GitHub",
+                    "Jira"
                 ],
                 correctAnswer: 2,
-                explanation: "git branch creates a new branch for you to work on."
+                explanation: "GitHub is the version control tool mentioned."
+            },
+            {
+                question: "What is GitHub compared to in the example?",
+                options: [
+                    "A central library for books",
+                    "A messaging app for developers",
+                    "Google Docs, where you can see the history of document changes",
+                    "An app store for mobile applications"
+                ],
+                correctAnswer: 2,
+                explanation: "GitHub is compared to Google Docs’ document history feature."
+            },
+            {
+                question: "Although different version control systems exist, what remains the same across them?",
+                options: [
+                    "The syntax used to write code",
+                    "The core principles of recording changes, tracking modifications, and managing collaboration",
+                    "The design and color themes of the platforms",
+                    "The default settings and login systems"
+                ],
+                correctAnswer: 1,
+                explanation: "Regardless of the system, the core ideas are the same."
             }
         ];
 
@@ -656,13 +624,8 @@ nav_order: 1
                 completionMessage.textContent = 'Good effort';
                 completionSubtext.innerHTML = `
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
-                    <a href="../index" class="return-link">Review this chapter</a>
+                    <a href="#" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);

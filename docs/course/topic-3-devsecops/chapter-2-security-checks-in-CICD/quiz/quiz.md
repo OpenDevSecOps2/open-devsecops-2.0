@@ -1,9 +1,9 @@
 ---
 layout: custom
 title: Chapter 2 Quiz
-grand_parent: Topic 1 - Git
-parent: Chapter 2 - Git Fundamentals
-nav_order: 1
+grand_parent: Topic 3 - DevSecOps
+parent: Chapter 2 - Security Checks in CI/CD
+nav_order: 3
 ---
 
 <div id="quiz">
@@ -287,16 +287,16 @@ nav_order: 1
 
     <div id="intro-page">
         <header>
-            <div class="chapter-name">Chapter 2 - Git Fundamentals</div>
+            <div class="chapter-name">Chapter 2 - Security Checks in CI/CD</div>
         </header>
         
         <div class="container">
-            <p>This quiz covers the key concepts from Chapter 2 - Git Fundamentals.</p>
+            <p>This quiz covers the key concepts from Chapter 2 - Security Checks in CI/CD.</p>
             <p>You'll be tested on:</p>
             <ul>
-                <li>How repositories organize and store your project's files and history</li>
-                <li>How changes flow through each stage using commands</li>
-                <li>Supporting isolated development and safe collaboration</li>
+                <li>The role of security checks in each stage of the CI/CD pipeline</li>
+                <li>Differences between SAST and DAST</li>
+                <li>Common vulnerability scanning tools and their use cases</li>
             </ul>
         </div>
 
@@ -367,121 +367,120 @@ nav_order: 1
         
         <div>
             <button id="return-chapter" class="return-btn" onclick="window.location.href='../index'">Return to Chapter</button>
-            <button id="next-chapter" class="quiz-btn" onclick="window.location.href='../../chapter-3-Intermediate-Concepts/index'">Next Chapter</button>
         </div>
     </div>
 
     <script>
         const quizData = [
             {
-                question: "What is a repository in Git?",
+                question: "Why is it important to embed security checks into every stage of the CI/CD pipeline?",
                 options: [
-                    "A tool that automatically writes code for you",
-                    "A digital library where all project files and their history are stored",
-                    "A place where completed projects are archived permanently",
-                    "A remote server that only stores backups of projects"
+                    "To make the code run faster",
+                    "To catch vulnerabilities early and maintain application security throughout the lifecycle",
+                    "To reduce the size of the source code",
+                    "To minimize the number of developers needed"
                 ],
                 correctAnswer: 1,
-                explanation: "A repository acts as a central hub for your project files."
+                explanation: "Security checks in all stages help proactively identify and fix vulnerabilities."
             },
             {
-                question: "In GitHub, what can you do with repositories?",
+                question: "What is the goal of threat modeling during the planning phase?",
                 options: [
-                    "You can only store up to three repositories at a time",
-                    "You can create unlimited repositories and control their structure and access",
-                    "You cannot edit repositories after creating them",
-                    "You must pay to create private repositories"
+                    "To estimate development costs",
+                    "To identify potential vulnerabilities and define countermeasures",
+                    "To prioritize aesthetic features",
+                    "To create the user interface layout"
                 ],
                 correctAnswer: 1,
-                explanation: "GitHub lets you create and manage as many repos as you like."
+                explanation: "Threat modeling helps spot and mitigate risks early."
             },
             {
-                question: "What is the working directory in Git?",
+                question: "What is a key activity in the 'Coding' phase of a secure CI/CD pipeline?",
                 options: [
-                    "A storage location for all previous commits",
-                    "A temporary folder Git uses to sync files with the cloud",
-                    "The place where you actively make changes to project files",
-                    "A location where Git backups your old project versions"
+                    "Setting up production monitoring",
+                    "Using source code scanners to detect vulnerabilities",
+                    "Deploying features immediately to production",
+                    "Conducting user feedback surveys"
+                ],
+                correctAnswer: 1,
+                explanation: "During coding, static analysis tools catch vulnerabilities early."
+            },
+            {
+                question: "What does SAST stand for?",
+                options: [
+                    "Secure Application Standard Testing",
+                    "Static Application Security Testing",
+                    "Server Application Security Tracking",
+                    "Security Authentication and Static Testing"
+                ],
+                correctAnswer: 1,
+                explanation: "SAST analyzes code without executing it."
+            },
+            {
+                question: "What does DAST focus on?",
+                options: [
+                    "Analyzing source code before it runs",
+                    "Simulating attacks against a running application",
+                    "Checking grammar in documentation",
+                    "Optimizing application speed"
+                ],
+                correctAnswer: 1,
+                explanation: "DAST finds vulnerabilities by interacting with live apps."
+            },
+            {
+                question: "When is SAST typically conducted?",
+                options: [
+                    "After deployment in production",
+                    "As soon as code is written, before the application runs",
+                    "During load testing",
+                    "After user feedback collection"
+                ],
+                correctAnswer: 1,
+                explanation: "SAST checks code without running it."
+            },
+            {
+                question: "What is a major drawback of relying only on DAST?",
+                options: [
+                    "It can produce false positives",
+                    "Some vulnerabilities may not be detectable unless analyzing source code",
+                    "It requires direct access to the source code",
+                    "It runs too early in the development lifecycle"
+                ],
+                correctAnswer: 1,
+                explanation: "DAST can't catch issues that static code review (SAST) might."
+            },
+            {
+                question: "What is the main advantage of using both SAST and DAST together?",
+                options: [
+                    "They increase application size",
+                    "They provide a more complete security assessment",
+                    "They guarantee no bugs in production",
+                    "They shorten the development lifecycle significantly"
+                ],
+                correctAnswer: 1,
+                explanation: "SAST covers code vulnerabilities, DAST covers runtime vulnerabilities."
+            },
+            {
+                question: "Which tool specializes in fixing vulnerabilities in open-source dependencies?",
+                options: [
+                    "Fortify",
+                    "SonarQube",
+                    "Snyk",
+                    "OWASP ZAP"
                 ],
                 correctAnswer: 2,
-                explanation: "The working directory is where you make changes to files before staging them."
+                explanation: "Snyk specializes in finding and fixing issues in open-source libraries and containers."
             },
             {
-                question: "What Git command is used to show the status of your files?",
+                question: "What does GitLab CI/CD offer as part of its security scanning?",
                 options: [
-                    "git add",
-                    "git checkout",
-                    "git status",
-                    "git log"
+                    "Only container scanning",
+                    "Only vulnerability scanning after deployment",
+                    "Static, dynamic, dependency, and container security scans",
+                    "Real-time firewall updates"
                 ],
                 correctAnswer: 2,
-                explanation: "git status shows what’s changed, what’s staged, and what’s untracked."
-            },
-            {
-                question: "What is the purpose of the staging area?",
-                options: [
-                    "To permanently save changes to your repository",
-                    "To temporarily store changes that are ready to be committed",
-                    "To switch between different branches",
-                    "To download updates from the remote repository"
-                ],
-                correctAnswer: 1,
-                explanation: "The staging area holds changes that are about to be committed."
-            },
-            {
-                question: "Which Git command is used to add changes from the working directory to the staging area?",
-                options: [
-                    "git commit",
-                    "git status",
-                    "git checkout",
-                    "git add"
-                ],
-                correctAnswer: 3,
-                explanation: "git add moves changes to the staging area."
-            },
-            {
-                question: "What does the command git push do?",
-                options: [
-                    "It commits local changes to the working directory",
-                    "It uploads your local commits to a remote repository like GitHub",
-                    "It reverts your project back to the last saved version",
-                    "It deletes unnecessary files from the repository"
-                ],
-                correctAnswer: 1,
-                explanation: "git push moves commits to a remote server."
-            },
-            {
-                question: "What is a branch in Git?",
-                options: [
-                    "A backup of the entire project stored separately",
-                    "A tool that encrypts your project files for security",
-                    "An independent line of development separate from the main codebase",
-                    "A folder where completed features are archived"
-                ],
-                correctAnswer: 2,
-                explanation: "A branch isolates your changes from the main project."
-            },
-            {
-                question: "What is one major benefit of using branches?",
-                options: [
-                    "You can lock files to prevent other developers from accessing them.",
-                    "You can experiment with new features without affecting the main codebase.",
-                    "You can automatically merge all changes without reviewing them.",
-                    "You can permanently delete old commits without risk."
-                ],
-                correctAnswer: 1,
-                explanation: "Branches isolate new work safely."
-            },
-            {
-                question: "What command would you use to create a new branch in Git?",
-                options: [
-                    "git checkout",
-                    "git merge",
-                    "git branch <branch-name>",
-                    "git push"
-                ],
-                correctAnswer: 2,
-                explanation: "git branch creates a new branch for you to work on."
+                explanation: "GitLab offers a wide range of built-in security scanning tools."
             }
         ];
 
@@ -507,7 +506,6 @@ nav_order: 1
         const reviewList = document.getElementById('review-list');
         const questionReview = document.getElementById('question-review');
         const returnChapterBtn = document.getElementById('return-chapter');
-        const nextChapterBtn = document.getElementById('next-chapter');
         const quizInfo = document.querySelector('.quiz-info');
         
         quizInfo.innerHTML = `

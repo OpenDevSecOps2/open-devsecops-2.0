@@ -2,7 +2,7 @@
 title: Chapter 1 - Introduction to Version Control
 layout: custom
 parent: Topic 1 - Git
-has_children: false
+has_children: true
 has_toc: false
 nav_order: 1
 ---

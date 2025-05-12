@@ -2,6 +2,7 @@
 title: Chapter 4 - Git Best Practices
 layout: custom
 parent: Topic 1 - Git
+has_children: true
 has_toc: false
 nav_order: 4
 ---

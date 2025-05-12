@@ -1,8 +1,8 @@
 ---
 layout: custom
-title: Chapter 2 Quiz
+title: Chapter 4 Quiz
 grand_parent: Topic 1 - Git
-parent: Chapter 2 - Git Fundamentals
+parent: Chapter 4 - Git Best Practices
 nav_order: 1
 ---
 
@@ -287,16 +287,16 @@ nav_order: 1
 
     <div id="intro-page">
         <header>
-            <div class="chapter-name">Chapter 2 - Git Fundamentals</div>
+            <div class="chapter-name">Chapter 4 - Git Best Practices</div>
         </header>
         
         <div class="container">
-            <p>This quiz covers the key concepts from Chapter 2 - Git Fundamentals.</p>
+            <p>This quiz covers the key concepts from Chapter 4 - Git Best Practices.</p>
             <p>You'll be tested on:</p>
             <ul>
-                <li>How repositories organize and store your project's files and history</li>
-                <li>How changes flow through each stage using commands</li>
-                <li>Supporting isolated development and safe collaboration</li>
+                <li>The importance of documentation for project maintainability</li>
+                <li>How and when to use a project’s Wiki for extended documentation</li>
+                <li>Best practices for writing clear and useful code comments</li>
             </ul>
         </div>
 
@@ -367,121 +367,44 @@ nav_order: 1
         
         <div>
             <button id="return-chapter" class="return-btn" onclick="window.location.href='../index'">Return to Chapter</button>
-            <button id="next-chapter" class="quiz-btn" onclick="window.location.href='../../chapter-3-Intermediate-Concepts/index'">Next Chapter</button>
+            <button id="next-chapter" class="quiz-btn" onclick="window.location.href='../../../topic-2-DevOps/chapter-1-intro-to-devops/index'">Next Chapter</button>
         </div>
     </div>
 
     <script>
         const quizData = [
             {
-                question: "What is a repository in Git?",
+                question: "What is the main purpose of a README file?",
                 options: [
-                    "A tool that automatically writes code for you",
-                    "A digital library where all project files and their history are stored",
-                    "A place where completed projects are archived permanently",
-                    "A remote server that only stores backups of projects"
+                    "To keep a list of team members working on the project",
+                    "To provide a high-level overview, usage instructions, and contribution guidelines",
+                    "To display all version history and code commits",
+                    "To automatically update code when changes are made"
                 ],
                 correctAnswer: 1,
-                explanation: "A repository acts as a central hub for your project files."
+                explanation: "A README gives essential information about the project's purpose, setup, usage, and collaboration processes."
             },
             {
-                question: "In GitHub, what can you do with repositories?",
+                question: "What is the purpose of using a project wiki?",
                 options: [
-                    "You can only store up to three repositories at a time",
-                    "You can create unlimited repositories and control their structure and access",
-                    "You cannot edit repositories after creating them",
-                    "You must pay to create private repositories"
+                    "To save backup copies of the repository",
+                    "To store extensive documentation like tutorials, design notes, and examples",
+                    "To log every commit made to the project",
+                    "To automatically generate installation scripts for users"
                 ],
                 correctAnswer: 1,
-                explanation: "GitHub lets you create and manage as many repos as you like."
+                explanation: "A project's wiki is great for more detailed, ongoing documentation beyond the README."
             },
             {
-                question: "What is the working directory in Git?",
+                question: "How should comments be used within code?",
                 options: [
-                    "A storage location for all previous commits",
-                    "A temporary folder Git uses to sync files with the cloud",
-                    "The place where you actively make changes to project files",
-                    "A location where Git backups your old project versions"
-                ],
-                correctAnswer: 2,
-                explanation: "The working directory is where you make changes to files before staging them."
-            },
-            {
-                question: "What Git command is used to show the status of your files?",
-                options: [
-                    "git add",
-                    "git checkout",
-                    "git status",
-                    "git log"
-                ],
-                correctAnswer: 2,
-                explanation: "git status shows what’s changed, what’s staged, and what’s untracked."
-            },
-            {
-                question: "What is the purpose of the staging area?",
-                options: [
-                    "To permanently save changes to your repository",
-                    "To temporarily store changes that are ready to be committed",
-                    "To switch between different branches",
-                    "To download updates from the remote repository"
+                    "To explain what every single line of code does",
+                    "To document the reasoning behind complex logic or significant changes",
+                    "To replace function names and variable declarations",
+                    "To speed up the compilation of the code"
                 ],
                 correctAnswer: 1,
-                explanation: "The staging area holds changes that are about to be committed."
-            },
-            {
-                question: "Which Git command is used to add changes from the working directory to the staging area?",
-                options: [
-                    "git commit",
-                    "git status",
-                    "git checkout",
-                    "git add"
-                ],
-                correctAnswer: 3,
-                explanation: "git add moves changes to the staging area."
-            },
-            {
-                question: "What does the command git push do?",
-                options: [
-                    "It commits local changes to the working directory",
-                    "It uploads your local commits to a remote repository like GitHub",
-                    "It reverts your project back to the last saved version",
-                    "It deletes unnecessary files from the repository"
-                ],
-                correctAnswer: 1,
-                explanation: "git push moves commits to a remote server."
-            },
-            {
-                question: "What is a branch in Git?",
-                options: [
-                    "A backup of the entire project stored separately",
-                    "A tool that encrypts your project files for security",
-                    "An independent line of development separate from the main codebase",
-                    "A folder where completed features are archived"
-                ],
-                correctAnswer: 2,
-                explanation: "A branch isolates your changes from the main project."
-            },
-            {
-                question: "What is one major benefit of using branches?",
-                options: [
-                    "You can lock files to prevent other developers from accessing them.",
-                    "You can experiment with new features without affecting the main codebase.",
-                    "You can automatically merge all changes without reviewing them.",
-                    "You can permanently delete old commits without risk."
-                ],
-                correctAnswer: 1,
-                explanation: "Branches isolate new work safely."
-            },
-            {
-                question: "What command would you use to create a new branch in Git?",
-                options: [
-                    "git checkout",
-                    "git merge",
-                    "git branch <branch-name>",
-                    "git push"
-                ],
-                correctAnswer: 2,
-                explanation: "git branch creates a new branch for you to work on."
+                explanation: "Code comments are best used to explain why something was done a certain way, helping future developers understand important decisions."
             }
         ];
 

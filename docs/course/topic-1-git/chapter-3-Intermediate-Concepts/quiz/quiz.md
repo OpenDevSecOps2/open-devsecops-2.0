@@ -1,9 +1,9 @@
 ---
 layout: custom
-title: Chapter 2 Quiz
+title: Chapter 3 Quiz
 grand_parent: Topic 1 - Git
-parent: Chapter 2 - Git Fundamentals
-nav_order: 1
+parent: Chapter 3 - Git Intermediate Concepts
+nav_order: 2
 ---
 
 <div id="quiz">
@@ -287,16 +287,17 @@ nav_order: 1
 
     <div id="intro-page">
         <header>
-            <div class="chapter-name">Chapter 2 - Git Fundamentals</div>
+            <div class="chapter-name">Chapter 3 - Git Intermediate Concepts</div>
         </header>
         
         <div class="container">
-            <p>This quiz covers the key concepts from Chapter 2 - Git Fundamentals.</p>
+            <p>This quiz covers the key concepts from Chapter 3 - Git Intermediate Concepts.</p>
             <p>You'll be tested on:</p>
             <ul>
-                <li>How repositories organize and store your project's files and history</li>
-                <li>How changes flow through each stage using commands</li>
-                <li>Supporting isolated development and safe collaboration</li>
+                <li>Different branching strategies and their purposes</li>
+                <li>Types of merges in Git and when to use them</li>
+                <li>Core concepts like pull requests, workflows, and rebasing</li>
+                <li>Advanced techniques like stashing and squash merging</li>
             </ul>
         </div>
 
@@ -367,121 +368,88 @@ nav_order: 1
         
         <div>
             <button id="return-chapter" class="return-btn" onclick="window.location.href='../index'">Return to Chapter</button>
-            <button id="next-chapter" class="quiz-btn" onclick="window.location.href='../../chapter-3-Intermediate-Concepts/index'">Next Chapter</button>
+            <button id="next-chapter" class="quiz-btn" onclick="window.location.href='../../chapter-4-git-best-practices/index'">Next Chapter</button>
         </div>
     </div>
 
     <script>
         const quizData = [
             {
-                question: "What is a repository in Git?",
+                question: "What is the main purpose of feature branching?",
                 options: [
-                    "A tool that automatically writes code for you",
-                    "A digital library where all project files and their history are stored",
-                    "A place where completed projects are archived permanently",
-                    "A remote server that only stores backups of projects"
+                    "To delete old code from the main branch",
+                    "To isolate new development work from the main codebase",
+                    "To merge all code directly into production",
+                    "To backup the project regularly"
                 ],
                 correctAnswer: 1,
-                explanation: "A repository acts as a central hub for your project files."
+                explanation: "Feature branches allow developers to build features without affecting the main branch."
             },
             {
-                question: "In GitHub, what can you do with repositories?",
+                question: "When would you typically create a release branch?",
                 options: [
-                    "You can only store up to three repositories at a time",
-                    "You can create unlimited repositories and control their structure and access",
-                    "You cannot edit repositories after creating them",
-                    "You must pay to create private repositories"
+                    "When starting a new feature",
+                    "When preparing a project for a production release",
+                    "When fixing a security vulnerability",
+                    "When merging several features at once"
                 ],
                 correctAnswer: 1,
-                explanation: "GitHub lets you create and manage as many repos as you like."
+                explanation: "Release branches allow final adjustments and testing before releasing."
             },
             {
-                question: "What is the working directory in Git?",
+                question: "What is the goal of a hotfix branch?",
                 options: [
-                    "A storage location for all previous commits",
-                    "A temporary folder Git uses to sync files with the cloud",
-                    "The place where you actively make changes to project files",
-                    "A location where Git backups your old project versions"
-                ],
-                correctAnswer: 2,
-                explanation: "The working directory is where you make changes to files before staging them."
-            },
-            {
-                question: "What Git command is used to show the status of your files?",
-                options: [
-                    "git add",
-                    "git checkout",
-                    "git status",
-                    "git log"
-                ],
-                correctAnswer: 2,
-                explanation: "git status shows what’s changed, what’s staged, and what’s untracked."
-            },
-            {
-                question: "What is the purpose of the staging area?",
-                options: [
-                    "To permanently save changes to your repository",
-                    "To temporarily store changes that are ready to be committed",
-                    "To switch between different branches",
-                    "To download updates from the remote repository"
+                    "To add a new feature requested by users",
+                    "To quickly address a critical bug in production",
+                    "To save uncommitted changes before merging",
+                    "To rewrite history into a straight line"
                 ],
                 correctAnswer: 1,
-                explanation: "The staging area holds changes that are about to be committed."
+                explanation: "Hotfix branches are for urgent production bug fixes."
             },
             {
-                question: "Which Git command is used to add changes from the working directory to the staging area?",
+                question: "What happens during a fast-forward merge?",
                 options: [
-                    "git commit",
-                    "git status",
-                    "git checkout",
-                    "git add"
-                ],
-                correctAnswer: 3,
-                explanation: "git add moves changes to the staging area."
-            },
-            {
-                question: "What does the command git push do?",
-                options: [
-                    "It commits local changes to the working directory",
-                    "It uploads your local commits to a remote repository like GitHub",
-                    "It reverts your project back to the last saved version",
-                    "It deletes unnecessary files from the repository"
+                    "Git creates a new merge commit joining two diverging histories",
+                    "The base branch pointer moves forward to match the feature branch without creating a merge commit",
+                    "Git combines all commits into one",
+                    "Git deletes the feature branch automatically"
                 ],
                 correctAnswer: 1,
-                explanation: "git push moves commits to a remote server."
+                explanation: "Fast-forward merging simply advances the branch pointer without extra commits."
             },
             {
-                question: "What is a branch in Git?",
+                question: "What is the purpose of squash merging?",
                 options: [
-                    "A backup of the entire project stored separately",
-                    "A tool that encrypts your project files for security",
-                    "An independent line of development separate from the main codebase",
-                    "A folder where completed features are archived"
-                ],
-                correctAnswer: 2,
-                explanation: "A branch isolates your changes from the main project."
-            },
-            {
-                question: "What is one major benefit of using branches?",
-                options: [
-                    "You can lock files to prevent other developers from accessing them.",
-                    "You can experiment with new features without affecting the main codebase.",
-                    "You can automatically merge all changes without reviewing them.",
-                    "You can permanently delete old commits without risk."
+                    "To delete unneeded branches",
+                    "To combine all commits from a feature branch into a single clean commit",
+                    "To overwrite the main branch",
+                    "To fast-track changes into production without review"
                 ],
                 correctAnswer: 1,
-                explanation: "Branches isolate new work safely."
+                explanation: "Squash merging produces one clean commit for easier project history."
             },
             {
-                question: "What command would you use to create a new branch in Git?",
+                question: "What is a pull request (PR) used for?",
                 options: [
-                    "git checkout",
-                    "git merge",
-                    "git branch <branch-name>",
-                    "git push"
+                    "To notify others about changes and request code review before merging",
+                    "To delete an old repository",
+                    "To merge branches without any approvals",
+                    "To back up local branches"
                 ],
-                correctAnswer: 2,
-                explanation: "git branch creates a new branch for you to work on."
+                correctAnswer: 0,
+                explanation: "PRs allow team members to review and discuss changes before they become part of the main branch."
+            },
+            {
+                question: "What is the purpose of rebasing in Git?",
+                options: [
+                    "To create a backup of the entire repository",
+                    "To rewrite commit history into a linear sequence",
+                    "To clone a repository from GitHub",
+                    "To merge changes by creating a new commit"
+                ],
+                correctAnswer: 1,
+                explanation: "Rebasing restructures commits to make history cleaner and more straightforward."
             }
         ];
 

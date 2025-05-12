@@ -1,8 +1,8 @@
 ---
 layout: custom
-title: Chapter 2 Quiz
-grand_parent: Topic 1 - Git
-parent: Chapter 2 - Git Fundamentals
+title: Chapter 1 Quiz
+grand_parent: Topic 3 - DevSecOps
+parent: Chapter 1 - DevSecOps
 nav_order: 1
 ---
 
@@ -287,16 +287,16 @@ nav_order: 1
 
     <div id="intro-page">
         <header>
-            <div class="chapter-name">Chapter 2 - Git Fundamentals</div>
+            <div class="chapter-name">Chapter 1 - DevSecOps</div>
         </header>
         
         <div class="container">
-            <p>This quiz covers the key concepts from Chapter 2 - Git Fundamentals.</p>
+            <p>This quiz covers the key concepts from Chapter 1 - DevSecOps.</p>
             <p>You'll be tested on:</p>
             <ul>
-                <li>How repositories organize and store your project's files and history</li>
-                <li>How changes flow through each stage using commands</li>
-                <li>Supporting isolated development and safe collaboration</li>
+                <li>The definition and core principles of DevSecOps in the software lifecycle</li>
+                <li>The purpose and differences between shift-left and shift-right testing</li>
+                <li>Key DevSecOps tools like IaC scanning, SAST/DAST, and container security</li>
             </ul>
         </div>
 
@@ -367,121 +367,121 @@ nav_order: 1
         
         <div>
             <button id="return-chapter" class="return-btn" onclick="window.location.href='../index'">Return to Chapter</button>
-            <button id="next-chapter" class="quiz-btn" onclick="window.location.href='../../chapter-3-Intermediate-Concepts/index'">Next Chapter</button>
+            <button id="next-chapter" class="quiz-btn" onclick="window.location.href='../../chapter-2-security-checks-in-CICD/index'">Next Chapter</button>
         </div>
     </div>
 
     <script>
         const quizData = [
             {
-                question: "What is a repository in Git?",
+                question: "What does 'DevSecOps' stand for?",
                 options: [
-                    "A tool that automatically writes code for you",
-                    "A digital library where all project files and their history are stored",
-                    "A place where completed projects are archived permanently",
-                    "A remote server that only stores backups of projects"
+                    "Development, Security, Optimization",
+                    "Development, Security, Operations",
+                    "Deployment, Services, Operations",
+                    "Developer Security Operations"
                 ],
                 correctAnswer: 1,
-                explanation: "A repository acts as a central hub for your project files."
+                explanation: "DevSecOps integrates development, security, and operations practices."
             },
             {
-                question: "In GitHub, what can you do with repositories?",
+                question: "What is the main goal of DevSecOps?",
                 options: [
-                    "You can only store up to three repositories at a time",
-                    "You can create unlimited repositories and control their structure and access",
-                    "You cannot edit repositories after creating them",
-                    "You must pay to create private repositories"
+                    "To delay security testing until after deployment",
+                    "To embed security practices throughout the entire development lifecycle",
+                    "To automate server infrastructure setup",
+                    "To eliminate the need for manual coding"
                 ],
                 correctAnswer: 1,
-                explanation: "GitHub lets you create and manage as many repos as you like."
+                explanation: "DevSecOps integrates security from initial design through final delivery."
             },
             {
-                question: "What is the working directory in Git?",
+                question: "Why is it risky to defer security activities until the testing phase?",
                 options: [
-                    "A storage location for all previous commits",
-                    "A temporary folder Git uses to sync files with the cloud",
-                    "The place where you actively make changes to project files",
-                    "A location where Git backups your old project versions"
-                ],
-                correctAnswer: 2,
-                explanation: "The working directory is where you make changes to files before staging them."
-            },
-            {
-                question: "What Git command is used to show the status of your files?",
-                options: [
-                    "git add",
-                    "git checkout",
-                    "git status",
-                    "git log"
-                ],
-                correctAnswer: 2,
-                explanation: "git status shows what’s changed, what’s staged, and what’s untracked."
-            },
-            {
-                question: "What is the purpose of the staging area?",
-                options: [
-                    "To permanently save changes to your repository",
-                    "To temporarily store changes that are ready to be committed",
-                    "To switch between different branches",
-                    "To download updates from the remote repository"
+                    "It guarantees faster software delivery",
+                    "Security risks might go unnoticed and cause severe impact later",
+                    "It simplifies the design process",
+                    "It ensures more robust features"
                 ],
                 correctAnswer: 1,
-                explanation: "The staging area holds changes that are about to be committed."
+                explanation: "Late detection of risks can be costly and harmful."
             },
             {
-                question: "Which Git command is used to add changes from the working directory to the staging area?",
+                question: "What does 'shift left' mean in DevSecOps?",
                 options: [
-                    "git commit",
-                    "git status",
-                    "git checkout",
-                    "git add"
-                ],
-                correctAnswer: 3,
-                explanation: "git add moves changes to the staging area."
-            },
-            {
-                question: "What does the command git push do?",
-                options: [
-                    "It commits local changes to the working directory",
-                    "It uploads your local commits to a remote repository like GitHub",
-                    "It reverts your project back to the last saved version",
-                    "It deletes unnecessary files from the repository"
+                    "Pushing features to production faster",
+                    "Moving testing activities earlier in the development process",
+                    "Running final security checks in production",
+                    "Outsourcing security tasks"
                 ],
                 correctAnswer: 1,
-                explanation: "git push moves commits to a remote server."
+                explanation: "Shift left means testing and securing code earlier."
             },
             {
-                question: "What is a branch in Git?",
+                question: "What is 'shift right' testing focused on?",
                 options: [
-                    "A backup of the entire project stored separately",
-                    "A tool that encrypts your project files for security",
-                    "An independent line of development separate from the main codebase",
-                    "A folder where completed features are archived"
+                    "Monitoring user behavior and security metrics after deployment",
+                    "Delaying testing until product release",
+                    "Writing code for different platforms",
+                    "Automating build processes"
                 ],
-                correctAnswer: 2,
-                explanation: "A branch isolates your changes from the main project."
+                correctAnswer: 0,
+                explanation: "Shift right involves observing and ensuring operational security post-release."
             },
             {
-                question: "What is one major benefit of using branches?",
+                question: "What does Infrastructure as Code (IaC) involve?",
                 options: [
-                    "You can lock files to prevent other developers from accessing them.",
-                    "You can experiment with new features without affecting the main codebase.",
-                    "You can automatically merge all changes without reviewing them.",
-                    "You can permanently delete old commits without risk."
+                    "Writing backend code for apps",
+                    "Managing and provisioning infrastructure through code",
+                    "Storing backup copies of source code",
+                    "Manually updating server settings"
                 ],
                 correctAnswer: 1,
-                explanation: "Branches isolate new work safely."
+                explanation: "IaC automates the setup of servers, networks, and more via code."
             },
             {
-                question: "What command would you use to create a new branch in Git?",
+                question: "What does Dynamic Application Security Testing (DAST) focus on?",
                 options: [
-                    "git checkout",
-                    "git merge",
-                    "git branch <branch-name>",
-                    "git push"
+                    "Scanning infrastructure setup files",
+                    "Testing the application while it is running",
+                    "Checking code before it compiles",
+                    "Monitoring server traffic logs"
                 ],
-                correctAnswer: 2,
-                explanation: "git branch creates a new branch for you to work on."
+                correctAnswer: 1,
+                explanation: "DAST simulates attacks against a live, running application."
+            },
+            {
+                question: "What is the purpose of Static Application Security Testing (SAST)?",
+                options: [
+                    "Testing a running application's defenses",
+                    "Scanning source code for vulnerabilities before compilation",
+                    "Testing database queries under load",
+                    "Checking user interface consistency"
+                ],
+                correctAnswer: 1,
+                explanation: "SAST examines source code directly to find security flaws early."
+            },
+            {
+                question: "What is a container?",
+                options: [
+                    "A physical server for storing databases",
+                    "A lightweight package containing code and all dependencies needed to run it",
+                    "A type of cybersecurity firewall",
+                    "A backup file stored in the cloud"
+                ],
+                correctAnswer: 1,
+                explanation: "Containers bundle applications and dependencies into portable units."
+            },
+            {
+                question: "What does a container image contain?",
+                options: [
+                    "Only the source code",
+                    "An executable bundle of the application and its dependencies",
+                    "A complete copy of a virtual machine",
+                    "A list of all the company's servers"
+                ],
+                correctAnswer: 1,
+                explanation: "A container image includes everything the container needs to run."
             }
         ];
 

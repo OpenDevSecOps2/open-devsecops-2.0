@@ -7,7 +7,7 @@ has_children: true
 nav_order: 2
 ---
 
-# Git Fundamentals 
+# Chapter 2 - Git Fundamentals 
 ## What is a repository?
 
 {: .definition }
