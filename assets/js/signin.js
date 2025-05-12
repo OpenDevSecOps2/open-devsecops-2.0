@@ -55,7 +55,7 @@ onAuthStateChanged(auth, (user) => {
         link.style.verticalAlign = 'middle';
         link.style.margin = '7px';
 
-        link.href = '/docs/other/profile.html';
+        link.href = "{{ '/docs/other/profile.html' | relative_url }}";
 
         link.appendChild(profileImage);
         ul.append(link);
