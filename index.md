@@ -48,3 +48,5 @@ Contributions are welcome! Help us keep the curriculum relevant and effective by
 - [Raymond Smith (Lit Review)](https://www.linkedin.com/in/raymondsmith100/)
 - [Uijin Lim (Developer)](https://www.linkedin.com/in/uijinlim/)
 - [Leo Zheng (UX Researcher/Developer)](https://www.linkedin.com/in/leozheng-/)
+
+<script type='module' src="/assets/js/signin.js"></script>
