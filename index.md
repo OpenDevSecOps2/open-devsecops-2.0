@@ -3,8 +3,8 @@ title: Home
 layout: custom
 nav_order: 0
 ---
-# Welcome Back, John Doe! 👋
-you are currently on an 8 day streak of logging in. Keep it going! 🔥
+# Welcome to the DevSecOps Curriculum! 👋
+If you would like personal quizzes and feedback, SIGN IN! 🔥
 
 ---
 # DevSecOps Curriculum 💻
@@ -48,3 +48,5 @@ Contributions are welcome! Help us keep the curriculum relevant and effective by
 - [Raymond Smith (Lit Review)](https://www.linkedin.com/in/raymondsmith100/)
 - [Uijin Lim (Developer)](https://www.linkedin.com/in/uijinlim/)
 - [Leo Zheng (UX Researcher/Developer)](https://www.linkedin.com/in/leozheng-/)
+
+<script type='module' src="{{ '/assets/js/home.js' | relative_url }}"></script>
