@@ -50,6 +50,7 @@ onAuthStateChanged(auth, (user) => {
         
         // if signed in show sign in button with profile 
         const link = document.createElement('a');
+        link.id = 'profile-link'
         profileImage.src = user.photoURL;
 
         link.style.verticalAlign = 'middle';
@@ -86,9 +87,4 @@ onAuthStateChanged(auth, (user) => {
         // if not signed in show sign in button
         ul.appendChild(button);
     }
-});
-
-// Redirects to profile page when clicked
-profileImage.addEventListener('click', () => {
-    
 });
