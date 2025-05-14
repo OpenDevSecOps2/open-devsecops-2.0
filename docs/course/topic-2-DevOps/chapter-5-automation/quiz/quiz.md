@@ -372,7 +372,11 @@ nav_order: 2
         </div>
     </div>
 
-    <script>
+    <script type='module'>
+        import { auth, db } from '../../../../../assets/js/firebase.js';
+        import { ref, update } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
         const quizData = [
   {
     question: "What is a main reason automated testing is used in CI/CD?",
@@ -598,6 +602,31 @@ nav_order: 2
                 const reviewLink = completionSubtext.querySelector('.return-link');
                 reviewLink.addEventListener('click', () => {
                     alert('Returning to chapter for review...');
+                });
+
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        const quizRef = ref(db, "users/" + user.uid + "/" + "Automated_Tests");
+
+                        let status = "Failed";
+                        let passed = false
+                        if (percentage >= 75) {
+                            status = "Passed";
+                            passed = true
+                        }
+
+                        const today = new Date();
+                        const formatted = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+
+                        const outcome = score + "/" + quizData.length;
+
+                        update(quizRef, {
+                            score: outcome,
+                            date: formatted,
+                            passed: passed,
+                            status: status
+                        })
+                    }
                 });
             }
             
