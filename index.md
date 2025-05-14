@@ -55,4 +55,11 @@ Contributions are welcome! Help us keep the curriculum relevant and effective by
 - [Uijin Lim (Developer)](https://www.linkedin.com/in/uijinlim/)
 - [Leo Zheng (UX Researcher/Developer)](https://www.linkedin.com/in/leozheng-/)
 
+### Previous Contributers
+- [Sirena Akopyan](https://www.linkedin.com/in/sirena-akopyan/)
+- [Bhavya Garlapati](https://www.linkedin.com/in/bhavya-garlapati-95ab46225/)
+- [Eric Kim](https://www.linkedin.com/in/taehyunnkim/)
+- [Mari Woodworth](https://www.linkedin.com/in/marikowoodworth/)
+- [Brandon Mendoza](https://www.linkedin.com/in/bwmendo/)
+
 <script type='module' src="{{ '/assets/js/home.js' | relative_url }}"></script>
