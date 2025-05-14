@@ -1,6 +1,6 @@
 title: open-devsecops2
 description: 'From Classroom to Industry: Bridging the DevSecOps Knowledge Gap with Open, Practical Learning.'
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs
 
 logo: "/assets/images/opendevsecops-transparent.png"
 favicon_ico: "/assets/images/opendevsecops-favicon.ico"
@@ -27,6 +27,3 @@ callouts:
   lab:
     title: Access The Lab
     color: purple
-
-plugins:
-  - jekyll-remote-theme
