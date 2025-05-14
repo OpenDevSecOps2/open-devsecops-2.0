@@ -3,6 +3,12 @@ title: Home
 layout: custom
 nav_order: 0
 ---
+> **📢 Project Open-Sourcing Notice**  
+> This project, *Open DevSecOps 2.0*, is now open source!  
+> As of **May 15, 2025**, the codebase and documentation are publicly available for educational and collaborative use.  
+> 👉 [View the GitHub Repository](https://github.com/eugenelim0805/open-devsecops-2.0)
+
+---
 # Welcome to the DevSecOps Curriculum! 👋
 If you would like personal quizzes and feedback, SIGN IN! 🔥
 
