@@ -61,7 +61,6 @@ npm run build
 
 ## 📘 Curriculum & Presentation
 
-- 📄 [Final Presentation Slides](URL_TO_SLIDES_HERE)
 - 📚 Curriculum content is located in the `/docs` folder
 
 ## 🧾 License
