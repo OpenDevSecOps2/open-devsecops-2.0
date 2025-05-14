@@ -29,14 +29,15 @@ onAuthStateChanged(auth, (user) => {
     });
 });
 
-export const quizList = ['Introduction_to_Version_Control', 'Git_Fundamentals', 'Git_Intermediate', 'Git_Best_Practices', 'Intro_to_DevOps', 'Intro_to_CI/CD', 'Containerization', 'Webhooks', 'Automated_Tests', 'Deployment', 'DevSecOps', 'Security_Checks_in_CI/CD'];
+export const quizList = ['Introduction_to_Version_Control', 'Git_Fundamentals', 'Git_Intermediate', 'Git_Best_Practices', 'Intro_to_DevOps', "Intro_to_CI_CD", 'Containerization', 'Webhooks', 'Automated_Tests', 'Deployment', 'DevSecOps', 'Security_Checks_in_CI_CD'];
 function newUser(uid) {
     for (let i = 0; i < quizList.length; i++) {
         const quizRef = ref(db, "users/" + uid + "/" + quizList[i])
         set(quizRef, {
             score: 'N/A',
             date: 'N/A',
-            status: 'Incomplete'
+            passed: false,
+            status: "Incomplete"
         })
     }
 }
