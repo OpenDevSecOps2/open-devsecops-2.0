@@ -27,3 +27,6 @@ callouts:
   lab:
     title: Access The Lab
     color: purple
+
+plugins:
+  - jekyll-remote-theme
