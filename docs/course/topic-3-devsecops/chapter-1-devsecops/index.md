@@ -2,6 +2,7 @@
 title: Chapter 1 - DevSecOps
 layout: custom
 parent: Topic 3 - DevSecOps
+has_children: true
 has_toc: false
 nav_order: 1
 ---

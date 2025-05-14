@@ -1,6 +1,6 @@
 ---
 layout: custom
-title: Chapter 1 Quiz
+title: Chapter 1 Quiz 📝
 grand_parent: Topic 3 - DevSecOps
 parent: Chapter 1 - DevSecOps
 nav_order: 1

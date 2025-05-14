@@ -1,6 +1,6 @@
 ---
 layout: custom
-title: Chapter 3 Quiz
+title: Chapter 3 Quiz 📝
 grand_parent: Topic 2 - DevOps
 parent: Chapter 3 - Containerization
 nav_order: 2
@@ -317,7 +317,7 @@ nav_order: 2
         
         <div class="actions">
             <button id="start-quiz-btn" class="btn">Start Quiz</button>
-            <a href="#" class="return-link">Return to Chapter</a>
+            <a href="../index" class="return-link">Return to Chapter</a>
         </div>
     </div>
     
@@ -367,8 +367,8 @@ nav_order: 2
         </div>
         
         <div>
-            <button id="return-chapter" class="return-btn">Return to Chapter</button>
-            <button id="next-chapter" class="quiz-btn">Next Chapter</button>
+            <button id="return-chapter" class="return-btn" onclick="window.location.href='../index'">Return to Chapter</button>
+            <button id="next-chapter" class="quiz-btn" onclick="window.location.href='../../chapter-4-webhooks/index'">Next Chapter</button>
         </div>
     </div>
 
@@ -613,7 +613,7 @@ nav_order: 2
                 completionMessage.textContent = 'Good effort';
                 completionSubtext.innerHTML = `
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
-                    <a href="#" class="return-link">Review this chapter</a>
+                    <a href="../index" class="return-link">Review this chapter</a>
                 `;
                 
                 const reviewLink = completionSubtext.querySelector('.return-link');

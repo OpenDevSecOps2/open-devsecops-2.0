@@ -1,6 +1,6 @@
 ---
 layout: custom
-title: Chapter 2 Quiz
+title: Chapter 2 Quiz 📝
 grand_parent: Topic 3 - DevSecOps
 parent: Chapter 2 - Security Checks in CI/CD
 nav_order: 3

@@ -1,13 +1,14 @@
 ---
 layout: custom
-title: Chapter 1 Quiz
+title: Chapter 1 Quiz 📝
 grand_parent: Topic 1 - Git
 parent: Chapter 1 - Introduction to Version Control
 nav_order: 1
 ---
 
 <div id="quiz">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -560,6 +561,7 @@ nav_order: 1
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -569,6 +571,22 @@ nav_order: 1
             submitBtn.classList.add('hidden');
             nextBtn.classList.remove('hidden');
         });
+
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
 
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
@@ -624,7 +642,7 @@ nav_order: 1
                 completionMessage.textContent = 'Good effort';
                 completionSubtext.innerHTML = `
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
-                    <a href="#" class="return-link">Review this chapter</a>
+                    <a href="../index" class="return-link">Review this chapter</a>
                 `;
             }
             

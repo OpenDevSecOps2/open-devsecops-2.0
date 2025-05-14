@@ -1,6 +1,6 @@
 ---
 layout: custom
-title: Chapter 3 Quiz
+title: Chapter 3 Quiz 📝
 grand_parent: Topic 1 - Git
 parent: Chapter 3 - Git Intermediate Concepts
 nav_order: 2
