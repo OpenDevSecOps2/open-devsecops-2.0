@@ -21,7 +21,7 @@ function getQuizzes(uid) {
     for (let i = 0; i < quizList.length; i++) {
         const quizRef = ref(db, "users/" + uid + "/" + quizList[i])
         const data = get(quizRef)
-        if (data.status != "Passed") {
+        if (!data.passed) {
             total++;
         }
     }
