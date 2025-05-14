@@ -371,7 +371,11 @@ nav_order: 1
         </div>
     </div>
 
-    <script>
+    <script type='module'>
+        import { auth, db } from '../../../../../assets/js/firebase.js';
+        import { ref, update } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
         const quizData = [
             {
                 question: "What is the main purpose of a README file?",
@@ -615,6 +619,31 @@ nav_order: 1
                     </div>
                 `;
             }).join('');
+
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    const quizRef = ref(db, "users/" + user.uid + "/" + "Git_Best_Practices");
+
+                    let status = "Failed";
+                    let passed = false;
+                    if (percentage >= 75) {
+                        status = "Passed";
+                        passed = true;
+                    }
+
+                    const today = new Date();
+                    const formatted = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+
+                    const outcome = score + "/" + quizData.length;
+
+                    update(quizRef, {
+                        score: outcome,
+                        date: formatted,
+                        passed: passed,
+                        status: status
+                    })
+                }
+            });
         }
     </script>
 </div>
