@@ -1,5 +1,6 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
-import auth from '../js/signin.js';
+import { auth, db, quizList } from '../js/firebase.js';
+import { ref, get } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -10,7 +11,20 @@ onAuthStateChanged(auth, (user) => {
 
         // Show some detail about the user
         const p = document.querySelector('main > p');
-        const num = '???'
-        p.textContent = 'You are currently ' + num + " quizzes away from being certified. Keep it going! 🔥"; 
+        p.textContent = 'You are currently ' + getQuizzes(user.uid) + " quizzes away from being certified. Keep it going! 🔥"; 
     }
 });
+
+function getQuizzes(uid) {
+    let total = 0;
+
+    for (let i = 0; i < quizList.length; i++) {
+        const quizRef = ref(db, "users/" + uid + "/" + quizList[i])
+        const data = get(quizRef)
+        if (data.status != "Passed") {
+            total++;
+        }
+    }
+
+    return total;
+}
