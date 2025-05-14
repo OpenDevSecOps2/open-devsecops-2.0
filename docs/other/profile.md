@@ -11,7 +11,7 @@ has_children: false
 </body>
 
 <script type='module'>
-    import auth from '../../assets/js/signin.js';
+    import { auth } from '../../assets/js/firebase.js';
     import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
     const div = document.querySelector('#profile');
