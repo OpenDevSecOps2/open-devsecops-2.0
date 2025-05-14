@@ -12,7 +12,6 @@ Our goal is to transform traditional DevSecOps education into a practical, hands
 - 🧪 Interactive labs (React, GitHub Pages, containerization, etc.)
 - 👤 Avatar-based feedback and achievements
 - 📊 Dashboard-style progress visualization
-- 👥 Built-in community discussion templates
 
 ## 🖥️ Live Demo
 
