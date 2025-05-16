@@ -180,6 +180,11 @@ has_children: false
         background: rgba(147, 225, 147, 0.4);
     }
 
+    .sign-in:hover {
+        background: rgba(165, 214, 167, 0.8);
+        cursor: pointer;
+    }
+
     .signed-out {
         justify-content: center;
     }
