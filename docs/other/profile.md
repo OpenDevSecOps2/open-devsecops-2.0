@@ -89,6 +89,15 @@ has_children: false
             label.style.fontWeight = 'bold';
             progress.appendChild(label);
 
+            const claimBtn = document.createElement('button');
+            claimBtn.textContent = 'Claim Certificate';
+            claimBtn.className = 'container-element claim-certificate';
+            // claimBtn.addEventListener('click', () => {
+            //     window.open('/certificate-claim', '_blank');
+            // });
+            cert.append(claimBtn);
+
+
             // Add Quiz Performance div
             const quizHeader = document.createElement('h2');
             quizHeader.className = 'heading';
@@ -158,6 +167,11 @@ has_children: false
         margin-left: 70px;
     }
 
+    .sign-out:hover { 
+        background: rgba(192, 57, 43, 0.35);
+        cursor: pointer;
+    }
+
     .sign-in {
         color: green;
         border: 2px solid green;
@@ -179,4 +193,18 @@ has_children: false
     .container-text {
         margin: 3px;
     }
+
+    .claim-certificate {
+        margin-left: auto;
+        color: rgb(21, 55, 208);
+        border: 2px solid rgb(22, 22, 148);
+        background: rgba(21, 55, 208, 0.1);
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .claim-certificate:hover {
+    background: rgba(21, 55, 208, 0.2);
+    cursor: pointer;
+}
 </style>
