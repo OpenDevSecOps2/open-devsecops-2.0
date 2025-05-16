@@ -16,7 +16,7 @@ Our goal is to transform traditional DevSecOps education into a practical, hands
 ## 🖥️ Live Demo
 
 Explore the live application here:  
-👉 [https://eugenelim0805.github.io/open-devsecops-2.0/](https://eugenelim0805.github.io/open-devsecops-2.0/)
+👉 [https://opendevsecops2.github.io/open-devsecops-2.0/](https://opendevsecops2.github.io/open-devsecops-2.0/)
 
 ## 📂 Repository Structure
 
