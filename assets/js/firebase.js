@@ -34,8 +34,8 @@ function newUser(uid) {
     for (let i = 0; i < quizList.length; i++) {
         const quizRef = ref(db, "users/" + uid + "/" + quizList[i])
         set(quizRef, {
-            score: 'N/A',
-            date: 'N/A',
+            score: '---',
+            date: '---',
             passed: false,
             status: "Incomplete"
         })

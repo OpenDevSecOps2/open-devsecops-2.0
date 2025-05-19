@@ -11,20 +11,23 @@ onAuthStateChanged(auth, (user) => {
 
         // Show some detail about the user
         const p = document.querySelector('main > p');
-        p.textContent = 'You are currently ' + getQuizzes(user.uid) + " quizzes away from being certified. Keep it going! 🔥"; 
+        getQuizzes(user.uid).then(total => {
+            p.textContent = 'You are currently ' + total + " quizzes away from being certified. Keep it going! 🔥"; 
+        });
     }
 });
 
-function getQuizzes(uid) {
+async function getQuizzes(uid) {
     let total = 0;
 
     for (let i = 0; i < quizList.length; i++) {
         const quizRef = ref(db, "users/" + uid + "/" + quizList[i])
-        const data = get(quizRef)
+        const snapshot = await get(quizRef);
+        const data = snapshot.val();
+
         if (!data.passed) {
             total++;
         }
     }
-
     return total;
 }

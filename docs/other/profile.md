@@ -11,8 +11,9 @@ has_children: false
 </body>
 
 <script type='module'>
-    import { auth } from '../../assets/js/firebase.js';
+    import { auth, quizList, db } from '../../assets/js/firebase.js';
     import { onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+    import { ref, get } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
 
     const div = document.querySelector('#profile');
 
@@ -100,6 +101,55 @@ has_children: false
             quiz.className = 'container';
             body.appendChild(quiz);
 
+            // Add Quiz Table
+            const table = document.createElement('table');
+
+            const thead = document.createElement('thead');
+            const headerRow = document.createElement('tr');
+            const headers = ['Quiz Name', 'Score', 'Date Completed', 'Status']
+            headers.forEach(label => {
+                const th = document.createElement('th');
+                th.textContent = label;
+                headerRow.appendChild(th);
+            });
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+            quiz.appendChild(table);
+
+            for (let i = 0; i < quizList.length; i++) {
+                const tr = document.createElement('tr');
+                
+                const name = document.createElement('td');
+                name.textContent = quizList[i].split('_').join(' ');
+                tr.appendChild(name);
+
+                const quizRef = ref(db, 'users/' + user.uid + '/' + quizList[i]);
+                getData(quizRef).then(output => {
+                    const score = document.createElement('td');
+                    score.textContent = output[0];
+                    tr.appendChild(score);
+
+                    const date = document.createElement('td');
+                    date.textContent = output[1];
+                    tr.appendChild(date);
+
+                    const status = document.createElement('td');
+                    status.className = 'status';
+                    const statusPic = document.createElement('p');
+                    statusPic.textContent = output[2];
+                    if (output[2] == 'Passed') {
+                        statusPic.className = 'status-passed';
+                    } else {
+                        statusPic.className = 'status-failed';
+                    }
+                    status.appendChild(statusPic);
+                    tr.appendChild(status);
+                });
+                
+                table.appendChild(tr);
+            }
+
         } else {
             // space showing that a user is not signed in
             const container = document.querySelector('#profile');
@@ -115,6 +165,14 @@ has_children: false
             });
         }
     });
+
+    async function getData(quizRef) {
+
+        const snapshot = await get(quizRef);
+        const data = snapshot.val();
+
+        return [data.score, data.date, data.status];
+    }
 </script>
 
 <style>
@@ -179,4 +237,34 @@ has_children: false
     .container-text {
         margin: 3px;
     }
+
+    td {
+        text-align: center;
+    }
+
+    th {
+        background: #f2f2f2;
+        border-radius: 10px;
+    }
+
+    .status-passed {
+        border: 2px solid green;
+        border-radius: 20px;
+        background: rgba(147, 225, 147, 0.4);
+        color: green;
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .status-failed {
+        border: 2px solid #B22222;
+        border-radius: 20px;
+        background: rgba(222, 106, 106, 0.4);
+        color: #B22222;
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
 </style>
