@@ -16,7 +16,7 @@ Our goal is to transform traditional DevSecOps education into a practical, hands
 ## 🖥️ Live Demo
 
 Explore the live application here:  
-👉 [https://eugenelim0805.github.io/open-devsecops-2.0/](https://eugenelim0805.github.io/open-devsecops-2.0/)
+👉 [https://opendevsecops2.github.io/open-devsecops-2.0/](https://opendevsecops2.github.io/open-devsecops-2.0/)
 
 ## 📂 Repository Structure
 
@@ -36,26 +36,21 @@ LICENSE             # MIT License
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/eugenelim0805/open-devsecops-2.0.git
+git clone https://github.com/OpenDevSecOps2/open-devsecops-2.0.git
 cd open-devsecops-2.0
 ```
 
 ### 2. Install Dependencies
 
 ```bash
-npm install
+# Install Ruby gems (for Jekyll)
+bundle install
 ```
 
 ### 3. Run Locally
 
 ```bash
-npm start
-```
-
-### 4. Build for Production
-
-```bash
-npm run build
+bundle exec jekyll serve
 ```
 
 ## 📘 Curriculum & Presentation
@@ -89,7 +84,7 @@ Please be respectful and constructive. We aim to maintain a positive and collabo
 Open DevSecOps 2.0 was developed for the Spring 2025 iSchool Capstone program at the University of Washington by the following team:
 
 - Raymond Smith   
-- Eugene Lim  
+- Uijin Lim  
 - Jonathan To  
 - Ben Leland  
 - Leo Zheng
