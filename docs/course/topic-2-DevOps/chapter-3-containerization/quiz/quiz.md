@@ -3,11 +3,12 @@ layout: custom
 title: Chapter 3 Quiz 📝
 grand_parent: Topic 2 - DevOps
 parent: Chapter 3 - Containerization
-nav_order: 2
+nav_order: 4
 ---
 
 <div id="quiz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -378,73 +379,167 @@ nav_order: 2
         import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
         const quizData = [
-  {
-    question: "What is a container in cloud computing?",
-    options: [
-      "A virtual machine running a separate operating system",
-      "A hardware device for cloud storage",
-      "A standard unit of software that packages code and dependencies to run reliably across environments",
-      "A type of database management system"
-    ],
-    correctAnswer: 2,
-    explanation: "Containers bundle code, libraries, and settings together, allowing software to run reliably across different environments without needing separate OS instances like virtual machines."
-  },
-  {
-    question: "Why are containers more lightweight than virtual machines?",
-    options: [
-      "Containers use less RAM by default",
-      "Containers share the host machine’s operating system kernel",
-      "Containers don't need any operating system to run",
-      "Containers store only user data and no system files"
-    ],
-    correctAnswer: 1,
-    explanation: "Unlike virtual machines, containers share the host OS kernel, which reduces overhead and makes them lightweight."
-  },
-  {
-    question: "What is a major advantage of containerization?",
-    options: [
-      "It eliminates the need for any code dependencies",
-      "It guarantees zero software bugs",
-      "It allows applications to run consistently across different environments",
-      "It requires a dedicated server for each container"
-    ],
-    correctAnswer: 2,
-    explanation: "By encapsulating all dependencies, containers enable consistent behavior across environments."
-  },
-  {
-    question: "What tool is commonly used to manage and orchestrate containers?",
-    options: [
-      "GitHub",
-      "Artifactory",
-      "Jenkins",
-      "Kubernetes"
-    ],
-    correctAnswer: 3,
-    explanation: "Kubernetes is a powerful orchestration platform used for deploying, scaling, and managing containerized applications."
-  },
-  {
-    question: "What is 'Artifactory'?",
-    options: [
-      "A universal repository manager for storing software packages and artifacts",
-      "A library of pre-built operating systems",
-      "A container runtime for launching applications",
-      "A server for running Kubernetes clusters"
-    ],
-    correctAnswer: 0,
-    explanation: "Artifactory is a repository tool used to manage and distribute artifacts such as container images and packages."
-  },
-  {
-    question: "Which is NOT a benefit of containerization?",
-    options: [
-      "Faster software deployment",
-      "Isolation between applications",
-      "Increased complexity by requiring a separate operating system per container",
-      "Portability across environments"
-    ],
-    correctAnswer: 2,
-    explanation: "Unlike virtual machines, containers **share** the host OS and do not require separate OS instances, which simplifies deployment."
-  }
-];
+            {
+                question: "What is a container in cloud computing?",
+                options: [
+                    "A virtual machine running a separate operating system",
+                    "A standard unit of software that packages code and dependencies to run reliably across environments",
+                    "A hardware device for cloud storage",
+                    "A type of database management system"
+                ],
+                explanations: [
+                    "Containers share the host OS kernel; they don't require separate OS instances like virtual machines.",
+                    "Containers bundle code, libraries, and settings together for consistent performance across environments.",
+                    "Containers are software-based, not hardware devices.",
+                    "Containers manage applications, not databases."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Why are containers more lightweight than virtual machines?",
+                options: [
+                    "Containers don't need any operating system to run",
+                    "Containers share the host machine's operating system kernel",
+                    "Containers use less RAM by default",
+                    "Containers store only user data and no system files"
+                ],
+                explanations: [
+                    "Containers still rely on an OS, but share it instead of duplicating it.",
+                    "Unlike VMs, containers don't boot a new OS, making them faster and lighter.",
+                    "It's about shared OS kernels, not RAM alone.",
+                    "Containers include system settings and dependencies, not just user data."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is a major advantage of containerization?",
+                options: [
+                    "It requires a dedicated server for each container",
+                    "It guarantees zero software bugs",
+                    "It allows applications to run consistently across different environments",
+                    "It eliminates the need for any code dependencies"
+                ],
+                explanations: [
+                    "Containers allow multiple apps to run on the same server efficiently.",
+                    "Containers improve consistency but do not eliminate bugs.",
+                    "Containers encapsulate everything needed to run the app reliably anywhere.",
+                    "Containers include dependencies but do not eliminate the need for them."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What tool is commonly used to manage and orchestrate containers?",
+                options: [
+                    "GitHub",
+                    "Kubernetes",
+                    "Jenkins",
+                    "Artifactory"
+                ],
+                explanations: [
+                    "GitHub hosts code, not containers directly.",
+                    "Kubernetes automates deployment, scaling, and management of containerized applications.",
+                    "Jenkins is used for CI/CD automation, not container orchestration.",
+                    "Artifactory manages artifacts, not container orchestration."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "How does containerization support microservices architecture?",
+                options: [
+                    "By combining all services into one large container",
+                    "By preventing services from communicating with each other",
+                    "By allowing small, independent services to be packaged separately",
+                    "By using multiple operating systems for each service"
+                ],
+                explanations: [
+                    "Microservices are broken into separate, smaller services, not combined.",
+                    "Microservices must communicate efficiently.",
+                    "Each microservice can live in its own container, making development and scaling easier.",
+                    "Containers share the same OS kernel."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "In the context of IoT devices, why is containerization helpful?",
+                options: [
+                    "It eliminates the need for software updates on IoT devices",
+                    "It increases the physical storage size needed on IoT devices",
+                    "It simplifies deploying and updating applications across devices with limited resources",
+                    "It forces all devices to run the same hardware"
+                ],
+                explanations: [
+                    "Software still needs updating, but containers make it easier.",
+                    "Containers are lightweight and efficient for limited-resource devices.",
+                    "Containers package the app neatly for easier deployment to IoT devices.",
+                    "Containers ensure software portability, not hardware uniformity."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is an 'artifact' in containerization?",
+                options: [
+                    "The running application in production",
+                    "A snapshot image of an application and its dependencies",
+                    "A manual script written by developers",
+                    "A temporary cache file used during compilation"
+                ],
+                explanations: [
+                    "The artifact is the image, not the running app.",
+                    "An artifact (like a container image) contains everything needed to recreate the app environment.",
+                    "Artifacts are structured packages, not random scripts.",
+                    "Artifacts are final deliverables, not temporary files."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is 'Artifactory'?",
+                options: [
+                    "A container runtime for launching applications",
+                    "A universal repository manager for storing software packages and artifacts",
+                    "A server for running Kubernetes clusters",
+                    "A library of pre-built operating systems"
+                ],
+                explanations: [
+                    "Artifactory stores and manages artifacts, not runs containers.",
+                    "Artifactory is a tool that helps manage and distribute various types of artifacts.",
+                    "Kubernetes servers orchestrate containers, not Artifactory.",
+                    "Artifactory handles artifacts, not OS images."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the relationship between an artifact and Artifactory?",
+                options: [
+                    "An artifact stores different versions of Artifactory",
+                    "An artifact is a product of software development, while Artifactory manages and stores these artifacts",
+                    "Artifactory replaces the need for artifacts",
+                    "An artifact is always automatically updated in Artifactory"
+                ],
+                explanations: [
+                    "Artifactory stores artifacts, not the other way around.",
+                    "Artifacts are outputs of development (like container images), and Artifactory is where they're stored and distributed.",
+                    "Artifactory exists to organize and manage artifacts, not replace them.",
+                    "Updates must be pushed manually or through CI/CD pipelines."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Which is NOT a benefit of containerization?",
+                options: [
+                    "Portability across environments",
+                    "Isolation between applications",
+                    "Increased complexity by requiring a separate operating system per container",
+                    "Faster software deployment"
+                ],
+                explanations: [
+                    "Portability is one of the major benefits.",
+                    "Containers isolate apps and their dependencies effectively.",
+                    "Containers share the OS kernel, making them simpler and lighter compared to virtual machines.",
+                    "Containerization greatly speeds up deployment."
+                ],
+                correctAnswer: 2
+            }
+        ];
 
         let currentQuestion = 0;
         let score = 0;
@@ -547,12 +642,12 @@ nav_order: 2
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -563,13 +658,29 @@ nav_order: 2
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -580,9 +691,9 @@ nav_order: 2
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -605,7 +716,7 @@ nav_order: 2
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "Containerization";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -619,11 +730,6 @@ nav_order: 2
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../index" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);
@@ -679,13 +785,5 @@ nav_order: 2
                 }
             });
         }
-
-        returnChapterBtn.addEventListener('click', () => {
-            alert('Returning to chapter...');
-        });
-
-        nextChapterBtn.addEventListener('click', () => {
-            alert('Moving to next chapter...');
-        });
     </script>
 </div>

@@ -387,19 +387,29 @@ nav_order: 1
                     "To prevent developers from editing the same file at the same time",
                     "To manage project funding and timelines"
                 ],
-                correctAnswer: 1,
-                explanation: "This is exactly the purpose of version control: collaboration, tracking modifications, and reverting when necessary."
+                explanations: [
+                    "Backup systems are different; version control tracks changes over time, not just backups.",
+                    "This is exactly the purpose of version control: collaboration, tracking modifications, and reverting when necessary.",
+                    "Version control allows simultaneous work and helps manage merging, not block editing.",
+                    "That's project management, not version control."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "In the example, what was the potential problem Armine and Tigran faced without version control?",
                 options: [
                     "They might forget to save their changes",
                     "They could accidentally delete each other's accounts",
-                    "Tigran’s upload could overwrite Armine’s changes, causing loss of progress and conflicts",
+                    "Tigran's upload could overwrite Armine's changes, causing loss of progress and conflicts",
                     "The application might crash due to poor coding practices"
                 ],
-                correctAnswer: 2,
-                explanation: "Without version control, edits could overwrite each other’s work."
+                explanations: [
+                    "Saving is a local issue; the problem is overwriting each other's work.",
+                    "Nothing about user accounts is mentioned.",
+                    "Without version control, edits could overwrite each other's work.",
+                    "The issue is collaboration, not code quality."
+                ],
+                correctAnswer: 2
             },
             {
                 question: "What happens with version control when Armine and Tigran work on their code?",
@@ -409,30 +419,45 @@ nav_order: 1
                     "Tigran automatically controls all updates to the system",
                     "Only one person can access the project at a time"
                 ],
-                correctAnswer: 1,
-                explanation: "Version control allows concurrent work and later merging."
+                explanations: [
+                    "Version control allows simultaneous editing.",
+                    "Version control allows concurrent work and later merging.",
+                    "No single developer controls everything; changes are tracked individually.",
+                    "Version control is built for multi-user collaboration."
+                ],
+                correctAnswer: 1
             },
             {
-                question: "If a problem arises with Armine’s authentication updates, what advantage does version control offer?",
+                question: "If a problem arises with Armine's authentication updates, what advantage does version control offer?",
                 options: [
                     "Tigran's code is automatically deleted",
                     "The entire project is reset to the original version",
-                    "Armine can revert her specific changes without affecting Tigran’s work",
+                    "Armine can revert her specific changes without affecting Tigran's work",
                     "The system locks down any future edits until the issue is fixed"
                 ],
-                correctAnswer: 2,
-                explanation: "Version control allows rolling back individual changes safely."
+                explanations: [
+                    "No code is deleted automatically.",
+                    "Only specific changes can be reverted, not the whole project.",
+                    "Version control allows rolling back individual changes safely.",
+                    "Collaboration continues even when issues arise."
+                ],
+                correctAnswer: 2
             },
             {
                 question: "What popular tool for version control is mentioned in the chapter?",
                 options: [
-                    "Dropboxs",
+                    "Dropbox",
                     "Slack",
                     "GitHub",
                     "Jira"
                 ],
-                correctAnswer: 2,
-                explanation: "GitHub is the version control tool mentioned."
+                explanations: [
+                    "Dropbox is a file storage service, not a version control tool.",
+                    "Slack is for communication, not code versioning.",
+                    "GitHub is the version control tool mentioned.",
+                    "Jira is for project and issue tracking, not code versioning."
+                ],
+                correctAnswer: 2
             },
             {
                 question: "What is GitHub compared to in the example?",
@@ -442,8 +467,13 @@ nav_order: 1
                     "Google Docs, where you can see the history of document changes",
                     "An app store for mobile applications"
                 ],
-                correctAnswer: 2,
-                explanation: "GitHub is compared to Google Docs’ document history feature."
+                explanations: [
+                    "GitHub is compared to document history, not libraries.",
+                    "GitHub is about version control, not messaging.",
+                    "GitHub is compared to Google Docs' document history feature.",
+                    "GitHub isn't a store."
+                ],
+                correctAnswer: 2
             },
             {
                 question: "Although different version control systems exist, what remains the same across them?",
@@ -453,8 +483,13 @@ nav_order: 1
                     "The design and color themes of the platforms",
                     "The default settings and login systems"
                 ],
-                correctAnswer: 1,
-                explanation: "Regardless of the system, the core ideas are the same."
+                explanations: [
+                    "Syntax can vary; core concepts stay the same.",
+                    "Regardless of the system, the core ideas are the same.",
+                    "UIs can look different.",
+                    "These vary across platforms."
+                ],
+                correctAnswer: 1
             }
         ];
 
@@ -559,7 +594,6 @@ nav_order: 1
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
@@ -598,7 +632,7 @@ nav_order: 1
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -609,9 +643,9 @@ nav_order: 1
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }

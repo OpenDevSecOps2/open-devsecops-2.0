@@ -8,6 +8,7 @@ nav_order: 1
 
 <div id="quiz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -380,112 +381,162 @@ nav_order: 1
             {
                 question: "What does 'DevSecOps' stand for?",
                 options: [
-                    "Development, Security, Optimization",
+                    "Developer Security Operations",
                     "Development, Security, Operations",
                     "Deployment, Services, Operations",
-                    "Developer Security Operations"
+                    "Development, Security, Optimization"
                 ],
-                correctAnswer: 1,
-                explanation: "DevSecOps integrates development, security, and operations practices."
+                explanations: [
+                    "It's a broader process, not just about developers.",
+                    "DevSecOps integrates development, security, and operations practices.",
+                    "DevSecOps is not about deployment services specifically.",
+                    "The 'Ops' refers to Operations, not Optimization."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is the main goal of DevSecOps?",
                 options: [
-                    "To delay security testing until after deployment",
-                    "To embed security practices throughout the entire development lifecycle",
                     "To automate server infrastructure setup",
+                    "To embed security practices throughout the entire development lifecycle",
+                    "To delay security testing until after deployment",
                     "To eliminate the need for manual coding"
                 ],
-                correctAnswer: 1,
-                explanation: "DevSecOps integrates security from initial design through final delivery."
+                explanations: [
+                    "That relates to infrastructure as code, not the main goal of DevSecOps.",
+                    "DevSecOps integrates security from initial design through final delivery.",
+                    "DevSecOps emphasizes early and continuous security integration.",
+                    "Manual coding is still essential."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "Why is it risky to defer security activities until the testing phase?",
                 options: [
-                    "It guarantees faster software delivery",
                     "Security risks might go unnoticed and cause severe impact later",
+                    "It guarantees faster software delivery",
                     "It simplifies the design process",
                     "It ensures more robust features"
                 ],
-                correctAnswer: 1,
-                explanation: "Late detection of risks can be costly and harmful."
+                explanations: [
+                    "Late detection of risks can be costly and harmful.",
+                    "Delaying security can slow progress due to late-detected vulnerabilities.",
+                    "It complicates the entire SDLC instead.",
+                    "Late security practices weaken overall software robustness."
+                ],
+                correctAnswer: 0
             },
             {
                 question: "What does 'shift left' mean in DevSecOps?",
                 options: [
-                    "Pushing features to production faster",
                     "Moving testing activities earlier in the development process",
+                    "Pushing features to production faster",
                     "Running final security checks in production",
                     "Outsourcing security tasks"
                 ],
-                correctAnswer: 1,
-                explanation: "Shift left means testing and securing code earlier."
+                explanations: [
+                    "Shift left means testing and securing code earlier.",
+                    "Shift left focuses on early security testing.",
+                    "That's part of 'shift right.'",
+                    "It's about internal team practices."
+                ],
+                correctAnswer: 0
             },
             {
                 question: "What is 'shift right' testing focused on?",
                 options: [
+                    "Writing code for different platforms",
                     "Monitoring user behavior and security metrics after deployment",
                     "Delaying testing until product release",
-                    "Writing code for different platforms",
                     "Automating build processes"
                 ],
-                correctAnswer: 0,
-                explanation: "Shift right involves observing and ensuring operational security post-release."
+                explanations: [
+                    "Platform coding isn't related to shift right.",
+                    "Shift right involves observing and ensuring operational security post-release.",
+                    "It's proactive monitoring, not delaying.",
+                    "Automation relates to DevOps broadly, not specifically shift right."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What does Infrastructure as Code (IaC) involve?",
                 options: [
-                    "Writing backend code for apps",
                     "Managing and provisioning infrastructure through code",
+                    "Writing backend code for apps",
                     "Storing backup copies of source code",
                     "Manually updating server settings"
                 ],
-                correctAnswer: 1,
-                explanation: "IaC automates the setup of servers, networks, and more via code."
+                explanations: [
+                    "IaC automates the setup of servers, networks, and more via code.",
+                    "IaC is about infrastructure setup, not app logic.",
+                    "That's source control, not infrastructure management.",
+                    "IaC replaces manual updates with automated scripts."
+                ],
+                correctAnswer: 0
             },
             {
                 question: "What does Dynamic Application Security Testing (DAST) focus on?",
                 options: [
-                    "Scanning infrastructure setup files",
                     "Testing the application while it is running",
+                    "Scanning infrastructure setup files",
                     "Checking code before it compiles",
                     "Monitoring server traffic logs"
                 ],
-                correctAnswer: 1,
-                explanation: "DAST simulates attacks against a live, running application."
+                explanations: [
+                    "DAST simulates attacks against a live, running application.",
+                    "DAST targets live application vulnerabilities, not infrastructure.",
+                    "That's Static Application Security Testing (SAST).",
+                    "DAST targets applications, not network traffic alone."
+                ],
+                correctAnswer: 0
             },
             {
                 question: "What is the purpose of Static Application Security Testing (SAST)?",
                 options: [
-                    "Testing a running application's defenses",
-                    "Scanning source code for vulnerabilities before compilation",
                     "Testing database queries under load",
+                    "Scanning source code for vulnerabilities before compilation",
+                    "Testing a running application's defenses",
                     "Checking user interface consistency"
                 ],
-                correctAnswer: 1,
-                explanation: "SAST examines source code directly to find security flaws early."
+                explanations: [
+                    "Database load testing is separate from SAST.",
+                    "SAST examines source code directly to find security flaws early.",
+                    "SAST analyzes code before it even compiles.",
+                    "SAST is for security vulnerabilities, not UI quality."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is a container?",
                 options: [
                     "A physical server for storing databases",
-                    "A lightweight package containing code and all dependencies needed to run it",
                     "A type of cybersecurity firewall",
+                    "A lightweight package containing code and all dependencies needed to run it",
                     "A backup file stored in the cloud"
                 ],
-                correctAnswer: 1,
-                explanation: "Containers bundle applications and dependencies into portable units."
+                explanations: [
+                    "Containers are software-based.",
+                    "Containers are not security firewalls.",
+                    "Containers bundle applications and dependencies into portable units.",
+                    "Containers run applications, not store backups."
+                ],
+                correctAnswer: 2
             },
             {
                 question: "What does a container image contain?",
                 options: [
                     "Only the source code",
-                    "An executable bundle of the application and its dependencies",
                     "A complete copy of a virtual machine",
+                    "An executable bundle of the application and its dependencies",
                     "A list of all the company's servers"
                 ],
-                correctAnswer: 1,
-                explanation: "A container image includes everything the container needs to run."
+                explanations: [
+                    "It includes more than just source code.",
+                    "Containers are much lighter than full virtual machines.",
+                    "A container image includes everything the container needs to run.",
+                    "Container images are unrelated to server inventories."
+                ],
+                correctAnswer: 2
             }
         ];
 
@@ -590,12 +641,12 @@ nav_order: 1
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -606,13 +657,29 @@ nav_order: 1
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -623,9 +690,9 @@ nav_order: 1
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -648,7 +715,7 @@ nav_order: 1
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "DevSecOps";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -662,11 +729,6 @@ nav_order: 1
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../index" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);

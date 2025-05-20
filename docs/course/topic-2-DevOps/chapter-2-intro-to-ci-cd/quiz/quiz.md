@@ -8,6 +8,7 @@ nav_order: 2
 
 <div id="quiz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -382,45 +383,81 @@ nav_order: 2
                 question: "What does CI/CD stand for?",
                 options: [
                     "Central Integration and Central Deployment",
-                    "Continuous Integration and Continuous Delivery",
                     "Cloud Infrastructure and Centralized Deployment",
+                    "Continuous Integration and Continuous Delivery",
                     "Collaborative Integration and Collaborative Development"
                 ],
-                correctAnswer: 1,
-                explanation: "CI/CD refers to Continuous Integration and Continuous Delivery, a core DevOps practice for automating the software delivery process."
+                explanations: [
+                    "CI/CD stands for Continuous Integration and Continuous Delivery, not Central Integration.",
+                    "While cloud infrastructure is important, it is unrelated to the CI/CD acronym.",
+                    "CI/CD is a DevOps practice focused on continuously integrating and delivering code changes reliably.",
+                    "Collaboration is important but not what CI/CD directly stands for."
+                ],
+                correctAnswer: 2
             },
             {
                 question: "What is the main purpose of Continuous Integration (CI)?",
                 options: [
-                    "Automating code deployment to production",
-                    "Automating testing to ensure code compatibility",
                     "Building infrastructure automatically",
+                    "Automating testing to ensure code compatibility",
+                    "Automating code deployment to production",
                     "Managing communication between developers and customers"
                 ],
-                correctAnswer: 1,
-                explanation: "CI focuses on automatically testing code changes to detect integration issues early in the development cycle."
+                explanations: [
+                    "Infrastructure as Code (IaC) handles that, not CI directly.",
+                    "CI focuses on testing code automatically to identify and resolve integration issues early.",
+                    "That's the purpose of Continuous Delivery (CD), not CI.",
+                    "That's broader DevOps work, not CI specifically."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is a key benefit of Continuous Delivery (CD)?",
                 options: [
-                    "It slows down software updates to ensure extra caution",
+                    "It prevents developers from pushing code quickly",
                     "It automates deployment processes to minimize risks",
-                    "It eliminates the need for infrastructure",
-                    "It prevents developers from pushing code quickly"
+                    "It slows down software updates to ensure extra caution",
+                    "It eliminates the need for infrastructure"
                 ],
-                correctAnswer: 1,
-                explanation: "CD ensures code can be reliably deployed with minimal human intervention, reducing deployment risks."
+                explanations: [
+                    "CD accelerates pushing code safely, not prevents it.",
+                    "CD ensures code can be reliably deployed with minimal human intervention, reducing deployment risks.",
+                    "CD speeds up updates while still maintaining reliability.",
+                    "Infrastructure is still needed for any deployment."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "How is DevOps different from CI/CD?",
                 options: [
-                    "DevOps focuses only on testing while CI/CD focuses on operations",
-                    "DevOps encompasses culture and automation beyond just integration and delivery",
+                    "DevOps only happens after CI/CD pipelines are built",
                     "DevOps eliminates the need for operations teams",
-                    "DevOps only happens after CI/CD pipelines are built"
+                    "DevOps encompasses culture and automation beyond just integration and delivery",
+                    "DevOps focuses only on testing while CI/CD focuses on operations"
                 ],
-                correctAnswer: 1,
-                explanation: "DevOps is a broader cultural and operational framework that includes CI/CD, but also emphasizes collaboration, automation, and continuous improvement."
+                explanations: [
+                    "DevOps practices are continuous, not something that happens afterward.",
+                    "DevOps strengthens collaboration with operations, not removes them.",
+                    "DevOps is the overall framework that includes CI/CD, collaboration, automation, and feedback.",
+                    "DevOps is broader, involving culture, collaboration, and automation across the lifecycle."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is a key method used in DevOps?",
+                options: [
+                    "Manual testing and deployment of code",
+                    "Increasing the number of manual release meetings",
+                    "Limiting developer access to production environments",
+                    "Infrastructure as Code (IaC) for managing infrastructure"
+                ],
+                explanations: [
+                    "DevOps emphasizes automation to avoid manual errors.",
+                    "DevOps tries to streamline and automate releases, not slow them down with manual steps.",
+                    "While access management is important, the core methods focus on automation and collaboration.",
+                    "IaC allows teams to manage and provision infrastructure automatically through code."
+                ],
+                correctAnswer: 3
             }
         ];
 
@@ -525,12 +562,12 @@ nav_order: 2
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -541,13 +578,29 @@ nav_order: 2
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -558,9 +611,9 @@ nav_order: 2
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -583,7 +636,7 @@ nav_order: 2
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "Intro to CI/CD";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -597,11 +650,6 @@ nav_order: 2
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../index" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);

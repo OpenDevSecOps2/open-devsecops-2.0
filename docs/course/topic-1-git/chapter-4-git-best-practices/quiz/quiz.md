@@ -7,7 +7,8 @@ nav_order: 1
 ---
 
 <div id="quiz">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>    
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -385,8 +386,13 @@ nav_order: 1
                     "To display all version history and code commits",
                     "To automatically update code when changes are made"
                 ],
-                correctAnswer: 1,
-                explanation: "A README gives essential information about the project's purpose, setup, usage, and collaboration processes."
+                explanations: [
+                    "The README focuses on the project overview, not team rosters.",
+                    "A README gives essential information about the project's purpose, setup, usage, and collaboration processes.",
+                    "Version history is managed separately by the version control system, not by the README.",
+                    "The README is for documentation, not automation."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is the purpose of using a project wiki?",
@@ -396,8 +402,13 @@ nav_order: 1
                     "To log every commit made to the project",
                     "To automatically generate installation scripts for users"
                 ],
-                correctAnswer: 1,
-                explanation: "A project's wiki is great for more detailed, ongoing documentation beyond the README."
+                explanations: [
+                    "Wikis are used for detailed documentation, not for backups.",
+                    "A project's wiki is great for more detailed, ongoing documentation beyond the README.",
+                    "Commits are tracked through Git, not in the wiki.",
+                    "Wikis are written documentation, not executable scripts."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "How should comments be used within code?",
@@ -407,8 +418,13 @@ nav_order: 1
                     "To replace function names and variable declarations",
                     "To speed up the compilation of the code"
                 ],
-                correctAnswer: 1,
-                explanation: "Code comments are best used to explain why something was done a certain way, helping future developers understand important decisions."
+                explanations: [
+                    "Comments should explain the why behind decisions, not describe obvious actions.",
+                    "Code comments are best used to explain why something was done a certain way, helping future developers understand important decisions.",
+                    "Good code should be self-explanatory with clear names; comments are for clarifying thought processes.",
+                    "Comments have no impact on code execution or speed."
+                ],
+                correctAnswer: 1
             }
         ];
 
@@ -513,12 +529,12 @@ nav_order: 1
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -529,13 +545,29 @@ nav_order: 1
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -546,9 +578,9 @@ nav_order: 1
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -571,7 +603,7 @@ nav_order: 1
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "Git Best Practices";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -585,11 +617,6 @@ nav_order: 1
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../index" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);

@@ -8,6 +8,7 @@ nav_order: 2
 
 <div id="quiz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -379,26 +380,164 @@ nav_order: 2
 
         const quizData = [
             {
-                question: "What is DevOps?",
+                question: "What is a major challenge that emerges when scaling a project without planning for growth from the beginning?",
                 options: [
-                    "A programming language used for backend systems",
-                    "A cloud storage solution for large codebases",
-                    "A set of practices combining development and operations for better collaboration and faster delivery",
-                    "A database management system"
+                    "The team must redesign the user interface",
+                    "Code automatically adapts to larger workloads",
+                    "Extensive revisions may be needed to retrofit scalability",
+                    "Developers have to switch to new programming languages"
                 ],
-                correctAnswer: 2,
-                explanation: "DevOps helps bridge the gap between development and operations for faster, reliable delivery."
+                explanations: [
+                    "UI redesign isn't the primary scalability challenge mentioned",
+                    "Code does not adapt automatically without planning",
+                    "Without initial scalability planning, teams often face costly and complex revisions later",
+                    "The need to scale doesn't require language changes"
+                ],
+                correctAnswer: 2
             },
             {
-                question: "Which of the following is a pillar of DevOps?",
+                question: "What typically causes communication gaps between Development and Operations teams?",
                 options: [
-                    "Waterfall project planning",
-                    "Manual deployment processes",
-                    "Collaborative culture and shared responsibility",
-                    "Security reviews at the end of development"
+                    "Isolation between the teams with distinct responsibilities",
+                    "Too many automated tools",
+                    "Use of different programming languages",
+                    "Overuse of continuous integration pipelines"
                 ],
-                correctAnswer: 2,
-                explanation: "DevOps promotes shared responsibility and team collaboration."
+                explanations: [
+                    "When Dev and Ops work separately, miscommunication and inefficiencies emerge",
+                    "Lack of automation, not too much, is a problem",
+                    "The languages aren't the main cause; the team separation is",
+                    "CI pipelines improve communication, not harm it"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "What was the core issue in the 'MyApp' example?",
+                options: [
+                    "Users found the interface confusing",
+                    "A mismatch in API keys between development and production environments",
+                    "The database was too slow to handle the new feature",
+                    "Developers forgot to write documentation"
+                ],
+                explanations: [
+                    "The problem was technical, not related to UI",
+                    "Using different API keys caused the document preview feature to fail",
+                    "No database issues were described",
+                    "The problem was with configuration, not documentation"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What solution helped 'StreamlineChat' fix its slow release cycle?",
+                options: [
+                    "Switching programming languages",
+                    "Increasing the number of code reviews",
+                    "Hiring more manual testers",
+                    "Implementing CI/CD pipelines and fostering collaboration"
+                ],
+                explanations: [
+                    "No language switch was involved",
+                    "While helpful, code reviews alone wouldn't fix slow release cycles",
+                    "Manual testing caused delays, not solved them",
+                    "Automating integration and deployment, plus better teamwork, sped up releases"
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "What leads to 'But it works on my machine' syndrome?",
+                options: [
+                    "Different environment configurations between development, testing, and production",
+                    "A lack of team communication",
+                    "Lack of user feedback",
+                    "Too much reliance on cloud computing"
+                ],
+                explanations: [
+                    "Inconsistent environments cause features to behave differently across stages",
+                    "While communication is important, the issue is deeper",
+                    "Environment inconsistency, not feedback, caused this problem",
+                    "Cloud computing is not the core issue"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "In 'CodeCraft,' what caused users to experience buggy features?",
+                options: [
+                    "Too many development teams working simultaneously",
+                    "Poor internet connections",
+                    "Lack of marketing efforts",
+                    "Insufficient testing and prioritization of speed over quality"
+                ],
+                explanations: [
+                    "Team size wasn't identified as the cause here",
+                    "The problem was internal quality assurance, not user internet",
+                    "Marketing wasn't part of the described issue",
+                    "Focusing too much on speed led to under-tested, buggy releases"
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "What improved 'Streamline's' ability to detect and fix system issues?",
+                options: [
+                    "Rebuilding the platform from scratch",
+                    "Implementing monitoring and logging tools",
+                    "Adding more developers to the team",
+                    "Outsourcing all testing to third-party companies"
+                ],
+                explanations: [
+                    "No full rebuild was mentioned",
+                    "Monitoring and logging provided visibility into system performance",
+                    "The improvement came from better tools, not more people",
+                    "They used in-house monitoring improvements"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What did 'GlobalShop' do to improve scalability and handle unpredictable traffic?",
+                options: [
+                    "Adopted auto-scaling policies and Infrastructure as Code (IaC)",
+                    "Built larger manual server rooms",
+                    "Hired more manual system administrators",
+                    "Reduced the number of customers during peak periods"
+                ],
+                explanations: [
+                    "Automation and IaC allowed efficient, dynamic scaling",
+                    "Manual scaling was the problem, not the solution",
+                    "Manual scaling was what they moved away from",
+                    "Limiting users would hurt business, not solve scalability"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "What was a major security issue faced by 'SafeNet'?",
+                options: [
+                    "Over-reliance on open-source libraries",
+                    "Poor user interface design",
+                    "High server maintenance costs",
+                    "Cyber attacks due to late-stage security integration"
+                ],
+                explanations: [
+                    "No mention of open-source library issues",
+                    "The problem was not UX-related",
+                    "Their issue was not financial, but security-focused",
+                    "Not embedding security from the start exposed vulnerabilities"
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "What problem did 'CodeFusion' face as their team grew?",
+                options: [
+                    "Outsourcing development to other countries",
+                    "Merge conflicts, version confusion, and lack of coordinated processes",
+                    "Running out of office space",
+                    "Too few developers to complete tasks"
+                ],
+                explanations: [
+                    "Outsourcing wasn't part of their issue",
+                    "More developers meant more coordination problems without better version control and CI/CD",
+                    "Physical space wasn't the issue",
+                    "The team grew, which was part of the challenge"
+                ],
+                correctAnswer: 1
             }
         ];
 
@@ -503,12 +642,12 @@ nav_order: 2
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -519,13 +658,29 @@ nav_order: 2
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -536,9 +691,9 @@ nav_order: 2
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -561,7 +716,7 @@ nav_order: 2
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "Intro to DevOps";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -575,11 +730,6 @@ nav_order: 2
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../index" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);

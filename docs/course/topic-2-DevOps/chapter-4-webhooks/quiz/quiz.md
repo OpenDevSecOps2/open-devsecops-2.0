@@ -8,6 +8,7 @@ nav_order: 2
 
 <div id="quiz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -378,30 +379,71 @@ nav_order: 2
         import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
         const quizData = [
-  {
-    question: "What does a webhook do in a CI/CD workflow?",
-    options: [
-      "Manually starts a test run",
-      "Automatically notifies a CI/CD tool when events like code pushes occur",
-      "Stores deployment history",
-      "Encrypts application secrets"
-    ],
-    correctAnswer: 1,
-    explanation: "Webhooks automatically notify external tools (like CI/CD platforms) of events such as code pushes, enabling automated actions like test runs."
-  },
-  {
-    question: "Why would you include a secret token in your webhook configuration?",
-    options: [
-      "To trigger a test environment",
-      "To authenticate that the webhook request came from GitHub",
-      "To track who edited the code",
-      "To automatically approve pull requests"
-    ],
-    correctAnswer: 1,
-    explanation: "A secret token ensures that incoming webhook requests are genuine and originate from the trusted source, such as GitHub."
-  }
-];
-
+            {
+                question: "What is the primary purpose of a webhook in a CI/CD setup?",
+                options: [
+                    "To merge pull requests automatically",
+                    "To create a backup of the code",
+                    "To automatically notify a CI/CD tool when an event happens in the code repository",
+                    "To send a manual reminder to the developer to run tests"
+                ],
+                explanations: [
+                    "Webhooks only notify; merging still requires separate processes.",
+                    "Webhooks trigger actions, they don't handle backups.",
+                    "Webhooks alert the CI/CD platform automatically when events like code pushes happen.",
+                    "Webhooks automate the process; they don't send manual reminders."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Which of the following is NOT typically a trigger event for a webhook?",
+                options: [
+                    "Writing a new README file",
+                    "Opening a new pull request",
+                    "Pushes to the repository",
+                    "Creating a new release"
+                ],
+                explanations: [
+                    "Simply editing documentation like a README is not typically a webhook trigger unless coupled with a push event.",
+                    "Pull requests are a standard webhook trigger.",
+                    "Pushes are a common webhook trigger.",
+                    "Releases can trigger webhooks."
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "What is the Payload URL in a webhook configuration?",
+                options: [
+                    "The location where GitHub sends the webhook notification",
+                    "A security token to verify webhook authenticity",
+                    "A copy of the repository for testing",
+                    "The local machine's URL where code is written"
+                ],
+                explanations: [
+                    "The Payload URL is the destination server that receives the webhook from GitHub.",
+                    "The security token is different; it's used for verifying the payload.",
+                    "Payload URL is not a copy of the repo.",
+                    "The payload URL refers to the receiving service, not the developer's machine."
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Why might you configure a secret token in your webhook?",
+                options: [
+                    "To store environment variables",
+                    "To encrypt the code being pushed",
+                    "To limit how many times the webhook can fire",
+                    "To prevent unauthorized services from spoofing webhook notifications"
+                ],
+                explanations: [
+                    "Environment variables are handled separately in CI/CD setups.",
+                    "The secret token verifies identity, not encrypts code.",
+                    "The secret token does not control frequency.",
+                    "The secret token ensures that only verified, legitimate webhook payloads are accepted."
+                ],
+                correctAnswer: 3
+            }
+        ];
 
         let currentQuestion = 0;
         let score = 0;
@@ -504,12 +546,12 @@ nav_order: 2
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -520,13 +562,29 @@ nav_order: 2
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -537,9 +595,9 @@ nav_order: 2
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -562,7 +620,7 @@ nav_order: 2
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "Webhooks";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -576,11 +634,6 @@ nav_order: 2
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);

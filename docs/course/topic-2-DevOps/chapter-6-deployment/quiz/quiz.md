@@ -3,11 +3,12 @@ layout: custom
 title: Chapter 6 Quiz 📝
 grand_parent: Topic 2 - DevOps
 parent: Chapter 6 - Deployment
-nav_order: 2
+nav_order: 3
 ---
 
 <div id="quiz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -378,41 +379,87 @@ nav_order: 2
         import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
         const quizData = [
-    {
-        question: "What caused the outage when Ani and Mariam pushed their code?",
-        options: [
-            "They forgot to update their documentation",
-            "Integration issues between API and database schema changes",
-            "They used different programming languages",
-            "They pushed at different times"
-        ],
-        correctAnswer: 1,
-        explanation: "Conflicting API and database changes caused integration failures, leading to the site outage."
-    },
-    {
-        question: "What is the primary purpose of the staging environment in CI/CD?",
-        options: [
-            "To allow developers to code freely",
-            "To test the application in a near-production setup",
-            "To collect analytics from real users",
-            "To archive older versions"
-        ],
-        correctAnswer: 1,
-        explanation: "Staging replicates production and is used for final testing before going live."
-    },
-    {
-        question: "Which deployment strategy releases new code to a small subset of users first?",
-        options: [
-            "Blue-Green Deployment",
-            "Canary Deployment",
-            "Rolling Deployment",
-            "Immutable Deployment"
-        ],
-        correctAnswer: 1,
-        explanation: "Canary deployments start with a small group of users to monitor behavior before a full rollout."
-    }
-];
-
+            {
+                question: "What was the cause of the site outage when Ani and Mariam pushed their code?",
+                options: [
+                    "They used incompatible programming languages",
+                    "They pushed their code at different times",
+                    "Integration issues between the API and database schema changes",
+                    "They forgot to update their documentation"
+                ],
+                explanations: [
+                    "The conflict was about integration, not languages.",
+                    "They pushed at the same time, and the lack of automatic testing was the real problem.",
+                    "Ani's changes and Mariam's code conflicted, leading to broken endpoints and database issues.",
+                    "Documentation issues didn't cause the crash."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is the main purpose of a staging environment?",
+                options: [
+                    "To test the application in a near-production setup before going live",
+                    "To allow developers to write code freely",
+                    "To permanently archive old application versions",
+                    "To monitor user activity in real time"
+                ],
+                explanations: [
+                    "Staging environments replicate production for final testing.",
+                    "That's the role of the development environment.",
+                    "Staging is temporary and focuses on testing the latest version.",
+                    "Monitoring happens mainly in production."
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "Which deployment strategy gradually releases changes to a small group of users first?",
+                options: [
+                    "Canary Deployment",
+                    "Blue-Green Deployment",
+                    "Immutable Deployment",
+                    "Rolling Deployment"
+                ],
+                explanations: [
+                    "Canary deployments start with a small group and expand based on monitoring.",
+                    "Blue-Green swaps between two environments, not a gradual rollout.",
+                    "Immutable deployments switch environments entirely.",
+                    "Rolling deploys changes incrementally across all instances."
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "What is one benefit of Blue-Green deployment?",
+                options: [
+                    "It enables easy rollback if something goes wrong",
+                    "It uses fewer resources",
+                    "It guarantees no bugs in new code",
+                    "It allows real users to test features selectively"
+                ],
+                explanations: [
+                    "You can quickly revert to the previous environment if problems occur.",
+                    "Blue-Green is resource-intensive because it requires two full environments.",
+                    "No strategy can guarantee bug-free code.",
+                    "That's a feature of canary deployments, not Blue-Green."
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "What is a key challenge of using Feature Toggles?",
+                options: [
+                    "They slow down deployments significantly",
+                    "They increase technical debt if not managed properly",
+                    "They require creating multiple production environments",
+                    "They eliminate the need for testing"
+                ],
+                explanations: [
+                    "Feature toggles are designed to speed up flexibility, not slow down deployment.",
+                    "Too many or poorly managed feature toggles can create messy, hard-to-maintain code.",
+                    "Feature toggles work within a single production environment.",
+                    "Feature toggles don't remove the need for testing."
+                ],
+                correctAnswer: 1
+            }
+        ];
 
         let currentQuestion = 0;
         let score = 0;
@@ -515,12 +562,12 @@ nav_order: 2
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -531,13 +578,29 @@ nav_order: 2
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -548,9 +611,9 @@ nav_order: 2
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -573,7 +636,7 @@ nav_order: 2
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "Deployment";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -587,11 +650,6 @@ nav_order: 2
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../index" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);

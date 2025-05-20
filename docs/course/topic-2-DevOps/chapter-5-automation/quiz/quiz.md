@@ -8,6 +8,7 @@ nav_order: 2
 
 <div id="quiz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -378,51 +379,167 @@ nav_order: 2
         import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
         const quizData = [
-  {
-    question: "What is a main reason automated testing is used in CI/CD?",
-    options: [
-      "To replace the need for developers",
-      "To ensure features are only tested manually",
-      "To verify every code change automatically before integration",
-      "To reduce the amount of code written"
-    ],
-    correctAnswer: 2,
-    explanation: "Automated testing ensures each code change is validated before merging, reducing bugs and manual effort."
-  },
-  {
-    question: "Compared to manual testing, automated testing is:",
-    options: [
-      "Only usable for UI testing",
-      "Slower but more accurate",
-      "Fast and consistent",
-      "Ideal only for yearly releases"
-    ],
-    correctAnswer: 2,
-    explanation: "Automated testing offers both speed and consistency, ideal for continuous delivery."
-  },
-  {
-    question: "What type of test checks how different parts of a system work together?",
-    options: [
-      "Integration test",
-      "Load test",
-      "Unit test",
-      "End-to-end test"
-    ],
-    correctAnswer: 0,
-    explanation: "Integration tests ensure that modules or services function properly together."
-  },
-  {
-    question: "What is a major challenge of maintaining an automated test suite?",
-    options: [
-      "It guarantees perfect test coverage",
-      "It removes the need for test frameworks",
-      "Keeping tests updated as the system evolves",
-      "It deletes old versions of code"
-    ],
-    correctAnswer: 2,
-    explanation: "Automated tests require ongoing updates as software features and architecture evolve."
-  }
-];
+            {
+                question: "What is one main reason automated testing is crucial in CI/CD?",
+                options: [
+                    "It reduces the amount of code written",
+                    "It verifies every code change automatically before integration",
+                    "It allows manual testers to work faster",
+                    "It eliminates the need for developers to write tests"
+                ],
+                explanations: [
+                    "Automated testing verifies code, not reduces how much code you write.",
+                    "Automated tests ensure that every change is validated automatically before merging into the main codebase.",
+                    "Automated testing reduces the need for manual testers, not just speeds them up.",
+                    "Developers still need to write test scripts for automation."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Compared to manual testing, automated testing is:",
+                options: [
+                    "Limited to only user interface testing",
+                    "Best suited for once-a-year product releases",
+                    "Fast and consistent",
+                    "Slower but more accurate"
+                ],
+                explanations: [
+                    "It covers unit, integration, and end-to-end testing, not just UI.",
+                    "It's ideal for frequent, continuous releases.",
+                    "Automated testing provides speed and consistent test results.",
+                    "Automated testing is both faster and often more accurate."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is a key benefit of faster feedback in automated testing?",
+                options: [
+                    "It prevents all possible bugs",
+                    "It reduces the size of the development team",
+                    "Developers can make corrections more quickly",
+                    "It eliminates the need for documentation"
+                ],
+                explanations: [
+                    "Faster feedback detects bugs early but can't prevent every bug.",
+                    "Team size is not directly affected by faster feedback.",
+                    "Immediate feedback helps developers fix issues early.",
+                    "Documentation is still essential."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What does a unit test primarily validate?",
+                options: [
+                    "The complete behavior of an entire system",
+                    "Individual functions or components",
+                    "Only the user interface",
+                    "The interaction between two or more services"
+                ],
+                explanations: [
+                    "That's an end-to-end test.",
+                    "Unit tests check small, isolated pieces of functionality.",
+                    "Unit tests focus on logic, not UI specifically.",
+                    "That's what integration tests validate."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "What is the main purpose of integration tests?",
+                options: [
+                    "To generate deployment scripts",
+                    "To stress-test the hardware performance",
+                    "To ensure different modules or services work together as expected",
+                    "To verify that individual components function correctly in isolation"
+                ],
+                explanations: [
+                    "Deployment scripts are unrelated to integration testing.",
+                    "Integration tests focus on software interaction, not hardware.",
+                    "Integration tests check the interactions between different parts of the system.",
+                    "That's the purpose of unit tests."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "Which type of test mimics real-world usage of an application?",
+                options: [
+                    "Branch coverage test",
+                    "Load test",
+                    "End-to-end test",
+                    "Unit test"
+                ],
+                explanations: [
+                    "Branch coverage is a measure of code coverage, not a test type itself.",
+                    "Load tests measure performance under stress, not real user behavior specifically.",
+                    "End-to-end tests simulate real user interactions across the full system.",
+                    "Unit tests are narrow in scope."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is a common initial obstacle when setting up automated testing?",
+                options: [
+                    "Reduced software quality",
+                    "Faster manual testing times",
+                    "High initial setup cost and effort",
+                    "Decreased test coverage"
+                ],
+                explanations: [
+                    "Quality improves with good automated testing.",
+                    "Manual testing is slower, not faster.",
+                    "Setting up a robust automated testing system requires upfront time and resources.",
+                    "Automated testing usually increases coverage."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "How does CI/CD help with automated testing?",
+                options: [
+                    "It slows down deployments for thorough checking",
+                    "It prevents developers from writing new features",
+                    "It manually alerts testers after every commit",
+                    "It automatically runs tests after code changes are pushed"
+                ],
+                explanations: [
+                    "CI/CD speeds up delivery while maintaining quality.",
+                    "CI/CD supports continuous development, not restricts it.",
+                    "CI/CD automates the testing and notification process.",
+                    "Tests are triggered automatically with each code change in CI/CD pipelines."
+                ],
+                correctAnswer: 3
+            },
+            {
+                question: "What is a major challenge of maintaining an automated test suite?",
+                options: [
+                    "Preventing tests from ever failing",
+                    "Writing tests that require no updates ever",
+                    "Keeping tests updated as the system evolves",
+                    "Automated tests delete old versions of the code"
+                ],
+                explanations: [
+                    "Some test failures are necessary to catch bugs.",
+                    "Realistic tests always need updating.",
+                    "Tests must be updated regularly to match changes in features and functionality.",
+                    "Tests don't delete code."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "What is a key step in building an effective automated testing framework?",
+                options: [
+                    "Running tests only after full production deployment",
+                    "Relying only on manual review processes",
+                    "Choosing tools that fit the project's technology stack",
+                    "Writing tests without a clear goal to catch everything"
+                ],
+                explanations: [
+                    "Tests should be run continuously throughout development.",
+                    "Automation is critical in a CI/CD workflow.",
+                    "Choosing compatible tools ensures smooth, efficient testing.",
+                    "Tests should have clear, specific objectives."
+                ],
+                correctAnswer: 2
+            }
+        ];
 
 
         let currentQuestion = 0;
@@ -526,12 +643,12 @@ nav_order: 2
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -542,13 +659,29 @@ nav_order: 2
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -559,9 +692,9 @@ nav_order: 2
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -584,7 +717,7 @@ nav_order: 2
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "Automated Tests";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -598,11 +731,6 @@ nav_order: 2
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../index" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
 
                 onAuthStateChanged(auth, (user) => {
                     if (user) {

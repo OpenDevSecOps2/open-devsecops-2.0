@@ -7,7 +7,8 @@ nav_order: 1
 ---
 
 <div id="quiz">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>    
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -385,8 +386,13 @@ nav_order: 1
                     "A place where completed projects are archived permanently",
                     "A remote server that only stores backups of projects"
                 ],
-                correctAnswer: 1,
-                explanation: "A repository acts as a central hub for your project files."
+                explanations: [
+                    "A repository stores files and their history, it doesn't generate code.",
+                    "A repository acts as a central hub for your project files.",
+                    "Repositories track ongoing development, not just archiving.",
+                    "Repositories are more dynamic than simple backups."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "In GitHub, what can you do with repositories?",
@@ -396,8 +402,13 @@ nav_order: 1
                     "You cannot edit repositories after creating them",
                     "You must pay to create private repositories"
                 ],
-                correctAnswer: 1,
-                explanation: "GitHub lets you create and manage as many repos as you like."
+                explanations: [
+                    "GitHub allows unlimited repositories.",
+                    "GitHub lets you create and manage as many repos as you like.",
+                    "You can always edit a repo.",
+                    "Private repositories are free on GitHub for personal use."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is the working directory in Git?",
@@ -407,8 +418,13 @@ nav_order: 1
                     "The place where you actively make changes to project files",
                     "A location where Git backups your old project versions"
                 ],
-                correctAnswer: 2,
-                explanation: "The working directory is where you make changes to files before staging them."
+                explanations: [
+                    "Commits are stored in the repository, not the working directory.",
+                    "Git doesn't sync automatically to the cloud.",
+                    "The working directory is where you modify files before staging.",
+                    "That's handled by the repository."
+                ],
+                correctAnswer: 2
             },
             {
                 question: "What Git command is used to show the status of your files?",
@@ -418,8 +434,13 @@ nav_order: 1
                     "git status",
                     "git log"
                 ],
-                correctAnswer: 2,
-                explanation: "git status shows what’s changed, what’s staged, and what’s untracked."
+                explanations: [
+                    "git add moves files to staging; it doesn't show their status.",
+                    "git checkout switches branches or restores files.",
+                    "git status shows what's changed, what's staged, and what's untracked.",
+                    "git log shows commit history, not working file status."
+                ],
+                correctAnswer: 2
             },
             {
                 question: "What is the purpose of the staging area?",
@@ -429,8 +450,13 @@ nav_order: 1
                     "To switch between different branches",
                     "To download updates from the remote repository"
                 ],
-                correctAnswer: 1,
-                explanation: "The staging area holds changes that are about to be committed."
+                explanations: [
+                    "Staging prepares changes for a commit; saving happens at commit time.",
+                    "The staging area holds changes that are about to be committed.",
+                    "Switching branches is done with git checkout.",
+                    "That's part of git pull."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "Which Git command is used to add changes from the working directory to the staging area?",
@@ -440,8 +466,13 @@ nav_order: 1
                     "git checkout",
                     "git add"
                 ],
-                correctAnswer: 3,
-                explanation: "git add moves changes to the staging area."
+                explanations: [
+                    "git commit saves changes from the staging area to the repository.",
+                    "git status only shows information, it doesn't move changes.",
+                    "git checkout is for switching branches or files.",
+                    "git add moves changes to the staging area."
+                ],
+                correctAnswer: 3
             },
             {
                 question: "What does the command git push do?",
@@ -451,8 +482,13 @@ nav_order: 1
                     "It reverts your project back to the last saved version",
                     "It deletes unnecessary files from the repository"
                 ],
-                correctAnswer: 1,
-                explanation: "git push moves commits to a remote server."
+                explanations: [
+                    "Push uploads committed changes to the remote repository.",
+                    "git push moves commits to a remote server.",
+                    "git revert or checkout would do that.",
+                    "Push doesn't delete files."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is a branch in Git?",
@@ -462,19 +498,29 @@ nav_order: 1
                     "An independent line of development separate from the main codebase",
                     "A folder where completed features are archived"
                 ],
-                correctAnswer: 2,
-                explanation: "A branch isolates your changes from the main project."
+                explanations: [
+                    "Branches allow parallel development, not backups.",
+                    "Branches are for development, not security.",
+                    "A branch isolates your changes from the main project.",
+                    "Branches are not folders."
+                ],
+                correctAnswer: 2
             },
             {
                 question: "What is one major benefit of using branches?",
                 options: [
-                    "You can lock files to prevent other developers from accessing them.",
-                    "You can experiment with new features without affecting the main codebase.",
-                    "You can automatically merge all changes without reviewing them.",
-                    "You can permanently delete old commits without risk."
+                    "You can lock files to prevent other developers from accessing them",
+                    "You can experiment with new features without affecting the main codebase",
+                    "You can automatically merge all changes without reviewing them",
+                    "You can permanently delete old commits without risk"
                 ],
-                correctAnswer: 1,
-                explanation: "Branches isolate new work safely."
+                explanations: [
+                    "Branches allow collaborative work, not file locking.",
+                    "Branches isolate new work safely.",
+                    "Merging usually requires review.",
+                    "Deleting commits can still be risky."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What command would you use to create a new branch in Git?",
@@ -484,8 +530,13 @@ nav_order: 1
                     "git branch <branch-name>",
                     "git push"
                 ],
-                correctAnswer: 2,
-                explanation: "git branch creates a new branch for you to work on."
+                explanations: [
+                    "Checkout switches branches but doesn't create them.",
+                    "Merge combines branches; it doesn't create new ones.",
+                    "git branch creates a new branch.",
+                    "Push sends commits to the remote repository."
+                ],
+                correctAnswer: 2
             }
         ];
 
@@ -590,12 +641,12 @@ nav_order: 1
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -606,13 +657,29 @@ nav_order: 1
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -623,9 +690,9 @@ nav_order: 1
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -648,7 +715,7 @@ nav_order: 1
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "Git Fundamentals";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -662,11 +729,6 @@ nav_order: 1
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../index" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);

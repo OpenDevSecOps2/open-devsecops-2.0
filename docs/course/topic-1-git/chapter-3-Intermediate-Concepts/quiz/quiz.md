@@ -7,7 +7,8 @@ nav_order: 2
 ---
 
 <div id="quiz">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -386,8 +387,13 @@ nav_order: 2
                     "To merge all code directly into production",
                     "To backup the project regularly"
                 ],
-                correctAnswer: 1,
-                explanation: "Feature branches allow developers to build features without affecting the main branch."
+                explanations: [
+                    "Feature branching isolates new work, not old code removal.",
+                    "Feature branches allow developers to build features without affecting the main branch.",
+                    "Merging into production happens after review, not immediately.",
+                    "Backups are a different system from branching."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "When would you typically create a release branch?",
@@ -397,8 +403,13 @@ nav_order: 2
                     "When fixing a security vulnerability",
                     "When merging several features at once"
                 ],
-                correctAnswer: 1,
-                explanation: "Release branches allow final adjustments and testing before releasing."
+                explanations: [
+                    "New features use feature branches.",
+                    "Release branches allow final adjustments and testing before releasing.",
+                    "That would be a hotfix branch.",
+                    "Merging happens later, after branching."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is the goal of a hotfix branch?",
@@ -408,8 +419,13 @@ nav_order: 2
                     "To save uncommitted changes before merging",
                     "To rewrite history into a straight line"
                 ],
-                correctAnswer: 1,
-                explanation: "Hotfix branches are for urgent production bug fixes."
+                explanations: [
+                    "Hotfixes are about bug fixes, not new features.",
+                    "Hotfix branches are for urgent production bug fixes.",
+                    "That describes stashing.",
+                    "That describes rebasing."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What happens during a fast-forward merge?",
@@ -419,8 +435,13 @@ nav_order: 2
                     "Git combines all commits into one",
                     "Git deletes the feature branch automatically"
                 ],
-                correctAnswer: 1,
-                explanation: "Fast-forward merging simply advances the branch pointer without extra commits."
+                explanations: [
+                    "That's a three-way merge.",
+                    "Fast-forward merging simply advances the branch pointer without extra commits.",
+                    "That describes squash merging.",
+                    "Branch deletion must be done manually."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is the purpose of squash merging?",
@@ -430,8 +451,13 @@ nav_order: 2
                     "To overwrite the main branch",
                     "To fast-track changes into production without review"
                 ],
-                correctAnswer: 1,
-                explanation: "Squash merging produces one clean commit for easier project history."
+                explanations: [
+                    "Squash merging is about commits, not branches.",
+                    "Squash merging produces one clean commit for easier project history.",
+                    "Merging doesn't overwrite.",
+                    "Squash merging still requires review and merging approval."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is a pull request (PR) used for?",
@@ -441,8 +467,13 @@ nav_order: 2
                     "To merge branches without any approvals",
                     "To back up local branches"
                 ],
-                correctAnswer: 0,
-                explanation: "PRs allow team members to review and discuss changes before they become part of the main branch."
+                explanations: [
+                    "PRs allow team members to review and discuss changes before they become part of the main branch.",
+                    "Pull requests are for code collaboration.",
+                    "PRs encourage review and approval.",
+                    "PRs have nothing to do with backups."
+                ],
+                correctAnswer: 0
             },
             {
                 question: "What is the purpose of rebasing in Git?",
@@ -452,8 +483,13 @@ nav_order: 2
                     "To clone a repository from GitHub",
                     "To merge changes by creating a new commit"
                 ],
-                correctAnswer: 1,
-                explanation: "Rebasing restructures commits to make history cleaner and more straightforward."
+                explanations: [
+                    "Rebasing is not about backups.",
+                    "Rebasing restructures commits to make history cleaner and more straightforward.",
+                    "Cloning is downloading a full copy.",
+                    "That's three-way merging, not rebasing."
+                ],
+                correctAnswer: 1
             }
         ];
 
@@ -558,12 +594,12 @@ nav_order: 2
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -574,13 +610,29 @@ nav_order: 2
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -591,9 +643,9 @@ nav_order: 2
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -616,7 +668,7 @@ nav_order: 2
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "Git Intermediate Concepts";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -630,11 +682,6 @@ nav_order: 2
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../index" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);

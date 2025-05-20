@@ -8,6 +8,7 @@ nav_order: 3
 
 <div id="quiz">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
         #quiz {
             font-family: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
@@ -283,6 +284,35 @@ nav_order: 3
             <!-- flex-grow: 1; -->
             <!-- justify-content: left; -->
         }
+
+        #quiz #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 2px solid #7253ed;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px black;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: gray;
+        }
+
+        .close-btn:hover, .close-btn:focus {
+            color: black;
+        }
     </style>
 
     <div id="intro-page">
@@ -336,6 +366,12 @@ nav_order: 3
         
         <button id="next-btn" class="quiz-btn hidden">Next Question</button>
     </div>
+
+    <div id="popup" class="hidden">
+        <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        <h2 style="color: #7253ed; font-size: 24px;"><i class="fa-solid fa-trophy" style="color: gold"></i> Congratulations on completing all modules!</h2>
+        <a href="../../../../other/profile" class="btn" style="margin-top: 20px; font-weight: normal">Claim certificate</a>
+    </div>
     
     <div id="quiz-complete" class="quiz-complete hidden">
         <div class="chapter-name">Quiz Completed!</div>
@@ -379,57 +415,82 @@ nav_order: 3
             {
                 question: "Why is it important to embed security checks into every stage of the CI/CD pipeline?",
                 options: [
-                    "To make the code run faster",
+                    "To minimize the number of developers needed",
                     "To catch vulnerabilities early and maintain application security throughout the lifecycle",
-                    "To reduce the size of the source code",
-                    "To minimize the number of developers needed"
+                    "To make the code run faster",
+                    "To reduce the size of the source code"
                 ],
-                correctAnswer: 1,
-                explanation: "Security checks in all stages help proactively identify and fix vulnerabilities."
+                explanations: [
+                    "The focus is on security, not staffing.",
+                    "Security checks in all stages help proactively identify and fix vulnerabilities.",
+                    "Security checks ensure safety, not speed.",
+                    "Security checks don't impact code size."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is the goal of threat modeling during the planning phase?",
                 options: [
-                    "To estimate development costs",
                     "To identify potential vulnerabilities and define countermeasures",
+                    "To estimate development costs",
                     "To prioritize aesthetic features",
                     "To create the user interface layout"
                 ],
-                correctAnswer: 1,
-                explanation: "Threat modeling helps spot and mitigate risks early."
+                explanations: [
+                    "Threat modeling helps spot and mitigate risks early.",
+                    "Threat modeling focuses on security risks, not financial costs.",
+                    "It focuses on security, not design aesthetics.",
+                    "That's part of design, not threat modeling."
+                ],
+                correctAnswer: 0
             },
             {
                 question: "What is a key activity in the 'Coding' phase of a secure CI/CD pipeline?",
                 options: [
+                    "Deploying features immediately to production",
                     "Setting up production monitoring",
                     "Using source code scanners to detect vulnerabilities",
-                    "Deploying features immediately to production",
                     "Conducting user feedback surveys"
                 ],
-                correctAnswer: 1,
-                explanation: "During coding, static analysis tools catch vulnerabilities early."
+                explanations: [
+                    "Coding should be validated before deployment.",
+                    "Production monitoring happens much later.",
+                    "During coding, static analysis tools catch vulnerabilities early.",
+                    "Surveys are unrelated to the coding phase."
+                ],
+                correctAnswer: 2
             },
             {
                 question: "What does SAST stand for?",
                 options: [
-                    "Secure Application Standard Testing",
+                    "Security Authentication and Static Testing",
                     "Static Application Security Testing",
-                    "Server Application Security Tracking",
-                    "Security Authentication and Static Testing"
+                    "Secure Application Standard Testing",
+                    "Server Application Security Tracking"
                 ],
-                correctAnswer: 1,
-                explanation: "SAST analyzes code without executing it."
+                explanations: [
+                    "Close but incorrect.",
+                    "SAST analyzes code without executing it.",
+                    "That's not the correct term.",
+                    "SAST focuses on code, not servers."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What does DAST focus on?",
                 options: [
-                    "Analyzing source code before it runs",
-                    "Simulating attacks against a running application",
                     "Checking grammar in documentation",
-                    "Optimizing application speed"
+                    "Optimizing application speed",
+                    "Analyzing source code before it runs",
+                    "Simulating attacks against a running application"
                 ],
-                correctAnswer: 1,
-                explanation: "DAST finds vulnerabilities by interacting with live apps."
+                explanations: [
+                    "DAST has nothing to do with documentation.",
+                    "DAST tests security, not performance.",
+                    "That's SAST's role.",
+                    "DAST finds vulnerabilities by interacting with live apps."
+                ],
+                correctAnswer: 3
             },
             {
                 question: "When is SAST typically conducted?",
@@ -439,52 +500,77 @@ nav_order: 3
                     "During load testing",
                     "After user feedback collection"
                 ],
-                correctAnswer: 1,
-                explanation: "SAST checks code without running it."
+                explanations: [
+                    "SAST happens early in development.",
+                    "SAST checks code without running it.",
+                    "Load testing comes later in different phases.",
+                    "It's much earlier than user feedback."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is a major drawback of relying only on DAST?",
                 options: [
-                    "It can produce false positives",
+                    "It runs too early in the development lifecycle",
                     "Some vulnerabilities may not be detectable unless analyzing source code",
-                    "It requires direct access to the source code",
-                    "It runs too early in the development lifecycle"
+                    "It can produce false positives",
+                    "It requires direct access to the source code"
                 ],
-                correctAnswer: 1,
-                explanation: "DAST can't catch issues that static code review (SAST) might."
+                explanations: [
+                    "DAST typically runs later, not early.",
+                    "DAST can't catch issues that static code review (SAST) might.",
+                    "That is more common with SAST.",
+                    "DAST does not need source code."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What is the main advantage of using both SAST and DAST together?",
                 options: [
-                    "They increase application size",
-                    "They provide a more complete security assessment",
                     "They guarantee no bugs in production",
+                    "They provide a more complete security assessment",
+                    "They increase application size",
                     "They shorten the development lifecycle significantly"
                 ],
-                correctAnswer: 1,
-                explanation: "SAST covers code vulnerabilities, DAST covers runtime vulnerabilities."
+                explanations: [
+                    "No tool can completely guarantee a bug-free application.",
+                    "SAST covers code vulnerabilities, DAST covers runtime vulnerabilities.",
+                    "They improve security, not application size.",
+                    "They add critical checks, not necessarily speed."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "Which tool specializes in fixing vulnerabilities in open-source dependencies?",
                 options: [
-                    "Fortify",
-                    "SonarQube",
+                    "OWASP ZAP",
                     "Snyk",
-                    "OWASP ZAP"
+                    "SonarQube",
+                    "Fortify"
                 ],
-                correctAnswer: 2,
-                explanation: "Snyk specializes in finding and fixing issues in open-source libraries and containers."
+                explanations: [
+                    "ZAP focuses on dynamic security testing for web apps.",
+                    "Snyk specializes in finding and fixing issues in open-source libraries and containers.",
+                    "SonarQube focuses on static code analysis.",
+                    "Fortify focuses broadly on static and dynamic analysis."
+                ],
+                correctAnswer: 1
             },
             {
                 question: "What does GitLab CI/CD offer as part of its security scanning?",
                 options: [
                     "Only container scanning",
+                    "Real-time firewall updates",
                     "Only vulnerability scanning after deployment",
-                    "Static, dynamic, dependency, and container security scans",
-                    "Real-time firewall updates"
+                    "Static, dynamic, dependency, and container security scans"
                 ],
-                correctAnswer: 2,
-                explanation: "GitLab offers a wide range of built-in security scanning tools."
+                explanations: [
+                    "It offers multiple security scan types.",
+                    "Firewalls are not part of GitLab CI/CD scanning features.",
+                    "It scans during the pipeline too.",
+                    "GitLab offers a wide range of built-in security scanning tools."
+                ],
+                correctAnswer: 3
             }
         ];
 
@@ -511,6 +597,8 @@ nav_order: 3
         const questionReview = document.getElementById('question-review');
         const returnChapterBtn = document.getElementById('return-chapter');
         const quizInfo = document.querySelector('.quiz-info');
+        const popup = document.getElementById('popup');
+        const closeBtn = document.querySelector('.close-btn');
         
         quizInfo.innerHTML = `
             <div>Number of questions: ${quizData.length}</div>
@@ -521,6 +609,10 @@ nav_order: 3
             introPage.style.display = 'none';
             quizContainer.style.display = 'block';
             initQuiz();
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.classList.add('hidden');
         });
 
         function initQuiz() {
@@ -588,12 +680,12 @@ nav_order: 3
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
-                explanation: question.explanation,
                 isCorrect: isCorrect
             });
             
             if (isCorrect) {
                 score++;
+                launchConfetti(submitBtn);
                 showCorrectFeedback();
             } else {
                 showIncorrectFeedback();
@@ -604,13 +696,29 @@ nav_order: 3
             nextBtn.classList.remove('hidden');
         });
 
+        function launchConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.width/2) / window.innerWidth;
+            const y = (rect.top + rect.height/2) / window.innerHeight;
+            
+            confetti({
+                particleCount: 50,
+                spread: 50,
+                origin: {x, y},
+                startVelocity: 20,
+                gravity: 0.5,
+                ticks: 50,
+                colors: ['#315EEB', '#7253ed', '#54b56b'],
+            });
+        }
+
         function showCorrectFeedback() {
             const question = quizData[currentQuestion];
             feedbackContainer.innerHTML = `
                 <div class="feedback-correct">
                     <p style="color: green; font-size: 18px"><strong><i class="fa-solid fa-circle-check"></i> Correct!</strong></p>
                     <p><strong>You selected:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -621,9 +729,9 @@ nav_order: 3
                 <div class="feedback-incorrect">
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
                     <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanation}</p>
+                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -639,6 +747,32 @@ nav_order: 3
             }
         });
 
+        function completeConfetti() {
+            const duration = 3 * 1000;
+            const end = Date.now() + duration;
+            const defaults = {
+                startVelocity: 30,
+                spread: 360,
+                ticks: 60,
+                zIndex: 1,
+                colors: ['#315EEB', '#7253ed', '#54b56b']
+            };
+
+            const interval = setInterval(function() {
+                const timeLeft = end - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                const particleCount = 50 * (timeLeft / duration);
+                confetti(Object.assign({}, defaults, {
+                    particleCount,
+                    origin: { x: Math.random(), y: Math.random() - 0.2 }
+                }));
+            }, 250);
+        }
+
         function completeQuiz() {
             quizContainer.style.display = 'none';
             quizComplete.classList.remove('hidden');
@@ -646,7 +780,7 @@ nav_order: 3
             scoreDisplay.textContent = score;
             
             const percentage = (score / quizData.length) * 100;
-            const quizName = "Introduction to Version Control";
+            const quizName = "Security Checks in CI/CD";
             
             const completionMessage = document.querySelector('.completion-message h2');
             const completionSubtext = document.querySelector('.completion-message p');
@@ -654,17 +788,14 @@ nav_order: 3
             if (percentage >= 75) {
                 completionMessage.textContent = 'Good job!';
                 completionSubtext.innerHTML = `You've completed the ${quizName} quiz`;
+                popup.classList.remove('hidden');
+                completeConfetti();
             } else {
                 completionMessage.textContent = 'Good effort';
                 completionSubtext.innerHTML = `
                     <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
                     <a href="../index" class="return-link">Review this chapter</a>
                 `;
-                
-                const reviewLink = completionSubtext.querySelector('.return-link');
-                reviewLink.addEventListener('click', () => {
-                    alert('Returning to chapter for review...');
-                });
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);
