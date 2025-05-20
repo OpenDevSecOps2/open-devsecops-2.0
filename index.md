@@ -61,5 +61,3 @@ Contributions are welcome! Help us keep the curriculum relevant and effective by
 - [Eric Kim](https://www.linkedin.com/in/taehyunnkim/)
 - [Mari Woodworth](https://www.linkedin.com/in/marikowoodworth/)
 - [Brandon Mendoza](https://www.linkedin.com/in/bwmendo/)
-
-<script type='module' src="{{ '/assets/js/home.js' | relative_url }}"></script>
