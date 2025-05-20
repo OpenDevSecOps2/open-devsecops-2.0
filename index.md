@@ -1,3 +1,8 @@
+---
+title: Home
+layout: custom
+nav_order: 0
+---
 
 > **📢 Project Open-Sourcing Notice**  
 > This project, *Open DevSecOps 2.0*, is now open source!  
