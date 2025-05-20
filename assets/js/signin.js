@@ -4,6 +4,7 @@ import { auth } from '../js/firebase.js'
 let ul = document.querySelector('.aux-nav-list');
 
 // create sign in button
+
 let button = document.createElement('button');
 button.textContent = 'Sign in';
 
@@ -18,6 +19,17 @@ button.addEventListener('click', () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider);
 });
+
+button.addEventListener('mouseover', () => {
+    button.style.background = '#7253ed';
+    button.style.color = 'white';
+    button.style.cursor = 'pointer';
+});
+button.addEventListener('mouseout', () => {
+    button.style.background = 'rgba(220, 217, 234, 0.4)';
+    button.style.color = '#7253ed';
+});
+
 
 // Create user image for later use
 const profileImage = document.createElement('img');
