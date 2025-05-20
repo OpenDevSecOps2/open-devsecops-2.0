@@ -4,6 +4,12 @@ title: Profile
 nav_order: -1
 has_children: false
 ---
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <span id="modal-close" class="modal-close">&times;</span>
+    <p id="modal-message"></p>
+  </div>
+</div>
 
 <body id='body-info'>
     <h2 class='heading'><strong>Profile</strong></h2>
@@ -90,12 +96,17 @@ has_children: false
             label.style.fontWeight = 'bold';
             progress.appendChild(label);
 
+            const progressText = document.createElement('p');
+            progressText.className = 'container-text'
+            progress.appendChild(progressText);
+            progressText.style.color = '#444';
+            progressText.style.marginTop = '5px';
+            progressText.style.fontStyle = 'italic';
+
+            // Claim Certificate Button
             const claimBtn = document.createElement('button');
             claimBtn.textContent = 'Claim Certificate';
             claimBtn.className = 'container-element claim-certificate';
-            // claimBtn.addEventListener('click', () => {
-            //     window.open('/certificate-claim', '_blank');
-            // });
             cert.append(claimBtn);
 
 
@@ -123,41 +134,58 @@ has_children: false
             });
             thead.appendChild(headerRow);
             table.appendChild(thead);
-
             quiz.appendChild(table);
 
-            for (let i = 0; i < quizList.length; i++) {
+            let completedCount = 0;
+
+            Promise.all(quizList.map(async (quizName) => {
                 const tr = document.createElement('tr');
-                
+
                 const name = document.createElement('td');
-                name.textContent = quizList[i].split('_').join(' ');
+                name.textContent = quizName.split('_').join(' ');
                 tr.appendChild(name);
 
-                const quizRef = ref(db, 'users/' + user.uid + '/' + quizList[i]);
-                getData(quizRef).then(output => {
-                    const score = document.createElement('td');
-                    score.textContent = output[0];
-                    tr.appendChild(score);
+                const quizRef = ref(db, 'users/' + user.uid + '/' + quizName);
+                const [scoreVal, dateVal, statusVal] = await getData(quizRef);
 
-                    const date = document.createElement('td');
-                    date.textContent = output[1];
-                    tr.appendChild(date);
+                const score = document.createElement('td');
+                score.textContent = scoreVal || 'N/A';
+                tr.appendChild(score);
 
-                    const status = document.createElement('td');
-                    status.className = 'status';
-                    const statusPic = document.createElement('p');
-                    statusPic.textContent = output[2];
-                    if (output[2] == 'Passed') {
-                        statusPic.className = 'status-passed';
-                    } else {
-                        statusPic.className = 'status-failed';
-                    }
-                    status.appendChild(statusPic);
-                    tr.appendChild(status);
-                });
-                
+                const date = document.createElement('td');
+                date.textContent = dateVal || 'N/A';
+                tr.appendChild(date);
+
+                const status = document.createElement('td');
+                status.className = 'status';
+                const statusPic = document.createElement('p');
+                statusPic.textContent = statusVal || 'Incomplete';
+
+                if ((statusVal || '').trim() === 'Passed') {
+                    statusPic.className = 'status-passed';
+                    completedCount++;
+                } else {
+                    statusPic.className = 'status-failed';
+                }
+
+                status.appendChild(statusPic);
+                tr.appendChild(status);
                 table.appendChild(tr);
-            }
+                
+            })).then(() => {
+                progressText.textContent = `${completedCount}/12 chapters completed`;
+
+                claimBtn.addEventListener('click', () => {
+                    if (completedCount >= 9) {
+                        const name = user.displayName || 'Your Name';
+                        const date = new Date().toLocaleDateString();
+                        generateCertificateWithName(name, date);
+                        
+                    } else {
+                        showModal(`❌ You need at least 9 completed quizzes to claim the certificate.\n✅ Currently completed: ${completedCount}/12`);
+                    }
+                });
+            });
 
         } else {
             // space showing that a user is not signed in
@@ -182,6 +210,64 @@ has_children: false
 
         return [data.score, data.date, data.status];
     }
+
+    function generateCertificateWithName(name, date) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const image = new Image();
+
+    image.src = '../../assets/images/certificate.jpg';
+
+    image.onload = () => {
+        canvas.width = image.width;
+        canvas.height = image.height;
+        ctx.drawImage(image, 0, 0);
+
+        // Date of Completion
+        ctx.font = 'italic 60px Times New Roman';
+        ctx.fillStyle = '#000';
+        ctx.textAlign = 'left';
+        ctx.fillText(date, 275, 850);
+
+        // Name
+        ctx.font = '100px Times New Roman';
+        ctx.fillStyle = '#000';
+        ctx.textAlign = 'left';
+        ctx.fillText(name, 275, 1050);
+
+        // Download Image
+        const link = document.createElement('a');
+        const safeName = name.replace(/[^a-z0-9_\- ]/gi, '_');
+        link.download = `${safeName}_DevSecOps_Certificate.jpg`;
+        link.href = canvas.toDataURL();
+        link.click();
+    };
+}
+
+    // modal
+    const modal = document.getElementById('modal');
+    const modalMessage = document.getElementById('modal-message');
+    const modalClose = document.getElementById('modal-close');
+
+    // open the modal
+    function showModal(message) {
+        modalMessage.textContent = message;
+        modal.classList.remove('hidden');
+        modal.style.display = 'block';
+    }
+
+    // close the modal
+    modalClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // close the modal when clicking outside the modal content 
+    window.addEventListener('click', (e) => {
+        if (e.target == modal) {
+            modal.style.display = 'none';
+        }
+});
+
 </script>
 
 <style>
@@ -299,5 +385,43 @@ has_children: false
         margin-left: 20px;
         margin-right: 20px;
     }
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+        }
 
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 530px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            color: #aaa;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            color: black;
+        }
 </style>
