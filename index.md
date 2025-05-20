@@ -1,8 +1,4 @@
----
-title: Home
-layout: custom
-nav_order: 0
----
+
 > **📢 Project Open-Sourcing Notice**  
 > This project, *Open DevSecOps 2.0*, is now open source!  
 > As of **June 6th, 2025**, the codebase and documentation are publicly available for educational and collaborative use.  
