@@ -5,13 +5,6 @@ nav_order: -1
 has_children: false
 ---
 
-<div id="modal" class="modal hidden">
-  <div class="modal-content">
-    <span id="modal-close" class="modal-close">&times;</span>
-    <p id="modal-message"></p>
-  </div>
-</div>
-
 <body id='body-info'>
     <h2 class='heading'><strong>Profile</strong></h2>
     <div class='container' id='profile'></div>
@@ -108,9 +101,6 @@ has_children: false
             const claimBtn = document.createElement('button');
             claimBtn.textContent = 'Claim Certificate';
             claimBtn.className = 'container-element claim-certificate';
-            claimBtn.disabled = true;
-            claimBtn.style.opacity = 0.5;
-            claimBtn.style.cursor = 'not-allowed';
             cert.append(claimBtn);
 
 
@@ -179,11 +169,12 @@ has_children: false
             })).then(() => {
                 progressText.textContent = `${completedCount}/12 chapters completed`;
 
-                claimBtn.disabled = false;
-                claimBtn.style.opacity = completedCount >= 12 ? 1 : 0.5;
-                claimBtn.style.cursor = completedCount >= 12 ? 'pointer' : 'not-allowed';
-
-                // Add click handler
+                if (completedCount >= 12) {
+                    claimBtn.classList.remove('disabled');
+                } else {
+                    claimBtn.classList.add('disabled');
+                }
+                
                 claimBtn.addEventListener('click', () => {
                     if (completedCount >= 12) {
                         const name = user.displayName || 'Your Name';
@@ -191,10 +182,10 @@ has_children: false
                         generateCertificateWithName(name, date);
                     } else {
                         const remaining = 12 - completedCount;
-                        showModal(`${remaining} more chapter${remaining > 1 ? 's' : ''} needed to get a certificate!`);
+                        showModal(`${remaining} quiz${remaining === 1 ? '' : 'zes'} left to get certificate!`);
                     }
-                })
-        }) 
+            }); 
+        })
     } else {
             // space showing that a user is not signed in
             const container = document.querySelector('#profile');
@@ -252,29 +243,27 @@ has_children: false
     };
 }
 
-    // modal
-    const modal = document.getElementById('modal');
-    const modalMessage = document.getElementById('modal-message');
-    const modalClose = document.getElementById('modal-close');
-
-    // open the modal
     function showModal(message) {
-        modalMessage.textContent = message;
-        modal.classList.remove('hidden');
-        modal.style.display = 'block';
+        const modal = document.createElement('div');
+        modal.className = 'custom-modal';
+
+        const content = document.createElement('div');
+        content.className = 'modal-content';
+
+        const close = document.createElement('span');
+        close.innerHTML = '&times;';
+        close.className = 'close';
+        close.onclick = () => modal.remove();
+
+        const text = document.createElement('p');
+        text.textContent = message;
+
+        content.appendChild(close);
+        content.appendChild(text);
+        modal.appendChild(content);
+        document.body.appendChild(modal);
     }
 
-    // close the modal
-    modalClose.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    // close the modal when clicking outside the modal content 
-    window.addEventListener('click', (e) => {
-    if (e.target == modal) {
-        modal.style.display = 'none';
-        }
-});
 </script>
 
 <style>
@@ -400,43 +389,43 @@ has_children: false
         margin-right: 20px;
     }
 
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.4);
-        }
+    .custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .modal-content {
-        background-color: #fff;
-        margin: 15% auto;
-        padding: 20px;
-        border-radius: 10px;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 530px;
-        text-align: center;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-        position: relative;
-        }
+.modal-content {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
 
-    .modal-close {
-        position: absolute;
-        top: 0px;
-        right: 10px;
-        color: #aaa;
-        font-size: 24px;
-        font-weight: bold;
-        cursor: pointer;
-        }
+.modal-content .close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
 
-    .modal-close:hover,
-    .modal-close:focus {
-        color: black;
-        }
+.claim-certificate.disabled {
+    background: #ccc !important;
+    border: 2px solid #999 !important;
+    color: #666 !important;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
 </style>
