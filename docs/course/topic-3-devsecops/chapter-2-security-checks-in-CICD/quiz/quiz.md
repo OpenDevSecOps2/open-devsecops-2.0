@@ -459,118 +459,6 @@ nav_order: 3
                     "Surveys are unrelated to the coding phase."
                 ],
                 correctAnswer: 2
-            },
-            {
-                question: "What does SAST stand for?",
-                options: [
-                    "Security Authentication and Static Testing",
-                    "Static Application Security Testing",
-                    "Secure Application Standard Testing",
-                    "Server Application Security Tracking"
-                ],
-                explanations: [
-                    "Close but incorrect.",
-                    "SAST analyzes code without executing it.",
-                    "That's not the correct term.",
-                    "SAST focuses on code, not servers."
-                ],
-                correctAnswer: 1
-            },
-            {
-                question: "What does DAST focus on?",
-                options: [
-                    "Checking grammar in documentation",
-                    "Optimizing application speed",
-                    "Analyzing source code before it runs",
-                    "Simulating attacks against a running application"
-                ],
-                explanations: [
-                    "DAST has nothing to do with documentation.",
-                    "DAST tests security, not performance.",
-                    "That's SAST's role.",
-                    "DAST finds vulnerabilities by interacting with live apps."
-                ],
-                correctAnswer: 3
-            },
-            {
-                question: "When is SAST typically conducted?",
-                options: [
-                    "After deployment in production",
-                    "As soon as code is written, before the application runs",
-                    "During load testing",
-                    "After user feedback collection"
-                ],
-                explanations: [
-                    "SAST happens early in development.",
-                    "SAST checks code without running it.",
-                    "Load testing comes later in different phases.",
-                    "It's much earlier than user feedback."
-                ],
-                correctAnswer: 1
-            },
-            {
-                question: "What is a major drawback of relying only on DAST?",
-                options: [
-                    "It runs too early in the development lifecycle",
-                    "Some vulnerabilities may not be detectable unless analyzing source code",
-                    "It can produce false positives",
-                    "It requires direct access to the source code"
-                ],
-                explanations: [
-                    "DAST typically runs later, not early.",
-                    "DAST can't catch issues that static code review (SAST) might.",
-                    "That is more common with SAST.",
-                    "DAST does not need source code."
-                ],
-                correctAnswer: 1
-            },
-            {
-                question: "What is the main advantage of using both SAST and DAST together?",
-                options: [
-                    "They guarantee no bugs in production",
-                    "They provide a more complete security assessment",
-                    "They increase application size",
-                    "They shorten the development lifecycle significantly"
-                ],
-                explanations: [
-                    "No tool can completely guarantee a bug-free application.",
-                    "SAST covers code vulnerabilities, DAST covers runtime vulnerabilities.",
-                    "They improve security, not application size.",
-                    "They add critical checks, not necessarily speed."
-                ],
-                correctAnswer: 1
-            },
-            {
-                question: "Which tool specializes in fixing vulnerabilities in open-source dependencies?",
-                options: [
-                    "OWASP ZAP",
-                    "Snyk",
-                    "SonarQube",
-                    "Fortify"
-                ],
-                explanations: [
-                    "ZAP focuses on dynamic security testing for web apps.",
-                    "Snyk specializes in finding and fixing issues in open-source libraries and containers.",
-                    "SonarQube focuses on static code analysis.",
-                    "Fortify focuses broadly on static and dynamic analysis."
-                ],
-                correctAnswer: 1
-            },
-            {
-                question: "What does GitLab CI/CD offer as part of its security scanning?",
-                options: [
-                    "Only container scanning",
-                    "Real-time firewall updates",
-                    "Only vulnerability scanning after deployment",
-                    "Static, dynamic, dependency, and container security scans"
-                ],
-                explanations: [
-                    "It offers multiple security scan types.",
-                    "Firewalls are not part of GitLab CI/CD scanning features.",
-                    "It scans during the pipeline too.",
-                    "GitLab offers a wide range of built-in security scanning tools."
-                ],
-                correctAnswer: 3
             }
         ];
 
@@ -680,6 +568,7 @@ nav_order: 3
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
+                hint: question.explanations[question.correctAnswer],
                 isCorrect: isCorrect
             });
             
@@ -730,8 +619,7 @@ nav_order: 3
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
                     <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
-                    <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
+                    <p><strong style="color: green">Hint:</strong> ${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -793,16 +681,18 @@ nav_order: 3
             } else {
                 completionMessage.textContent = 'Good effort';
                 completionSubtext.innerHTML = `
-                    <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
-                    <a href="../index" class="return-link">Review this chapter</a>
+                    <div style="margin-bottom: 8px; color: #666;">You scored ${Math.floor(percentage)}%. Score at least <strong>80%</strong> to pass the quiz.</div>
                 `;
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);
             if (incorrectQuestions.length > 0) {
-                reviewList.innerHTML = incorrectQuestions.map(q => 
-                    `<li>${q.question}</li>`
-                ).join('');
+                reviewList.innerHTML = `
+                    ${incorrectQuestions.map(q => `<li>${q.question}</li>`).join('')}
+                    <div style="margin-top: 10px">
+                        <a href="../index" class="return-link">Review this chapter</a>
+                    </div>
+                `;
             } else {
                 reviewList.innerHTML = "<li>No areas need review</li>";
             }
@@ -819,7 +709,7 @@ nav_order: 3
                         </div>
                         ${!answer.isCorrect ? `
                             <div style="color: #00ab41; margin-left: 25px">
-                                Correct answer: ${answer.correctAnswer}
+                                Hint: ${answer.hint}
                             </div>
                         ` : ''}
                     </div>
