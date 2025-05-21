@@ -4,6 +4,7 @@ title: Profile
 nav_order: -1
 has_children: false
 ---
+
 <div id="modal" class="modal hidden">
   <div class="modal-content">
     <span id="modal-close" class="modal-close">&times;</span>
@@ -107,6 +108,9 @@ has_children: false
             const claimBtn = document.createElement('button');
             claimBtn.textContent = 'Claim Certificate';
             claimBtn.className = 'container-element claim-certificate';
+            claimBtn.disabled = true;
+            claimBtn.style.opacity = 0.5;
+            claimBtn.style.cursor = 'not-allowed';
             cert.append(claimBtn);
 
 
@@ -175,19 +179,23 @@ has_children: false
             })).then(() => {
                 progressText.textContent = `${completedCount}/12 chapters completed`;
 
+                claimBtn.disabled = false;
+                claimBtn.style.opacity = completedCount >= 12 ? 1 : 0.5;
+                claimBtn.style.cursor = completedCount >= 12 ? 'pointer' : 'not-allowed';
+
+                // Add click handler
                 claimBtn.addEventListener('click', () => {
-                    if (completedCount >= 9) {
+                    if (completedCount >= 12) {
                         const name = user.displayName || 'Your Name';
                         const date = new Date().toLocaleDateString();
                         generateCertificateWithName(name, date);
-                        
                     } else {
-                        showModal(`❌ You need at least 9 completed quizzes to claim the certificate.\n✅ Currently completed: ${completedCount}/12`);
+                        const remaining = 12 - completedCount;
+                        showModal(`${remaining} more chapter${remaining > 1 ? 's' : ''} needed to get a certificate!`);
                     }
-                });
-            });
-
-        } else {
+                })
+        }) 
+    } else {
             // space showing that a user is not signed in
             const container = document.querySelector('#profile');
             container.className = 'container signed-out'
@@ -263,11 +271,10 @@ has_children: false
 
     // close the modal when clicking outside the modal content 
     window.addEventListener('click', (e) => {
-        if (e.target == modal) {
-            modal.style.display = 'none';
+    if (e.target == modal) {
+        modal.style.display = 'none';
         }
 });
-
 </script>
 
 <style>
@@ -357,6 +364,13 @@ has_children: false
     cursor: pointer;
 }
 
+    .claim-certificate:disabled {
+    background: #ccc;
+    border: 2px solid #999;
+    color: #666;
+    cursor: not-allowed;
+}
+
     td {
         text-align: center;
     }
@@ -385,7 +399,8 @@ has_children: false
         margin-left: 20px;
         margin-right: 20px;
     }
-        .modal {
+
+    .modal {
         display: none;
         position: fixed;
         z-index: 1000;
@@ -397,31 +412,31 @@ has_children: false
         background-color: rgba(0,0,0,0.4);
         }
 
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 530px;
-            text-align: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-            position: relative;
+    .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 530px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        position: relative;
         }
 
-        .modal-close {
-            position: absolute;
-            top: 0px;
-            right: 10px;
-            color: #aaa;
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
+    .modal-close {
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        color: #aaa;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
         }
 
-        .modal-close:hover,
-        .modal-close:focus {
-            color: black;
+    .modal-close:hover,
+    .modal-close:focus {
+        color: black;
         }
 </style>
