@@ -568,6 +568,7 @@ nav_order: 3
                 question: question.question,
                 userAnswer: question.options[selectedIndex],
                 correctAnswer: question.options[question.correctAnswer],
+                hint: question.explanations[question.correctAnswer],
                 isCorrect: isCorrect
             });
             
@@ -618,8 +619,7 @@ nav_order: 3
                     <p style="color: red; font-size: 18px"><strong><i class="fa-solid fa-circle-xmark"></i> Incorrect</strong></p>
                     <p><strong>You selected:</strong> ${question.options[selectedOption]}</p>
                     <p style="margin-left: 20px">${question.explanations[selectedOption]}</p>
-                    <p><strong style="color: green">Correct answer:</strong> ${question.options[question.correctAnswer]}</p>
-                    <p style="margin-left: 20px">${question.explanations[question.correctAnswer]}</p>
+                    <p><strong style="color: green">Hint:</strong> ${question.explanations[question.correctAnswer]}</p>
                 </div>
             `;
         }
@@ -681,16 +681,18 @@ nav_order: 3
             } else {
                 completionMessage.textContent = 'Good effort';
                 completionSubtext.innerHTML = `
-                    <div style="margin-bottom: 8px; color: #666;">Score at least 75% to pass the quiz</div>
-                    <a href="../index" class="return-link">Review this chapter</a>
+                    <div style="margin-bottom: 8px; color: #666;">You scored ${Math.floor(percentage)}%. Score at least <strong>80%</strong> to pass the quiz.</div>
                 `;
             }
             
             const incorrectQuestions = userAnswers.filter(answer => !answer.isCorrect);
             if (incorrectQuestions.length > 0) {
-                reviewList.innerHTML = incorrectQuestions.map(q => 
-                    `<li>${q.question}</li>`
-                ).join('');
+                reviewList.innerHTML = `
+                    ${incorrectQuestions.map(q => `<li>${q.question}</li>`).join('')}
+                    <div style="margin-top: 10px">
+                        <a href="../index" class="return-link">Review this chapter</a>
+                    </div>
+                `;
             } else {
                 reviewList.innerHTML = "<li>No areas need review</li>";
             }
@@ -707,7 +709,7 @@ nav_order: 3
                         </div>
                         ${!answer.isCorrect ? `
                             <div style="color: #00ab41; margin-left: 25px">
-                                Correct answer: ${answer.correctAnswer}
+                                Hint: ${answer.hint}
                             </div>
                         ` : ''}
                     </div>
