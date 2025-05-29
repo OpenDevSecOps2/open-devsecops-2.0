@@ -75,20 +75,38 @@ So, while an "artifact" is a product of the software development process, "Artif
 {: .lab}
 [Lab 2 - Accessing Corporate Network and AWS ECR](./lab/containerization-lab-2.html){: .btn .btn-purple .btn-fill }
 
+<style>
+  .quiz-btn {
+      width: 160px;
+      background-color: #315EEB;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 25px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
 
+  .quiz-btn:hover {
+      background-color: #1046e9;
+  }
+</style>
 
-
+<div style="text-align: center">
+  <button class="quiz-btn" onclick="window.location.href='quiz/quiz'">Take Quiz</button>
+</div>
 
 ### References
-
-**1.** "What is Containerization?" *AWS*, [https://aws.amazon.com/what-is/containerization/#:~:text=Containerization%20involves%20building%20self%2Dsufficient,to%20run%20a%20containerized%20application](https://aws.amazon.com/what-is/containerization/#:~:text=Containerization%20involves%20building%20self%2Dsufficient,to%20run%20a%20containerized%20application). Accessed 20 Feb. 2024.
-
-**2.** "What is containerization? Overview, definition, benefits, and tools", *Log Rocket*, [https://blog.logrocket.com/product-management/what-is-containerization-definition-benefits-tools/](https://blog.logrocket.com/product-management/what-is-containerization-definition-benefits-tools/). Accessed 20 Feb. 2024.
-
-**3.** "What is containerization?", *Red Hat*, [https://www.redhat.com/en/topics/cloud-native-apps/what-is-containerization](https://www.redhat.com/en/topics/cloud-native-apps/what-is-containerization). Accessed 20 Feb. 2024.
-
-**4.** "Decoding the Difference: Artifacts vs Packages in Software Development", *cloudsmith*, [https://cloudsmith.com/blog/artifacts-vs-packages-what-is-the-difference](https://cloudsmith.com/blog/artifacts-vs-packages-what-is-the-difference). Accessed 20 Feb. 2024.
-
-**5.** "Azure Container Registry between Artifactory: Exploring the Differences", *LevInfo*, [https://ievinfo.com/azure-container-registry-between-artifactory-differenc/](https://ievinfo.com/azure-container-registry-between-artifactory-differenc/). Accessed 20 Feb. 2024.
+<details>
+  <summary>Expand</summary>
+    <b>1.</b> “What Is Containerization?” <i>AWS</i>, <a href="https://aws.amazon.com/what-is/containerization/#:~:text=Containerization%20involves%20building%20self%2Dsufficient,to%20run%20a%20containerized%20application" target="_blank">https://aws.amazon.com/what-is/containerization/</a>. Accessed 20 Feb. 2024.<br>
+    <b>2.</b> “What Is Containerization? Overview, Definition, Benefits, and Tools.” <i>Log Rocket</i>, <a href="https://blog.logrocket.com/product-management/what-is-containerization-definition-benefits-tools/" target="_blank">https://blog.logrocket.com/product-management/what-is-containerization-definition-benefits-tools/</a>. Accessed 20 Feb. 2024.<br>
+    <b>3.</b> “What Is Containerization?” <i>Red Hat</i>, <a href="https://www.redhat.com/en/topics/cloud-native-apps/what-is-containerization" target="_blank">https://www.redhat.com/en/topics/cloud-native-apps/what-is-containerization</a>. Accessed 20 Feb. 2024.<br>
+    <b>4.</b> “Decoding the Difference: Artifacts vs Packages in Software Development.” <i>Cloudsmith</i>, <a href="https://cloudsmith.com/blog/artifacts-vs-packages-what-is-the-difference" target="_blank">https://cloudsmith.com/blog/artifacts-vs-packages-what-is-the-difference</a>. Accessed 20 Feb. 2024.<br>
+    <b>5.</b> “Azure Container Registry between Artifactory: Exploring the Differences.” <i>LevInfo</i>, <a href="https://ievinfo.com/azure-container-registry-between-artifactory-differenc/" target="_blank">https://ievinfo.com/azure-container-registry-between-artifactory-differenc/</a>. Accessed 20 Feb. 2024.<br>
+</details>
 
 

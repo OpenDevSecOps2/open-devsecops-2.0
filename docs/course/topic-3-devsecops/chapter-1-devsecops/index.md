@@ -88,16 +88,35 @@ To **shift right** is to monitor user behavior, usage, performance, and security
 </p>
 </details> 
 
+<style>
+  .quiz-btn {
+      width: 160px;
+      background-color: #315EEB;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 25px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
 
+  .quiz-btn:hover {
+      background-color: #1046e9;
+  }
+</style>
 
+<div style="text-align: center">
+  <button class="quiz-btn" onclick="window.location.href='quiz/quiz'">Take Quiz</button>
+</div>
  
 ### References
-
-**1.** “What is DevSecOps?” *Red Hat*, [https://www.redhat.com/en/topics/devops/what-is-devsecops](https://www.redhat.com/en/topics/devops/what-is-devsecops). Accessed 8 Apr. 2024.
-
-**2.** “What is DevSecOps?” *Microsoft*, [https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops](https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops). Accessed 8 Apr. 2024.
-
-**3.** “Use containers to Build, Share and Run your applications” *Docker*, [https://www.docker.com/resources/what-container/](https://www.docker.com/resources/what-container/). Accessed 8 Apr. 2024.
-
-**4.** “Shift left vs. shift right” *Red Hat*, [https://www.redhat.com/en/topics/devops/shift-left-vs-shift-right](https://www.redhat.com/en/topics/devops/shift-left-vs-shift-right). Accessed 8 Apr. 2024.
-
+<details>
+  <summary>Expand</summary>
+    <b>1.</b> "What Is DevSecOps?" <i>Red Hat</i>, <a href="https://www.redhat.com/en/topics/devops/what-is-devsecops" target="_blank">https://www.redhat.com/en/topics/devops/what-is-devsecops</a>. Accessed 8 Apr. 2024.<br>
+    <b>2.</b> "What Is DevSecOps?" <i>Microsoft</i>, <a href="https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops" target="_blank">https://www.microsoft.com/en-us/security/business/security-101/what-is-devsecops</a>. Accessed 8 Apr. 2024.<br>
+    <b>3.</b> "Use Containers to Build, Share and Run Your Applications." <i>Docker</i>, <a href="https://www.docker.com/resources/what-container/" target="_blank">https://www.docker.com/resources/what-container/</a>. Accessed 8 Apr. 2024.<br>
+    <b>4.</b> "Shift Left vs. Shift Right." <i>Red Hat</i>, <a href="https://www.redhat.com/en/topics/devops/shift-left-vs-shift-right" target="_blank">https://www.redhat.com/en/topics/devops/shift-left-vs-shift-right</a>. Accessed 8 Apr. 2024.<br>
+</details>

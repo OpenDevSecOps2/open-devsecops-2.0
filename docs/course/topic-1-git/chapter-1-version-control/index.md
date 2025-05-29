@@ -29,6 +29,30 @@ Version control is **a system that records changes to a file or set of files ove
 
 A common tool for version control is GitHub. GitHub allows you acts as a central hub for all of the different versions of your code, kind of how in google docs you can see the history of your changes. Though there are many different systems for version control, we will be learning using GitHubs features. The syntax and user interface of different products are different, but the core elements are the same. 
 
+<style>
+  .quiz-btn {
+      width: 160px;
+      background-color: #315EEB;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 25px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+
+  .quiz-btn:hover {
+      background-color: #1046e9;
+  }
+</style>
+
+<div style="text-align: center">
+  <button class="quiz-btn" onclick="window.location.href='quiz/quiz'">Take Quiz</button>
+</div>
+
 ### References 
 <details>
   <summary>Expand</summary>

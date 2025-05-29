@@ -227,11 +227,35 @@ In many companies, Development and Operations teams work independently, leading 
 - **Collecting & Measuring Data**
 - **Continuous Feedback**
 
+<style>
+  .quiz-btn {
+      width: 160px;
+      background-color: #315EEB;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 25px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+
+  .quiz-btn:hover {
+      background-color: #1046e9;
+  }
+</style>
+
+<div style="text-align: center">
+  <button class="quiz-btn" onclick="window.location.href='quiz/quiz'">Take Quiz</button>
+</div>
+
 ### References 
 <details>
   <Summary>Expand</Summary>
-    <b>1.</b> “The Importance of Scalability in Software Design.” <i>Concepta Tech</i>, <a href="http://www.conceptatech.com/blog/importance-of-scalability-in-software-design" target="_blank">www.conceptatech.com/blog/importance-of-scalability-in-software-design</a>. Accessed 20 Feb. 2024.<br>
-    <b>2.</b> “Why Is There a Divide between Dev and Ops?” <i>CloudBees</i>, <a href="http://www.cloudbees.com/blog/why-there-divide-between-dev-and-ops" target="_blank">www.cloudbees.com/blog/why-there-divide-between-dev-and-ops</a>. Accessed 20 Feb. 2024.<br>
-    <b>3.</b> Charboneau, Tyler. “What Is Devops?” <i>Orange Matter</i>, 9 Aug. 2023, <a href="http://orangematter.solarwinds.com/2022/03/21/what-is-devops/" target="_blank">orangematter.solarwinds.com/2022/03/21/what-is-devops/</a>.<br>
-    <b>4.</b> “Six Pillars of Devsecops Series.” <i>CSA</i>, <a href="http://cloudsecurityalliance.org/blog/2021/09/09/six-pillars-of-devsecops-series" target="_blank">cloudsecurityalliance.org/blog/2021/09/09/six-pillars-of-devsecops-series</a>. Accessed 20 Feb. 2024.<br>
+    <b>1.</b> "The Importance of Scalability in Software Design." <i>Concepta Tech</i>, <a href="http://www.conceptatech.com/blog/importance-of-scalability-in-software-design" target="_blank">www.conceptatech.com/blog/importance-of-scalability-in-software-design</a>. Accessed 20 Feb. 2024.<br>
+    <b>2.</b> "Why Is There a Divide between Dev and Ops?" <i>CloudBees</i>, <a href="http://www.cloudbees.com/blog/why-there-divide-between-dev-and-ops" target="_blank">www.cloudbees.com/blog/why-there-divide-between-dev-and-ops</a>. Accessed 20 Feb. 2024.<br>
+    <b>3.</b> "What Is Devops?" <i>Orange Matter</i>, 9 Aug. 2023, <a href="http://orangematter.solarwinds.com/2022/03/21/what-is-devops/" target="_blank">orangematter.solarwinds.com/2022/03/21/what-is-devops/</a>.<br>
+    <b>4.</b> "Six Pillars of Devsecops Series." <i>CSA</i>, <a href="http://cloudsecurityalliance.org/blog/2021/09/09/six-pillars-of-devsecops-series" target="_blank">cloudsecurityalliance.org/blog/2021/09/09/six-pillars-of-devsecops-series</a>. Accessed 20 Feb. 2024.<br>
 </details>

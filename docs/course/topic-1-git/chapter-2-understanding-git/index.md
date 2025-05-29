@@ -78,6 +78,29 @@ Creating a branch in Git is a fast and simple operation because it doesn't copy 
 
 By using branches, you can manage the development of new features, fixes, and updates in a structured and organized manner, allowing for a smoother and more controlled workflow.
 
+<style>
+  .quiz-btn {
+      width: 160px;
+      background-color: #315EEB;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 25px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+
+  .quiz-btn:hover {
+      background-color: #1046e9;
+  }
+</style>
+
+<div style="text-align: center">
+  <button class="quiz-btn" onclick="window.location.href='quiz/quiz'">Take Quiz</button>
+</div>
 
 ### References
 <details>

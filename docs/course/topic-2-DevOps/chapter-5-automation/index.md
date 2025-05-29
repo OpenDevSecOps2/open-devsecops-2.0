@@ -87,6 +87,29 @@ Creating a robust automated testing framework involves several critical steps:
 
 Automated testing is a cornerstone of modern software development. By integrating effective automated tests into the CI/CD pipeline, teams can ensure that their software is not only functional but also meets quality standards before it reaches the end-user. Embracing these practices not only enhances product reliability but also empowers teams to innovate rapidly with confidence.
 
+<style>
+  .quiz-btn {
+      width: 160px;
+      background-color: #315EEB;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 25px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+
+  .quiz-btn:hover {
+      background-color: #1046e9;
+  }
+</style>
+
+<div style="text-align: center">
+  <button class="quiz-btn" onclick="window.location.href='quiz/quiz'">Take Quiz</button>
+</div>
 
 ### References
 <details>

@@ -28,6 +28,30 @@ Then, once you want to make a change, the following happens:
 2. **GitHub sends a webhook** - Because of the rule you set up, GitHub notifies your CI/CD tool that something happened (like a code push).
 3. **CI/CD tool starts tests** - The CI/CD tool, now informed by the webhook, starts running the tests or actions you've configured it to perform upon receiving such a notification.
 
+<style>
+  .quiz-btn {
+      width: 160px;
+      background-color: #315EEB;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 25px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+
+  .quiz-btn:hover {
+      background-color: #1046e9;
+  }
+</style>
+
+<div style="text-align: center">
+  <button class="quiz-btn" onclick="window.location.href='quiz/quiz'">Take Quiz</button>
+</div>
+
 ### References 
 <details>
   <Summary>Expand</Summary>

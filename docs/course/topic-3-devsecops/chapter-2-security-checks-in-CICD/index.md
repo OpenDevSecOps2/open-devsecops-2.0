@@ -137,22 +137,40 @@ Vulnerability scanning in a CI/CD pipeline refers to the automated process of id
 
 There are countless variations of vulnerability scanners out there and are constantly being innovated. Every software team should take throrough time to research and test as many tools as possible within their budget and timeline to ensure their pipeline is fully covered.
 
+<style>
+  .quiz-btn {
+      width: 160px;
+      background-color: #315EEB;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 25px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+
+  .quiz-btn:hover {
+      background-color: #1046e9;
+  }
+</style>
+
+<div style="text-align: center">
+  <button class="quiz-btn" onclick="window.location.href='quiz/quiz'">Take Quiz</button>
+</div>
 
 ### References
 
-**1.** "What is CI/CD security?" *Red Hat*, [Link](https://www.redhat.com/en/topics/security/what-is-cicd-security#:~:text=CI%2FCD%20security%20is%20used,policies%2C%20and%20ensure%20quality%20assurance.). Accessed 9 Apr. 2024.
-
-**2.** "Security in every stage of CI/CD pipeline" *AWS*, [Link](https://docs.aws.amazon.com/whitepapers/latest/practicing-continuous-integration-continuous-delivery/security-in-every-stage-of-cicd-pipeline.html). Accessed 9 Apr. 2024.
-
-**3.** "SAST, DAST, and IAST Security Testing" *Contrast Security*, [Link](https://www.contrastsecurity.com/security-influencers/why-the-difference-between-sast-dast-and-iast-matters). Accessed 9 Apr. 2024.
-
-**4.** "How to use the Jenkins Security Scan " *Jenkins*, [Link](https://www.jenkins.io/doc/developer/security/scan/). Accessed 9 Apr. 2024.
-
-**5.** "SonarQube" *SonarQube*, [Link](https://www.sonarsource.com/products/sonarqube/). Accessed 9 Apr. 2024.
-
-**6.** "Snyk Open Source" *Snyk*, [Link](https://snyk.io/product/open-source-security-management/?utm_medium=paid-search&utm_source=google&utm_campaign=gs_sn:-brand-ecpc&utm_content=br_sca&utm_term=snyk%20sca&gad_source=1&gclid=Cj0KCQjwztOwBhD7ARIsAPDKnkBbO4ZOhhLOMFnW3niLxxHAljuqKD8iOqe82_KTv9t4CDljRWacTd8aAlTxEALw_wcB). Accessed 9 Apr. 2024.
-
-**7.** "Vulnerability Scanner Tools" *Veracode*, [Link](https://www.veracode.com/security/vulnerability-scanning-tools). Accessed 9 Apr. 2024.
-
-**8.** "What is Fortify and How it works? An Overview and Its Use Cases" *DevOps School*, [Link](https://www.devopsschool.com/blog/what-is-fortify-and-how-it-works-an-overview-and-its-use-cases/). Accessed 9 Apr. 2024.
-
+<details>
+  <summary>Expand</summary>
+    <b>1.</b> "What Is CI/CD Security?" <i>Red Hat</i>, <a href="https://www.redhat.com/en/topics/security/what-is-cicd-security#:~:text=CI%2FCD%20security%20is%20used,policies%2C%20and%20ensure%20quality%20assurance." target="_blank">https://www.redhat.com/en/topics/security/what-is-cicd-security/</a>. Accessed 9 Apr. 2024.<br>
+    <b>2.</b> "Security in Every Stage of CI/CD Pipeline." <i>AWS</i>, <a href="https://docs.aws.amazon.com/whitepapers/latest/practicing-continuous-integration-continuous-delivery/security-in-every-stage-of-cicd-pipeline.html" target="_blank">https://docs.aws.amazon.com/whitepapers/latest/practicing-continuous-integration-continuous-delivery/security-in-every-stage-of-cicd-pipeline.html</a>. Accessed 9 Apr. 2024.<br>
+    <b>3.</b> "SAST, DAST, and IAST Security Testing." <i>Contrast Security</i>, <a href="https://www.contrastsecurity.com/security-influencers/why-the-difference-between-sast-dast-and-iast-matters" target="_blank">https://www.contrastsecurity.com/security-influencers/why-the-difference-between-sast-dast-and-iast-matters</a>. Accessed 9 Apr. 2024.<br>
+    <b>4.</b> "How to Use the Jenkins Security Scan." <i>Jenkins</i>, <a href="https://www.jenkins.io/doc/developer/security/scan/" target="_blank">https://www.jenkins.io/doc/developer/security/scan/</a>. Accessed 9 Apr. 2024.<br>
+    <b>5.</b> "SonarQube." <i>SonarQube</i>, <a href="https://www.sonarsource.com/products/sonarqube/" target="_blank">https://www.sonarsource.com/products/sonarqube/</a>. Accessed 9 Apr. 2024.<br>
+    <b>6.</b> "Snyk Open Source." <i>Snyk</i>, <a href="https://snyk.io/product/open-source-security-management/?utm_medium=paid-search&utm_source=google&utm_campaign=gs_sn:-brand-ecpc&utm_content=br_sca&utm_term=snyk%20sca&gad_source=1&gclid=Cj0KCQjwztOwBhD7ARIsAPDKnkBbO4ZOhhLOMFnW3niLxxHAljuqKD8iOqe82_KTv9t4CDljRWacTd8aAlTxEALw_wcB" target="_blank">https://snyk.io/product/open-source-security-management/</a>. Accessed 9 Apr. 2024.<br>
+    <b>7.</b> "Vulnerability Scanner Tools." <i>Veracode</i>, <a href="https://www.veracode.com/security/vulnerability-scanning-tools" target="_blank">https://www.veracode.com/security/vulnerability-scanning-tools</a>. Accessed 9 Apr. 2024.<br>
+    <b>8.</b> "What Is Fortify and How It Works? An Overview and Its Use Cases." <i>DevOps School</i>, <a href="https://www.devopsschool.com/blog/what-is-fortify-and-how-it-works-an-overview-and-its-use-cases/" target="_blank">https://www.devopsschool.com/blog/what-is-fortify-and-how-it-works-an-overview-and-its-use-cases/</a>. Accessed 9 Apr. 2024.<br>
+</details>
